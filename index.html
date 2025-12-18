@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARAR - Contemporary Art Exhibition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="assets/images/arar.svg" alt="ARAR" class="logo-img">
+            </div>
+            <nav>
+                <!-- <a href="#exhibitions">Exhibitions</a> -->
+                <!-- <a href="#collection">Collection</a> -->
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="upcoming-label">
+                    <span class="vertical-line"></span>
+                    <span>UPCOMING</span>
+                </div>
+                <h1 class="hero-title">
+                    Contemporary Art<br>
+                    Exhibition-Fundraiser
+                </h1>
+                <p class="charity-badge">20% TO CHARITY</p>
+                <!-- <p class="hero-description">
+                    Unique Art from 15 international and Armenian Artists
+                </p> -->
+            </div>
+            <button class="scroll-down-btn" onclick="scrollToNext()" aria-label="Scroll down">
+                <span class="material-icons-outlined">keyboard_arrow_down</span>
+            </button>
+        </div>
+
+        <div class="event-info-section">
+            <div class="event-info-container">
+                <div class="event-info-left">
+                    <div class="detail-item">
+                        <div class="detail-header">
+                            <span class="material-icons-outlined detail-icon">calendar_today</span>
+                            <span class="detail-label">Date</span>
+                        </div>
+                        <p class="detail-value">January 5–9, 2026</p>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-header">
+                            <span class="material-icons-outlined detail-icon">location_on</span>
+                            <span class="detail-label">Location</span>
+                        </div>
+                        <p class="detail-value">National Center of Aesthetics</p>
+                        <p class="detail-value">
+                            <a href="https://maps.app.goo.gl/UWaEVt8y4GGs9FeF6" target="_blank" rel="noreferrer" class="location-link">Abovyan 13, Yerevan</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="event-info-right">
+                    <p>The Contemporary Art Exhibition–Fundraiser presents international and Armenian artists known for powerful, vibrant, and visually striking works.</p>
+                    
+                    <div class="stats-section">
+                        <div class="stat-item">
+                            <div class="stat-value">17 ARTISTS</div>
+                            <div class="stat-label">Local and international</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">30 ARTWORKS</div>
+                            <div class="stat-label">Paintings & sculptures</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">130M<sup>²</sup> MURAL</div>
+                            <div class="stat-label">In the city center</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="artists-section">
+                <h3 class="artists-title">Exhibited Artists</h3>
+                <div class="artists-list">
+                    <div class="artists-column">
+                        <div class="artist-item">
+                            <span class="artist-name">Raydan Zebian (Spaz)</span>
+                        </div>
+                        <div class="artist-item">
+                            <span class="artist-name">Karen Akhikyan</span>
+                        </div>
+                        <div class="artist-item">
+                            <span class="artist-name">Aram Poladian</span>
+                        </div>
+                        <div class="artist-item">
+                            <span class="artist-name">Guy Khazanhcyan</span>
+                        </div>
+                        <div class="artist-item">
+                            <span class="artist-name">Hayduk Smbatyan</span>
+                        </div>
+                        <div class="artist-item">
+                            <span class="artist-name">Siranush Vardanyan</span>
+                        </div>
+                    </div>
+                    <div class="artists-column">
+                        <div class="artist-item">
+                            <span class="artist-name">Lilit Eghiazaryan</span>
+                        </div>
+                        <div class="artist-item">
+                            <span class="artist-name">Sero Soghomonyan</span>
+                        </div>
+                        <div class="artist-item">
+                            <span class="artist-name">Armen Hakobjanyan</span>
+                        </div>
+                        <div class="artist-item">
+                            <span class="artist-name">Aram Yengibaryan</span>
+                        </div>
+                        <div class="artist-item">
+                            <span class="artist-name">Adam Adamyan</span>
+                        </div>
+                        <div class="artist-item">
+                            <span class="artist-name">Tina Karakeshishyan</span>
+                        </div>
+                    </div>
+                    <div class="artists-column">
+                        <div class="artist-item">
+                            <span class="artist-name">Anatoliy Guyduk</span>
+                        </div>
+                        <div class="artist-item">
+                            <span class="artist-name">Lubna Al-Lahham</span>
+                        </div>
+                        <div class="artist-item">
+                            <span class="artist-name">Afis Enitan Quadri</span>
+                        </div>
+                        <div class="artist-item">
+                            <span class="artist-name">Ashot Harutyunyan</span>
+                        </div>
+                        <div class="artist-item">
+                            <span class="artist-name">Tigran Ghazaryan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="partners-section">
+                <h3 class="partners-title">Partners</h3>
+                <div class="partners-logos">
+                        <div class="partner-logo">
+                            <a href="https://www.yerevan.am/en/" target="_blank" rel="noreferrer">
+                                <img src="assets/images/ym.png" alt="Yerevan Municipality" class="logo-img">
+                            </a>
+                        </div>
+                        <div class="partner-logo">
+                            <a href="https://nca.am" target="_blank" rel="noreferrer">
+                                <img src="assets/images/nca.png" alt="National Centre for Aesthetics" class="logo-img">
+                            </a>
+                        </div>
+                        <div class="partner-logo">
+                            <a href="https://imast.am" target="_blank" rel="noreferrer">
+                                <img src="assets/images/imast.png" alt="Imast" class="logo-img">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Arar Gallery</h4>
+                <p>ararel.gallery@gmail.com</p>
+                <p>+374 95 28 68 88 </p>
+            </div>
+            <div class="footer-social">
+                <a class="social-btn" href="https://www.instagram.com/arar.gallery" target="_blank" rel="noreferrer">
+                    <span class="material-icons-outlined">photo_camera</span>
+                </a>
+                <a class="social-btn" href="https://www.threads.net/@arar.gallery" target="_blank" rel="noreferrer">
+                    <span class="material-icons-outlined">alternate_email</span>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ARAR Gallery. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToNext() {
+            const eventInfoSection = document.querySelector('.event-info-section');
+            if (eventInfoSection) {
+                eventInfoSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
