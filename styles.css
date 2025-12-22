@@ -75,14 +75,6 @@ header .logo-img {
     color: #000;
 }
 
-.menu-toggle.menu-open .menu-icon {
-    display: none;
-}
-
-.menu-toggle.menu-open .close-icon {
-    display: inline-block !important;
-}
-
 .menu-overlay {
     display: none;
     position: fixed;
