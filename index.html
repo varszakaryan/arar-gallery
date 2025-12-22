@@ -16,9 +16,20 @@
             <div class="logo">
                 <img src="assets/images/arar.svg" alt="ARAR" class="logo-img">
             </div>
-            <nav>
-                <!-- <a href="#exhibitions">Exhibitions</a> -->
-                <!-- <a href="#collection">Collection</a> -->
+            <button class="menu-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+                <span class="material-icons-outlined menu-icon">menu</span>
+                <span class="material-icons-outlined close-icon" style="display: none;">close</span>
+            </button>
+            <div class="menu-overlay" onclick="toggleMenu()"></div>
+            <nav id="main-nav" class="nav-menu">
+                <button class="menu-close-btn" onclick="toggleMenu()" aria-label="Close menu">
+                    <span class="material-icons-outlined">close</span>
+                </button>
+                <a href="#artists">Artists</a>
+                <a href="#artworks">Artworks</a>
+                <a href="#mural">Mural</a>
+                <a href="#partners">Partners</a>
+                <a href="#contacts">Contacts</a>
             </nav>
         </div>
     </header>
@@ -44,6 +55,10 @@
                 <span class="material-icons-outlined">keyboard_arrow_down</span>
             </button>
         </div>
+
+        <button class="scroll-up-btn" id="scrollUpBtn" onclick="scrollToTop()" aria-label="Scroll to top">
+            <span class="material-icons-outlined">keyboard_arrow_up</span>
+        </button>
 
         <div class="event-info-section">
             <div class="event-info-container">
@@ -88,7 +103,7 @@
                     
                 </div>
             </div>
-            <div class="artists-section">
+            <div class="artists-section" id="artists">
                 <h3 class="artists-title">Exhibited Artists</h3>
                 <div class="artists-list">
                     <div class="artists-column">
@@ -139,7 +154,7 @@
                             <span class="artist-name">Lubna Al-Lahham</span>
                         </div>
                         <div class="artist-item">
-                            <span class="artist-name">Afis Enitan Quadri</span>
+                            <span class="artist-name">Aksel Zardaryan</span>
                         </div>
                         <div class="artist-item">
                             <span class="artist-name">Ashot Harutyunyan</span>
@@ -150,7 +165,19 @@
                     </div>
                 </div>
             </div>
-            <div class="partners-section">
+            <div class="artworks-section" id="artworks">
+                <h3 class="artworks-title">Artworks</h3>
+                <div class="artworks-content">
+                    <p class="coming-soon">Coming soon</p>
+                </div>
+            </div>
+            <div class="mural-section" id="mural">
+                <h3 class="mural-title">Mural</h3>
+                <div class="mural-content">
+                    <p>As part of the exhibition, a <strong>130 m² large-scale mural</strong> will be created at <strong>13 Tumanyan Street</strong>, transforming the urban landscape with bold visual impact. The mural extends the exhibition beyond the gallery walls into the city.<br><br>Project design coming soon.</p>
+                </div>
+            </div>
+            <div class="partners-section" id="partners">
                 <h3 class="partners-title">Partners</h3>
                 <div class="partners-logos">
                         <div class="partner-logo">
@@ -169,15 +196,28 @@
                             </a>
                         </div>
                     </div>
+                    <div class="partners-logos partners-logos-second-row">
+                        <div class="partner-logo partner-logo-small">
+                            <a href="https://lawsuit.am/" target="_blank" rel="noreferrer">
+                                <img src="assets/images/lawsuit.svg" alt="Lawsuit" class="logo-img">
+                            </a>
+                        </div>
+                        <div class="partner-logo partner-logo-small">
+                            <a href="https://www.nera.am/" target="_blank" rel="noreferrer">
+                                <img src="assets/images/nera.png" alt="NERA" class="logo-img">
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
     </main>
 
-    <footer>
+    <footer id="contacts">
         <div class="footer-container">
             <div class="footer-section">
+                <img src="assets/images/arar.svg" alt="ARAR" class="footer-logo">
                 <h4>Arar Gallery</h4>
                 <p>ararel.gallery@gmail.com</p>
                 <p>+374 95 28 68 88 </p>
@@ -203,6 +243,53 @@
                 eventInfoSection.scrollIntoView({ behavior: 'smooth' });
             }
         }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show/hide scroll-up button based on scroll position
+        window.addEventListener('scroll', function() {
+            const artistsSection = document.querySelector('#artists');
+            const scrollUpBtn = document.getElementById('scrollUpBtn');
+            
+            if (artistsSection && scrollUpBtn) {
+                const artistsSectionTop = artistsSection.getBoundingClientRect().top;
+                if (artistsSectionTop < 0) {
+                    scrollUpBtn.classList.add('show');
+                } else {
+                    scrollUpBtn.classList.remove('show');
+                }
+            }
+        });
+
+        function toggleMenu() {
+            const nav = document.getElementById('main-nav');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const overlay = document.querySelector('.menu-overlay');
+            nav.classList.toggle('nav-open');
+            menuToggle.classList.toggle('menu-open');
+            if (overlay) {
+                overlay.classList.toggle('active');
+            }
+        }
+
+        // Close menu when clicking on a link
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('#main-nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const nav = document.getElementById('main-nav');
+                    const menuToggle = document.querySelector('.menu-toggle');
+                    const overlay = document.querySelector('.menu-overlay');
+                    nav.classList.remove('nav-open');
+                    menuToggle.classList.remove('menu-open');
+                    if (overlay) {
+                        overlay.classList.remove('active');
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
