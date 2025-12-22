@@ -828,6 +828,10 @@ footer {
         right: 0;
     }
     
+    .menu-toggle.menu-open {
+        display: none;
+    }
+    
     .menu-close-btn {
         display: block;
     }
@@ -852,6 +856,7 @@ footer {
         right: 30px;
         width: 45px;
         height: 45px;
+        z-index: 102;
     }
     
     .scroll-down-btn .material-icons-outlined {
@@ -916,6 +921,7 @@ footer {
         right: 20px;
         width: 40px;
         height: 40px;
+        z-index: 102;
     }
     
     .scroll-down-btn .material-icons-outlined {
