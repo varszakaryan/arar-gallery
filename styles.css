@@ -50,6 +50,13 @@ header {
     align-items: center;
 }
 
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .logo-img {
     height: 30px;
     width: auto;
