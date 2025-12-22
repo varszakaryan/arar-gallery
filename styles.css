@@ -357,7 +357,7 @@ nav a:hover {
 }
 
 .stat-value sup {
-    font-size: 0.5em;
+    /* font-size: 0.5em; */
     vertical-align: super;
     line-height: 0;
 }
