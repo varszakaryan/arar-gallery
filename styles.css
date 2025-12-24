@@ -206,6 +206,16 @@ nav a:hover {
     letter-spacing: -1px;
 }
 
+.charity-badge-link {
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.3s ease;
+}
+
+.charity-badge-link:hover {
+    opacity: 0.8;
+}
+
 .charity-badge {
     font-size: 12px;
     font-weight: 600;
