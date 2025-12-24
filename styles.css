@@ -626,6 +626,33 @@ nav a[href="agenda.html"] {
     margin-top: 40px;
 }
 
+/* .media-partners-section {
+    margin-top: 60px;
+    padding-top: 40px;
+} */
+
+.media-partners-title {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    color: #000;
+    margin: 0 0 40px 0;
+    letter-spacing: -0.5px;
+    font-family: 'Libre Franklin', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    opacity: 0.75;
+}
+
+.partners-logos-media {
+    margin-top: 0;
+}
+
+.partners-logos-media .partner-logo-small .logo-img {
+    max-width: 80px !important;
+    max-height: none !important;
+    width: auto;
+    height: auto;
+}
+
 /* Organizers Section */
 .organizers-section {
     width: 100%;
@@ -1110,7 +1137,7 @@ footer {
     }
     
     .stat-value {
-        font-size: 32px;
+        font-size: 24px;
         padding: 14px 20px;
     }
     
@@ -1164,6 +1191,10 @@ footer {
     
     .organizers-title {
         font-size: 36px;
+    }
+    
+    .media-partners-title {
+        font-size: 28px;
     }
     
     .artworks-content {
@@ -1221,9 +1252,26 @@ footer {
         height: auto;
     }
     
+    .partners-logos-media .partner-logo-small .logo-img {
+        max-width: 80px !important;
+        max-height: none !important;
+    }
+    
+    .partner-logo-ta {
+        width: 100%;
+        padding: 15px;
+        margin: 15px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
     .partner-logo-ta .logo-img {
-        max-width: none;
-        max-height: 35px;
+        max-width: 100%;
+        width: 100%;
+        max-height: none;
+        height: auto;
+        object-fit: contain;
     }
 }
 
