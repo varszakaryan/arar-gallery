@@ -1,0 +1,108 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "Rotational Grace Postcard (Signed)",
+      "artist": "Raydan Zebian (Spazuno)",
+      "price": 1000,
+      "discountedPrice": 500,
+      "currency": "AMD",
+      "dimensions": "10.5 x 14.8 cm",
+      "medium": "printed on paper",
+      "images": [
+        "assets/images/merch/spaz_front.png",
+        "assets/images/merch/spaz_back.png"
+      ],
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "title": "Close Distance Postcard",
+      "artist": "Lubna Al-Lahham",
+      "price": 1000,
+      "discountedPrice": 500,
+      "currency": "AMD",
+      "dimensions": "10.5 x 14.8 cm",
+      "medium": "printed on paper",
+      "images": [
+        "assets/images/merch/lubna_blue_front.png",
+        "assets/images/merch/lubna_blue_back.png"
+      ],
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "title": "Untitled from Circle Series Postcard",
+      "artist": "Lubna Al-Lahham",
+      "price": 1000,
+      "discountedPrice": 500,
+      "currency": "AMD",
+      "dimensions": "10.5 x 14.8 cm",
+      "medium": "printed on paper",
+      "images": [
+        "assets/images/merch/lubna_pink_front.png",
+        "assets/images/merch/lubna_pink_back.png"
+      ],
+      "link": "#"
+    },
+    {
+      "id": 4,
+      "title": "At the Stairs Postcard",
+      "artist": "Aram Poladian",
+      "price": 1000,
+      "discountedPrice": 500,
+      "currency": "AMD",
+      "dimensions": "10.5 x 14.8 cm",
+      "medium": "printed on paper",
+      "images": [
+        "assets/images/merch/poladian_stairs_front.png",
+        "assets/images/merch/poladian_stairs_back.png"
+      ],
+      "link": "#"
+    },
+    {
+      "id": 5,
+      "title": "Rebirth Postcard",
+      "artist": "Aram Poladian",
+      "price": 1000,
+      "discountedPrice": 500,
+      "currency": "AMD",
+      "dimensions": "10.5 x 14.8 cm",
+      "medium": "printed on paper",
+      "images": [
+        "assets/images/merch/poladian_rebirth_front.png",
+        "assets/images/merch/poladian_rebirth_back.png"
+      ],
+      "link": "#"
+    },
+    {
+      "id": 6,
+      "title": "Rotational Grace Print",
+      "artist": "Raydan Zebian (Spazuno)",
+      "price": 25000,
+      "discountedPrice": 12500,
+      "currency": "AMD",
+      "dimensions": "20 x 20 cm",
+      "medium": "printed on paper",
+      "images": [
+        "assets/images/merch/spaz.jpeg"
+      ],
+      "link": "#"
+    },
+    {
+      "id": 7,
+      "title": "Rotational Grace Print",
+      "artist": "Raydan Zebian (Spazuno)",
+      "price": 100000,
+      "discountedPrice": 50000,
+      "currency": "AMD",
+      "dimensions": "30 x 30 cm",
+      "medium": "printed on paper",
+      "images": [
+        "assets/images/merch/spaz.jpeg"
+      ],
+      "link": "#"
+    }
+  ]
+}
+
