@@ -218,6 +218,7 @@ nav a[href="agenda.html"] {
     position: relative;
     z-index: 10;
     pointer-events: auto;
+    margin-top: 20px;
 }
 
 .charity-badge-link:hover {
@@ -225,11 +226,11 @@ nav a[href="agenda.html"] {
 }
 
 .charity-badge {
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 700;
     color: #000;
     background: #fff;
-    padding: 6px 12px;
+    padding: 12px 24px;
     display: inline-block;
     width: fit-content;
     letter-spacing: 1px;
@@ -390,6 +391,18 @@ nav a[href="agenda.html"] {
     line-height: 1.6;
     color: #000;
     margin-bottom: 40px;
+}
+
+.event-info-right > p a {
+    color: #0066cc;
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 102, 204, 0.3);
+    transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+.event-info-right > p a:hover {
+    color: #0052a3;
+    text-decoration-color: rgba(0, 102, 204, 0.6);
 }
 
 /* Stats Section */
@@ -1622,7 +1635,7 @@ footer {
         letter-spacing: 3px;
         text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 255, 255, 0.3);
     }
-    
+
     .menu-toggle {
         display: block;
     }
