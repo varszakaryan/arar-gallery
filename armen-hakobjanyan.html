@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Armen Hakobjanyan - ARAR Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HGM21QWH4E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HGM21QWH4E');
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html"><img src="assets/images/arar.svg" alt="ARAR" class="logo-img"></a>
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()"><span class="material-icons-outlined">menu</span></button>
+            <div class="menu-overlay" onclick="toggleMenu()"></div>
+            <nav id="main-nav" class="nav-menu">
+                <button class="menu-close-btn" onclick="toggleMenu()"><span class="material-icons-outlined">close</span></button>
+                <a href="index.html#artists">Artists</a>
+                <a href="index.html#artworks">Artworks</a>
+                <a href="index.html#mural">Mural</a>
+                <a href="index.html#merch">Merch</a>
+                <a href="index.html#organizers">Organizers</a>
+                <a href="index.html#partners">Partners</a>
+                <a href="agenda.html">Agenda</a>
+                <a href="index.html#contacts">Contacts</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="artist-page-container">
+            <a href="index.html#artists" class="back-btn"><span class="material-icons-outlined">arrow_back</span></a>
+            <div class="artist-profile-card">
+                <div class="artist-profile-image">
+                    <img src="assets/images/artists/armen_hakobjanyan_profile.jpg" alt="Armen Hakobjanyan" class="artist-profile-img">
+                </div>
+                <div class="artist-profile-info">
+                    <h1 class="artist-profile-name">Armen Hakobjanyan</h1>
+                    <p class="artist-profile-location">Sisian, Armenia</p>
+                    <p class="artist-profile-bio">Armen Hakobjanyan is a contemporary painter born in 1989 in Sisian (Syunik Province in southern Armenia). During his teenagerhood, the artist has studied in the Sisian School of Fine Arts named after Zakar Khachatryan. Here he studied under the supervision of Ashot Avagyan, a well-known Armenian painter, who is inspired by ancient megalithic structures and ancient petroglyphs. This is where Hakobjanyan found interest in the functional abilities of the materials. Later, he studied at Yerevan State University of Architecture and Construction, receiving a master's degree in Architecture. This background has developed his specific approach towards painting.
+<br><br>
+Hakobjanyan plays with his role as an artist switching it from a "doer" to a "definer", questioning the presence and meaning of painting in the contemporary world. Inspired by nostalgic memories he is trying to create a bridge between our memories and reality. "Love", "Equality" and "Quietness" are three words, which according to Hakobjanyan, best describe his artworks.</p>
+                    <div class="artist-artworks-section">
+                        <h2 class="artist-artworks-title">Exhibited Artworks</h2>
+                        <p class="artist-artworks-coming-soon">Coming soon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('main-nav');
+            const overlay = document.querySelector('.menu-overlay');
+            nav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+        }
+    </script>
+</body>
+</html>

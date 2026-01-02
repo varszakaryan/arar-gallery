@@ -603,6 +603,165 @@ nav a[href="agenda.html"] {
     margin-bottom: 12px;
 }
 
+a.artist-name {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a.artist-name:hover {
+    color: #666;
+    text-decoration: none;
+}
+
+/* Artist Profile Card */
+.artist-profile-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 24px;
+    background: transparent;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    max-width: 100%;
+}
+
+.artist-profile-image {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+}
+
+.artist-profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+.artist-profile-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.artist-profile-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2a2a2a;
+    text-decoration: none;
+    font-family: 'Libre Franklin', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: color 0.3s ease;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.artist-profile-name:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+.artist-profile-name:not(a) {
+    text-decoration: none;
+}
+
+.artist-profile-name:not(a):hover {
+    text-decoration: none;
+}
+
+/* Artist Page Container */
+.artist-page-container {
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    padding: 80px 40px 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.back-btn {
+    position: absolute;
+    top: 80px;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: #000;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 10;
+}
+
+.back-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: translateX(-2px);
+}
+
+.back-btn .material-icons-outlined {
+    font-size: 24px;
+}
+
+.artist-page-container .artist-profile-card {
+    max-width: 100%;
+    width: 100%;
+    background: transparent;
+    margin-left: 120px;
+}
+
+.artist-profile-location {
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.artist-profile-bio {
+    font-size: 15px;
+    font-weight: 400;
+    color: #2a2a2a;
+    margin: 0;
+    line-height: 1.6;
+    width: 60%;
+}
+
+/* Artist Artworks Section */
+.artist-artworks-section {
+    width: 100%;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.artist-artworks-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 30px 0;
+    text-align: left;
+    font-family: 'Libre Franklin', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.5px;
+}
+
+.artist-artworks-coming-soon {
+    font-size: 18px;
+    font-weight: 400;
+    color: #666;
+    margin: 0;
+    text-align: left;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
 .artist-separator {
     width: 100%;
     height: 1px;
@@ -852,6 +1011,125 @@ nav a[href="agenda.html"] {
     line-height: 1.8;
     margin: 0;
     max-width: 900px;
+}
+
+.organizers-donate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.donate-btn {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+.donate-btn:hover {
+    background: #333;
+    transform: translateY(-1px);
+}
+
+.donate-btn:active {
+    transform: translateY(0);
+}
+
+/* Donate Modal */
+.donate-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.donate-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.donate-modal-content {
+    background: #fff;
+    border-radius: 8px;
+    padding: 40px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.donate-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: #000;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.donate-modal-close:hover {
+    color: #666;
+}
+
+.donate-modal-close .material-icons-outlined {
+    font-size: 24px;
+}
+
+.donate-modal-body {
+    margin-top: 20px;
+}
+
+.donate-modal-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 24px 0;
+    text-align: center;
+    font-family: 'Libre Franklin', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.donate-payment-item {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    line-height: 1.8;
+    margin: 0 0 16px 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    word-break: break-word;
+}
+
+.donate-payment-item:last-child {
+    margin-bottom: 0;
 }
 
 /* Mural Section */
@@ -1432,6 +1710,52 @@ footer {
     .artists-section {
         padding: 60px 30px;
     }
+
+    .artist-profile-card {
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .artist-profile-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .artist-profile-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .artist-profile-name {
+        font-size: 22px;
+    }
+
+    .artist-profile-bio {
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .artist-artworks-title {
+        font-size: 28px;
+    }
+
+    .artist-page-container {
+        padding: 60px 30px 40px;
+    }
+
+    .artist-page-container .artist-profile-card {
+        margin-left: 60px;
+    }
+
+    .back-btn {
+        top: 60px;
+        left: 30px;
+    }
+
+    .back-btn {
+        top: 60px;
+        left: 30px;
+    }
     
     .artworks-section {
         padding: 60px 30px;
@@ -1475,6 +1799,20 @@ footer {
     
     .organizers-logos {
         gap: 50px;
+    }
+
+    .donate-modal-content {
+        padding: 30px 24px;
+        max-width: 90%;
+    }
+
+    .donate-modal-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .donate-payment-item {
+        font-size: 14px;
     }
 }
 
@@ -1551,6 +1889,72 @@ footer {
     
     .artist-name {
         text-align: center;
+    }
+
+    .artist-profile-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .artist-profile-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .artist-profile-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .artist-profile-name {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .artist-profile-location {
+        text-align: center;
+    }
+
+    .artist-profile-bio {
+        text-align: center;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .artist-artworks-section {
+        margin-top: 40px;
+        align-items: center;
+    }
+
+    .artist-artworks-title {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .artist-artworks-coming-soon {
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .artist-page-container {
+        padding: 60px 20px 40px;
+    }
+
+    .artist-page-container .artist-profile-card {
+        margin-left: 0;
+    }
+
+    .back-btn {
+        top: 60px;
+        left: 20px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .back-btn .material-icons-outlined {
+        font-size: 22px;
     }
     
     .event-info-section {
@@ -1680,6 +2084,26 @@ footer {
     
     .organizers-text p {
         font-size: 16px;
+    }
+
+    .donate-btn {
+        padding: 12px 28px;
+        font-size: 15px;
+    }
+
+    .donate-modal-content {
+        padding: 24px 20px;
+        max-width: 95%;
+    }
+
+    .donate-modal-title {
+        font-size: 18px;
+        margin-bottom: 18px;
+    }
+
+    .donate-payment-item {
+        font-size: 13px;
+        margin-bottom: 12px;
     }
     
     .partners-logos {

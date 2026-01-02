@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="orientation" content="portrait">
+    <title>Karen Akhikyan - ARAR Gallery</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arargallery.com/karen-akhikyan">
+    <meta property="og:title" content="Karen Akhikyan - ARAR Gallery">
+    <meta property="og:description" content="Karen Akhikyan - Contemporary artist">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://arargallery.com/karen-akhikyan">
+    <meta name="twitter:title" content="Karen Akhikyan - ARAR Gallery">
+    <meta name="twitter:description" content="Karen Akhikyan - Contemporary artist">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HGM21QWH4E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-HGM21QWH4E');
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" aria-label="Go to home">
+                    <img src="assets/images/arar.svg" alt="ARAR" class="logo-img">
+                </a>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+                <span class="material-icons-outlined">menu</span>
+            </button>
+            <div class="menu-overlay" onclick="toggleMenu()"></div>
+            <nav id="main-nav" class="nav-menu">
+                <button class="menu-close-btn" onclick="toggleMenu()" aria-label="Close menu">
+                    <span class="material-icons-outlined">close</span>
+                </button>
+                <a href="index.html#artists">Artists</a>
+                <a href="index.html#artworks">Artworks</a>
+                <a href="index.html#mural">Mural</a>
+                <a href="index.html#merch">Merch</a>
+                <a href="index.html#organizers">Organizers</a>
+                <a href="index.html#partners">Partners</a>
+                <a href="agenda.html">Agenda</a>
+                <a href="index.html#contacts">Contacts</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="artist-page-container">
+            <a href="index.html#artists" class="back-btn">
+                <span class="material-icons-outlined">arrow_back</span>
+            </a>
+            <div class="artist-profile-card">
+                <div class="artist-profile-image">
+                    <img src="assets/images/artists/karen_akhikyan_profile.jpg" alt="Karen Akhikyan" class="artist-profile-img">
+                </div>
+                <div class="artist-profile-info">
+                    <h1 class="artist-profile-name">Karen Akhikyan</h1>
+                    <p class="artist-profile-location">Yerevan, Armenia</p>
+                    <p class="artist-profile-bio">Karen Akhikyan is an Armenian artist whose poetic wire sculptures have found resonance across the world. His sculptures belong to private collections in over sixty countries and have been presented in exhibitions across continents. His work captures the quiet tension between strength and vulnerability, where a hard material is shaped into gestures of softness, grace, and emotion.<br><br>He began his art journey with painting, but over time, sculpture became his deeper language. Wire, with all its resistance and memory, became a way to draw in space. Each piece is shaped by hand, without sketches or plans, allowing the form to emerge gradually through movement and touch. His process remains deeply personal. Each work begins simply, with a line, a gesture, and the slow uncovering of something true.</p>
+                    <div class="artist-artworks-section">
+                        <h2 class="artist-artworks-title">Exhibited Artworks</h2>
+                        <p class="artist-artworks-coming-soon">Coming soon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('main-nav');
+            const overlay = document.querySelector('.menu-overlay');
+            nav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+        }
+    </script>
+</body>
+</html>
+

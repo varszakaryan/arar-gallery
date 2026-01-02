@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Lubna Al-Lahham - ARAR Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HGM21QWH4E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HGM21QWH4E');
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html"><img src="assets/images/arar.svg" alt="ARAR" class="logo-img"></a>
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()"><span class="material-icons-outlined">menu</span></button>
+            <div class="menu-overlay" onclick="toggleMenu()"></div>
+            <nav id="main-nav" class="nav-menu">
+                <button class="menu-close-btn" onclick="toggleMenu()"><span class="material-icons-outlined">close</span></button>
+                <a href="index.html#artists">Artists</a>
+                <a href="index.html#artworks">Artworks</a>
+                <a href="index.html#mural">Mural</a>
+                <a href="index.html#merch">Merch</a>
+                <a href="index.html#organizers">Organizers</a>
+                <a href="index.html#partners">Partners</a>
+                <a href="agenda.html">Agenda</a>
+                <a href="index.html#contacts">Contacts</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="artist-page-container">
+            <a href="index.html#artists" class="back-btn"><span class="material-icons-outlined">arrow_back</span></a>
+            <div class="artist-profile-card">
+                <div class="artist-profile-image">
+                    <img src="assets/images/artists/lubna_al_lahham_profile.png" alt="Lubna Al-Lahham" class="artist-profile-img">
+                </div>
+                <div class="artist-profile-info">
+                    <h1 class="artist-profile-name">Lubna Al-Lahham</h1>
+                    <p class="artist-profile-location">Jordan</p>
+                    <p class="artist-profile-bio">Lubna is a Jordanian artist and architect and gallery manager in Jordan, whose work explores the emotional depth and visual complexity of nature through abstraction. Her background in architecture shapes the way she approaches painting—thinking in layers, space, and structure, yet always seeking emotion beneath form. <br><br>In her latest Forest Collection, Lubna invites viewers into imagined landscapes shaped by intuition, memory, and the subtle play of light and shadow. Nature has always been her greatest inspiration—not in its obvious shapes, but in its hidden details: the shifting light between branches, the quiet rhythm of roots, the spaces in between.
+<br><br>
+Her paintings are not literal representations of forests, but emotional impressions—visual fields where colors and textures overlap and unfold. Using oil paint and palette knife techniques, she creates layered, textured surfaces that feel alive and deeply contemplative.
+<br><br>
+With each work, Lubna offers a quiet invitation to enter a world where the natural and the abstract merge—where her architectural eye meets her emotional instinct. This collection is a journey into the soul of the forest, built not from blueprints, but from feeling.</p>
+                    <div class="artist-artworks-section">
+                        <h2 class="artist-artworks-title">Exhibited Artworks</h2>
+                        <p class="artist-artworks-coming-soon">Coming soon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('main-nav');
+            const overlay = document.querySelector('.menu-overlay');
+            nav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+        }
+    </script>
+</body>
+</html>

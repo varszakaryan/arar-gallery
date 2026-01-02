@@ -170,56 +170,56 @@
                 <div class="artists-list">
                     <div class="artists-column">
                         <div class="artist-item">
-                            <span class="artist-name">Raydan Zebian (Spaz)</span>
+                            <a href="spazuno.html" class="artist-name">Raydan Zebian (Spazuno)</a>
                         </div>
                         <div class="artist-item">
-                            <span class="artist-name">Karen Akhikyan</span>
+                            <a href="karen-akhikyan.html" class="artist-name">Karen Akhikyan</a>
                         </div>
                         <div class="artist-item">
-                            <span class="artist-name">Aram Poladian</span>
+                            <a href="aram-poladian.html" class="artist-name">Aram Poladian</a>
                         </div>
                         <div class="artist-item">
-                            <span class="artist-name">Guy Ghazanchyan</span>
+                            <a href="guy-ghazanchyan.html" class="artist-name">Guy Ghazanchyan</a>
                         </div>
                         <div class="artist-item">
-                            <span class="artist-name">Hayduk Smbatyan</span>
+                            <a href="hayduk-smbatyan.html" class="artist-name">Hayduk Smbatyan</a>
                         </div>
                         <div class="artist-item">
-                            <span class="artist-name">Siranush Vardanyan</span>
-                        </div>
-                    </div>
-                    <div class="artists-column">
-                        <div class="artist-item">
-                            <span class="artist-name">Lilit Eghiazaryan</span>
-                        </div>
-                        <div class="artist-item">
-                            <span class="artist-name">Armen Hakobjanyan</span>
-                        </div>
-                        <div class="artist-item">
-                            <span class="artist-name">Aram Yengibaryan</span>
-                        </div>
-                        <div class="artist-item">
-                            <span class="artist-name">Adam Adamyan</span>
-                        </div>
-                        <div class="artist-item">
-                            <span class="artist-name">Tina Karakeshishyan</span>
+                            <a href="siranush-vardanyan.html" class="artist-name">Siranush Vardanyan</a>
                         </div>
                     </div>
                     <div class="artists-column">
                         <div class="artist-item">
-                            <span class="artist-name">Anatoliy Guyduk</span>
+                            <a href="lilit-eghiazaryan.html" class="artist-name">Lilit Eghiazaryan</a>
                         </div>
                         <div class="artist-item">
-                            <span class="artist-name">Lubna Al-Lahham</span>
+                            <a href="armen-hakobjanyan.html" class="artist-name">Armen Hakobjanyan</a>
                         </div>
                         <div class="artist-item">
-                            <span class="artist-name">Aksel Zardaryan</span>
+                            <a href="aram-yengibaryan.html" class="artist-name">Aram Yengibaryan</a>
                         </div>
                         <div class="artist-item">
-                            <span class="artist-name">Ashot Harutyunyan</span>
+                            <a href="adam-adamyan.html" class="artist-name">Adam Adamyan</a>
                         </div>
                         <div class="artist-item">
-                            <span class="artist-name">Tigran Ghazaryan</span>
+                            <a href="tina-karakeshishyan.html" class="artist-name">Tina Karakeshishyan</a>
+                        </div>
+                    </div>
+                    <div class="artists-column">
+                        <div class="artist-item">
+                            <a href="anatoliy-guyduk.html" class="artist-name">Anatoliy Guyduk</a>
+                        </div>
+                        <div class="artist-item">
+                            <a href="lubna-al-lahham.html" class="artist-name">Lubna Al-Lahham</a>
+                        </div>
+                        <div class="artist-item">
+                            <a href="aksel-zardaryan.html" class="artist-name">Aksel Zardaryan</a>
+                        </div>
+                        <div class="artist-item">
+                            <a href="ashot-harutyunyan.html" class="artist-name">Ashot Harutyunyan</a>
+                        </div>
+                        <div class="artist-item">
+                            <a href="tigran-ghazaryan.html" class="artist-name">Tigran Ghazaryan</a>
                         </div>
                     </div>
                 </div>
@@ -386,6 +386,9 @@
                 <div class="organizers-text">
                     <p>Arar Gallery and IPBA Foundation join forces to realize a bold contemporary art project that extends beyond the exhibition space. From gallery to city walls, the collaboration brings ambitious artworks and a large-scale mural to life — activating public space and turning artistic vision into visible, lasting impact.</p>
                 </div>
+                <div class="organizers-donate">
+                    <button class="donate-btn" onclick="openDonateModal()">Donate</button>
+                </div>
             </div>
             <div class="partners-section" id="partners">
                 <h3 class="partners-title">Partners</h3>
@@ -475,6 +478,23 @@
             <p>&copy; 2026 ARAR Gallery. All rights reserved.<br>Designed and developed by <a href="https://www.linkedin.com/in/varserzakaryan/" target="_blank" rel="noreferrer">Varser Zakaryan</a></p>
         </div>
     </footer>
+
+    <!-- Donate Modal -->
+    <div class="donate-modal" id="donateModal" onclick="closeDonateModal(event)">
+        <div class="donate-modal-content" onclick="event.stopPropagation()">
+            <button class="donate-modal-close" onclick="closeDonateModal(event)" aria-label="Close modal">
+                <span class="material-icons-outlined">close</span>
+            </button>
+            <div class="donate-modal-body">
+                <h3 class="donate-modal-title">DONATE TO IPBA FOUNDATION</h3>
+                <p class="donate-payment-item">🇦🇲 ID BANK - 1181 5042 0172 00 AMD</p>
+                <p class="donate-payment-item">🇦🇲 iDram -190740726 / Telcell - 12243577</p>
+                <p class="donate-payment-item">🌐 BTC - 1LeJaNdvMeTY3EdY2mPcNNPHdabQczk646</p>
+                <p class="donate-payment-item">🌐 USDT - 1LeJaNdvMeTY3EdY2mPcNNPHdabQczk646</p>
+                <p class="donate-payment-item">🌐 MoneyGram • RiaMoney • Moneytun • Inteliexpress</p>
+            </div>
+        </div>
+    </div>
 
     <script>
         function scrollToNext() {
@@ -672,6 +692,33 @@
             if (!container) return;
             container.classList.toggle('flipped');
         }
+
+        // Donate Modal Functions
+        function openDonateModal() {
+            const modal = document.getElementById('donateModal');
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeDonateModal(event) {
+            if (event) {
+                event.stopPropagation();
+            }
+            const modal = document.getElementById('donateModal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeDonateModal();
+            }
+        });
     </script>
 </body>
 </html>
