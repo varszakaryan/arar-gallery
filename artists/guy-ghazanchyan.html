@@ -3,16 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="screen-orientation" content="portrait">
-    <meta name="orientation" content="portrait">
-    <title>Aram Poladian - ARAR Gallery</title>
-    
+    <title>Guy Ghazanchyan - ARAR Gallery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HGM21QWH4E"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -25,8 +21,8 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <a href="index.html" aria-label="Go to home">
-                    <img src="assets/images/arar.svg" alt="ARAR" class="logo-img">
+                <a href="../index.html" aria-label="Go to home">
+                    <img src="../assets/images/arar.svg" alt="ARAR" class="logo-img">
                 </a>
             </div>
             <button class="menu-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
@@ -37,32 +33,30 @@
                 <button class="menu-close-btn" onclick="toggleMenu()" aria-label="Close menu">
                     <span class="material-icons-outlined">close</span>
                 </button>
-                <a href="index.html#artists">Artists</a>
-                <a href="index.html#artworks">Artworks</a>
-                <a href="index.html#mural">Mural</a>
-                <a href="index.html#merch">Merch</a>
-                <a href="index.html#organizers">Organizers</a>
-                <a href="index.html#partners">Partners</a>
-                <a href="agenda.html">Agenda</a>
-                <a href="index.html#contacts">Contacts</a>
+                <a href="../index.html#artists">Artists</a>
+                <a href="../index.html#artworks">Artworks</a>
+                <a href="../index.html#mural">Mural</a>
+                <a href="../index.html#merch">Merch</a>
+                <a href="../index.html#organizers">Organizers</a>
+                <a href="../index.html#partners">Partners</a>
+                <a href="../agenda.html">Agenda</a>
+                <a href="../index.html#contacts">Contacts</a>
             </nav>
         </div>
     </header>
-
     <main>
         <div class="artist-page-container">
-            <a href="index.html#artists" class="back-btn">
+            <a href="../index.html#artists" class="back-btn">
                 <span class="material-icons-outlined">arrow_back</span>
             </a>
             <div class="artist-profile-card">
                 <div class="artist-profile-image">
-                    <img src="assets/images/artists/aram_poladian_profile.png" alt="Aram Poladian" class="artist-profile-img">
+                    <img src="../assets/images/artists/guy_ghazanchyan_profile.webp" alt="Guy Ghazanchyan" class="artist-profile-img">
                 </div>
                 <div class="artist-profile-info">
-                    <h1 class="artist-profile-name">Aram Poladian</h1>
-                    <p class="artist-profile-location">São Paulo, Brazil</p>
-                    <p class="artist-profile-bio">Born in the city of São Paulo, Aram (1997) is part of the third generation of Armenians in Brazil. His first contact with the arts was through animation, games, urban art and later in design school. He works with painting, drawing and muralism, where he incorporates elements of "Armenian identity" into inventive compositions, mixing the real with the symbolic.</p>
-                    <p class="artist-profile-bio">"Armenianity" is a term commonly used within the Armenian diaspora to refer to the deep feeling of respect and admiration for the culture of the Armenian people, a feeling that the artist explores in his works. Through the use of national, religious, and tapestry symbols, images are produced that highlight the challenges experienced in metropolises and the contradictions faced by those in the diaspora, offering an updated perspective on how a Brazilian Armenian perceives their own identity.</p>
+                    <h1 class="artist-profile-name">Guy Ghazanchyan</h1>
+                    <p class="artist-profile-location">Yerevan, Armenia</p>
+                    <p class="artist-profile-bio">Guy Ghazanchyan is a contemporary Armenian painter and sculptor, born in 1991 in Yerevan into a family of renowned artists. The son of painters Gagik Ghazanchyan and Lilit Soghomonyan, and grandson of sculptor Nona Gabrielyan, he was immersed in a rich and stimulating artistic universe from a very young age. <br><br>Ghazanchyan's work explores profound themes such as freedom, identity, and collective memory, often through expressive portraits and symbolic compositions. His major series include Behind the Walls (2016), awarded the Presidential Youth Award; AKANates (2021), exhibited at the Yerevan Museum of Modern Art; and IUVENIS (2022), which celebrates contemporary Armenian youth.</p>
                     <div class="artist-artworks-section">
                         <h2 class="artist-artworks-title">Exhibited Artworks</h2>
                         <p class="artist-artworks-coming-soon">Coming soon</p>
@@ -71,7 +65,6 @@
             </div>
         </div>
     </main>
-
     <script>
         function toggleMenu() {
             const nav = document.getElementById('main-nav');
