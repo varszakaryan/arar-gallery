@@ -251,129 +251,6 @@
                 </div>
             </div>
             
-            <script type="application/json" id="merch-data">
-{
-  "items": [
-    {
-      "id": 1,
-      "title": "Rotational Grace Postcard (Signed)",
-      "artist": "Raydan Zebian (Spazuno)",
-      "price": 1000,
-      "discountedPrice": 500,
-      "currency": "AMD",
-      "dimensions": "10.5 x 14.8 cm",
-      "medium": "printed on paper",
-      "images": [
-        "assets/images/merch/spaz_front.png",
-        "assets/images/merch/spaz_back.png"
-      ],
-      "link": "#"
-    },
-    {
-      "id": 2,
-      "title": "Close Distance Postcard",
-      "artist": "Lubna Al-Lahham",
-      "price": 1000,
-      "discountedPrice": 500,
-      "currency": "AMD",
-      "dimensions": "10.5 x 14.8 cm",
-      "medium": "printed on paper",
-      "images": [
-        "assets/images/merch/lubna_blue_front.png",
-        "assets/images/merch/lubna_blue_back.png"
-      ],
-      "link": "#"
-    },
-    {
-      "id": 3,
-      "title": "Untitled from Circle Series Postcard",
-      "artist": "Lubna Al-Lahham",
-      "price": 1000,
-      "discountedPrice": 500,
-      "currency": "AMD",
-      "dimensions": "10.5 x 14.8 cm",
-      "medium": "printed on paper",
-      "images": [
-        "assets/images/merch/lubna_pink_front.png",
-        "assets/images/merch/lubna_pink_back.png"
-      ],
-      "link": "#"
-    },
-    {
-      "id": 4,
-      "title": "At the Stairs Postcard",
-      "artist": "Aram Poladian",
-      "price": 1000,
-      "discountedPrice": 500,
-      "currency": "AMD",
-      "dimensions": "10.5 x 14.8 cm",
-      "medium": "printed on paper",
-      "images": [
-        "assets/images/merch/poladian_stairs_front.png",
-        "assets/images/merch/poladian_stairs_back.png"
-      ],
-      "link": "#"
-    },
-    {
-      "id": 5,
-      "title": "Rebirth Postcard",
-      "artist": "Aram Poladian",
-      "price": 1000,
-      "discountedPrice": 500,
-      "currency": "AMD",
-      "dimensions": "10.5 x 14.8 cm",
-      "medium": "printed on paper",
-      "images": [
-        "assets/images/merch/poladian_rebirth_front.png",
-        "assets/images/merch/poladian_rebirth_back.png"
-      ],
-      "link": "#"
-    },
-    {
-      "id": 6,
-      "title": "Rotational Grace Print (Framed)",
-      "artist": "Raydan Zebian (Spazuno)",
-      "price": 25000,
-      "discountedPrice": 12500,
-      "currency": "AMD",
-      "dimensions": "20 x 20 cm",
-      "medium": "printed on paper",
-      "images": [
-        "assets/images/merch/spaz_20x20.png"
-      ],
-      "link": "#"
-    },
-    {
-      "id": 7,
-      "title": "Rotational Grace Print (Framed)",
-      "artist": "Raydan Zebian (Spazuno)",
-      "price": 100000,
-      "discountedPrice": 50000,
-      "currency": "AMD",
-      "dimensions": "45 x 45 cm",
-      "medium": "printed on paper",
-      "images": [
-        "assets/images/merch/spaz_45x45.png"
-      ],
-      "link": "#"
-    },
-    {
-      "id": 9,
-      "title": "Rotational Grace Print (Framed)",
-      "artist": "Raydan Zebian (Spazuno)",
-      "price": 200000,
-      "discountedPrice": 100000,
-      "currency": "AMD",
-      "dimensions": "60 x 60 cm",
-      "medium": "printed on paper",
-      "images": [
-        "assets/images/merch/spaz_60x60.png"
-      ],
-      "link": "#"
-    }
-  ]
-}
-            </script>
             <div class="organizers-section" id="organizers">
                 <h3 class="organizers-title">Organizers</h3>
                 <div class="organizers-logos">
@@ -578,113 +455,62 @@
                 return;
             }
 
-            try {
-                // Try to load from embedded JSON first (works without server)
-                const merchDataScript = document.getElementById('merch-data');
-                let data;
-                
-                if (merchDataScript) {
-                    // Use embedded data
-                    data = JSON.parse(merchDataScript.textContent);
-                    console.log('Merch data loaded from embedded JSON');
-                } else {
-                    // Fallback: try to fetch from file (requires server)
-                    throw new Error('No embedded data found');
-                }
-                
-                if (data.items && data.items.length > 0) {
-                    merchGrid.innerHTML = data.items.map((item, index) => {
-                        const images = item.images || (item.image ? [item.image] : []);
-                        const itemId = `merch-${item.id || index}`;
-                        return `
-                        <div class="merch-item">
-                            <a href="${item.link}" class="merch-item-link">
-                                <div class="merch-image-container" onclick="event.preventDefault(); ${images.length > 1 ? `flipMerchImage('${itemId}')` : ''}" style="cursor: ${images.length > 1 ? 'pointer' : 'default'}">
-                                    <div class="merch-flip-container" id="${itemId}">
-                                        <div class="merch-flip-front">
-                                            <img src="${images[0]}" alt="${item.title}" class="merch-image" onerror="this.src='assets/images/placeholder.jpg'">
+            // Load from merch.json file
+            fetch('merch.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch merch.json');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.items && data.items.length > 0) {
+                        merchGrid.innerHTML = data.items.map((item, index) => {
+                            const images = item.images || (item.image ? [item.image] : []);
+                            const itemId = `merch-${item.id || index}`;
+                            return `
+                            <div class="merch-item">
+                                <a href="${item.link}" class="merch-item-link">
+                                    <div class="merch-image-container" onclick="event.preventDefault(); ${images.length > 1 ? `flipMerchImage('${itemId}')` : ''}" style="cursor: ${images.length > 1 ? 'pointer' : 'default'}">
+                                        <div class="merch-flip-container" id="${itemId}">
+                                            <div class="merch-flip-front">
+                                                <img src="${images[0]}" alt="${item.title}" class="merch-image" onerror="this.src='assets/images/placeholder.jpg'">
+                                            </div>
+                                            ${images.length > 1 ? `
+                                            <div class="merch-flip-back">
+                                                <img src="${images[1]}" alt="${item.title}" class="merch-image" onerror="this.src='assets/images/placeholder.jpg'">
+                                            </div>
+                                            ` : ''}
                                         </div>
-                                        ${images.length > 1 ? `
-                                        <div class="merch-flip-back">
-                                            <img src="${images[1]}" alt="${item.title}" class="merch-image" onerror="this.src='assets/images/placeholder.jpg'">
-                                        </div>
-                                        ` : ''}
+                                    </div>
+                                </a>
+                                <div class="merch-info">
+                                    <div class="merch-info-left">
+                                        <p class="merch-item-title">${item.title}</p>
+                                        <p class="merch-artist">${item.artist}</p>
+                                        <p class="merch-details-combined">
+                                            <span class="merch-medium">${item.medium}</span>
+                                            <span class="merch-separator">·</span>
+                                            <span class="merch-dimensions">${item.dimensions}</span>
+                                        </p>
+                                        <p class="merch-price">
+                                            <span class="merch-price-original">${item.currency === 'USD' ? '$' : ''}${item.price} ${item.currency !== 'USD' ? item.currency : ''}</span>
+                                            ${item.discountedPrice ? `<span class="merch-price-discounted">${item.currency === 'USD' ? '$' : ''}${item.discountedPrice} ${item.currency !== 'USD' ? item.currency : ''}</span>` : ''}
+                                        </p>
                                     </div>
                                 </div>
-                            </a>
-                            <div class="merch-info">
-                                <div class="merch-info-left">
-                                    <p class="merch-item-title">${item.title}</p>
-                                    <p class="merch-artist">${item.artist}</p>
-                                    <p class="merch-details-combined">
-                                        <span class="merch-medium">${item.medium}</span>
-                                        <span class="merch-separator">·</span>
-                                        <span class="merch-dimensions">${item.dimensions}</span>
-                                    </p>
-                                    <p class="merch-price">
-                                        <span class="merch-price-original">${item.currency === 'USD' ? '$' : ''}${item.price} ${item.currency !== 'USD' ? item.currency : ''}</span>
-                                        ${item.discountedPrice ? `<span class="merch-price-discounted">${item.currency === 'USD' ? '$' : ''}${item.discountedPrice} ${item.currency !== 'USD' ? item.currency : ''}</span>` : ''}
-                                    </p>
-                                </div>
                             </div>
-                        </div>
-                    `;
-                    }).join('');
-                    console.log('Merch items rendered');
-                } else {
-                    merchGrid.innerHTML = '<p class="merch-empty">Coming soon</p>';
-                }
-            } catch (error) {
-                console.error('Error loading merch:', error);
-                // Try to fetch from file as fallback
-                fetch('merch.json')
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.items && data.items.length > 0) {
-                            merchGrid.innerHTML = data.items.map((item, index) => {
-                                const images = item.images || (item.image ? [item.image] : []);
-                                const itemId = `merch-${item.id || index}`;
-                                return `
-                                <div class="merch-item">
-                                    <a href="${item.link}" class="merch-item-link">
-                                        <div class="merch-image-container" onclick="event.preventDefault(); ${images.length > 1 ? `flipMerchImage('${itemId}')` : ''}" style="cursor: ${images.length > 1 ? 'pointer' : 'default'}">
-                                            <div class="merch-flip-container" id="${itemId}">
-                                                <div class="merch-flip-front">
-                                                    <img src="${images[0]}" alt="${item.title}" class="merch-image" onerror="this.src='assets/images/placeholder.jpg'">
-                                                </div>
-                                                ${images.length > 1 ? `
-                                                <div class="merch-flip-back">
-                                                    <img src="${images[1]}" alt="${item.title}" class="merch-image" onerror="this.src='assets/images/placeholder.jpg'">
-                                                </div>
-                                                ` : ''}
-                                            </div>
-                                        </div>
-                                    </a>
-                            <div class="merch-info">
-                                <div class="merch-info-left">
-                                    <p class="merch-item-title">${item.title}</p>
-                                    <p class="merch-artist">${item.artist}</p>
-                                    <p class="merch-details-combined">
-                                        <span class="merch-medium">${item.medium}</span>
-                                        <span class="merch-separator">·</span>
-                                        <span class="merch-dimensions">${item.dimensions}</span>
-                                    </p>
-                                    <p class="merch-price">
-                                        <span class="merch-price-original">${item.currency === 'USD' ? '$' : ''}${item.price} ${item.currency !== 'USD' ? item.currency : ''}</span>
-                                        ${item.discountedPrice ? `<span class="merch-price-discounted">${item.currency === 'USD' ? '$' : ''}${item.discountedPrice} ${item.currency !== 'USD' ? item.currency : ''}</span>` : ''}
-                                    </p>
-                                </div>
-                            </div>
-                                </div>
-                            `;
-                            }).join('');
-                        }
-                    })
-                    .catch(err => {
-                        console.error('Failed to load from file:', err);
-                        merchGrid.innerHTML = '<p class="merch-empty">Error loading merch. Please check console for details.</p>';
-                    });
-            }
+                        `;
+                        }).join('');
+                        console.log('Merch items loaded from merch.json');
+                    } else {
+                        merchGrid.innerHTML = '<p class="merch-empty">Coming soon</p>';
+                    }
+                })
+                .catch(err => {
+                    console.error('Failed to load merch.json:', err);
+                    merchGrid.innerHTML = '<p class="merch-empty">Error loading merch. Please check console for details.</p>';
+                });
         }
 
         // Function to flip merch image
