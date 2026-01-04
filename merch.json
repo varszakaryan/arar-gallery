@@ -77,13 +77,13 @@
     },
     {
       "id": 6,
-      "title": "Rotational Grace Print (Framed)",
+      "title": "Rotational Grace Print (Preorder)",
       "artist": "Raydan Zebian (Spazuno)",
-      "price": 25000,
-      "discountedPrice": 7500,
+      "price": 7500,
+      "discountedPrice": 3750,
       "currency": "AMD",
       "dimensions": "20 x 20 cm",
-      "medium": "printed on paper",
+      "medium": "printed on paper (framed)",
       "images": [
         "assets/images/merch/spaz_20x20.png"
       ],
@@ -91,13 +91,13 @@
     },
     {
       "id": 7,
-      "title": "Rotational Grace Print (Framed)",
+      "title": "Rotational Grace Print (Preorder)",
       "artist": "Raydan Zebian (Spazuno)",
-      "price": 100000,
-      "discountedPrice": 25000,
+      "price": 25000,
+      "discountedPrice": 12500,
       "currency": "AMD",
       "dimensions": "45 x 45 cm",
-      "medium": "printed on paper",
+      "medium": "printed on paper (framed)",
       "images": [
         "assets/images/merch/spaz_45x45.png"
       ],
@@ -105,13 +105,13 @@
     },
     {
       "id": 9,
-      "title": "Rotational Grace Print (Framed)",
+      "title": "Rotational Grace Print (Preorder)",
       "artist": "Raydan Zebian (Spazuno)",
-      "price": 200000,
-      "discountedPrice": 100000,
+      "price": 100000,
+      "discountedPrice": 50000,
       "currency": "AMD",
       "dimensions": "60 x 60 cm",
-      "medium": "printed on paper",
+      "medium": "printed on paper (framed)",
       "images": [
         "assets/images/merch/spaz_60x60.png"
       ],
