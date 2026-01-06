@@ -234,6 +234,9 @@
                     <div class="merch-grid" id="artworksGrid">
                         <p class="merch-loading">Loading...</p>
                     </div>
+                    <div class="see-all-container" id="seeAllContainer" style="display: none;">
+                        <a href="artworks.html" class="see-all-btn">See all</a>
+                    </div>
                 </div>
             </div>
             <div class="mural-section" id="mural">
@@ -596,41 +599,16 @@
                 })
                 .then(data => {
                     if (data && data.length > 0) {
-                        artworksGrid.innerHTML = data.map((artwork, index) => {
-                            const artworkId = `artwork-${index}`;
-                            // Always try artwork image first, fallback to artist profile on error
-                            const imagePath = artwork.image || getArtistProfileImage(artwork.artist);
-                            const fallbackImage = getArtistProfileImage(artwork.artist);
-                            
-                            return `
-                            <div class="merch-item">
-                                <div class="merch-image-container">
-                                    <div class="merch-flip-container" id="${artworkId}">
-                                        <div class="merch-flip-front">
-                                            <img src="${imagePath}" alt="${artwork.title}" class="merch-image" onerror="this.onerror=null; this.src='${fallbackImage}'">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="merch-info">
-                                    <div class="merch-info-left">
-                                        <p class="merch-item-title"><a href="${artwork.artistLink}?from=artworks" class="artist-name-link">${artwork.artist} <span class="merch-separator">·</span> ${artwork.country}</a></p>
-                                        <p class="merch-artist">
-                                            ${artwork.title || ''}
-                                            ${artwork.year ? ` <span class="merch-separator">·</span> ${artwork.year}` : ''}
-                                        </p>
-                                        <p class="merch-details-combined">
-                                            <span class="merch-medium">${artwork.media}</span>
-                                        </p>
-                                        <p class="merch-dimensions">${artwork.size || 'size not available'}</p>
-                                        <p class="merch-price">
-                                            ${artwork.priceAMD ? `<span class="merch-price-discounted">֏${artwork.priceAMD}</span>` : ''}
-                                            <span class="merch-price-discounted">($${artwork.price})</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                        }).join('');
+                        // Show only first 16 items
+                        const displayedArtworks = data.slice(0, 16);
+                        const seeAllContainer = document.getElementById('seeAllContainer');
+                        
+                        // Show "See all" button if there are more than 16 artworks
+                        if (data.length > 16 && seeAllContainer) {
+                            seeAllContainer.style.display = 'block';
+                        }
+                        
+                        renderArtworks(displayedArtworks);
                         console.log('Artworks loaded from artworks.json');
                     } else {
                         artworksGrid.innerHTML = '<p class="merch-empty">Coming soon</p>';
@@ -641,6 +619,49 @@
                     artworksGrid.innerHTML = '<p class="artworks-empty">Error loading artworks. Please check console for details.</p>';
                 });
         }
+
+        // Render artworks to the grid
+        function renderArtworks(artworks) {
+            const artworksGrid = document.getElementById('artworksGrid');
+            if (!artworksGrid) return;
+            
+            artworksGrid.innerHTML = artworks.map((artwork, index) => {
+                const artworkId = `artwork-${index}`;
+                // Always try artwork image first, fallback to artist profile on error
+                const imagePath = artwork.image || getArtistProfileImage(artwork.artist);
+                const fallbackImage = getArtistProfileImage(artwork.artist);
+                
+                return `
+                <div class="merch-item">
+                    <div class="merch-image-container">
+                        <div class="merch-flip-container" id="${artworkId}">
+                            <div class="merch-flip-front">
+                                <img src="${imagePath}" alt="${artwork.title}" class="merch-image" onerror="this.onerror=null; this.src='${fallbackImage}'">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="merch-info">
+                        <div class="merch-info-left">
+                            <p class="merch-item-title"><a href="${artwork.artistLink}?from=artworks" class="artist-name-link">${artwork.artist} <span class="merch-separator">·</span> ${artwork.country}</a></p>
+                            <p class="merch-artist">
+                                ${artwork.title || ''}
+                                ${artwork.year ? ` <span class="merch-separator">·</span> ${artwork.year}` : ''}
+                            </p>
+                            <p class="merch-details-combined">
+                                <span class="merch-medium">${artwork.media}</span>
+                            </p>
+                            <p class="merch-dimensions">${artwork.size || 'size not available'}</p>
+                            <p class="merch-price">
+                                ${artwork.priceAMD ? `<span class="merch-price-discounted">֏${artwork.priceAMD}</span>` : ''}
+                                <span class="merch-price-discounted">($${artwork.price})</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                `;
+            }).join('');
+        }
+
 
         // Donate Modal Functions
         function openDonateModal() {

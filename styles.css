@@ -912,9 +912,10 @@ a.artist-name:hover {
 
 .artworks-content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 80px;
+    gap: 40px;
     flex-wrap: wrap;
     margin-top: 0;
     max-width: 1400px;
@@ -922,6 +923,124 @@ a.artist-name:hover {
     margin-right: auto;
     padding: 0;
     box-sizing: border-box;
+}
+
+.artworks-controls {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sort-container {
+    position: relative;
+    display: inline-block;
+}
+
+.sort-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sort-btn:hover {
+    background: #f5f5f5;
+    border-color: #ccc;
+}
+
+.sort-btn .material-icons-outlined {
+    font-size: 20px;
+    transition: transform 0.2s ease;
+}
+
+.sort-container.active .sort-btn .material-icons-outlined {
+    transform: rotate(180deg);
+}
+
+.sort-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 180px;
+    z-index: 100;
+    display: none;
+    overflow: hidden;
+    transform: translateX(0);
+}
+
+.sort-menu.show {
+    display: block;
+}
+
+.sort-option {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    background: #fff;
+    border: none;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.sort-option:hover {
+    background: #f5f5f5;
+}
+
+.sort-option:first-child {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.see-all-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.see-all-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.see-all-btn:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+.see-all-btn:active {
+    transform: translateY(0);
 }
 
 
@@ -1896,6 +2015,27 @@ footer {
     
     .artworks-section {
         padding: 60px 30px;
+    }
+    
+    .artworks-controls {
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    
+    .sort-btn {
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+    
+    .sort-menu {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .see-all-btn {
+        padding: 12px 28px;
+        font-size: 14px;
     }
     
     .mural-section {

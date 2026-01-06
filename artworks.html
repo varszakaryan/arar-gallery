@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="orientation" content="portrait">
+    <title>All Artworks - ARAR Gallery</title>
+    
+    <link rel="icon" type="image/svg+xml" href="assets/images/ar.svg?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HGM21QWH4E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HGM21QWH4E');
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" aria-label="Go to homepage">
+                    <img src="assets/images/ar.svg" alt="ARAR" class="logo-img">
+                </a>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+                <span class="material-icons-outlined">menu</span>
+            </button>
+            <div class="menu-overlay" onclick="toggleMenu()"></div>
+            <nav id="main-nav" class="nav-menu">
+                <button class="menu-close-btn" onclick="toggleMenu()" aria-label="Close menu">
+                    <span class="material-icons-outlined">close</span>
+                </button>
+                <a href="index.html#artists">Artists</a>
+                <a href="index.html#artworks">Artworks</a>
+                <a href="index.html#mural">Mural</a>
+                <a href="index.html#merch">Merch</a>
+                <a href="index.html#organizers">Organizers</a>
+                <a href="index.html#partners">Partners</a>
+                <a href="agenda.html">Agenda</a>
+                <a href="index.html#contacts">Contacts</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="artworks-section" id="artworks" style="margin-top: 0; padding-top: 80px;">
+            <h3 class="artworks-title">All Artworks</h3>
+            <div class="artworks-content">
+                <div class="artworks-controls">
+                    <div class="sort-container">
+                        <button class="sort-btn" id="sortBtn" onclick="toggleSortMenu(event)">
+                            <span class="sort-label">Sort by price</span>
+                            <span class="material-icons-outlined">arrow_drop_down</span>
+                        </button>
+                        <div class="sort-menu" id="sortMenu">
+                            <button class="sort-option" onclick="sortArtworks('high-to-low')">Highest to Lowest</button>
+                            <button class="sort-option" onclick="sortArtworks('low-to-high')">Lowest to Highest</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="merch-grid" id="artworksGrid">
+                    <p class="merch-loading">Loading...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('main-nav');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const overlay = document.querySelector('.menu-overlay');
+            nav.classList.toggle('nav-open');
+            menuToggle.classList.toggle('menu-open');
+            if (overlay) {
+                overlay.classList.toggle('active');
+            }
+        }
+
+        // Close menu when clicking on a link
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('#main-nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const nav = document.getElementById('main-nav');
+                    const menuToggle = document.querySelector('.menu-toggle');
+                    const overlay = document.querySelector('.menu-overlay');
+                    nav.classList.remove('nav-open');
+                    menuToggle.classList.remove('menu-open');
+                    if (overlay) {
+                        overlay.classList.remove('active');
+                    }
+                });
+            });
+
+            // Load and display all artworks
+            loadAllArtworks();
+        });
+
+        // Helper function to get artist profile image path
+        function getArtistProfileImage(artistName) {
+            const artistImageMap = {
+                'Raydan Zebian (Spazuno)': 'assets/images/artists/spaz_profile.jpg',
+                'Spazuno': 'assets/images/artists/spaz_profile.jpg',
+                'Karen Akhikyan': 'assets/images/artists/karen_akhikyan_profile.jpg',
+                'Aram Poladian': 'assets/images/artists/aram_poladian_profile.png',
+                'Guy Ghazanchyan': 'assets/images/artists/guy_ghazanchyan_profile.webp',
+                'Hayduk Smbatyan': 'assets/images/artists/hayduk_smbatyan_profile.jpeg',
+                'Adam Adamyan': 'assets/images/artists/adam_adamyan_profile.webp',
+                'Aram Yengibaryan': 'assets/images/artists/aram_yengibaryan_profile.jpg',
+                'Armen Hakobjanyan': 'assets/images/artists/armen_hakobjanyan_profile.jpg',
+                'Lilith Leel Eghiazaryan': 'assets/images/artists/lilit_eghiazaryan_profile.jpg',
+                'Lilit Eghiazaryan': 'assets/images/artists/lilit_eghiazaryan_profile.jpg',
+                'Siranush Vardanyan': 'assets/images/artists/siranush_vardanyan_profile.jpg',
+                'Lubna Al-Lahham': 'assets/images/artists/lubna_al_lahham_profile.png',
+                'Tigran Ghazaryan': 'assets/images/artists/tigran_ghazaryan_profile.avif',
+                'Ashot Harutyunyan': 'assets/images/artists/ashot_harutyunyan_profile.jpg',
+                'Tina Karakeshishyan': 'assets/images/artists/tina_karakeshishyan_profile.png',
+                'Anatoliy Guyduk': 'assets/images/artists/anatoliy_guyduk_profile.jpeg',
+                'Aksel Zardaryan': 'assets/images/artists/aksel_zardaryan_profile.png',
+                'Aksel Zardaryan-Mavian': 'assets/images/artists/aksel_zardaryan_profile.png'
+            };
+            
+            return artistImageMap[artistName] || 'assets/images/placeholder.jpg';
+        }
+
+        // Store artworks data globally for sorting
+        let allArtworksData = [];
+        let currentSortOrder = null;
+
+        // Load and display all artworks
+        function loadAllArtworks() {
+            const artworksGrid = document.getElementById('artworksGrid');
+            if (!artworksGrid) {
+                console.error('Artworks grid element not found');
+                return;
+            }
+
+            // Load from artworks.json file
+            fetch('artworks.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch artworks.json');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data && data.length > 0) {
+                        // Store all artworks data
+                        allArtworksData = data;
+                        
+                        // Apply current sort if active
+                        let displayedArtworks = data;
+                        if (currentSortOrder) {
+                            displayedArtworks = sortArtworksData(displayedArtworks, currentSortOrder);
+                        }
+                        
+                        renderArtworks(displayedArtworks);
+                        console.log('All artworks loaded from artworks.json');
+                    } else {
+                        artworksGrid.innerHTML = '<p class="merch-empty">Coming soon</p>';
+                    }
+                })
+                .catch(err => {
+                    console.error('Failed to load artworks.json:', err);
+                    artworksGrid.innerHTML = '<p class="artworks-empty">Error loading artworks. Please check console for details.</p>';
+                });
+        }
+
+        // Render artworks to the grid
+        function renderArtworks(artworks) {
+            const artworksGrid = document.getElementById('artworksGrid');
+            if (!artworksGrid) return;
+            
+            artworksGrid.innerHTML = artworks.map((artwork, index) => {
+                            const artworkId = `artwork-${index}`;
+                            // Always try artwork image first, fallback to artist profile on error
+                            const imagePath = artwork.image || getArtistProfileImage(artwork.artist);
+                            const fallbackImage = getArtistProfileImage(artwork.artist);
+                            
+                            return `
+                            <div class="merch-item">
+                                <div class="merch-image-container">
+                                    <div class="merch-flip-container" id="${artworkId}">
+                                        <div class="merch-flip-front">
+                                            <img src="${imagePath}" alt="${artwork.title}" class="merch-image" onerror="this.onerror=null; this.src='${fallbackImage}'">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="merch-info">
+                                    <div class="merch-info-left">
+                                        <p class="merch-item-title"><a href="${artwork.artistLink}?from=artworks" class="artist-name-link">${artwork.artist} <span class="merch-separator">·</span> ${artwork.country}</a></p>
+                                        <p class="merch-artist">
+                                            ${artwork.title || ''}
+                                            ${artwork.year ? ` <span class="merch-separator">·</span> ${artwork.year}` : ''}
+                                        </p>
+                                        <p class="merch-details-combined">
+                                            <span class="merch-medium">${artwork.media}</span>
+                                        </p>
+                                        <p class="merch-dimensions">${artwork.size || 'size not available'}</p>
+                                        <p class="merch-price">
+                                            ${artwork.priceAMD ? `<span class="merch-price-discounted">֏${artwork.priceAMD}</span>` : ''}
+                                            <span class="merch-price-discounted">($${artwork.price})</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            `;
+            }).join('');
+        }
+
+        // Sort artworks data
+        function sortArtworksData(artworks, order) {
+            const sorted = [...artworks];
+            sorted.sort((a, b) => {
+                const priceA = parseFloat(a.price) || 0;
+                const priceB = parseFloat(b.price) || 0;
+                return order === 'high-to-low' ? priceB - priceA : priceA - priceB;
+            });
+            return sorted;
+        }
+
+        // Toggle sort menu
+        function toggleSortMenu(event) {
+            event.stopPropagation();
+            const menu = document.getElementById('sortMenu');
+            if (menu) {
+                menu.classList.toggle('show');
+            }
+        }
+
+        // Close sort menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('sortMenu');
+            const button = document.getElementById('sortBtn');
+            if (menu && button && !menu.contains(event.target) && !button.contains(event.target)) {
+                menu.classList.remove('show');
+            }
+        });
+
+        // Sort artworks
+        function sortArtworks(order) {
+            currentSortOrder = order;
+            const artworksGrid = document.getElementById('artworksGrid');
+            if (!artworksGrid || allArtworksData.length === 0) return;
+
+            // Sort all artworks
+            let displayedArtworks = sortArtworksData(allArtworksData, order);
+            
+            // Update sort button label
+            const sortLabel = document.querySelector('.sort-label');
+            if (sortLabel) {
+                sortLabel.textContent = order === 'high-to-low' ? 'Highest to Lowest' : 'Lowest to Highest';
+            }
+            
+            // Close menu
+            const menu = document.getElementById('sortMenu');
+            if (menu) {
+                menu.classList.remove('show');
+            }
+            
+            // Re-render artworks
+            renderArtworks(displayedArtworks);
+        }
+    </script>
+</body>
+</html>
+
