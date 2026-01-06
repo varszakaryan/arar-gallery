@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Siranush Vardanyan - ARAR Gallery</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/images/ar.svg?v=2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -40,7 +41,7 @@
     </header>
     <main>
         <div class="artist-page-container">
-            <a href="../index.html#artists" class="back-btn"><span class="material-icons-outlined">arrow_back</span></a>
+            <a href="#" class="back-btn" id="backBtn"><span class="material-icons-outlined">arrow_back</span></a>
             <div class="artist-profile-card">
                 <div class="artist-profile-image">
                     <img src="../assets/images/artists/siranush_vardanyan_profile.png" alt="Siranush Vardanyan" class="artist-profile-img">
@@ -51,7 +52,15 @@
                     <p class="artist-profile-bio">Siranush Vardanyan was born on February 5, 1998, in Armenia. She graduated from Terlemezian Yerevan State College of Arts in 2018 and has been a student at Yerevan Academy of Fine Arts since 2018. As an artist, she has taken part in various exhibitions and competitions such as " Hogevor Veracnund ", "Erek patmutun" " Hayrenik" "Mi ktor krak " etc . Also she has taken part in the project implemented by the organization " A piece of fire " and has won many prizes.</p>
                     <div class="artist-artworks-section">
                         <h2 class="artist-artworks-title">Exhibited Artworks</h2>
-                        <p class="artist-artworks-coming-soon">Coming soon</p>
+                        <div class="merch-grid" id="artistArtworksGrid">
+                            <p class="merch-loading">Loading...</p>
+                        </div>
+                    </div>
+                    <div class="artist-merch-section" id="artistMerchSection" style="display: none;">
+                        <h2 class="artist-artworks-title">Merch</h2>
+                        <div class="merch-grid" id="artistMerchGrid">
+                            <p class="merch-loading">Loading...</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -65,6 +74,200 @@
             overlay.classList.toggle('active');
             document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
         }
+
+        // Get artist profile image path
+        function getArtistProfileImage(artistName) {
+            const artistImageMap = {
+                'Raydan Zebian (Spazuno)': '../assets/images/artists/spaz_profile.jpg',
+                'Spazuno': '../assets/images/artists/spaz_profile.jpg',
+                'Karen Akhikyan': '../assets/images/artists/karen_akhikyan_profile.jpg',
+                'Aram Poladian': '../assets/images/artists/aram_poladian_profile.png',
+                'Guy Ghazanchyan': '../assets/images/artists/guy_ghazanchyan_profile.webp',
+                'Hayduk Smbatyan': '../assets/images/artists/hayduk_smbatyan_profile.jpeg',
+                'Adam Adamyan': '../assets/images/artists/adam_adamyan_profile.webp',
+                'Aram Yengibaryan': '../assets/images/artists/aram_yengibaryan_profile.jpg',
+                'Armen Hakobjanyan': '../assets/images/artists/armen_hakobjanyan_profile.jpg',
+                'Lilith Leel Eghiazaryan': '../assets/images/artists/lilit_eghiazaryan_profile.jpg',
+                'Lilit Eghiazaryan': '../assets/images/artists/lilit_eghiazaryan_profile.jpg',
+                'Lilith Leel Eghiazaryan': '../assets/images/artists/lilit_eghiazaryan_profile.jpg',
+                'Siranush Vardanyan': '../assets/images/artists/siranush_vardanyan_profile.png',
+                'Lubna Al-Lahham': '../assets/images/artists/lubna_al_lahham_profile.png',
+                'Tigran Ghazaryan': '../assets/images/artists/tigran_ghazaryan_profile.avif',
+                'Ashot Harutyunyan': '../assets/images/artists/ashot_harutyunyan_profile.jpg',
+                'Tina Karakeshishyan': '../assets/images/artists/tina_karakeshishyan_profile.jpg',
+                'Anatoliy Guyduk': '../assets/images/artists/anatoliy_guyduk_profile.jpeg',
+                'Aksel Zardaryan': '../assets/images/artists/aksel_zardaryan_profile.png',
+                'Aksel Zardaryan-Mavian': '../assets/images/artists/aksel_zardaryan_profile.png'
+            };
+            return artistImageMap[artistName] || '../assets/images/placeholder.jpg';
+        }
+
+        // Load and display artist artworks
+        function loadArtistArtworks() {
+            const artistName = document.querySelector('.artist-profile-name').textContent.trim();
+            const artworksGrid = document.getElementById('artistArtworksGrid');
+            
+            if (!artworksGrid) return;
+
+            fetch('../artworks.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch artworks.json');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Filter artworks by artist name
+                    const artistArtworks = data.filter(artwork => artwork.artist === artistName);
+                    
+                    if (artistArtworks && artistArtworks.length > 0) {
+                        artworksGrid.innerHTML = artistArtworks.map((artwork, index) => {
+                            const artworkId = `artwork-${index}`;
+                            // Always try artwork image first, fallback to artist profile on error
+                            const imagePath = artwork.image ? '../' + artwork.image : getArtistProfileImage(artwork.artist);
+                            const fallbackImage = getArtistProfileImage(artwork.artist);
+                            
+                            return `
+                            <div class="merch-item">
+                                <div class="merch-image-container">
+                                    <div class="merch-flip-container" id="${artworkId}">
+                                        <div class="merch-flip-front">
+                                            <img src="${imagePath}" alt="${artwork.title}" class="merch-image" onerror="this.onerror=null; this.src='${fallbackImage}'">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="merch-info">
+                                    <div class="merch-info-left">
+                                        <p class="merch-item-title">
+                                            <strong>${artwork.title || 'Untitled'}</strong>
+                                            ${artwork.year ? ` <span class="merch-separator">·</span> ${artwork.year}` : ''}
+                                        </p>
+                                        <p class="merch-details-combined">
+                                            <span class="merch-medium">${artwork.media}</span>
+                                        </p>
+                                        <p class="merch-dimensions">${artwork.size || 'size not available'}</p>
+                                        <p class="merch-price">
+                                            ${artwork.priceAMD ? `<span class="merch-price-discounted">֏${artwork.priceAMD}</span>` : ''}
+                                            <span class="merch-price-discounted">($${artwork.price})</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            `;
+                        }).join('');
+                    } else {
+                        artworksGrid.innerHTML = '<p class="merch-empty">Coming soon</p>';
+                    }
+                })
+                .catch(err => {
+                    console.error('Failed to load artworks:', err);
+                    artworksGrid.innerHTML = '<p class="merch-empty">Coming soon</p>';
+                });
+        }
+
+        // Set back button destination based on where user came from
+        function setBackButton() {
+            const backBtn = document.getElementById('backBtn');
+            if (backBtn) {
+                const urlParams = new URLSearchParams(window.location.search);
+                const from = urlParams.get('from');
+                
+                if (from === 'artworks') {
+                    backBtn.href = '../index.html#artworks';
+                } else {
+                    backBtn.href = '../index.html#artists';
+                }
+            }
+        }
+
+        // Load and display artist merch items
+        function loadArtistMerch() {
+            const artistName = document.querySelector('.artist-profile-name').textContent.trim();
+            const merchSection = document.getElementById('artistMerchSection');
+            const merchGrid = document.getElementById('artistMerchGrid');
+            
+            if (!merchGrid || !merchSection) return;
+
+            fetch('../merch.json?' + new Date().getTime(), { cache: 'no-store' })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch merch.json');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Function to match artist names (handles variations)
+                    function matchesArtist(merchArtist, pageArtist) {
+                        if (merchArtist === pageArtist) return true;
+                        // Handle "Raydan Zebian (Spazuno)" variations
+                        if (merchArtist.includes('Spazuno') && (pageArtist.includes('Spazuno') || pageArtist.includes('Raydan Zebian'))) return true;
+                        if (pageArtist.includes('Spazuno') && merchArtist.includes('Spazuno')) return true;
+                        return false;
+                    }
+                    
+                    // Filter merch items by artist name
+                    const artistMerch = data.items ? data.items.filter(item => matchesArtist(item.artist, artistName)) : [];
+                    
+                    if (artistMerch && artistMerch.length > 0) {
+                        merchSection.style.display = 'block';
+                        merchGrid.innerHTML = artistMerch.map((item, index) => {
+                            const images = item.images || (item.image ? [item.image] : []);
+                            const itemId = `merch-${item.id || index}`;
+                            return `
+                            <div class="merch-item">
+                                <a href="${item.link}" class="merch-item-link">
+                                    <div class="merch-image-container" onclick="event.preventDefault(); ${images.length > 1 ? `flipMerchImage('${itemId}')` : ''}" style="cursor: ${images.length > 1 ? 'pointer' : 'default'}">
+                                        <div class="merch-flip-container" id="${itemId}">
+                                            <div class="merch-flip-front">
+                                                <img src="../${images[0]}" alt="${item.title}" class="merch-image" onerror="this.src='../assets/images/placeholder.jpg'">
+                                            </div>
+                                            ${images.length > 1 ? `
+                                            <div class="merch-flip-back">
+                                                <img src="../${images[1]}" alt="${item.title}" class="merch-image" onerror="this.src='../assets/images/placeholder.jpg'">
+                                            </div>
+                                            ` : ''}
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="merch-info">
+                                    <p class="merch-item-title">${item.title}</p>
+                                    <p class="merch-details-combined">
+                                        <span class="merch-medium">${item.medium}</span>
+                                        <span class="merch-separator">·</span>
+                                        <span class="merch-dimensions">${item.dimensions}</span>
+                                    </p>
+                                    <p class="merch-price">
+                                        <span class="merch-price-original">${item.currency === 'USD' ? '$' : ''}${item.price} ${item.currency !== 'USD' ? item.currency : ''}</span>
+                                        ${item.discountedPrice ? `<span class="merch-price-discounted">${item.currency === 'USD' ? '$' : ''}${item.discountedPrice} ${item.currency !== 'USD' ? item.currency : ''}</span>` : ''}
+                                    </p>
+                                </div>
+                            </div>
+                            `;
+                        }).join('');
+                    } else {
+                        merchSection.style.display = 'none';
+                    }
+                })
+                .catch(err => {
+                    console.error('Failed to load merch:', err);
+                    merchSection.style.display = 'none';
+                });
+        }
+
+        // Function to flip merch image
+        function flipMerchImage(containerId) {
+            const container = document.getElementById(containerId);
+            if (container) {
+                container.classList.toggle('flipped');
+            }
+        }
+
+        // Load artworks when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setBackButton();
+            loadArtistArtworks();
+            loadArtistMerch();
+        });
     </script>
 </body>
 </html>

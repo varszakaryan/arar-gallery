@@ -24,6 +24,7 @@
     <meta name="twitter:description" content="Contemporary Art Exhibition-Fundraiser presenting international and Armenian artists">
     <meta name="twitter:image" content="https://arargallery.com/assets/images/bg.jpg">
     
+    <link rel="icon" type="image/svg+xml" href="assets/images/ar.svg?v=2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -92,16 +93,13 @@
             <div class="hero-content">
                 <div class="upcoming-label">
                     <span class="vertical-line"></span>
-                    <span>UPCOMING</span>
+                    <span>RUNNING</span>
                 </div>
                 <h1 class="hero-title">
                     Contemporary Art<br>
                     Exhibition-Fundraiser
                 </h1>
-                <p class="opening-info">OPENING - 5 JANUARY, 19:00</p>
-                <a href="https://forms.gle/aNJterPWLiEiUXJP6" target="_blank" rel="noreferrer" class="charity-badge-link">
-                    <p class="charity-badge">Join the Opening</p>
-                </a>
+                <p class="opening-info">OPEN UNTIL JANUARY 9</p>
                 <!-- <p class="hero-description">
                     Unique Art from 15 international and Armenian Artists
                 </p> -->
@@ -150,16 +148,22 @@
                     
                     <div class="stats-section">
                         <div class="stat-item">
-                            <div class="stat-value">16 ARTISTS</div>
-                            <div class="stat-label">Local and international</div>
+                            <a href="#artists" class="stat-link">
+                                <div class="stat-value">16 ARTISTS</div>
+                                <div class="stat-label">Local and international</div>
+                            </a>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-value">30 ARTWORKS</div>
-                            <div class="stat-label">Paintings & sculptures</div>
+                            <a href="#artworks" class="stat-link">
+                                <div class="stat-value">46 ARTWORKS</div>
+                                <div class="stat-label">Paintings & sculptures</div>
+                            </a>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-value">130M<sup>²</sup> MURAL</div>
-                            <div class="stat-label">In the city center</div>
+                            <a href="#mural" class="stat-link">
+                                <div class="stat-value">130M<sup>²</sup> MURAL</div>
+                                <div class="stat-label">In the city center</div>
+                            </a>
                         </div>
                     </div>
                     
@@ -190,7 +194,7 @@
                     </div>
                     <div class="artists-column">
                         <div class="artist-item">
-                            <a href="artists/lilit-eghiazaryan.html" class="artist-name">Lilit Eghiazaryan</a>
+                            <a href="artists/lilit-eghiazaryan.html" class="artist-name">Lilith Leel Eghiazaryan</a>
                         </div>
                         <div class="artist-item">
                             <a href="artists/armen-hakobjanyan.html" class="artist-name">Armen Hakobjanyan</a>
@@ -213,7 +217,7 @@
                             <a href="artists/lubna-al-lahham.html" class="artist-name">Lubna Al-Lahham</a>
                         </div>
                         <div class="artist-item">
-                            <a href="artists/aksel-zardaryan.html" class="artist-name">Aksel Zardaryan</a>
+                            <a href="artists/aksel-zardaryan.html" class="artist-name">Aksel Zardaryan-Mavian</a>
                         </div>
                         <div class="artist-item">
                             <a href="artists/ashot-harutyunyan.html" class="artist-name">Ashot Harutyunyan</a>
@@ -227,7 +231,9 @@
             <div class="artworks-section" id="artworks">
                 <h3 class="artworks-title">Artworks</h3>
                 <div class="artworks-content">
-                    <p class="coming-soon">Coming soon</p>
+                    <div class="merch-grid" id="artworksGrid">
+                        <p class="merch-loading">Loading...</p>
+                    </div>
                 </div>
             </div>
             <div class="mural-section" id="mural">
@@ -244,7 +250,7 @@
             <div class="merch-section" id="merch">
                 <h3 class="merch-title">Merch</h3>
                 <div class="merch-content">
-                    <p class="merch-availability">Merch will be available for purchase at the exhibition from January 5–9, 2026. Get 50% off on the first day, then 10% less discount each following day.</p>
+                    <p class="merch-availability">Merch will be available for purchase at the exhibition from January 5–9, 2026 with special 50% discount.</p>
                     <div class="merch-grid" id="merchGrid">
                         <p class="merch-loading">Loading...</p>
                     </div>
@@ -428,8 +434,33 @@
                 });
             });
 
+            // Function to scroll to hash section
+            function scrollToHash() {
+                if (window.location.hash) {
+                    const hash = window.location.hash.substring(1);
+                    const targetElement = document.getElementById(hash);
+                    if (targetElement) {
+                        // Small delay to ensure page is fully loaded
+                        setTimeout(() => {
+                            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 100);
+                    }
+                }
+            }
+
+            // Scroll to section if hash is present in URL on page load
+            scrollToHash();
+
+            // Handle hash changes (e.g., when navigating from another page)
+            window.addEventListener('hashchange', function() {
+                scrollToHash();
+            });
+
             // Load and display merch items
             loadMerch();
+            
+            // Load and display artworks
+            loadArtworks();
         });
 
         function toggleCalendarMenu(event) {
@@ -456,7 +487,7 @@
             }
 
             // Load from merch.json file
-            fetch('merch.json')
+            fetch('merch.json?' + new Date().getTime(), { cache: 'no-store' })
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Failed to fetch merch.json');
@@ -518,6 +549,97 @@
             const container = document.getElementById(containerId);
             if (!container) return;
             container.classList.toggle('flipped');
+        }
+
+        // Helper function to get artist profile image path
+        function getArtistProfileImage(artistName) {
+            const artistImageMap = {
+                'Raydan Zebian (Spazuno)': 'assets/images/artists/spaz_profile.jpg',
+                'Spazuno': 'assets/images/artists/spaz_profile.jpg',
+                'Karen Akhikyan': 'assets/images/artists/karen_akhikyan_profile.jpg',
+                'Aram Poladian': 'assets/images/artists/aram_poladian_profile.png',
+                'Guy Ghazanchyan': 'assets/images/artists/guy_ghazanchyan_profile.webp',
+                'Hayduk Smbatyan': 'assets/images/artists/hayduk_smbatyan_profile.jpeg',
+                'Adam Adamyan': 'assets/images/artists/adam_adamyan_profile.webp',
+                'Aram Yengibaryan': 'assets/images/artists/aram_yengibaryan_profile.jpg',
+                'Armen Hakobjanyan': 'assets/images/artists/armen_hakobjanyan_profile.jpg',
+                'Lilith Leel Eghiazaryan': 'assets/images/artists/lilit_eghiazaryan_profile.jpg',
+                'Lilit Eghiazaryan': 'assets/images/artists/lilit_eghiazaryan_profile.jpg',
+                'Siranush Vardanyan': 'assets/images/artists/siranush_vardanyan_profile.png',
+                'Lubna Al-Lahham': 'assets/images/artists/lubna_al_lahham_profile.png',
+                'Tigran Ghazaryan': 'assets/images/artists/tigran_ghazaryan_profile.avif',
+                'Ashot Harutyunyan': 'assets/images/artists/ashot_harutyunyan_profile.jpg',
+                'Tina Karakeshishyan': 'assets/images/artists/tina_karakeshishyan_profile.png',
+                'Anatoliy Guyduk': 'assets/images/artists/anatoliy_guyduk_profile.jpeg',
+                'Aksel Zardaryan': 'assets/images/artists/aksel_zardaryan_profile.png',
+                'Aksel Zardaryan-Mavian': 'assets/images/artists/aksel_zardaryan_profile.png'
+            };
+            
+            return artistImageMap[artistName] || 'assets/images/placeholder.jpg';
+        }
+
+        // Load and display artworks
+        function loadArtworks() {
+            const artworksGrid = document.getElementById('artworksGrid');
+            if (!artworksGrid) {
+                console.error('Artworks grid element not found');
+                return;
+            }
+
+            // Load from artworks.json file
+            fetch('artworks.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch artworks.json');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data && data.length > 0) {
+                        artworksGrid.innerHTML = data.map((artwork, index) => {
+                            const artworkId = `artwork-${index}`;
+                            // Always try artwork image first, fallback to artist profile on error
+                            const imagePath = artwork.image || getArtistProfileImage(artwork.artist);
+                            const fallbackImage = getArtistProfileImage(artwork.artist);
+                            
+                            return `
+                            <div class="merch-item">
+                                <div class="merch-image-container">
+                                    <div class="merch-flip-container" id="${artworkId}">
+                                        <div class="merch-flip-front">
+                                            <img src="${imagePath}" alt="${artwork.title}" class="merch-image" onerror="this.onerror=null; this.src='${fallbackImage}'">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="merch-info">
+                                    <div class="merch-info-left">
+                                        <p class="merch-item-title"><a href="${artwork.artistLink}?from=artworks" class="artist-name-link">${artwork.artist} <span class="merch-separator">·</span> ${artwork.country}</a></p>
+                                        <p class="merch-artist">
+                                            ${artwork.title || ''}
+                                            ${artwork.year ? ` <span class="merch-separator">·</span> ${artwork.year}` : ''}
+                                        </p>
+                                        <p class="merch-details-combined">
+                                            <span class="merch-medium">${artwork.media}</span>
+                                        </p>
+                                        <p class="merch-dimensions">${artwork.size || 'size not available'}</p>
+                                        <p class="merch-price">
+                                            ${artwork.priceAMD ? `<span class="merch-price-discounted">֏${artwork.priceAMD}</span>` : ''}
+                                            <span class="merch-price-discounted">($${artwork.price})</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        }).join('');
+                        console.log('Artworks loaded from artworks.json');
+                    } else {
+                        artworksGrid.innerHTML = '<p class="merch-empty">Coming soon</p>';
+                    }
+                })
+                .catch(err => {
+                    console.error('Failed to load artworks.json:', err);
+                    artworksGrid.innerHTML = '<p class="artworks-empty">Error loading artworks. Please check console for details.</p>';
+                });
         }
 
         // Donate Modal Functions
