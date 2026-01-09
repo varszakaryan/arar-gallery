@@ -9,7 +9,8 @@
     "price": 5000,
     "priceAMD": "1.800.000",
     "year": "2026",
-    "image": "assets/images/artworks/spazuno_bird.jpg"
+    "images": ["assets/images/artworks/spazuno_bird.jpg", "assets/images/artworks/spazuno_bird1.jpg"],
+    "description": "The swan appears as a remembered presence, one that once emerged in dreams as a guide from darkness toward light. Neither symbol nor fantasy, she exists as an embodied force that saved, held, and returned the self to breath. Rendered as a feminine humanoid form, the figure is fractured, carrying the tension of multiplicity rather than harmony. Her rotating face moves through shifting states of awareness, revealing identity as something continuously negotiated. Masculinity and femininity coexist within her, not in balance, but in active dialogue. The swan does not dissolve; she remains watchful, altered, and luminous."
   },
   {
     "title": "Grace",
@@ -21,7 +22,7 @@
     "price": 1300,
     "priceAMD": "500.000",
     "year": "2025",
-    "image": "assets/images/artworks/akhikyan1.jpg"
+    "images": ["assets/images/artworks/akhikyan1.jpg", "assets/images/artworks/akhikyan1_1.jpg"]
   },
   {
     "title": "Mythology, Displaced Goddess",
@@ -33,7 +34,7 @@
     "price": 1500,
     "priceAMD": "570.000",
     "year": "2025",
-    "image": "assets/images/artworks/aram_poladian1.jpg"
+    "images": ["assets/images/artworks/aram_poladian1.jpg", "assets/images/artworks/aram_poladian1_1.jpg"]
   },
   {
     "title": "Portrait",
@@ -45,7 +46,7 @@
     "price": 2500,
     "priceAMD": "950.000",
     "year": "2025",
-    "image": "assets/images/artworks/guy_ghazanchyan.jpg"
+    "images": ["assets/images/artworks/guy_ghazanchyan.jpg", "assets/images/artworks/guy_ghazanchyan1.jpg"]
   },
   {
     "title": "Untitled",
@@ -57,7 +58,7 @@
     "price": 2000,
     "priceAMD": "750.000",
     "year": "2025",
-    "image": "assets/images/artworks/hayduk1.jpg"
+    "images": ["assets/images/artworks/hayduk1.jpg", "assets/images/artworks/hayduk1_1.jpg"]
   },
   {
     "title": "The Chaos of Hell",
@@ -69,7 +70,7 @@
     "price": 3500,
     "priceAMD": "1.300.000",
     "year": "2023",
-    "image": "assets/images/artworks/siranush_vardanyan.jpg"
+    "images": ["assets/images/artworks/siranush_vardanyan.jpg", "assets/images/artworks/siranush_vardnayn1.jpg"]
   },
   {
     "title": "The Kept Light",
@@ -81,7 +82,7 @@
     "price": 2000,
     "priceAMD": "750.000",
     "year": "2025",
-    "image": "assets/images/artworks/lilith_eghiazaryan.jpg"
+    "images": ["assets/images/artworks/lilith_eghiazaryan.jpg", "assets/images/artworks/lilit_2.jpg"]
   },
   {
     "title": "0-Panorama",
@@ -93,7 +94,7 @@
     "price": 5000,
     "priceAMD": "1.800.000",
     "year": "2020",
-    "image": "assets/images/artworks/armen_hakobjanyan_1.jpg"
+    "images": ["assets/images/artworks/armen_hakobjanyan_1.jpg", "assets/images/artworks/armen_hakobjanyan2nd.jpg"]
   },
   {
     "title": "The Two of Them",
@@ -105,7 +106,7 @@
     "price": 2000,
     "priceAMD": "750.000",
     "year": "2025",
-    "image": "assets/images/artworks/aram_yengibaryan1.jpg"
+    "images": ["assets/images/artworks/aram_yengibaryan1.jpg", "assets/images/artworks/aram_yengibaryan_2nd.jpg"]
   },
   {
     "title": "Untitled",
@@ -117,7 +118,7 @@
     "price": 1900,
     "priceAMD": "730.000",
     "year": "2025",
-    "image": "assets/images/artworks/adam_adamyan_1.jpg"
+    "images": ["assets/images/artworks/adam_adamyan_1.jpg", "assets/images/artworks/adam_2nd.jpg"]
   },
   {
     "title": "ErAZ (Dream)",
@@ -129,7 +130,7 @@
     "price": 1000,
     "priceAMD": "380.000",
     "year": "2023",
-    "image": "assets/images/artworks/tina_karakeshishyan1.jpg"
+    "images": ["assets/images/artworks/tina_karakeshishyan1.jpg", "assets/images/artworks/tina_karakeshishyan_2nd.jpg"]
   },
   {
     "title": "The Metro",
@@ -141,7 +142,7 @@
     "price": 1800,
     "priceAMD": "690.000",
     "year": "2023",
-    "image": "assets/images/artworks/guyduk1.jpg"
+    "images": ["assets/images/artworks/guyduk1.jpg", "assets/images/artworks/guyduk2nd.jpg"]
   },
   {
     "title": "Circle Series #2",
@@ -153,7 +154,7 @@
     "price": 1800,
     "priceAMD": "690.000",
     "year": "2025",
-    "image": "assets/images/artworks/lubna1.jpg"
+    "images": ["assets/images/artworks/lubna1.jpg", "assets/images/artworks/lubna1_1.jpg"]
   },
   {
     "title": "Urban Flower 1",
@@ -165,7 +166,7 @@
     "price": 950,
     "priceAMD": "350.000",
     "year": "2023",
-    "image": "assets/images/artworks/aksel_zardaryan1.jpg"
+    "images": ["assets/images/artworks/aksel_zardaryan1.jpg", "assets/images/artworks/mavian.jpg"]
   },
   {
     "title": "Chains of Ignorance",
@@ -177,7 +178,7 @@
     "price": 5000,
     "priceAMD": "1.800.000",
     "year": "2025",
-    "image": "assets/images/artworks/ashot_harutyunyan.jpg"
+    "images": ["assets/images/artworks/ashot_harutyunyan.jpg", "assets/images/artworks/ashot_harutyunyan2nd.jpg"]
   },
   {
     "title": "Untitled",
@@ -189,7 +190,7 @@
     "price": 350,
     "priceAMD": "130.000",
     "year": "2025",
-    "image": "assets/images/artworks/tigran_ghazaryan1.jpg"
+    "images": ["assets/images/artworks/tigran_ghazaryan1.jpg", "assets/images/artworks/tigran_ghazaryanright_1.jpg"]
   },
   {
     "title": "Flow With It",
@@ -201,7 +202,7 @@
     "price": 1000,
     "priceAMD": "380.000",
     "year": "2025",
-    "image": "assets/images/artworks/spazuno_1.jpeg"
+    "images": ["assets/images/artworks/spazuno_1.jpeg", "assets/images/artworks/spaz2nd.jpg"]
   },
     {
     "title": "The Companion",
@@ -213,7 +214,7 @@
     "price": 1300,
     "priceAMD": "500.000",
     "year": "2025",
-    "image": "assets/images/artworks/akhikyan2.jpg"
+    "images": ["assets/images/artworks/akhikyan2.jpg", "assets/images/artworks/akhikyan_3_1.jpg"]
   },
   {
     "title": "The Same Eyes—Transformed",
@@ -225,7 +226,7 @@
     "price": 500,
     "priceAMD": "190.000",
     "year": "2025",
-    "image": "assets/images/artworks/aram_poladian2.jpg"
+    "images": ["assets/images/artworks/aram_poladian2.jpg", "assets/images/artworks/aram_poladian1_1.jpg"]
   },
     {
     "title": "Untitled",
@@ -237,7 +238,7 @@
     "price": 2000,
     "priceAMD": "750.000",
     "year": "2025",
-    "image": "assets/images/artworks/hayduk2.jpg"
+    "images": ["assets/images/artworks/hayduk2.jpg", "assets/images/artworks/hayduk1_1.jpg"]
   },
     {
     "title": "0-Panorama",
@@ -249,7 +250,7 @@
     "price": 5000,
     "priceAMD": "1.800.000",
     "year": "2020",
-    "image": "assets/images/artworks/armen_hakobjanyan_2.jpg"
+    "images": ["assets/images/artworks/armen_hakobjanyan_2.jpg", "assets/images/artworks/armen_hakobjanyan2nd.jpg"]
   },
    {
     "title": "Threshold",
@@ -261,7 +262,7 @@
     "price": 2200,
     "priceAMD": "840.000",
     "year": "2024",
-    "image": "assets/images/artworks/aram_yengibaryan2.jpg"
+    "images": ["assets/images/artworks/aram_yengibaryan2.jpg", "assets/images/artworks/aram_yengibaryan_2nd.jpg"]
   },
   {
     "title": "Untitled",
@@ -273,7 +274,7 @@
     "price": 1600,
     "priceAMD": "600.000",
     "year": "2025",
-    "image": "assets/images/artworks/adam_adamyan_2.jpg"
+    "images": ["assets/images/artworks/adam_adamyan_2.jpg", "assets/images/artworks/adam_2nd.jpg"]
   },
   {
     "title": "Ari",
@@ -285,7 +286,7 @@
     "price": 200,
     "priceAMD": "80.000",
     "year": "2022",
-    "image": "assets/images/artworks/tina_karakeshishyan2.jpg"
+    "images": ["assets/images/artworks/tina_karakeshishyan2.jpg", "assets/images/artworks/tina_karakeshishyan_2nd.jpg"]
   },
   {
     "title": "The Garden",
@@ -297,7 +298,7 @@
     "price": 2000,
     "priceAMD": "750.000",
     "year": "2025",
-    "image": "assets/images/artworks/guyduk2.jpg"
+    "images": ["assets/images/artworks/guyduk2.jpg", "assets/images/artworks/guyduk2_2.jpg"]
   },
   {
     "title": "Circle Series #1",
@@ -309,7 +310,7 @@
     "price": 1500,
     "priceAMD": "570.000",
     "year": "2025",
-    "image": "assets/images/artworks/lubna2.jpg"
+    "images": ["assets/images/artworks/lubna2.jpg", "assets/images/artworks/lubna2_1.jpg"]
   },
   {
     "title": "Urban Flower 2",
@@ -321,7 +322,7 @@
     "price": 950,
     "priceAMD": "350.000",
     "year": "2023",
-    "image": "assets/images/artworks/aksel_zardaryan2.jpg"
+    "images": ["assets/images/artworks/aksel_zardaryan2.jpg", "assets/images/artworks/mavian.jpg"]
   },
   {
     "title": "Untitled",
@@ -333,7 +334,7 @@
     "price": 350,
     "priceAMD": "130.000",
     "year": "2025",
-    "image": "assets/images/artworks/tigran_ghazaryan2.jpg"
+    "images": ["assets/images/artworks/tigran_ghazaryan2.jpg", "assets/images/artworks/tigran_ghazaryanright_1.jpg"]
   },
   {
     "title": "Broken Icons",
@@ -345,7 +346,7 @@
     "price": 1000,
     "priceAMD": "380.000",
     "year": "2025",
-    "image": "assets/images/artworks/spazuno_2.jpeg"
+    "images": ["assets/images/artworks/spazuno_2.jpeg", "assets/images/artworks/spaz2nd.jpg"]
   },
   {
     "title": "Giraffe",
@@ -357,7 +358,7 @@
     "price": 1300,
     "priceAMD": "500.000",
     "year": "2025",
-    "image": "assets/images/artworks/akhikyan3.jpg"
+    "images": ["assets/images/artworks/akhikyan3.jpg", "assets/images/artworks/akhikyan_giraffe1.jpg"]
   },
   {
     "title": "Generational, New Achievements",
@@ -369,7 +370,7 @@
     "price": 500,
     "priceAMD": "190.000",
     "year": "2025",
-    "image": "assets/images/artworks/aram_poladian3.jpg"
+    "images": ["assets/images/artworks/aram_poladian3.jpg", "assets/images/artworks/aram_poladian1_1.jpg"]
   },
   {
     "title": "Untitled",
@@ -381,7 +382,7 @@
     "price": 2000,
     "priceAMD": "750.000",
     "year": "2025",
-    "image": "assets/images/artworks/hayduk3.jpg"
+    "images": ["assets/images/artworks/hayduk3.jpg", "assets/images/artworks/hayduk1_1.jpg"]
   },
   {
     "title": "Autumn",
@@ -393,7 +394,7 @@
     "price": 2200,
     "priceAMD": "840.000",
     "year": "2024",
-    "image": "assets/images/artworks/aram_yengibaryan2.jpg"
+    "images": ["assets/images/artworks/aram_yengibaryan3.jpg", "assets/images/artworks/aram_yengibaryan_2nd.jpg"]
   },
   {
     "title": "Untitled",
@@ -405,7 +406,7 @@
     "price": 2000,
     "priceAMD": "750.000",
     "year": "2025",
-    "image": "assets/images/artworks/adam_adamyan_3.jpg"
+    "images": ["assets/images/artworks/adam_adamyan_3.jpg", "assets/images/artworks/adam_2nd.jpg"]
   },
   {
     "title": "Warmth",
@@ -417,7 +418,7 @@
     "price": 800,
     "priceAMD": "300.000",
     "year": "2024",
-    "image": "assets/images/artworks/tina_karakeshishyan3.jpg"
+    "images": ["assets/images/artworks/tina_karakeshishyan3.jpg", "assets/images/artworks/tina_karakeshishyan_2nd.jpg"]
   },
   {
     "title": "Urban Flower 3",
@@ -429,7 +430,7 @@
     "price": 950,
     "priceAMD": "350.000",
     "year": "2023",
-    "image": "assets/images/artworks/aksel_zardaryan3.jpg"
+    "images": ["assets/images/artworks/aksel_zardaryan3.jpg", "assets/images/artworks/mavian.jpg"]
   },
    {
     "title": "Untitled",
@@ -441,7 +442,7 @@
     "price": 1000,
     "priceAMD": "380.000",
     "year": "2025",
-    "image": "assets/images/artworks/tigran_ghazaryan3.jpg"
+    "images": ["assets/images/artworks/tigran_ghazaryan3.jpg", "assets/images/artworks/tigran_ghazaryanright_1.jpg"]
   },
   {
     "title": "Untitled",
@@ -453,7 +454,7 @@
     "price": 400,
     "priceAMD": "150.000",
     "year": "2025",
-    "image": "assets/images/artworks/adam_adamyan_4.jpg"
+    "images": ["assets/images/artworks/adam_adamyan_4.jpg", "assets/images/artworks/adam_adamyan_5_1.jpg"]
   },
   {
     "title": "Untitled",
@@ -465,7 +466,7 @@
     "price": 500,
     "priceAMD": "190.000",
     "year": "2025",
-    "image": "assets/images/artworks/tigran_ghazaryan4.jpg"
+    "images": ["assets/images/artworks/tigran_ghazaryan4.jpg", "assets/images/artworks/tigran_ghazaryan_celloist.jpg"]
   },
   {
     "title": "Untitled",
@@ -477,7 +478,7 @@
     "price": 400,
     "priceAMD": "150.000",
     "year": "2025",
-    "image": "assets/images/artworks/adam_adamyan_5.jpg"
+    "images": ["assets/images/artworks/adam_adamyan_5.jpg", "assets/images/artworks/adam_adamyan_5_1.jpg"]
   },
   {
     "title": "Untitled",
@@ -489,7 +490,7 @@
     "price": 2000,
     "priceAMD": "750.000",
     "year": "2025",
-    "image": "assets/images/artworks/tigran_ghazaryan5.jpg"
+    "images": ["assets/images/artworks/tigran_ghazaryan5.jpg", "assets/images/artworks/tigran_ghazaryan_5_1.jpg"]
   },
   {
     "title": "Untitled",
@@ -501,7 +502,7 @@
     "price": 350,
     "priceAMD": "130.000",
     "year": "2025",
-    "image": "assets/images/artworks/tigran_ghazaryan6.jpg"
+    "images": ["assets/images/artworks/tigran_ghazaryan6.jpg"]
   },
   {
     "title": "Untitled",
@@ -513,7 +514,7 @@
     "price": 750,
     "priceAMD": "280.000",
     "year": "2025",
-    "image": "assets/images/artworks/tigran_ghazaryan7.jpg"
+    "images": ["assets/images/artworks/tigran_ghazaryan7.jpg"]
   },
   {
     "title": "Untitled",
@@ -525,7 +526,7 @@
     "price": 750,
     "priceAMD": "280.000",
     "year": "2025",
-    "image": "assets/images/artworks/tigran_ghazaryan8.jpg"
+    "images": ["assets/images/artworks/tigran_ghazaryan8.jpg"]
   },
   {
     "title": "Untitled",
@@ -537,7 +538,7 @@
     "price": 500,
     "priceAMD": "190.000",
     "year": "2025",
-    "image": "assets/images/artworks/tigran_ghazaryan9.jpg"
+    "images": ["assets/images/artworks/tigran_ghazaryan9.jpg"]
   },
   {
     "title": "Untitled",
@@ -549,6 +550,6 @@
     "price": 350,
     "priceAMD": "130.000",
     "year": "2025",
-    "image": "assets/images/artworks/tigran_ghazaryan10.jpg"
+    "images": ["assets/images/artworks/tigran_ghazaryan10.jpg", "assets/images/artworks/tigran_fish.jpg"]
   }
 ]

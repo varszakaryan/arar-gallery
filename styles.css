@@ -1594,6 +1594,74 @@ a.artist-name:hover {
     color: #333;
 }
 
+.merch-limited {
+    font-size: 12px;
+    font-weight: 400;
+    color: #666;
+    margin: 4px 0 0 0;
+    text-align: left;
+    line-height: 1.4;
+}
+
+.merch-limited-badge {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    z-index: 10;
+    line-height: 1.4;
+    max-width: calc(100% - 16px);
+    text-align: right;
+}
+
+.merch-flip-btn {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 22px;
+    height: 22px;
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 20;
+    transition: all 0.2s ease;
+    color: #fff;
+}
+
+.merch-flip-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateX(-50%) scale(1.1);
+}
+
+.merch-flip-btn .material-icons-outlined {
+    display: none;
+}
+
+.merch-flip-btn::after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    background-color: currentColor;
+    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38"/></svg>');
+    mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38"/></svg>');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    display: block;
+}
+
+
 .merch-artist {
     /* font-size: 12px; */
     font-weight: 400;
@@ -2340,9 +2408,18 @@ footer {
     .merch-artist,
     .merch-details-combined,
     .merch-dimensions,
-    .merch-price {
+    .merch-price,
+    .merch-limited {
         font-size: 10px !important;
     }
+    
+    .merch-limited-badge {
+        font-size: 9px !important;
+        padding: 3px 6px !important;
+        bottom: 6px !important;
+        right: 6px !important;
+    }
+    
     
     .merch-info-left .merch-dimensions,
     p.merch-dimensions,

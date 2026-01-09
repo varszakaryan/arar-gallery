@@ -106,6 +106,13 @@
             loadAllArtworks();
         });
 
+        // Function to flip artwork image
+        function flipMerchImage(containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            container.classList.toggle('flipped');
+        }
+
         // Helper function to get artist profile image path
         function getArtistProfileImage(artistName) {
             const artistImageMap = {
@@ -183,18 +190,28 @@
             
             artworksGrid.innerHTML = artworks.map((artwork, index) => {
                             const artworkId = `artwork-${index}`;
-                            // Always try artwork image first, fallback to artist profile on error
-                            const imagePath = artwork.image || getArtistProfileImage(artwork.artist);
+                            // Support both images array and single image
+                            const images = artwork.images || (artwork.image ? [artwork.image] : []);
                             const fallbackImage = getArtistProfileImage(artwork.artist);
+                            const firstImage = images[0] || fallbackImage;
+                            const secondImage = images[1] || firstImage;
                             
                             return `
                             <div class="merch-item">
-                                <div class="merch-image-container">
+                                <div class="merch-image-container" onclick="${images.length > 1 ? `event.preventDefault(); flipMerchImage('${artworkId}')` : ''}" style="cursor: ${images.length > 1 ? 'pointer' : 'default'}">
                                     <div class="merch-flip-container" id="${artworkId}">
                                         <div class="merch-flip-front">
-                                            <img src="${imagePath}" alt="${artwork.title}" class="merch-image" onerror="this.onerror=null; this.src='${fallbackImage}'">
+                                            <img src="${firstImage}" alt="${artwork.title}" class="merch-image" onerror="this.onerror=null; this.src='${fallbackImage}'">
+                                        </div>
+                                        <div class="merch-flip-back">
+                                            <img src="${secondImage}" alt="${artwork.title}" class="merch-image" onerror="this.onerror=null; this.src='${fallbackImage}'">
                                         </div>
                                     </div>
+                                    ${images.length > 1 ? `
+                                    <button class="merch-flip-btn" onclick="event.preventDefault(); event.stopPropagation(); flipMerchImage('${artworkId}')" title="Flip image">
+                                        <span class="material-icons-outlined">sync</span>
+                                    </button>
+                                    ` : ''}
                                 </div>
                                 <div class="merch-info">
                                     <div class="merch-info-left">

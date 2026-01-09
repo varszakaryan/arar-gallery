@@ -149,20 +149,20 @@
                     <div class="stats-section">
                         <div class="stat-item">
                             <a href="#artists" class="stat-link">
-                                <div class="stat-value">16 ARTISTS</div>
-                                <div class="stat-label">Local and international</div>
+                            <div class="stat-value">16 ARTISTS</div>
+                            <div class="stat-label">Local and international</div>
                             </a>
                         </div>
                         <div class="stat-item">
                             <a href="#artworks" class="stat-link">
                                 <div class="stat-value">46 ARTWORKS</div>
-                                <div class="stat-label">Paintings & sculptures</div>
+                            <div class="stat-label">Paintings & sculptures</div>
                             </a>
                         </div>
                         <div class="stat-item">
                             <a href="#mural" class="stat-link">
                                 <div class="stat-value">70M<sup>²</sup> MURAL</div>
-                                <div class="stat-label">In the city center</div>
+                            <div class="stat-label">In the city center</div>
                             </a>
                         </div>
                     </div>
@@ -242,7 +242,7 @@
             <div class="mural-section" id="mural">
                 <h3 class="mural-title">Mural</h3>
                 <div class="mural-content">
-                    <p>As part of the exhibition, a <strong>130 m² large-scale mural</strong> will be created at <strong>13 Tumanyan Street</strong>, transforming the urban landscape with bold visual impact. The mural extends the exhibition beyond the gallery walls into the city.</p>
+                    <p>As part of the exhibition, a <strong>70 m² large-scale mural</strong> will be created at <strong>13 Tumanyan Street</strong>, transforming the urban landscape with bold visual impact. The mural extends the exhibition beyond the gallery walls into the city.</p>
                     <div class="mural-images">
                         <img src="assets/images/mural.jpeg" alt="Mural" class="mural-image">
                         <img src="assets/images/mural_exterior.jpeg" alt="Mural Exterior" class="mural-image">
@@ -505,7 +505,7 @@
                             return `
                             <div class="merch-item">
                                 <a href="${item.link}" class="merch-item-link">
-                                    <div class="merch-image-container" onclick="event.preventDefault(); ${images.length > 1 ? `flipMerchImage('${itemId}')` : ''}" style="cursor: ${images.length > 1 ? 'pointer' : 'default'}">
+                                    <div class="merch-image-container" onclick="${images.length > 1 ? `event.preventDefault(); flipMerchImage('${itemId}')` : ''}" style="cursor: ${images.length > 1 ? 'pointer' : 'default'}">
                                         <div class="merch-flip-container" id="${itemId}">
                                             <div class="merch-flip-front">
                                                 <img src="${images[0]}" alt="${item.title}" class="merch-image" onerror="this.src='assets/images/placeholder.jpg'">
@@ -516,6 +516,12 @@
                                             </div>
                                             ` : ''}
                                         </div>
+                                        ${item.stockLeft && item.stockTotal ? `<div class="merch-limited-badge">${item.stockLeft} left of ${item.stockTotal}</div>` : item.stockAvailableUntil ? `<div class="merch-limited-badge">available until ${item.stockAvailableUntil}</div>` : ''}
+                                        ${images.length > 1 ? `
+                                        <button class="merch-flip-btn" onclick="event.preventDefault(); event.stopPropagation(); flipMerchImage('${itemId}')" title="Flip image">
+                                            <span class="material-icons-outlined">sync</span>
+                                        </button>
+                                        ` : ''}
                                     </div>
                                 </a>
                                 <div class="merch-info">
@@ -627,18 +633,28 @@
             
             artworksGrid.innerHTML = artworks.map((artwork, index) => {
                 const artworkId = `artwork-${index}`;
-                // Always try artwork image first, fallback to artist profile on error
-                const imagePath = artwork.image || getArtistProfileImage(artwork.artist);
+                // Support both images array and single image
+                const images = artwork.images || (artwork.image ? [artwork.image] : []);
                 const fallbackImage = getArtistProfileImage(artwork.artist);
+                const firstImage = images[0] || fallbackImage;
+                const secondImage = images[1] || firstImage;
                 
                 return `
                 <div class="merch-item">
-                    <div class="merch-image-container">
+                    <div class="merch-image-container" onclick="${images.length > 1 ? `event.preventDefault(); flipMerchImage('${artworkId}')` : ''}" style="cursor: ${images.length > 1 ? 'pointer' : 'default'}">
                         <div class="merch-flip-container" id="${artworkId}">
                             <div class="merch-flip-front">
-                                <img src="${imagePath}" alt="${artwork.title}" class="merch-image" onerror="this.onerror=null; this.src='${fallbackImage}'">
+                                <img src="${firstImage}" alt="${artwork.title}" class="merch-image" onerror="this.onerror=null; this.src='${fallbackImage}'">
+                            </div>
+                            <div class="merch-flip-back">
+                                <img src="${secondImage}" alt="${artwork.title}" class="merch-image" onerror="this.onerror=null; this.src='${fallbackImage}'">
                             </div>
                         </div>
+                        ${images.length > 1 ? `
+                        <button class="merch-flip-btn" onclick="event.preventDefault(); event.stopPropagation(); flipMerchImage('${artworkId}')" title="Flip image">
+                            <span class="material-icons-outlined">sync</span>
+                        </button>
+                        ` : ''}
                     </div>
                     <div class="merch-info">
                         <div class="merch-info-left">
@@ -689,6 +705,7 @@
                 closeDonateModal();
             }
         });
+
     </script>
 </body>
 </html>

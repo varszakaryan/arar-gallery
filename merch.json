@@ -13,7 +13,8 @@
         "assets/images/merch/spaz_front.png",
         "assets/images/merch/spaz_back.png"
       ],
-      "link": "#"
+      "link": "#",
+      "description": "The swan appears as a remembered presence, one that once emerged in dreams as a guide from darkness toward light. Neither symbol nor fantasy, she exists as an embodied force that saved, held, and returned the self to breath. Rendered as a feminine humanoid form, the figure is fractured, carrying the tension of multiplicity rather than harmony. Her rotating face moves through shifting states of awareness, revealing identity as something continuously negotiated. Masculinity and femininity coexist within her, not in balance, but in active dialogue. The swan does not dissolve; she remains watchful, altered, and luminous."
     },
     {
       "id": 2,
@@ -87,7 +88,9 @@
       "images": [
         "assets/images/merch/spaz_20x20.png"
       ],
-      "link": "#"
+      "link": "#",
+      "stockAvailableUntil": "Feb 28, 2026",
+      "description": "The swan appears as a remembered presence, one that once emerged in dreams as a guide from darkness toward light. Neither symbol nor fantasy, she exists as an embodied force that saved, held, and returned the self to breath. Rendered as a feminine humanoid form, the figure is fractured, carrying the tension of multiplicity rather than harmony. Her rotating face moves through shifting states of awareness, revealing identity as something continuously negotiated. Masculinity and femininity coexist within her, not in balance, but in active dialogue. The swan does not dissolve; she remains watchful, altered, and luminous."
     },
     {
       "id": 7,
@@ -101,7 +104,10 @@
       "images": [
         "assets/images/merch/spaz_45x45.png"
       ],
-      "link": "#"
+      "link": "#",
+      "stockLeft": 95,
+      "stockTotal": 150,
+      "description": "The swan appears as a remembered presence, one that once emerged in dreams as a guide from darkness toward light. Neither symbol nor fantasy, she exists as an embodied force that saved, held, and returned the self to breath. Rendered as a feminine humanoid form, the figure is fractured, carrying the tension of multiplicity rather than harmony. Her rotating face moves through shifting states of awareness, revealing identity as something continuously negotiated. Masculinity and femininity coexist within her, not in balance, but in active dialogue. The swan does not dissolve; she remains watchful, altered, and luminous."
     },
     {
       "id": 9,
@@ -115,7 +121,10 @@
       "images": [
         "assets/images/merch/spaz_60x60.png"
       ],
-      "link": "#"
+      "link": "#",
+      "stockLeft": 14,
+      "stockTotal": 25,
+      "description": "The swan appears as a remembered presence, one that once emerged in dreams as a guide from darkness toward light. Neither symbol nor fantasy, she exists as an embodied force that saved, held, and returned the self to breath. Rendered as a feminine humanoid form, the figure is fractured, carrying the tension of multiplicity rather than harmony. Her rotating face moves through shifting states of awareness, revealing identity as something continuously negotiated. Masculinity and femininity coexist within her, not in balance, but in active dialogue. The swan does not dissolve; she remains watchful, altered, and luminous."
     }
   ]
 }

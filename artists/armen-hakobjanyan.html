@@ -125,18 +125,26 @@ Hakobjanyan plays with his role as an artist switching it from a "doer" to a "de
                     if (artistArtworks && artistArtworks.length > 0) {
                         artworksGrid.innerHTML = artistArtworks.map((artwork, index) => {
                             const artworkId = `artwork-${index}`;
-                            // Always try artwork image first, fallback to artist profile on error
-                            const imagePath = artwork.image ? '../' + artwork.image : getArtistProfileImage(artwork.artist);
+                            // Support both images array and single image
+                            const images = artwork.images || (artwork.image ? [artwork.image] : []);
                             const fallbackImage = getArtistProfileImage(artwork.artist);
+                            const firstImage = images[0] ? '../' + images[0] : fallbackImage;
+                            const secondImage = images[1] ? '../' + images[1] : firstImage;
                             
                             return `
                             <div class="merch-item">
-                                <div class="merch-image-container">
+                                <div class="merch-image-container" onclick="${images.length > 1 ? `event.preventDefault(); flipMerchImage('${artworkId}')` : ''}" style="cursor: ${images.length > 1 ? 'pointer' : 'default'}">
                                     <div class="merch-flip-container" id="${artworkId}">
                                         <div class="merch-flip-front">
-                                            <img src="${imagePath}" alt="${artwork.title}" class="merch-image" onerror="this.onerror=null; this.src='${fallbackImage}'">
+                                            <img src="${firstImage}" alt="${artwork.title}" class="merch-image" onerror="this.onerror=null; this.src='${fallbackImage}'">
+                                        </div>
+                                        <div class="merch-flip-back">
+                                            <img src="${secondImage}" alt="${artwork.title}" class="merch-image" onerror="this.onerror=null; this.src='${fallbackImage}'">
                                         </div>
                                     </div>
+                                    <button class="merch-flip-btn" style="${images.length > 1 ? 'display: flex' : 'display: none'}" onclick="event.preventDefault(); event.stopPropagation(); flipMerchImage('${artworkId}')" title="Flip image">
+                                        <span class="material-icons-outlined">sync</span>
+                                    </button>
                                 </div>
                                 <div class="merch-info">
                                     <div class="merch-info-left">
@@ -218,7 +226,7 @@ Hakobjanyan plays with his role as an artist switching it from a "doer" to a "de
                             return `
                             <div class="merch-item">
                                 <a href="${item.link}" class="merch-item-link">
-                                    <div class="merch-image-container" onclick="event.preventDefault(); ${images.length > 1 ? `flipMerchImage('${itemId}')` : ''}" style="cursor: ${images.length > 1 ? 'pointer' : 'default'}">
+                                    <div class="merch-image-container" onclick="${images.length > 1 ? `event.preventDefault(); flipMerchImage('${itemId}')` : ''}" style="cursor: ${images.length > 1 ? 'pointer' : 'default'}">
                                         <div class="merch-flip-container" id="${itemId}">
                                             <div class="merch-flip-front">
                                                 <img src="../${images[0]}" alt="${item.title}" class="merch-image" onerror="this.src='../assets/images/placeholder.jpg'">
@@ -229,6 +237,12 @@ Hakobjanyan plays with his role as an artist switching it from a "doer" to a "de
                                             </div>
                                             ` : ''}
                                         </div>
+                                        ${item.stockLeft && item.stockTotal ? `<div class="merch-limited-badge">${item.stockLeft} left of ${item.stockTotal}</div>` : item.stockAvailableUntil ? `<div class="merch-limited-badge">available until ${item.stockAvailableUntil}</div>` : ''}
+                                        ${images.length > 1 ? `
+                                        <button class="merch-flip-btn" onclick="event.preventDefault(); event.stopPropagation(); flipMerchImage('${itemId}')" title="Flip image">
+                                            <span class="material-icons-outlined">sync</span>
+                                        </button>
+                                        ` : ''}
                                     </div>
                                 </a>
                                 <div class="merch-info">
