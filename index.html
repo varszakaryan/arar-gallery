@@ -30,6 +30,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'OCR A TD';
+            src: url('assets/fonts/OCRAStd.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        .presence-title {
+            font-family: 'OCR A TD', 'OCR A Extended', 'OCRAExtended', 'OCR-A', monospace;
+        }
+    </style>
     
     <!-- Facebook Pixel Code -->
     <script>
@@ -63,46 +75,76 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <a href="#" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); return false;" aria-label="Go to top">
+                <a href="/" aria-label="Go to homepage">
                     <img src="assets/images/arar.svg" alt="ARAR" class="logo-img">
                 </a>
             </div>
             <button class="menu-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
                 <span class="material-icons-outlined">menu</span>
             </button>
-            <div class="menu-overlay" onclick="toggleMenu()"></div>
+            <div class="menu-overlay" onclick="closeMenu()"></div>
             <nav id="main-nav" class="nav-menu">
                 <button class="menu-close-btn" onclick="toggleMenu()" aria-label="Close menu">
                     <span class="material-icons-outlined">close</span>
                 </button>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle" onclick="toggleDropdown(event)">Exhibitions</a>
+                    <div class="nav-dropdown-menu">
+                        <a href="?exhibition=guyduk-presence-2026">PRESENCE - Anatoliy Guyduk Solo Exhibition</a>
+                        <a href="?exhibition=contemporary-art-2026">Contemporary Art Exhibition-Fundraiser</a>
+                    </div>
+                </div>
                 <a href="#artists">Artists</a>
                 <a href="#artworks">Artworks</a>
-                <a href="#mural">Mural</a>
                 <a href="#merch">Merch</a>
                 <a href="#organizers">Organizers</a>
                 <a href="#partners">Partners</a>
-                <a href="agenda.html">Agenda</a>
                 <a href="#contacts">Contacts</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <div class="hero-section">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <div class="upcoming-label">
-                    <span class="vertical-line"></span>
-                    <span>RUNNING</span>
+        <div class="hero-section hero-carousel">
+            <div class="hero-slide" data-bg="assets/images/guyduk_bg.png" data-link="?exhibition=guyduk-presence-2026">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <div class="upcoming-label">
+                        <span class="vertical-line"></span>
+                        <span>RUNNING</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="presence-title">PRESENCE</span><br>
+                        Anatoliy Guyduk Solo Exhibition
+                    </h1>
+                    <p class="opening-info">January 10-15, 2026</p>
                 </div>
-                <h1 class="hero-title">
-                    Contemporary Art<br>
-                    Exhibition-Fundraiser
-                </h1>
-                <p class="opening-info">OPEN UNTIL JANUARY 9, 11:00-20:00</p>
-                <!-- <p class="hero-description">
-                    Unique Art from 15 international and Armenian Artists
-                </p> -->
+            </div>
+            <div class="hero-slide" data-bg="assets/images/bg.jpg" data-link="?exhibition=contemporary-art-2026">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <div class="upcoming-label">
+                        <span class="vertical-line"></span>
+                        <span>PAST</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Contemporary Art<br>
+                        Exhibition-Fundraiser
+                    </h1>
+                    <p class="opening-info">January 5-10, 2026</p>
+                </div>
+            </div>
+            <div class="hero-carousel-controls">
+                <button class="hero-carousel-prev" onclick="changeHeroSlide(-1)" aria-label="Previous slide">
+                    <span class="material-icons-outlined">chevron_left</span>
+                </button>
+                <button class="hero-carousel-next" onclick="changeHeroSlide(1)" aria-label="Next slide">
+                    <span class="material-icons-outlined">chevron_right</span>
+                </button>
+            </div>
+            <div class="hero-carousel-indicators">
+                <span class="hero-indicator active" onclick="goToHeroSlide(0)"></span>
+                <span class="hero-indicator" onclick="goToHeroSlide(1)"></span>
             </div>
             <button class="scroll-down-btn" onclick="scrollToNext()" aria-label="Scroll down">
                 <span class="material-icons-outlined">keyboard_arrow_down</span>
@@ -113,7 +155,7 @@
             <span class="material-icons-outlined">keyboard_arrow_up</span>
         </button>
 
-        <div class="event-info-section">
+        <div class="event-info-section" id="eventInfoSection" style="display: none;">
             <div class="event-info-container">
                 <div class="event-info-left">
                     <div class="detail-item">
@@ -121,12 +163,12 @@
                             <span class="material-icons-outlined detail-icon">calendar_today</span>
                             <span class="detail-label">Date</span>
                         </div>
-                        <p class="detail-value">January 5–9, 2026</p>
+                        <p class="detail-value" id="eventDateValue">January 10–15, 2026</p>
                         <div class="calendar-dropdown">
                             <button class="calendar-link" onclick="toggleCalendarMenu(event)">Add to your calendar</button>
                             <div class="calendar-menu" id="calendarMenu">
-                                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Contemporary+Art+Exhibition-Fundraiser&dates=20260105T190000/20260109T220000&details=Contemporary+Art+Exhibition-Fundraiser+presenting+international+and+Armenian+artists&location=National+Center+of+Aesthetics%2C+Abovyan+13%2C+Yerevan" target="_blank" rel="noreferrer">Google Calendar</a>
-                                <a href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20260105T190000%0ADTEND:20260109T220000%0ASUMMARY:Contemporary+Art+Exhibition-Fundraiser%0ADESCRIPTION:Contemporary+Art+Exhibition-Fundraiser+presenting+international+and+Armenian+artists%0ALOCATION:National+Center+of+Aesthetics%2C+Abovyan+13%2C+Yerevan%0AEND:VEVENT%0AEND:VCALENDAR" download="event.ics">Apple Calendar</a>
+                                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Anatoliy+Guyduk+-+Presence+2026&dates=20260110T190000/20260115T220000&details=Anatoliy+Guyduk+-+Presence+2026+Solo+Exhibition&location=National+Center+of+Aesthetics%2C+Abovyan+13%2C+Yerevan" target="_blank" rel="noreferrer" id="googleCalendarLink">Google Calendar</a>
+                                <a href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20260110T190000%0ADTEND:20260115T220000%0ASUMMARY:Anatoliy+Guyduk+-+Presence+2026%0ADESCRIPTION:Anatoliy+Guyduk+-+Presence+2026+Solo+Exhibition%0ALOCATION:National+Center+of+Aesthetics%2C+Abovyan+13%2C+Yerevan%0AEND:VEVENT%0AEND:VCALENDAR" download="event.ics" id="appleCalendarLink">Apple Calendar</a>
                             </div>
                         </div>
                     </div>
@@ -144,86 +186,99 @@
                 </div>
 
                 <div class="event-info-right">
-                    <p>The Contemporary Art Exhibition–Fundraiser presents international and Armenian artists known for powerful, vibrant, and visually striking works. Alongside the curatorial program, the exhibition includes a fundraising component in support of <a href="https://onelink.to/fwq6jh" target="_blank" rel="noreferrer">Imast Foundation</a>, linking contemporary art with social responsibility. <br><strong>20% of all sales will be donated to charity.</strong></p>
-                    
-                    <div class="stats-section">
-                        <div class="stat-item">
-                            <a href="#artists" class="stat-link">
-                            <div class="stat-value">16 ARTISTS</div>
-                            <div class="stat-label">Local and international</div>
-                            </a>
-                        </div>
-                        <div class="stat-item">
-                            <a href="#artworks" class="stat-link">
-                                <div class="stat-value">46 ARTWORKS</div>
-                            <div class="stat-label">Paintings & sculptures</div>
-                            </a>
-                        </div>
-                        <div class="stat-item">
-                            <a href="#mural" class="stat-link">
-                                <div class="stat-value">70M<sup>²</sup> MURAL</div>
-                            <div class="stat-label">In the city center</div>
-                            </a>
-                        </div>
-                    </div>
-                    
+                    <p id="eventInfoDescription"><strong>"Presence"</strong> is a live session where the result is not the main focus — the creative process itself is. It is an immersion into the living atmosphere of the artist's studio. Over the course of several days, the artist works on a new series of paintings directly within the gallery space, while viewers may enter at any random moment to observe his movement, search, and everyday creative routine.<br><br>This is neither an exhibition nor a performance in the conventional sense. It is an invitation to become part of the creative process — to be present within the natural interaction of art, space, and people, in the here and now.</p>
                 </div>
             </div>
-            <div class="artists-section" id="artists">
-                <h3 class="artists-title">Exhibited Artists</h3>
+        </div>
+
+        <div class="exhibition-tabs-section" id="exhibitionTabsSection" style="display: none;">
+            <div id="zones"></div>
+            <h3 class="exhibition-zones-title">Exhibition Zones</h3>
+            <div class="exhibition-tabs">
+                <button class="exhibition-tab active" data-tab="rest-area" onclick="switchExhibitionTab('rest-area', event)">REST AREA</button>
+                <button class="exhibition-tab" data-tab="studio" onclick="switchExhibitionTab('studio', event)">STUDIO</button>
+                <button class="exhibition-tab" data-tab="exhibition" onclick="switchExhibitionTab('exhibition', event)">EXHIBITION</button>
+            </div>
+            <div class="exhibition-tab-content">
+                <div class="tab-panel active" id="rest-area-panel">
+                    <p><strong>Rest Area</strong> — a place for calm and reset. Visitors can have a glass of wine, brew some tea, simply sit without doing anything, and allow their thoughts to slow down. Within the logic of the project, this zone becomes a necessary pause between observation, participation, and acceptance.</p>
+                    <p>There are no works here that demand resolution or provoke inner tension for the artist. Most often, this status is given to paintings that have resonated with viewers, have been purchased, or gifted. Only a few works are accepted by the artist without external confirmation, when he agrees with their sense of completion on his own.</p>
+                    <p>In the context of the entire exhibition, this zone marks a rare state of balance — a moment when the process is temporarily suspended and presence does not require action.</p>
+                    <p>Throughout the exhibition, several films that have influenced the artist's work will be screened in this area:</p>
+                    <ul>
+                        <li>January 11, 6:00 PM — <strong>The Color of Pomegranates</strong> (Sergei Parajanov)</li>
+                        <li>January 12, 6:00 PM — <strong>Scenes by the Sea</strong> (Takeshi Kitano)</li>
+                        <li>January 13, 6:00 PM — <strong>Perfect days</strong> (Wim Wenders)</li>
+                        <li>January 14, 6:00 PM — <strong>Art Life</strong> (David Lynch)</li>
+                        <li>January 15, 7:00 PM — <strong>Closing</strong></li>
+                    </ul>
+                </div>
+                <div class="tab-panel" id="studio-panel">
+                    <p><strong>Studio</strong> — The most important part of the exhibition is the process itself. Here, the Artist works on sketches for future paintings and other creative projects. Rough drafts, fragments of phrases, and spontaneous drawings on scraps of paper remain in constant motion, layering over one another before forming an idea. Some sketches are transferred to canvas immediately; others may stay on the sketch board for years, waiting for their moment.</p>
+                    <p>The Artist invites visitors to join the creative process: anyone can take materials from the table and participate in making sketches. The resulting works can be taken home or attached to the shared board, where they will merge with the artist's sketches and those of other participants and, passing through a chain of interpretations, gain new life within the compositions of future works. These may be sketches, symbols, or isolated phrases — anything that resonates within you in the present moment.</p>
+                </div>
+                <div class="tab-panel" id="exhibition-panel">
+                    <p><strong>Exhibition</strong> — This zone presents works that are close to completion yet still remain in a state of artistic formation. The artist may return to these paintings after months or even years; however, revisiting them does not always bring a sense of final certainty. Doubt, pause, and reconsideration here are part of the everyday routine — or an integral part of the artistic method.</p>
+                    <p>The most intense and vulnerable stage of an artist's work is the moment when a piece already exists but has not yet acquired its final form or status. In this intermediate state, the works are presented to the viewer for the first time, inviting them to become witnesses and participants in the process of decision and acceptance.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="artists-section" id="artists">
+                <h3 class="artists-title">Gallery Artists</h3>
                 <div class="artists-list">
                     <div class="artists-column">
                         <div class="artist-item">
-                            <a href="artists/spazuno.html" class="artist-name">Raydan Zebian (Spazuno)</a>
+                            <a href="artists/spazuno" class="artist-name">Raydan Zebian (Spazuno)</a>
                         </div>
                         <div class="artist-item">
-                            <a href="artists/karen-akhikyan.html" class="artist-name">Karen Akhikyan</a>
+                            <a href="artists/karen-akhikyan" class="artist-name">Karen Akhikyan</a>
                         </div>
                         <div class="artist-item">
-                            <a href="artists/aram-poladian.html" class="artist-name">Aram Poladian</a>
+                            <a href="artists/aram-poladian" class="artist-name">Aram Poladian</a>
                         </div>
                         <div class="artist-item">
-                            <a href="artists/guy-ghazanchyan.html" class="artist-name">Guy Ghazanchyan</a>
+                            <a href="artists/guy-ghazanchyan" class="artist-name">Guy Ghazanchyan</a>
                         </div>
                         <div class="artist-item">
-                            <a href="artists/hayduk-smbatyan.html" class="artist-name">Hayduk Smbatyan</a>
+                            <a href="artists/hayduk-smbatyan" class="artist-name">Hayduk Smbatyan</a>
                         </div>
                         <div class="artist-item">
-                            <a href="artists/siranush-vardanyan.html" class="artist-name">Siranush Vardanyan</a>
-                        </div>
-                    </div>
-                    <div class="artists-column">
-                        <div class="artist-item">
-                            <a href="artists/lilit-eghiazaryan.html" class="artist-name">Lilith Leel Eghiazaryan</a>
-                        </div>
-                        <div class="artist-item">
-                            <a href="artists/armen-hakobjanyan.html" class="artist-name">Armen Hakobjanyan</a>
-                        </div>
-                        <div class="artist-item">
-                            <a href="artists/aram-yengibaryan.html" class="artist-name">Aram Yengibaryan</a>
-                        </div>
-                        <div class="artist-item">
-                            <a href="artists/adam-adamyan.html" class="artist-name">Adam Adamyan</a>
-                        </div>
-                        <div class="artist-item">
-                            <a href="artists/tina-karakeshishyan.html" class="artist-name">Tina Karakeshishyan</a>
+                            <a href="artists/siranush-vardanyan" class="artist-name">Siranush Vardanyan</a>
                         </div>
                     </div>
                     <div class="artists-column">
                         <div class="artist-item">
-                            <a href="artists/anatoliy-guyduk.html" class="artist-name">Anatoliy Guyduk</a>
+                            <a href="artists/lilit-eghiazaryan" class="artist-name">Lilith Leel Eghiazaryan</a>
                         </div>
                         <div class="artist-item">
-                            <a href="artists/lubna-al-lahham.html" class="artist-name">Lubna Al-Lahham</a>
+                            <a href="artists/armen-hakobjanyan" class="artist-name">Armen Hakobjanyan</a>
                         </div>
                         <div class="artist-item">
-                            <a href="artists/aksel-zardaryan.html" class="artist-name">Aksel Zardaryan-Mavian</a>
+                            <a href="artists/aram-yengibaryan" class="artist-name">Aram Yengibaryan</a>
                         </div>
                         <div class="artist-item">
-                            <a href="artists/ashot-harutyunyan.html" class="artist-name">Ashot Harutyunyan</a>
+                            <a href="artists/adam-adamyan" class="artist-name">Adam Adamyan</a>
                         </div>
                         <div class="artist-item">
-                            <a href="artists/tigran-ghazaryan.html" class="artist-name">Tigran Ghazaryan</a>
+                            <a href="artists/tina-karakeshishyan" class="artist-name">Tina Karakeshishyan</a>
+                        </div>
+                    </div>
+                    <div class="artists-column">
+                        <div class="artist-item">
+                            <a href="artists/anatoliy-guyduk" class="artist-name">Anatoliy Guyduk</a>
+                        </div>
+                        <div class="artist-item">
+                            <a href="artists/lubna-al-lahham" class="artist-name">Lubna Al-Lahham</a>
+                        </div>
+                        <div class="artist-item">
+                            <a href="artists/aksel-zardaryan" class="artist-name">Aksel Zardaryan-Mavian</a>
+                        </div>
+                        <div class="artist-item">
+                            <a href="artists/ashot-harutyunyan" class="artist-name">Ashot Harutyunyan</a>
+                        </div>
+                        <div class="artist-item">
+                            <a href="artists/tigran-ghazaryan" class="artist-name">Tigran Ghazaryan</a>
                         </div>
                     </div>
                 </div>
@@ -235,25 +290,13 @@
                         <p class="merch-loading">Loading...</p>
                     </div>
                     <div class="see-all-container" id="seeAllContainer" style="display: none;">
-                        <a href="artworks.html" class="see-all-btn">See all</a>
-                    </div>
-                </div>
-            </div>
-            <div class="mural-section" id="mural">
-                <h3 class="mural-title">Mural</h3>
-                <div class="mural-content">
-                    <p>As part of the exhibition, a <strong>70 m² large-scale mural</strong> will be created at <strong>13 Tumanyan Street</strong>, transforming the urban landscape with bold visual impact. The mural extends the exhibition beyond the gallery walls into the city.</p>
-                    <div class="mural-images">
-                        <img src="assets/images/mural.jpeg" alt="Mural" class="mural-image">
-                        <img src="assets/images/mural_exterior.jpeg" alt="Mural Exterior" class="mural-image">
-                        <img src="assets/images/mural_interior.jpeg" alt="Mural Interior" class="mural-image">
+                        <a href="artworks" class="see-all-btn">See all</a>
                     </div>
                 </div>
             </div>
             <div class="merch-section" id="merch">
                 <h3 class="merch-title">Merch</h3>
                 <div class="merch-content">
-                    <p class="merch-availability">Merch will be available for purchase at the exhibition from January 5–9, 2026 with special 50% discount.</p>
                     <div class="merch-grid" id="merchGrid">
                         <p class="merch-loading">Loading...</p>
                     </div>
@@ -276,49 +319,48 @@
                     <button class="donate-btn" onclick="openDonateModal()">Donate</button>
                 </div>
             </div>
-            <div class="partners-section" id="partners">
+            <div class="partners-section" id="partners" style="display: none;">
                 <h3 class="partners-title">Partners</h3>
-                <div class="partners-logos">
-                        <div class="partner-logo">
-                            <a href="https://www.yerevan.am/en/" target="_blank" rel="noreferrer">
-                                <img src="assets/images/partners/ym.png" alt="Yerevan Municipality" class="logo-img">
-                            </a>
-                        </div>
-                        <div class="partner-logo">
-                            <a href="https://nca.am" target="_blank" rel="noreferrer">
-                                <img src="assets/images/partners/nca.png" alt="National Centre for Aesthetics" class="logo-img">
-                            </a>
-                        </div>
-                        <div class="partner-logo">
-                            <a href="https://imast.am" target="_blank" rel="noreferrer">
-                                <img src="assets/images/partners/imast.png" alt="Imast" class="logo-img">
-                            </a>
-                        </div>
+                <div class="partners-logos" id="partnersLogosMain">
+                    <div class="partner-logo">
+                        <a href="https://www.yerevan.am/en/" target="_blank" rel="noreferrer">
+                            <img src="assets/images/partners/ym.png" alt="Yerevan Municipality" class="logo-img">
+                        </a>
                     </div>
-                    <div class="partners-logos partners-logos-second-row">
-                        <div class="partner-logo partner-logo-small partner-logo-ta">
-                            <a href="https://www.instagram.com/takashiakavado/" target="_blank" rel="noreferrer">
-                                <img src="assets/images/partners/TA.svg" alt="TA" class="logo-img">
-                            </a>
-                        </div>
-                        <div class="partner-logo partner-logo-small">
-                            <a href="https://www.instagram.com/blick.llc" target="_blank" rel="noreferrer">
-                                <img src="assets/images/partners/blick.svg" alt="Blick" class="logo-img">
-                            </a>
-                        </div>
-                        <div class="partner-logo partner-logo-small">
-                            <a href="https://voskanian.am/" target="_blank" rel="noreferrer">
-                                <img src="assets/images/partners/voskanian.png" alt="VOSKANIAN parfums" class="logo-img">
-                            </a>
-                        </div>
-                        <div class="partner-logo partner-logo-small partner-logo-lawsuit">
-                            <a href="#" target="_blank" rel="noreferrer">
-                                <img src="assets/images/partners/lawsuit.png" alt="Lawsuit" class="logo-img">
-                            </a>
-                        </div>
+                    <div class="partner-logo">
+                        <a href="https://nca.am" target="_blank" rel="noreferrer">
+                            <img src="assets/images/partners/nca.png" alt="National Centre for Aesthetics" class="logo-img">
+                        </a>
+                    </div>
+                    <div class="partner-logo">
+                        <a href="https://imast.am" target="_blank" rel="noreferrer">
+                            <img src="assets/images/partners/imast.png" alt="Imast" class="logo-img">
+                        </a>
                     </div>
                 </div>
-                <div class="media-partners-section">
+                <div class="partners-logos partners-logos-second-row" id="partnersLogosSecond">
+                    <div class="partner-logo partner-logo-small partner-logo-ta">
+                        <a href="https://www.instagram.com/takashiakavado/" target="_blank" rel="noreferrer">
+                            <img src="assets/images/partners/TA.svg" alt="TA" class="logo-img">
+                        </a>
+                    </div>
+                    <div class="partner-logo partner-logo-small">
+                        <a href="https://www.instagram.com/blick.llc" target="_blank" rel="noreferrer">
+                            <img src="assets/images/partners/blick.svg" alt="Blick" class="logo-img">
+                        </a>
+                    </div>
+                    <div class="partner-logo partner-logo-small">
+                        <a href="https://voskanian.am/" target="_blank" rel="noreferrer">
+                            <img src="assets/images/partners/voskanian.png" alt="VOSKANIAN parfums" class="logo-img">
+                        </a>
+                    </div>
+                    <div class="partner-logo partner-logo-small partner-logo-lawsuit">
+                        <a href="#" target="_blank" rel="noreferrer">
+                            <img src="assets/images/partners/lawsuit.png" alt="Lawsuit" class="logo-img">
+                        </a>
+                    </div>
+                </div>
+                <div class="media-partners-section" id="mediaPartnersSection">
                     <h4 class="media-partners-title">Media Partners</h4>
                     <div class="partners-logos partners-logos-media">
                         <div class="partner-logo partner-logo-small">
@@ -421,11 +463,591 @@
             }
         }
 
+        function closeMenu() {
+            const nav = document.getElementById('main-nav');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const overlay = document.querySelector('.menu-overlay');
+            // Only close if menu is open
+            if (nav && nav.classList.contains('nav-open')) {
+                nav.classList.remove('nav-open');
+                if (menuToggle) {
+                    menuToggle.classList.remove('menu-open');
+                }
+                if (overlay) {
+                    overlay.classList.remove('active');
+                }
+            }
+        }
+
+        let dropdownTimeout = null;
+        
+        function toggleDropdown(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            const dropdown = event.currentTarget.closest('.nav-dropdown');
+            if (dropdown) {
+                dropdown.classList.toggle('active');
+                // Clear any pending timeout when manually toggling
+                if (dropdownTimeout) {
+                    clearTimeout(dropdownTimeout);
+                    dropdownTimeout = null;
+                }
+            }
+        }
+
+        function switchExhibitionTab(tabName, event) {
+            if (event) {
+                event.preventDefault();
+            }
+            
+            // Remove active class from all tabs and panels
+            const tabs = document.querySelectorAll('.exhibition-tab');
+            const panels = document.querySelectorAll('.tab-panel');
+            
+            tabs.forEach(tab => tab.classList.remove('active'));
+            panels.forEach(panel => panel.classList.remove('active'));
+            
+            // Find and activate the clicked tab
+            const clickedTab = document.querySelector(`.exhibition-tab[data-tab="${tabName}"]`);
+            if (clickedTab) {
+                clickedTab.classList.add('active');
+            }
+            
+            // Show corresponding panel
+            const targetPanel = document.getElementById(tabName + '-panel');
+            if (targetPanel) {
+                targetPanel.classList.add('active');
+            }
+        }
+
+        // Handle dropdown hover with delay (desktop only)
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdown = document.querySelector('.nav-dropdown');
+            if (dropdown) {
+                const dropdownMenu = dropdown.querySelector('.nav-dropdown-menu');
+                
+                // Check if device supports touch (mobile)
+                const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+                
+                // Only add hover events for non-touch devices (desktop)
+                if (!isTouchDevice) {
+                    function clearDropdownTimeout() {
+                        if (dropdownTimeout) {
+                            clearTimeout(dropdownTimeout);
+                            dropdownTimeout = null;
+                        }
+                    }
+                    
+                    function hideDropdown() {
+                        dropdownTimeout = setTimeout(function() {
+                            dropdown.classList.remove('active');
+                            dropdownTimeout = null;
+                        }, 2000); // Keep visible for 2 seconds after mouse leaves
+                    }
+                    
+                    // When mouse enters dropdown toggle or menu, show it and clear any timeout
+                    dropdown.addEventListener('mouseenter', function() {
+                        clearDropdownTimeout();
+                        dropdown.classList.add('active');
+                    });
+                    
+                    // When mouse leaves dropdown, start timer to hide
+                    dropdown.addEventListener('mouseleave', function(e) {
+                        // Check if mouse is moving to the menu
+                        const relatedTarget = e.relatedTarget;
+                        if (!dropdown.contains(relatedTarget)) {
+                            hideDropdown();
+                        }
+                    });
+                    
+                    // When mouse enters the menu, clear timeout
+                    if (dropdownMenu) {
+                        dropdownMenu.addEventListener('mouseenter', function() {
+                            clearDropdownTimeout();
+                        });
+                        
+                        // When mouse leaves the menu, start timer
+                        dropdownMenu.addEventListener('mouseleave', function() {
+                            hideDropdown();
+                        });
+                    }
+                }
+            }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdowns = document.querySelectorAll('.nav-dropdown');
+            dropdowns.forEach(dropdown => {
+                if (!dropdown.contains(event.target)) {
+                    dropdown.classList.remove('active');
+                    // Clear any pending timeout
+                    if (dropdownTimeout) {
+                        clearTimeout(dropdownTimeout);
+                        dropdownTimeout = null;
+                    }
+                }
+            });
+        });
+
+        // Hero Carousel functionality
+        let currentHeroSlide = 0;
+        let heroSlides, heroIndicators;
+        
+        function updateHeroSlide(index) {
+            if (!heroSlides || heroSlides.length === 0) return;
+            
+            if (index < 0) index = heroSlides.length - 1;
+            if (index >= heroSlides.length) index = 0;
+            
+            currentHeroSlide = index;
+            
+            heroSlides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                    const heroSection = document.querySelector('.hero-section');
+                    if (heroSection && slide.dataset.bg) {
+                        heroSection.style.backgroundImage = `url('${slide.dataset.bg}')`;
+                    }
+                }
+            });
+            
+            if (heroIndicators) {
+                heroIndicators.forEach((indicator, i) => {
+                    indicator.classList.toggle('active', i === index);
+                });
+            }
+        }
+        
+        function changeHeroSlide(direction) {
+            updateHeroSlide(currentHeroSlide + direction);
+        }
+        
+        function goToHeroSlide(index) {
+            updateHeroSlide(index);
+        }
+
         // Close menu when clicking on a link
         document.addEventListener('DOMContentLoaded', function() {
+            // Check for Guyduk exhibition parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const exhibition = urlParams.get('exhibition');
+            
+            // Hide Zones link on homepage and other pages (will be shown only for Guyduk)
+            const zonesNavLink = document.querySelector('nav a[href="#zones"]');
+            if (zonesNavLink) {
+                zonesNavLink.style.display = 'none';
+            }
+            
+            // Initialize carousel only on homepage (no exhibition parameter)
+            if (!exhibition) {
+                heroSlides = document.querySelectorAll('.hero-slide');
+                heroIndicators = document.querySelectorAll('.hero-indicator');
+                
+                // Make hero slides clickable
+                heroSlides.forEach(slide => {
+                    slide.style.cursor = 'pointer';
+                    slide.addEventListener('click', function() {
+                        const link = this.dataset.link;
+                        if (link) {
+                            window.location.href = link;
+                        }
+                    });
+                });
+                
+                // Initialize first slide
+                if (heroSlides.length > 0) {
+                    updateHeroSlide(0);
+                }
+                
+                // Auto-advance carousel (every 5 seconds)
+                setInterval(() => {
+                    if (!document.querySelector('.hero-section:hover')) {
+                        changeHeroSlide(1);
+                    }
+                }, 5000);
+                
+                // Hide organizers section on homepage
+                const organizersSection = document.querySelector('.organizers-section');
+                if (organizersSection) {
+                    organizersSection.style.display = 'none';
+                }
+                
+                // Hide organizers link in navbar on homepage
+                const organizersNavLink = document.querySelector('nav a[href="#organizers"]');
+                if (organizersNavLink) {
+                    organizersNavLink.style.display = 'none';
+                }
+                
+                // Hide partners section on homepage
+                const partnersSectionHome = document.querySelector('.partners-section');
+                if (partnersSectionHome) {
+                    partnersSectionHome.style.display = 'none';
+                }
+                
+                // Hide partners link in navbar on homepage
+                const partnersNavLinkHome = document.querySelector('nav a[href="#partners"]');
+                if (partnersNavLinkHome) {
+                    partnersNavLinkHome.style.display = 'none';
+                }
+                
+                // Make hero section 30px higher on homepage
+                const heroSectionHome = document.querySelector('.hero-section');
+                if (heroSectionHome) {
+                    heroSectionHome.style.height = 'calc(60vh + 30px)';
+                    heroSectionHome.style.minHeight = '530px';
+                }
+                
+                // Remove artists section margin-top on homepage
+                const artistsSectionHome = document.querySelector('.artists-section');
+                if (artistsSectionHome) {
+                    artistsSectionHome.style.marginTop = '0';
+                }
+                
+                // Hide scroll down button on homepage
+                const scrollDownBtn = document.querySelector('.scroll-down-btn');
+                if (scrollDownBtn) {
+                    scrollDownBtn.style.display = 'none';
+                }
+            } else {
+                // Hide carousel controls when viewing specific exhibition
+                const carouselControls = document.querySelector('.hero-carousel-controls');
+                const carouselIndicators = document.querySelector('.hero-carousel-indicators');
+                if (carouselControls) carouselControls.style.display = 'none';
+                if (carouselIndicators) carouselIndicators.style.display = 'none';
+                
+                // Show only the relevant slide
+                heroSlides = document.querySelectorAll('.hero-slide');
+                if (exhibition === 'guyduk-presence-2026') {
+                    heroSlides.forEach((slide, i) => {
+                        slide.classList.toggle('active', i === 0);
+                        if (i === 0) {
+                            slide.style.pointerEvents = 'auto';
+                        } else {
+                            slide.style.pointerEvents = 'none';
+                        }
+                    });
+                    if (heroSlides[0] && heroSlides[0].dataset.bg) {
+                        const heroSection = document.querySelector('.hero-section');
+                        if (heroSection) {
+                            heroSection.style.backgroundImage = `url('${heroSlides[0].dataset.bg}')`;
+                        }
+                    }
+                } else if (exhibition === 'contemporary-art-2026') {
+                    heroSlides.forEach((slide, i) => {
+                        slide.classList.toggle('active', i === 1);
+                        if (i === 1) {
+                            slide.style.pointerEvents = 'auto';
+                        } else {
+                            slide.style.pointerEvents = 'none';
+                        }
+                    });
+                    if (heroSlides[1] && heroSlides[1].dataset.bg) {
+                        const heroSection = document.querySelector('.hero-section');
+                        if (heroSection) {
+                            heroSection.style.backgroundImage = `url('${heroSlides[1].dataset.bg}')`;
+                        }
+                    }
+                }
+            }
+            
+            if (exhibition === 'guyduk-presence-2026') {
+                // 1. Change hero section bg to guyduk_bg.png
+                const heroSection = document.querySelector('.hero-section');
+                if (heroSection) {
+                    heroSection.style.backgroundImage = "url('assets/images/guyduk_bg.png')";
+                }
+                
+                // 2. Change hero title
+                const heroTitle = document.querySelector('.hero-title');
+                if (heroTitle) {
+                    heroTitle.innerHTML = '<span class="presence-title">PRESENCE</span><br>Anatoliy Guyduk Solo Exhibition';
+                }
+                
+                // 3. Change opening info
+                const openingInfo = document.querySelector('.opening-info');
+                if (openingInfo) {
+                    openingInfo.textContent = 'OPEN UNTIL JANUARY 15, 11:00-20:00';
+                }
+                
+                // Show event info section
+                const eventInfoSection = document.getElementById('eventInfoSection');
+                if (eventInfoSection) {
+                    eventInfoSection.style.display = 'block';
+                }
+                
+                // Update event info description with fundraising text
+                const eventInfoDescription = document.getElementById('eventInfoDescription');
+                if (eventInfoDescription) {
+                    eventInfoDescription.innerHTML = '<strong>"Presence"</strong> is a live session where the result is not the main focus — the creative process itself is. It is an immersion into the living atmosphere of the artist\'s studio. Over the course of several days, the artist works on a new series of paintings directly within the gallery space, while viewers may enter at any random moment to observe his movement, search, and everyday creative routine.<br><br>This is neither an exhibition nor a performance in the conventional sense. It is an invitation to become part of the creative process — to be present within the natural interaction of art, space, and people, in the here and now.<br><br>The exhibition includes a fundraising component in support of <a href="https://onelink.to/fwq6jh" target="_blank" rel="noreferrer">Imast Foundation</a>. <strong>20% of all sales will be donated to charity.</strong>';
+                }
+                
+                // Update navbar - hide Merch link (section doesn't exist on this page)
+                const merchNavLink = document.querySelector('nav a[href="#merch"]');
+                if (merchNavLink) {
+                    merchNavLink.style.display = 'none';
+                }
+                
+                // Add Zones navbar item before Artists
+                let zonesNavLink = document.querySelector('nav a[href="#zones"]');
+                const artistsNavLink = document.querySelector('nav a[href="#artists"]');
+                if (!zonesNavLink && artistsNavLink) {
+                    zonesNavLink = document.createElement('a');
+                    zonesNavLink.href = '#zones';
+                    zonesNavLink.textContent = 'Zones';
+                    zonesNavLink.style.display = 'block';
+                    artistsNavLink.insertAdjacentElement('beforebegin', zonesNavLink);
+                } else if (zonesNavLink) {
+                    zonesNavLink.style.display = 'block';
+                }
+                
+                // Change Artists navbar link to "The Artist"
+                if (artistsNavLink) {
+                    artistsNavLink.textContent = 'The Artist';
+                }
+                
+                // Show Partners link in navbar (will be shown below)
+                const partnersNavLink = document.querySelector('nav a[href="#partners"]');
+                if (partnersNavLink) {
+                    partnersNavLink.style.display = 'block';
+                }
+                
+                // 5. Hide stats section
+                const statsSection = document.querySelector('.stats-section');
+                if (statsSection) {
+                    statsSection.style.display = 'none';
+                }
+                
+                // 6. Change "Exhibited Artists" to "The Artist" and show only Anatoliy Guyduk
+                const artistsTitle = document.querySelector('.artists-title');
+                if (artistsTitle) {
+                    artistsTitle.textContent = 'The Artist';
+                }
+                
+                const artistsList = document.querySelector('.artists-list');
+                if (artistsList) {
+                    artistsList.style.display = 'block';
+                    artistsList.innerHTML = `
+                        <div style="width: 100%; max-width: 900px; margin: 0 auto;">
+                            <p style="font-size: 18px; line-height: 1.8; color: #1a1a1a; margin: 0; text-align: left;">
+                                <a href="artists/anatoliy-guyduk" style="color: #000; text-decoration: none; font-weight: 600;">Anatoliy Guyduk</a> is an artist from Samara, Russia, working in a distinctive technique that combines painterly and graphic approaches using acrylic on large-format plywood. The subjects of his works revolve around solitary animal characters and humanoid creatures that, in essence, are semi-mythical figures born somewhere between memory and imagination. Together, they form the artist's own universe — the heroes of an unwritten fairy tale or a contemporary epic.<br><br>
+                                In 2022, Anatoly, an art producer at <strong>Mundfish studio</strong>, relocated to the company's Yerevan office. After a long creative stagnation in Moscow, where repeated attempts to return to art brought little fulfillment, the atmosphere of Yerevan allowed him to rediscover his path back to artistic practice.<br><br>
+                                A significant influence on the artist's visual culture has been Sergei Parajanov — during his student years, Anatoly immersed himself deeply in <strong>Parajanov's work</strong>. Perhaps it was this early experience that helped him reconnect with inspiration after moving to Armenia. The city's calm rhythm, intimacy, and human warmth became the backdrop for a gentle return to painting.
+                            </p>
+                        </div>
+                    `;
+                }
+                
+                // 7. Remove listed artworks and write "Coming soon"
+                const artworksGrid = document.getElementById('artworksGrid');
+                if (artworksGrid) {
+                    artworksGrid.innerHTML = '<p class="merch-empty">Coming soon</p>';
+                }
+                
+                // 8. Remove Mural section
+                const muralSection = document.querySelector('.mural-section');
+                if (muralSection) {
+                    muralSection.style.display = 'none';
+                }
+                
+                // 9. Remove Merch section
+                const merchSection = document.querySelector('.merch-section');
+                if (merchSection) {
+                    merchSection.style.display = 'none';
+                }
+                
+                // Update navbar - hide Merch link (already done above, but ensure it's hidden)
+                const merchNavLinkCheck = document.querySelector('nav a[href="#merch"]');
+                if (merchNavLinkCheck) {
+                    merchNavLinkCheck.style.display = 'none';
+                }
+                
+                // 10. Show Partners section with only Imast
+                const partnersSection = document.getElementById('partners');
+                if (partnersSection) {
+                    partnersSection.style.display = 'block';
+                    
+                    // Hide second row and media partners for Guyduk
+                    const partnersLogosSecond = document.getElementById('partnersLogosSecond');
+                    const mediaPartnersSection = document.getElementById('mediaPartnersSection');
+                    if (partnersLogosSecond) {
+                        partnersLogosSecond.style.display = 'none';
+                    }
+                    if (mediaPartnersSection) {
+                        mediaPartnersSection.style.display = 'none';
+                    }
+                    
+                    // Keep only Imast in the main row
+                    const partnersLogosMain = document.getElementById('partnersLogosMain');
+                    if (partnersLogosMain) {
+                        const imastLogo = partnersLogosMain.querySelector('a[href*="imast"]');
+                        if (imastLogo && imastLogo.parentElement) {
+                            partnersLogosMain.innerHTML = '';
+                            partnersLogosMain.appendChild(imastLogo.parentElement);
+                        }
+                    }
+                    
+                    // Make Imast logo smaller
+                    const imastLogoImg = partnersSection.querySelector('a[href*="imast"] .logo-img');
+                    if (imastLogoImg) {
+                        imastLogoImg.style.maxWidth = '200px';
+                        imastLogoImg.style.maxHeight = '80px';
+                    }
+                }
+                
+                // Update organizers text for Guyduk exhibition
+                const organizersText = document.querySelector('.organizers-text p');
+                if (organizersText) {
+                    organizersText.textContent = 'Arar Gallery and IPBA Foundation organize a live, process-based art session where visitors can enter at any moment to witness an artist creating a new series of paintings in real time inside the gallery, becoming part of the creative process itself.';
+                }
+                
+                // Show exhibition tabs section
+                const exhibitionTabsSection = document.getElementById('exhibitionTabsSection');
+                if (exhibitionTabsSection) {
+                    exhibitionTabsSection.style.display = 'block';
+                    
+                    // Ensure only the first tab panel is active initially
+                    const panels = exhibitionTabsSection.querySelectorAll('.tab-panel');
+                    panels.forEach((panel, index) => {
+                        if (index === 0) {
+                            panel.classList.add('active');
+                        } else {
+                            panel.classList.remove('active');
+                        }
+                    });
+                }
+                
+                // 11. Show charity badge link in hero section
+                const charityBadgeLink = document.getElementById('charityBadgeLink');
+                if (charityBadgeLink) {
+                    charityBadgeLink.style.display = 'block';
+                }
+            } else if (exhibition === 'contemporary-art-2026') {
+                // Hide Zones link on contemporary art page
+                const zonesNavLinkContemp = document.querySelector('nav a[href="#zones"]');
+                if (zonesNavLinkContemp) {
+                    zonesNavLinkContemp.style.display = 'none';
+                }
+                
+                // Update contemporary art exhibition page
+                // Change RUNNING to PAST in the active slide
+                const activeSlide = document.querySelector('.hero-slide.active');
+                if (activeSlide) {
+                    const upcomingLabel = activeSlide.querySelector('.upcoming-label span:last-child');
+                    if (upcomingLabel) {
+                        upcomingLabel.textContent = 'PAST';
+                    }
+                    
+                    // Change opening info to January 5-10, 2026
+                    const openingInfo = activeSlide.querySelector('.opening-info');
+                    if (openingInfo) {
+                        openingInfo.textContent = 'January 5-10, 2026';
+                    }
+                }
+                
+                // Change artists title to "Exhibited Artists"
+                const artistsTitle = document.querySelector('.artists-title');
+                if (artistsTitle) {
+                    artistsTitle.textContent = 'Exhibited Artists';
+                }
+                
+                // Show event info section for contemporary art
+                const eventInfoSection = document.getElementById('eventInfoSection');
+                if (eventInfoSection) {
+                    eventInfoSection.style.display = 'block';
+                    
+                    // Update date to January 5-9, 2026
+                    const dateValue = document.getElementById('eventDateValue');
+                    if (dateValue) {
+                        dateValue.textContent = 'January 5–9, 2026';
+                    }
+                    
+                    // Update calendar links for contemporary art
+                    const googleCalendarLink = document.getElementById('googleCalendarLink');
+                    const appleCalendarLink = document.getElementById('appleCalendarLink');
+                    if (googleCalendarLink) {
+                        googleCalendarLink.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Contemporary+Art+Exhibition-Fundraiser&dates=20260105T190000/20260109T220000&details=Contemporary+Art+Exhibition-Fundraiser+presenting+international+and+Armenian+artists&location=National+Center+of+Aesthetics%2C+Abovyan+13%2C+Yerevan';
+                    }
+                    if (appleCalendarLink) {
+                        appleCalendarLink.href = 'data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20260105T190000%0ADTEND:20260109T220000%0ASUMMARY:Contemporary+Art+Exhibition-Fundraiser%0ADESCRIPTION:Contemporary+Art+Exhibition-Fundraiser+presenting+international+and+Armenian+artists%0ALOCATION:National+Center+of+Aesthetics%2C+Abovyan+13%2C+Yerevan%0AEND:VEVENT%0AEND:VCALENDAR';
+                    }
+                    
+                    // Update description text for contemporary art
+                    const eventInfoDescription = document.getElementById('eventInfoDescription');
+                    if (eventInfoDescription) {
+                        eventInfoDescription.innerHTML = 'The Contemporary Art Exhibition–Fundraiser presents international and Armenian artists known for powerful, vibrant, and visually striking works. Alongside the curatorial program, the exhibition includes a fundraising component in support of <a href="https://onelink.to/fwq6jh" target="_blank" rel="noreferrer">Imast Foundation</a>, linking contemporary art with social responsibility. <br><strong>20% of all sales will be donated to charity.</strong>';
+                    }
+                }
+                
+                // Show full partners section for contemporary art
+                const partnersSectionContemp = document.getElementById('partners');
+                if (partnersSectionContemp) {
+                    partnersSectionContemp.style.display = 'block';
+                    
+                    // Ensure all partner logos are visible (restore full structure)
+                    const partnersLogosMain = document.getElementById('partnersLogosMain');
+                    const partnersLogosSecond = document.getElementById('partnersLogosSecond');
+                    const mediaPartnersSection = document.getElementById('mediaPartnersSection');
+                    
+                    // Restore full partners structure if it was modified
+                    if (partnersLogosMain && partnersLogosMain.children.length === 1) {
+                        // If only Imast is showing, restore all partners
+                        partnersLogosMain.innerHTML = `
+                            <div class="partner-logo">
+                                <a href="https://www.yerevan.am/en/" target="_blank" rel="noreferrer">
+                                    <img src="assets/images/partners/ym.png" alt="Yerevan Municipality" class="logo-img">
+                                </a>
+                            </div>
+                            <div class="partner-logo">
+                                <a href="https://nca.am" target="_blank" rel="noreferrer">
+                                    <img src="assets/images/partners/nca.png" alt="National Centre for Aesthetics" class="logo-img">
+                                </a>
+                            </div>
+                            <div class="partner-logo">
+                                <a href="https://imast.am" target="_blank" rel="noreferrer">
+                                    <img src="assets/images/partners/imast.png" alt="Imast" class="logo-img">
+                                </a>
+                            </div>
+                        `;
+                    }
+                    
+                    if (partnersLogosSecond) {
+                        partnersLogosSecond.style.display = 'flex';
+                    }
+                    if (mediaPartnersSection) {
+                        mediaPartnersSection.style.display = 'block';
+                    }
+                }
+                
+                // Show Partners link in navbar
+                const partnersNavLink = document.querySelector('nav a[href="#partners"]');
+                if (partnersNavLink) {
+                    partnersNavLink.style.display = 'block';
+                }
+            }
+            
             const navLinks = document.querySelectorAll('#main-nav a');
             navLinks.forEach(link => {
-                link.addEventListener('click', function() {
+                link.addEventListener('click', function(e) {
+                    // Don't close menu if clicking on dropdown toggle
+                    if (link.classList.contains('nav-dropdown-toggle')) {
+                        e.stopPropagation();
+                        return;
+                    }
+                    // Close menu when clicking dropdown menu items (they will navigate)
+                    if (link.closest('.nav-dropdown-menu')) {
+                        const nav = document.getElementById('main-nav');
+                        const menuToggle = document.querySelector('.menu-toggle');
+                        const overlay = document.querySelector('.menu-overlay');
+                        nav.classList.remove('nav-open');
+                        menuToggle.classList.remove('menu-open');
+                        if (overlay) {
+                            overlay.classList.remove('active');
+                        }
+                        return;
+                    }
+                    // Close menu for all other nav links
                     const nav = document.getElementById('main-nav');
                     const menuToggle = document.querySelector('.menu-toggle');
                     const overlay = document.querySelector('.menu-overlay');
@@ -459,11 +1081,15 @@
                 scrollToHash();
             });
 
-            // Load and display merch items
-            loadMerch();
+            // Load and display merch items (only on homepage or contemporary art exhibition)
+            if (!exhibition || exhibition === 'contemporary-art-2026') {
+                loadMerch();
+            }
             
-            // Load and display artworks
-            loadArtworks();
+            // Load and display artworks (only on homepage or contemporary art exhibition)
+            if (!exhibition || exhibition === 'contemporary-art-2026') {
+                loadArtworks();
+            }
         });
 
         function toggleCalendarMenu(event) {

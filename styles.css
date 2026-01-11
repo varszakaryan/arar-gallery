@@ -122,8 +122,83 @@ nav a:hover {
     opacity: 0.6;
 }
 
-nav a[href="agenda.html"] {
+
+/* Dropdown Navigation Styles */
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-dropdown-toggle {
+    cursor: pointer;
+}
+
+.nav-dropdown-toggle::after {
+    content: '▼';
+    font-size: 10px;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.nav-dropdown:hover .nav-dropdown-toggle::after,
+.nav-dropdown.active .nav-dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    background: #fff;
+    min-width: 250px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+    padding: 10px 0;
+    pointer-events: none;
     display: none;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown.active .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+    display: block;
+}
+
+/* Keep dropdown open when hovering over menu */
+.nav-dropdown-menu:hover {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+    display: block !important;
+}
+
+.nav-dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: none;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s ease;
+    color: #000;
+    text-decoration: none;
+}
+
+.nav-dropdown-menu a:hover {
+    background-color: #f8f8f8;
+    opacity: 1;
+}
+
+.nav-dropdown-menu a:last-child {
+    border-bottom: none;
 }
 
 .menu-close-btn {
@@ -155,6 +230,86 @@ nav a[href="agenda.html"] {
     min-height: 500px;
     background: url('assets/images/bg.jpg') center center / cover no-repeat;
     overflow: hidden;
+    transition: background-image 0.5s ease;
+}
+
+.hero-carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.hero-carousel-controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.hero-carousel-prev,
+.hero-carousel-next {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+    pointer-events: auto;
+    z-index: 11;
+}
+
+.hero-carousel-prev:hover,
+.hero-carousel-next:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.hero-carousel-indicators {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.hero-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.hero-indicator.active {
+    background: #fff;
 }
 
 /* Dark overlay */
@@ -784,6 +939,50 @@ a.artist-name:hover {
     width: 60%;
 }
 
+/* Artist Exhibitions Section */
+.artist-exhibitions-section {
+    width: 60%;
+    margin-top: 40px;
+}
+
+.artist-exhibitions-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    margin: 0 0 20px 0;
+    text-align: left;
+    font-family: 'Libre Franklin', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.artist-exhibitions-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.artist-exhibitions-list li {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-bottom: 8px;
+}
+
+.artist-exhibitions-list li a,
+.artist-exhibitions-list li a:link,
+.artist-exhibitions-list li a:visited {
+    color: #444;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.8;
+    transition: color 0.2s ease;
+}
+
+.artist-exhibitions-list li a:hover,
+.artist-exhibitions-list li a:active {
+    color: #666;
+    text-decoration: none;
+}
+
 /* Artist Artworks Section */
 .artist-artworks-section {
     width: 100%;
@@ -1189,6 +1388,20 @@ a.artist-name:hover {
     box-sizing: border-box;
 }
 
+.exhibition-zones-title {
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    color: #000;
+    margin: 0 0 40px 0;
+    letter-spacing: -1px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .organizers-logos {
     display: flex;
     justify-content: center;
@@ -1251,6 +1464,97 @@ a.artist-name:hover {
     line-height: 1.8;
     margin: 0;
     max-width: 900px;
+}
+
+/* Exhibition Tabs Section */
+.exhibition-tabs-section {
+    width: 100%;
+    margin-top: 60px;
+    padding: 60px 40px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.exhibition-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.exhibition-tab {
+    background: none;
+    border: 2px solid #000;
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Libre Franklin', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.exhibition-tab:hover {
+    background: #000;
+    color: #fff;
+}
+
+.exhibition-tab.active {
+    background: #000;
+    color: #fff;
+}
+
+.exhibition-tab-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tab-panel {
+    display: none !important;
+}
+
+.tab-panel.active {
+    display: block !important;
+}
+
+.tab-panel p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #1a1a1a;
+    margin: 0 0 20px 0;
+    text-align: left;
+}
+
+.tab-panel p:last-child {
+    margin-bottom: 0;
+}
+
+.tab-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+.tab-panel li {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #1a1a1a;
+    margin: 0 0 12px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.tab-panel li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #000;
+    font-weight: bold;
+}
+
+.tab-panel li:last-child {
+    margin-bottom: 0;
 }
 
 .organizers-donate {
@@ -1997,12 +2301,44 @@ footer {
     nav a {
         width: 100%;
         padding: 15px 0;
-        border-bottom: 1px solid #e0e0e0;
+        border-bottom: none;
         font-size: 18px;
     }
     
-    nav a:last-child {
-        border-bottom: none;
+    /* Mobile Dropdown Styles */
+    .nav-dropdown {
+        width: 100%;
+    }
+    
+    .nav-dropdown-menu {
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        box-shadow: none !important;
+        margin-top: 0 !important;
+        padding: 0 !important;
+        display: none !important;
+        pointer-events: auto !important;
+    }
+    
+    .nav-dropdown.active .nav-dropdown-menu {
+        display: block !important;
+    }
+    
+    .nav-dropdown-menu a {
+        padding-left: 30px;
+        font-size: 16px;
+        border-bottom: none !important;
+    }
+    
+    .nav-dropdown-toggle::after {
+        content: '▶';
+        transform: rotate(0deg);
+    }
+    
+    .nav-dropdown.active .nav-dropdown-toggle::after {
+        transform: rotate(90deg);
     }
     
     .scroll-down-btn {
@@ -2266,6 +2602,45 @@ footer {
         text-align: center;
         font-size: 14px;
         width: 100%;
+    }
+
+    .artist-exhibitions-section {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .artist-exhibitions-title {
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .artist-exhibitions-list {
+        text-align: center;
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .artist-exhibitions-list li {
+        list-style: none !important;
+        padding-left: 0 !important;
+    }
+
+    .artist-exhibitions-list li a,
+    .artist-exhibitions-list li a:link,
+    .artist-exhibitions-list li a:visited {
+        font-size: 14px;
+        color: #444;
+        font-weight: 700;
+        line-height: 1.8;
+        text-decoration: none;
+    }
+
+    .artist-exhibitions-list li a:hover,
+    .artist-exhibitions-list li a:active {
+        color: #666;
+        text-decoration: none;
     }
 
     .artist-artworks-section {

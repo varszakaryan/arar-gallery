@@ -2,20 +2,20 @@
   {
     "title": "Rotational Grace",
     "artist": "Raydan Zebian (Spazuno)",
-    "artistLink": "artists/spazuno.html",
+    "artistLink": "artists/spazuno",
     "country": "Lebanon",
     "media": "Spray paint & acrylic on canvas",
     "size": "150 x 150 cm",
     "price": 5000,
     "priceAMD": "1.800.000",
     "year": "2026",
-    "images": ["assets/images/artworks/spazuno_bird.jpg", "assets/images/artworks/spazuno_bird1.jpg"],
+    "images": ["assets/images/artworks/spazuno_bird_1.jpg", "assets/images/artworks/spazuno_bird_2.jpg"],
     "description": "The swan appears as a remembered presence, one that once emerged in dreams as a guide from darkness toward light. Neither symbol nor fantasy, she exists as an embodied force that saved, held, and returned the self to breath. Rendered as a feminine humanoid form, the figure is fractured, carrying the tension of multiplicity rather than harmony. Her rotating face moves through shifting states of awareness, revealing identity as something continuously negotiated. Masculinity and femininity coexist within her, not in balance, but in active dialogue. The swan does not dissolve; she remains watchful, altered, and luminous."
   },
   {
     "title": "Grace",
     "artist": "Karen Akhikyan",
-    "artistLink": "artists/karen-akhikyan.html",
+    "artistLink": "artists/karen-akhikyan",
     "country": "Armenia",
     "media": "Iron, concrete",
     "size": "",
@@ -27,7 +27,7 @@
   {
     "title": "Mythology, Displaced Goddess",
     "artist": "Aram Poladian",
-    "artistLink": "artists/aram-poladian.html",
+    "artistLink": "artists/aram-poladian",
     "country": "Brazil",
     "media": "Acrylic on canvas",
     "size": "70 x 60 cm",
@@ -39,7 +39,7 @@
   {
     "title": "Portrait",
     "artist": "Guy Ghazanchyan",
-    "artistLink": "artists/guy-ghazanchyan.html",
+    "artistLink": "artists/guy-ghazanchyan",
     "country": "Armenia",
     "media": "Tempera",
     "size": "89 x 70 cm",
@@ -51,7 +51,7 @@
   {
     "title": "Untitled",
     "artist": "Hayduk Smbatyan",
-    "artistLink": "artists/hayduk-smbatyan.html",
+    "artistLink": "artists/hayduk-smbatyan",
     "country": "Armenia",
     "media": "Paper, mixed media",
     "size": "64 x 45 cm",
@@ -63,7 +63,7 @@
   {
     "title": "The Chaos of Hell",
     "artist": "Siranush Vardanyan",
-    "artistLink": "artists/siranush-vardanyan.html",
+    "artistLink": "artists/siranush-vardanyan",
     "country": "Armenia",
     "media": "Oil on canvas",
     "size": "130 x 165 cm",
@@ -75,7 +75,7 @@
   {
     "title": "The Kept Light",
     "artist": "Lilith Leel Eghiazaryan",
-    "artistLink": "artists/lilit-eghiazaryan.html",
+    "artistLink": "artists/lilit-eghiazaryan",
     "country": "Armenia",
     "media": "Oil on canvas",
     "size": "100 x 100 cm",
@@ -87,7 +87,7 @@
   {
     "title": "0-Panorama",
     "artist": "Armen Hakobjanyan",
-    "artistLink": "artists/armen-hakobjanyan.html",
+    "artistLink": "artists/armen-hakobjanyan",
     "country": "Armenia",
     "media": "Oil on canvas",
     "size": "165 x 115 cm",
@@ -99,7 +99,7 @@
   {
     "title": "The Two of Them",
     "artist": "Aram Yengibaryan",
-    "artistLink": "artists/aram-yengibaryan.html",
+    "artistLink": "artists/aram-yengibaryan",
     "country": "Armenia",
     "media": "Mixed media on canvas",
     "size": "60 x 50 cm",
@@ -111,7 +111,7 @@
   {
     "title": "Untitled",
     "artist": "Adam Adamyan",
-    "artistLink": "artists/adam-adamyan.html",
+    "artistLink": "artists/adam-adamyan",
     "country": "Armenia",
     "media": "Spray paint and acrylics on canvas",
     "size": "100 x 70 cm",
@@ -123,7 +123,7 @@
   {
     "title": "ErAZ (Dream)",
     "artist": "Tina Karakeshishyan",
-    "artistLink": "artists/tina-karakeshishyan.html",
+    "artistLink": "artists/tina-karakeshishyan",
     "country": "Armenia",
     "media": "Etching, aquatint, installation",
     "size": "120 x 40 cm",
@@ -135,7 +135,7 @@
   {
     "title": "The Metro",
     "artist": "Anatoliy Guyduk",
-    "artistLink": "artists/anatoliy-guyduk.html",
+    "artistLink": "artists/anatoliy-guyduk",
     "country": "Russia",
     "media": "Acrylics on plywood",
     "size": "150 x 75 cm",
@@ -147,7 +147,7 @@
   {
     "title": "Circle Series #2",
     "artist": "Lubna Al-Lahham",
-    "artistLink": "artists/lubna-al-lahham.html",
+    "artistLink": "artists/lubna-al-lahham",
     "country": "Jordan",
     "media": "Mixed media on canvas",
     "size": "100 x 80 cm",
@@ -159,7 +159,7 @@
   {
     "title": "Urban Flower 1",
     "artist": "Aksel Zardaryan-Mavian",
-    "artistLink": "artists/aksel-zardaryan.html",
+    "artistLink": "artists/aksel-zardaryan",
     "country": "France-Armenia",
     "media": "Metal",
     "size": "",
@@ -171,7 +171,7 @@
   {
     "title": "Chains of Ignorance",
     "artist": "Ashot Harutyunyan",
-    "artistLink": "artists/ashot-harutyunyan.html",
+    "artistLink": "artists/ashot-harutyunyan",
     "country": "Armenia",
     "media": "Plastic",
     "size": "",
@@ -183,7 +183,7 @@
   {
     "title": "Untitled",
     "artist": "Tigran Ghazaryan",
-    "artistLink": "artists/tigran-ghazaryan.html",
+    "artistLink": "artists/tigran-ghazaryan",
     "country": "Armenia",
     "media": "Oil on cardboard",
     "size": "46 x 35 cm",
@@ -195,7 +195,7 @@
   {
     "title": "Flow With It",
     "artist": "Raydan Zebian (Spazuno)",
-    "artistLink": "artists/spazuno.html",
+    "artistLink": "artists/spazuno",
     "country": "Lebanon",
     "media": "Alcohol markers on paper",
     "size": "15 x 21 cm",
@@ -207,7 +207,7 @@
     {
     "title": "The Companion",
     "artist": "Karen Akhikyan",
-    "artistLink": "artists/karen-akhikyan.html",
+    "artistLink": "artists/karen-akhikyan",
     "country": "Armenia",
     "media": "Iron",
     "size": "",
@@ -219,7 +219,7 @@
   {
     "title": "The Same Eyes—Transformed",
     "artist": "Aram Poladian",
-    "artistLink": "artists/aram-poladian.html",
+    "artistLink": "artists/aram-poladian",
     "country": "Brazil",
     "media": "Acrylic on canvas",
     "size": "30 x 30 cm",
@@ -231,7 +231,7 @@
     {
     "title": "Untitled",
     "artist": "Hayduk Smbatyan",
-    "artistLink": "artists/hayduk-smbatyan.html",
+    "artistLink": "artists/hayduk-smbatyan",
     "country": "Armenia",
     "media": "Paper, mixed media",
     "size": "64 x 45 cm",
@@ -243,7 +243,7 @@
     {
     "title": "0-Panorama",
     "artist": "Armen Hakobjanyan",
-    "artistLink": "artists/armen-hakobjanyan.html",
+    "artistLink": "artists/armen-hakobjanyan",
     "country": "Armenia",
     "media": "Oil on canvas",
     "size": "170 x 130 cm",
@@ -255,7 +255,7 @@
    {
     "title": "Threshold",
     "artist": "Aram Yengibaryan",
-    "artistLink": "artists/aram-yengibaryan.html",
+    "artistLink": "artists/aram-yengibaryan",
     "country": "Armenia",
     "media": "Mixed media on canvas",
     "size": "60 x 50 cm",
@@ -267,7 +267,7 @@
   {
     "title": "Untitled",
     "artist": "Adam Adamyan",
-    "artistLink": "artists/adam-adamyan.html",
+    "artistLink": "artists/adam-adamyan",
     "country": "Armenia",
     "media": "Spray paint and acrylics on canvas",
     "size": "100 x 70 cm",
@@ -279,7 +279,7 @@
   {
     "title": "Ari",
     "artist": "Tina Karakeshishyan",
-    "artistLink": "artists/tina-karakeshishyan.html",
+    "artistLink": "artists/tina-karakeshishyan",
     "country": "Armenia",
     "media": "Etching",
     "size": "21 x 29 cm",
@@ -291,7 +291,7 @@
   {
     "title": "The Garden",
     "artist": "Anatoliy Guyduk",
-    "artistLink": "artists/anatoliy-guyduk.html",
+    "artistLink": "artists/anatoliy-guyduk",
     "country": "Russia",
     "media": "Acrylics on plywood",
     "size": "150 x 75 cm",
@@ -303,7 +303,7 @@
   {
     "title": "Circle Series #1",
     "artist": "Lubna Al-Lahham",
-    "artistLink": "artists/lubna-al-lahham.html",
+    "artistLink": "artists/lubna-al-lahham",
     "country": "Jordan",
     "media": "Mixed media on canvas",
     "size": "80 x 80 cm",
@@ -315,7 +315,7 @@
   {
     "title": "Urban Flower 2",
     "artist": "Aksel Zardaryan-Mavian",
-    "artistLink": "artists/aksel-zardaryan.html",
+    "artistLink": "artists/aksel-zardaryan",
     "country": "France-Armenia",
     "media": "Metal",
     "size": "",
@@ -327,7 +327,7 @@
   {
     "title": "Untitled",
     "artist": "Tigran Ghazaryan",
-    "artistLink": "artists/tigran-ghazaryan.html",
+    "artistLink": "artists/tigran-ghazaryan",
     "country": "Armenia",
     "media": "Oil on cardboard",
     "size": "45 x 36 cm",
@@ -339,7 +339,7 @@
   {
     "title": "Broken Icons",
     "artist": "Raydan Zebian (Spazuno)",
-    "artistLink": "artists/spazuno.html",
+    "artistLink": "artists/spazuno",
     "country": "Lebanon",
     "media": "Alcohol markers on paper",
     "size": "15 x 21 cm",
@@ -351,7 +351,7 @@
   {
     "title": "Giraffe",
     "artist": "Karen Akhikyan",
-    "artistLink": "artists/karen-akhikyan.html",
+    "artistLink": "artists/karen-akhikyan",
     "country": "Armenia",
     "media": "Iron",
     "size": "",
@@ -363,7 +363,7 @@
   {
     "title": "Generational, New Achievements",
     "artist": "Aram Poladian",
-    "artistLink": "artists/aram-poladian.html",
+    "artistLink": "artists/aram-poladian",
     "country": "Brazil",
     "media": "Acrylic on canvas",
     "size": "30 x 30 cm",
@@ -375,7 +375,7 @@
   {
     "title": "Untitled",
     "artist": "Hayduk Smbatyan",
-    "artistLink": "artists/hayduk-smbatyan.html",
+    "artistLink": "artists/hayduk-smbatyan",
     "country": "Armenia",
     "media": "Paper, mixed media",
     "size": "64 x 45 cm",
@@ -387,7 +387,7 @@
   {
     "title": "Autumn",
     "artist": "Aram Yengibaryan",
-    "artistLink": "artists/aram-yengibaryan.html",
+    "artistLink": "artists/aram-yengibaryan",
     "country": "Armenia",
     "media": "Mixed media on canvas",
     "size": "70 x 80 cm",
@@ -399,7 +399,7 @@
   {
     "title": "Untitled",
     "artist": "Adam Adamyan",
-    "artistLink": "artists/adam-adamyan.html",
+    "artistLink": "artists/adam-adamyan",
     "country": "Armenia",
     "media": "Spray paint and acrylics on canvas",
     "size": "100 x 70 cm",
@@ -411,7 +411,7 @@
   {
     "title": "Warmth",
     "artist": "Tina Karakeshishyan",
-    "artistLink": "artists/tina-karakeshishyan.html",
+    "artistLink": "artists/tina-karakeshishyan",
     "country": "Armenia",
     "media": "Dry point, monotype",
     "size": "50 x 50 cm",
@@ -423,7 +423,7 @@
   {
     "title": "Urban Flower 3",
     "artist": "Aksel Zardaryan-Mavian",
-    "artistLink": "artists/aksel-zardaryan.html",
+    "artistLink": "artists/aksel-zardaryan",
     "country": "France-Armenia",
     "media": "Metal",
     "size": "",
@@ -435,7 +435,7 @@
    {
     "title": "Untitled",
     "artist": "Tigran Ghazaryan",
-    "artistLink": "artists/tigran-ghazaryan.html",
+    "artistLink": "artists/tigran-ghazaryan",
     "country": "Armenia",
     "media": "Oil on cardboard",
     "size": "55 x 85 cm",
@@ -447,7 +447,7 @@
   {
     "title": "Untitled",
     "artist": "Adam Adamyan",
-    "artistLink": "artists/adam-adamyan.html",
+    "artistLink": "artists/adam-adamyan",
     "country": "Armenia",
     "media": "Spray paint and acrylics on canvas",
     "size": "20 x 40 cm",
@@ -459,7 +459,7 @@
   {
     "title": "Untitled",
     "artist": "Tigran Ghazaryan",
-    "artistLink": "artists/tigran-ghazaryan.html",
+    "artistLink": "artists/tigran-ghazaryan",
     "country": "Armenia",
     "media": "Oil on cardboard",
     "size": "17 x 24 cm",
@@ -471,7 +471,7 @@
   {
     "title": "Untitled",
     "artist": "Adam Adamyan",
-    "artistLink": "artists/adam-adamyan.html",
+    "artistLink": "artists/adam-adamyan",
     "country": "Armenia",
     "media": "Spray paint and acrylics on canvas",
     "size": "20 x 40 cm",
@@ -483,7 +483,7 @@
   {
     "title": "Untitled",
     "artist": "Tigran Ghazaryan",
-    "artistLink": "artists/tigran-ghazaryan.html",
+    "artistLink": "artists/tigran-ghazaryan",
     "country": "Armenia",
     "media": "Oil on canvas",
     "size": "96 x 61 cm",
@@ -495,7 +495,7 @@
   {
     "title": "Untitled",
     "artist": "Tigran Ghazaryan",
-    "artistLink": "artists/tigran-ghazaryan.html",
+    "artistLink": "artists/tigran-ghazaryan",
     "country": "Armenia",
     "media": "Oil on canvas",
     "size": "30 x 30 cm",
@@ -507,7 +507,7 @@
   {
     "title": "Untitled",
     "artist": "Tigran Ghazaryan",
-    "artistLink": "artists/tigran-ghazaryan.html",
+    "artistLink": "artists/tigran-ghazaryan",
     "country": "Armenia",
     "media": "Oil on canvas",
     "size": "30 x 30 cm",
@@ -519,7 +519,7 @@
   {
     "title": "Untitled",
     "artist": "Tigran Ghazaryan",
-    "artistLink": "artists/tigran-ghazaryan.html",
+    "artistLink": "artists/tigran-ghazaryan",
     "country": "Armenia",
     "media": "Oil on canvas",
     "size": "50 x 50 cm",
@@ -531,7 +531,7 @@
   {
     "title": "Untitled",
     "artist": "Tigran Ghazaryan",
-    "artistLink": "artists/tigran-ghazaryan.html",
+    "artistLink": "artists/tigran-ghazaryan",
     "country": "Armenia",
     "media": "Oil on canvas",
     "size": "",
@@ -543,7 +543,7 @@
   {
     "title": "Untitled",
     "artist": "Tigran Ghazaryan",
-    "artistLink": "artists/tigran-ghazaryan.html",
+    "artistLink": "artists/tigran-ghazaryan",
     "country": "Armenia",
     "media": "Oil on cardboard",
     "size": "",

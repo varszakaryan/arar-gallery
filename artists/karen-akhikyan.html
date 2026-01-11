@@ -40,7 +40,7 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <a href="../index.html" aria-label="Go to home">
+                <a href="/" aria-label="Go to homepage">
                     <img src="../assets/images/arar.svg" alt="ARAR" class="logo-img">
                 </a>
             </div>
@@ -52,13 +52,18 @@
                 <button class="menu-close-btn" onclick="toggleMenu()" aria-label="Close menu">
                     <span class="material-icons-outlined">close</span>
                 </button>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle" onclick="toggleDropdown(event)">Exhibitions</a>
+                    <div class="nav-dropdown-menu">
+                        <a href="../index.html?exhibition=guyduk-presence-2026">PRESENCE - Anatoliy Guyduk Solo Exhibition</a>
+                        <a href="../index.html?exhibition=contemporary-art-2026">Contemporary Art Exhibition-Fundraiser</a>
+                    </div>
+                </div>
                 <a href="../index.html#artists">Artists</a>
                 <a href="../index.html#artworks">Artworks</a>
-                <a href="../index.html#mural">Mural</a>
                 <a href="../index.html#merch">Merch</a>
                 <a href="../index.html#organizers">Organizers</a>
                 <a href="../index.html#partners">Partners</a>
-                <a href="../agenda.html">Agenda</a>
                 <a href="../index.html#contacts">Contacts</a>
             </nav>
         </div>
@@ -77,6 +82,12 @@
                     <h1 class="artist-profile-name">Karen Akhikyan</h1>
                     <p class="artist-profile-location">Yerevan, Armenia</p>
                     <p class="artist-profile-bio">Karen Akhikyan is an Armenian artist whose poetic wire sculptures have found resonance across the world. His sculptures belong to private collections in over sixty countries and have been presented in exhibitions across continents. His work captures the quiet tension between strength and vulnerability, where a hard material is shaped into gestures of softness, grace, and emotion.<br><br>He began his art journey with painting, but over time, sculpture became his deeper language. Wire, with all its resistance and memory, became a way to draw in space. Each piece is shaped by hand, without sketches or plans, allowing the form to emerge gradually through movement and touch. His process remains deeply personal. Each work begins simply, with a line, a gesture, and the slow uncovering of something true.</p>
+                    <div class="artist-exhibitions-section">
+                        <h3 class="artist-exhibitions-title">ARAR Exhibitions</h3>
+                        <ul class="artist-exhibitions-list">
+                            <li><a href="../index.html?exhibition=contemporary-art-2026">Contemporary Art Exhibition-Fundraiser</a></li>
+                        </ul>
+                    </div>
                     <div class="artist-artworks-section">
                         <h2 class="artist-artworks-title">Exhibited Artworks</h2>
                         <div class="merch-grid" id="artistArtworksGrid">
@@ -102,6 +113,84 @@
             overlay.classList.toggle('active');
             document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
         }
+
+        let dropdownTimeout = null;
+
+        function toggleDropdown(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            const dropdown = event.currentTarget.closest('.nav-dropdown');
+            if (dropdown) {
+                dropdown.classList.toggle('active');
+                // Clear any pending timeout when manually toggling
+                if (dropdownTimeout) {
+                    clearTimeout(dropdownTimeout);
+                    dropdownTimeout = null;
+                }
+            }
+        }
+
+        // Initialize dropdown functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.nav-dropdown');
+            dropdowns.forEach(dropdown => {
+                const dropdownMenu = dropdown.querySelector('.nav-dropdown-menu');
+                
+                function clearDropdownTimeout() {
+                    if (dropdownTimeout) {
+                        clearTimeout(dropdownTimeout);
+                        dropdownTimeout = null;
+                    }
+                }
+
+                function hideDropdown() {
+                    dropdownTimeout = setTimeout(function() {
+                        dropdown.classList.remove('active');
+                        dropdownTimeout = null;
+                    }, 2000); // Keep visible for 2 seconds after mouse leaves
+                }
+
+                // When mouse enters dropdown toggle or menu, show it and clear any timeout
+                dropdown.addEventListener('mouseenter', function() {
+                    clearDropdownTimeout();
+                    dropdown.classList.add('active');
+                });
+
+                // When mouse leaves dropdown, start timer to hide
+                dropdown.addEventListener('mouseleave', function(e) {
+                    // Check if mouse is moving to the menu
+                    const relatedTarget = e.relatedTarget;
+                    if (!dropdown.contains(relatedTarget)) {
+                        hideDropdown();
+                    }
+                });
+
+                if (dropdownMenu) {
+                    // When mouse enters the menu, clear timeout
+                    dropdownMenu.addEventListener('mouseenter', function() {
+                        clearDropdownTimeout();
+                    });
+
+                    // When mouse leaves the menu, start timer
+                    dropdownMenu.addEventListener('mouseleave', function() {
+                        hideDropdown();
+                    });
+                }
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.nav-dropdown')) {
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                        if (dropdownTimeout) {
+                            clearTimeout(dropdownTimeout);
+                            dropdownTimeout = null;
+                        }
+                    });
+                }
+            });
+        });
 
         // Get artist profile image path
         function getArtistProfileImage(artistName) {
@@ -201,18 +290,16 @@
                 });
         }
 
-        // Set back button destination based on where user came from
+        // Set back button to go back to exact previous page with scroll position
         function setBackButton() {
             const backBtn = document.getElementById('backBtn');
             if (backBtn) {
-                const urlParams = new URLSearchParams(window.location.search);
-                const from = urlParams.get('from');
-                
-                if (from === 'artworks') {
-                    backBtn.href = '../index.html#artworks';
-                } else {
-                    backBtn.href = '../index.html#artists';
-                }
+                backBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Use history.back() to go to exact previous page (homepage, exhibition page, etc.)
+                    // and automatically restore the exact scroll position
+                    window.history.back();
+                });
             }
         }
 

@@ -27,8 +27,8 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <a href="index.html" aria-label="Go to homepage">
-                    <img src="assets/images/ar.svg" alt="ARAR" class="logo-img">
+                <a href="/" aria-label="Go to homepage">
+                    <img src="assets/images/arar.svg" alt="ARAR" class="logo-img">
                 </a>
             </div>
             <button class="menu-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
@@ -39,17 +39,26 @@
                 <button class="menu-close-btn" onclick="toggleMenu()" aria-label="Close menu">
                     <span class="material-icons-outlined">close</span>
                 </button>
-                <a href="index.html#artists">Artists</a>
-                <a href="index.html#artworks">Artworks</a>
-                <a href="index.html#mural">Mural</a>
-                <a href="index.html#merch">Merch</a>
-                <a href="index.html#organizers">Organizers</a>
-                <a href="index.html#partners">Partners</a>
-                <a href="agenda.html">Agenda</a>
-                <a href="index.html#contacts">Contacts</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle" onclick="toggleDropdown(event)">Exhibitions</a>
+                    <div class="nav-dropdown-menu">
+                        <a href="/?exhibition=guyduk-presence-2026">PRESENCE - Anatoliy Guyduk Solo Exhibition</a>
+                        <a href="/?exhibition=contemporary-art-2026">Contemporary Art Exhibition-Fundraiser</a>
+                    </div>
+                </div>
+                <a href="/#artists">Artists</a>
+                <a href="/#artworks">Artworks</a>
+                <a href="/#merch">Merch</a>
+                <a href="/#organizers">Organizers</a>
+                <a href="/#partners">Partners</a>
+                <a href="/#contacts">Contacts</a>
             </nav>
         </div>
     </header>
+
+    <button class="scroll-up-btn" id="scrollUpBtn" onclick="scrollToTop()" aria-label="Scroll to top">
+        <span class="material-icons-outlined">keyboard_arrow_up</span>
+    </button>
 
     <main>
         <div class="artworks-section" id="artworks" style="margin-top: 0; padding-top: 80px;">
@@ -86,8 +95,99 @@
             }
         }
 
+        let dropdownTimeout = null;
+
+        function toggleDropdown(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            const dropdown = event.currentTarget.closest('.nav-dropdown');
+            if (dropdown) {
+                dropdown.classList.toggle('active');
+                // Clear any pending timeout when manually toggling
+                if (dropdownTimeout) {
+                    clearTimeout(dropdownTimeout);
+                    dropdownTimeout = null;
+                }
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show/hide scroll-up button based on scroll position
+        window.addEventListener('scroll', function() {
+            const scrollUpBtn = document.getElementById('scrollUpBtn');
+            if (scrollUpBtn) {
+                if (window.scrollY > 300) {
+                    scrollUpBtn.classList.add('show');
+                } else {
+                    scrollUpBtn.classList.remove('show');
+                }
+            }
+        });
+
         // Close menu when clicking on a link
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize dropdown functionality
+            const dropdowns = document.querySelectorAll('.nav-dropdown');
+            dropdowns.forEach(dropdown => {
+                const dropdownMenu = dropdown.querySelector('.nav-dropdown-menu');
+                
+                function clearDropdownTimeout() {
+                    if (dropdownTimeout) {
+                        clearTimeout(dropdownTimeout);
+                        dropdownTimeout = null;
+                    }
+                }
+
+                function hideDropdown() {
+                    dropdownTimeout = setTimeout(function() {
+                        dropdown.classList.remove('active');
+                        dropdownTimeout = null;
+                    }, 2000); // Keep visible for 2 seconds after mouse leaves
+                }
+
+                // When mouse enters dropdown toggle or menu, show it and clear any timeout
+                dropdown.addEventListener('mouseenter', function() {
+                    clearDropdownTimeout();
+                    dropdown.classList.add('active');
+                });
+
+                // When mouse leaves dropdown, start timer to hide
+                dropdown.addEventListener('mouseleave', function(e) {
+                    // Check if mouse is moving to the menu
+                    const relatedTarget = e.relatedTarget;
+                    if (!dropdown.contains(relatedTarget)) {
+                        hideDropdown();
+                    }
+                });
+
+                if (dropdownMenu) {
+                    // When mouse enters the menu, clear timeout
+                    dropdownMenu.addEventListener('mouseenter', function() {
+                        clearDropdownTimeout();
+                    });
+
+                    // When mouse leaves the menu, start timer
+                    dropdownMenu.addEventListener('mouseleave', function() {
+                        hideDropdown();
+                    });
+                }
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.nav-dropdown')) {
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                        if (dropdownTimeout) {
+                            clearTimeout(dropdownTimeout);
+                            dropdownTimeout = null;
+                        }
+                    });
+                }
+            });
             const navLinks = document.querySelectorAll('#main-nav a');
             navLinks.forEach(link => {
                 link.addEventListener('click', function() {
