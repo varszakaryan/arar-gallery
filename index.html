@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="screen-orientation" content="portrait">
     <meta name="orientation" content="portrait">
-    <title>ARAR Gallery- Contemporary Art Exhibition</title>
+    <title>ARAR Gallery - Fine Art, Fine Heart</title>
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -22,7 +22,7 @@
     <meta name="twitter:url" content="https://arargallery.com/">
     <meta name="twitter:title" content="ARAR Gallery - Contemporary Art Exhibition">
     <meta name="twitter:description" content="Contemporary Art Exhibition-Fundraiser presenting international and Armenian artists">
-    <meta name="twitter:image" content="https://arargallery.com/assets/images/bg.jpg">
+    <meta name="twitter:image" content="https://arargallery.com/assets/images/arar.svg">
     
     <link rel="icon" type="image/svg+xml" href="assets/images/ar.svg?v=2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -633,6 +633,55 @@
             // Check for Guyduk exhibition parameter
             const urlParams = new URLSearchParams(window.location.search);
             const exhibition = urlParams.get('exhibition');
+            
+            // Update page title based on exhibition parameter
+            if (exhibition === 'guyduk-presence-2026') {
+                document.title = 'PRESENCE - Anatoliy Guyduk Solo Exhibition | ARAR Gallery';
+            } else if (exhibition === 'contemporary-art-2026') {
+                document.title = 'Contemporary Art Exhibition-Fundraiser | ARAR Gallery';
+            } else {
+                document.title = 'ARAR Gallery - Fine Art, Fine Heart';
+            }
+            
+            // Update Open Graph image based on page/exhibition
+            function updateOGImage(imageUrl, fallbackLogo = 'assets/images/arar.svg') {
+                const ogImage = document.querySelector('meta[property="og:image"]');
+                const twitterImage = document.querySelector('meta[name="twitter:image"]');
+                
+                // Check if image exists by trying to load it
+                const img = new Image();
+                img.onload = function() {
+                    const fullUrl = imageUrl.startsWith('http') ? imageUrl : `https://arargallery.com/${imageUrl}`;
+                    if (ogImage) {
+                        ogImage.setAttribute('content', fullUrl);
+                    }
+                    if (twitterImage) {
+                        twitterImage.setAttribute('content', fullUrl);
+                    }
+                };
+                img.onerror = function() {
+                    // Use logo as fallback if image doesn't exist
+                    const logoUrl = fallbackLogo.startsWith('http') ? fallbackLogo : `https://arargallery.com/${fallbackLogo}`;
+                    if (ogImage) {
+                        ogImage.setAttribute('content', logoUrl);
+                    }
+                    if (twitterImage) {
+                        twitterImage.setAttribute('content', logoUrl);
+                    }
+                };
+                // Set src to trigger load check
+                img.src = imageUrl.startsWith('http') ? imageUrl : imageUrl;
+            }
+            
+            // Set appropriate image based on exhibition or use logo as fallback
+            if (exhibition === 'guyduk-presence-2026') {
+                updateOGImage('assets/images/guyduk_bg.png');
+            } else if (exhibition === 'contemporary-art-2026') {
+                updateOGImage('assets/images/bg.jpg');
+            } else {
+                // Homepage - use bg.jpg if available, otherwise logo
+                updateOGImage('assets/images/bg.jpg');
+            }
             
             // Hide Zones link on homepage and other pages (will be shown only for Guyduk)
             const zonesNavLink = document.querySelector('nav a[href="#zones"]');
