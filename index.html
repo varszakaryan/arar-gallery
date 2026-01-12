@@ -304,7 +304,7 @@
                         <p class="merch-loading">Loading...</p>
                     </div>
                     <div class="see-all-container" id="seeAllContainer" style="display: none;">
-                        <a href="artworks" class="see-all-btn">See all</a>
+                        <a href="artworks.html" class="see-all-btn">See all</a>
                     </div>
                 </div>
             </div>
@@ -961,11 +961,8 @@
                     `;
                 }
                 
-                // 7. Remove listed artworks and write "Coming soon"
-                const artworksGrid = document.getElementById('artworksGrid');
-                if (artworksGrid) {
-                    artworksGrid.innerHTML = '<p class="merch-empty">Coming soon</p>';
-                }
+                // 7. Load artworks for Guyduk solo exhibition
+                loadArtworks('guyduk-presence-2026');
                 
                 // 8. Remove Mural section
                 const muralSection = document.querySelector('.mural-section');
@@ -1147,6 +1144,9 @@
                 if (partnersNavLink) {
                     partnersNavLink.style.display = 'block';
                 }
+                
+                // Load artworks for contemporary art exhibition
+                loadArtworks('contemporary-art-2026');
             }
             
             const navLinks = document.querySelectorAll('#main-nav a');
@@ -1208,9 +1208,9 @@
                 loadMerch();
             }
             
-            // Load and display artworks (only on homepage or contemporary art exhibition)
-            if (!exhibition || exhibition === 'contemporary-art-2026') {
-                loadArtworks();
+            // Load and display artworks (only on homepage - contemporary art exhibition artworks, limit to 8)
+            if (!exhibition) {
+                loadArtworks('contemporary-art-2026', true); // true = limit to 8 for homepage
             }
         });
 
@@ -1336,7 +1336,7 @@
         }
 
         // Load and display artworks
-        function loadArtworks() {
+        function loadArtworks(exhibitionFilter = null, limitTo8 = false) {
             const artworksGrid = document.getElementById('artworksGrid');
             if (!artworksGrid) {
                 console.error('Artworks grid element not found');
@@ -1353,17 +1353,38 @@
                 })
                 .then(data => {
                     if (data && data.length > 0) {
-                        // Show only first 8 items
-                        const displayedArtworks = data.slice(0, 8);
-                        const seeAllContainer = document.getElementById('seeAllContainer');
-                        
-                        // Show "See all" button if there are more than 8 artworks
-                        if (data.length > 8 && seeAllContainer) {
-                            seeAllContainer.style.display = 'block';
+                        // Filter artworks by exhibition if filter is provided
+                        let filteredArtworks = data;
+                        if (exhibitionFilter) {
+                            filteredArtworks = data.filter(artwork => {
+                                const exhibitions = artwork.exhibitions || [];
+                                return exhibitions.includes(exhibitionFilter);
+                            });
                         }
                         
-                        renderArtworks(displayedArtworks);
-                        console.log('Artworks loaded from artworks.json');
+                        // Filter out artworks without images
+                        filteredArtworks = filteredArtworks.filter(artwork => {
+                            const images = artwork.images || (artwork.image ? [artwork.image] : []);
+                            return images.length > 0 && images.some(img => img && img.trim() !== '');
+                        });
+                        
+                        // Show only first 8 items if limitTo8 is true or on homepage (no filter), all items on exhibition pages
+                        const displayedArtworks = (limitTo8 || !exhibitionFilter) ? filteredArtworks.slice(0, 8) : filteredArtworks;
+                        const seeAllContainer = document.getElementById('seeAllContainer');
+                        
+                        // Show "See all" button if there are more than 8 artworks (only when limited to 8)
+                        if ((limitTo8 || !exhibitionFilter) && filteredArtworks.length > 8 && seeAllContainer) {
+                            seeAllContainer.style.display = 'block';
+                        } else if (seeAllContainer) {
+                            seeAllContainer.style.display = 'none';
+                        }
+                        
+                        if (displayedArtworks.length > 0) {
+                            renderArtworks(displayedArtworks);
+                            console.log('Artworks loaded from artworks.json', exhibitionFilter ? `(filtered by ${exhibitionFilter})` : '');
+                        } else {
+                            artworksGrid.innerHTML = '<p class="merch-empty">Coming soon</p>';
+                        }
                     } else {
                         artworksGrid.innerHTML = '<p class="merch-empty">Coming soon</p>';
                     }
@@ -1384,8 +1405,8 @@
                 // Support both images array and single image
                 const images = artwork.images || (artwork.image ? [artwork.image] : []);
                 const fallbackImage = getArtistProfileImage(artwork.artist);
-                const firstImage = images[0] || fallbackImage;
-                const secondImage = images[1] || firstImage;
+                const firstImage = images[0];
+                const secondImage = images.length > 1 && images[1] ? images[1] : firstImage;
                 
                 return `
                 <div class="merch-item">
@@ -1416,8 +1437,10 @@
                             </p>
                             <p class="merch-dimensions">${artwork.size || 'size not available'}</p>
                             <p class="merch-price">
-                                ${artwork.priceAMD ? `<span class="merch-price-discounted">֏${artwork.priceAMD}</span>` : ''}
-                                <span class="merch-price-discounted">($${artwork.price})</span>
+                                ${artwork.status === 'Gift' ? '<span class="merch-price-discounted">Gifted</span>' : artwork.status === 'Sold out' ? '<span class="merch-price-discounted">Sold out</span>' : `
+                                    ${artwork.priceAMD ? `<span class="merch-price-discounted">֏${artwork.priceAMD}</span>` : ''}
+                                    <span class="merch-price-discounted">($${artwork.price})</span>
+                                `}
                             </p>
                         </div>
                     </div>

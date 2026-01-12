@@ -17,6 +17,30 @@
       gtag('js', new Date());
       gtag('config', 'G-HGM21QWH4E');
     </script>
+    <script>
+        // Redirect to Guyduk profile if accessed directly (not from another page)
+        (function() {
+            const referrer = document.referrer;
+            const currentHost = window.location.hostname;
+            const currentPath = window.location.pathname;
+            
+            // Check if accessed directly (no referrer or referrer is external)
+            const isDirectAccess = !referrer || 
+                (!referrer.includes(currentHost) && !referrer.includes('localhost') && !referrer.includes('127.0.0.1'));
+            
+            // Also check if referrer is from a different path (not navigating within the site)
+            const isFromSameSite = referrer && (
+                referrer.includes(currentHost) || 
+                referrer.includes('localhost') || 
+                referrer.includes('127.0.0.1')
+            );
+            
+            // Redirect if direct access or if referrer doesn't include the site's domain
+            if (isDirectAccess || (referrer && !isFromSameSite)) {
+                window.location.replace('anatoliy-guyduk.html');
+            }
+        })();
+    </script>
 </head>
 <body>
     <header>
@@ -213,7 +237,13 @@
                 })
                 .then(data => {
                     // Filter artworks by artist name
-                    const artistArtworks = data.filter(artwork => artwork.artist === artistName);
+                    let artistArtworks = data.filter(artwork => artwork.artist === artistName);
+                    
+                    // Filter out artworks without images
+                    artistArtworks = artistArtworks.filter(artwork => {
+                        const images = artwork.images || (artwork.image ? [artwork.image] : []);
+                        return images.length > 0 && images.some(img => img && img.trim() !== '');
+                    });
                     
                     if (artistArtworks && artistArtworks.length > 0) {
                         artworksGrid.innerHTML = artistArtworks.map((artwork, index) => {
@@ -250,8 +280,10 @@
                                         </p>
                                         <p class="merch-dimensions">${artwork.size || 'size not available'}</p>
                                         <p class="merch-price">
-                                            ${artwork.priceAMD ? `<span class="merch-price-discounted">֏${artwork.priceAMD}</span>` : ''}
-                                            <span class="merch-price-discounted">($${artwork.price})</span>
+                                            ${artwork.status === 'Gift' ? '<span class="merch-price-discounted">Gifted</span>' : artwork.status === 'Sold out' ? '<span class="merch-price-discounted">Sold out</span>' : `
+                                                ${artwork.priceAMD ? `<span class="merch-price-discounted">֏${artwork.priceAMD}</span>` : ''}
+                                                <span class="merch-price-discounted">($${artwork.price})</span>
+                                            `}
                                         </p>
                                     </div>
                                 </div>

@@ -236,7 +236,13 @@
                 })
                 .then(data => {
                     // Filter artworks by artist name
-                    const artistArtworks = data.filter(artwork => artwork.artist === artistName);
+                    let artistArtworks = data.filter(artwork => artwork.artist === artistName);
+                    
+                    // Filter out artworks without images
+                    artistArtworks = artistArtworks.filter(artwork => {
+                        const images = artwork.images || (artwork.image ? [artwork.image] : []);
+                        return images.length > 0 && images.some(img => img && img.trim() !== '');
+                    });
                     
                     if (artistArtworks && artistArtworks.length > 0) {
                         artworksGrid.innerHTML = artistArtworks.map((artwork, index) => {
@@ -273,8 +279,10 @@
                                         </p>
                                         <p class="merch-dimensions">${artwork.size || 'size not available'}</p>
                                         <p class="merch-price">
-                                            ${artwork.priceAMD ? `<span class="merch-price-discounted">֏${artwork.priceAMD}</span>` : ''}
-                                            <span class="merch-price-discounted">($${artwork.price})</span>
+                                            ${artwork.status === 'Gift' ? '<span class="merch-price-discounted">Gifted</span>' : artwork.status === 'Sold out' ? '<span class="merch-price-discounted">Sold out</span>' : `
+                                                ${artwork.priceAMD ? `<span class="merch-price-discounted">֏${artwork.priceAMD}</span>` : ''}
+                                                <span class="merch-price-discounted">($${artwork.price})</span>
+                                            `}
                                         </p>
                                     </div>
                                 </div>

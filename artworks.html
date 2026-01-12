@@ -237,7 +237,7 @@
                 'Aksel Zardaryan-Mavian': 'assets/images/artists/aksel_zardaryan_profile.png'
             };
             
-            return artistImageMap[artistName] || 'assets/images/placeholder.jpg';
+            return artistImageMap[artistName] || 'assets/images/arar.svg';
         }
 
         // Store artworks data globally for sorting
@@ -262,11 +262,17 @@
                 })
                 .then(data => {
                     if (data && data.length > 0) {
+                        // Filter out artworks without images
+                        const artworksWithImages = data.filter(artwork => {
+                            const images = artwork.images || (artwork.image ? [artwork.image] : []);
+                            return images.length > 0 && images.some(img => img && img.trim() !== '');
+                        });
+                        
                         // Store all artworks data
-                        allArtworksData = data;
+                        allArtworksData = artworksWithImages;
                         
                         // Apply current sort if active
-                        let displayedArtworks = data;
+                        let displayedArtworks = artworksWithImages;
                         if (currentSortOrder) {
                             displayedArtworks = sortArtworksData(displayedArtworks, currentSortOrder);
                         }
@@ -293,8 +299,8 @@
                             // Support both images array and single image
                             const images = artwork.images || (artwork.image ? [artwork.image] : []);
                             const fallbackImage = getArtistProfileImage(artwork.artist);
-                            const firstImage = images[0] || fallbackImage;
-                            const secondImage = images[1] || firstImage;
+                            const firstImage = images[0];
+                            const secondImage = images.length > 1 && images[1] ? images[1] : firstImage;
                             
                             return `
                             <div class="merch-item">
@@ -325,8 +331,10 @@
                                         </p>
                                         <p class="merch-dimensions">${artwork.size || 'size not available'}</p>
                                         <p class="merch-price">
-                                            ${artwork.priceAMD ? `<span class="merch-price-discounted">֏${artwork.priceAMD}</span>` : ''}
-                                            <span class="merch-price-discounted">($${artwork.price})</span>
+                                            ${artwork.status === 'Gift' ? '<span class="merch-price-discounted">Gifted</span>' : artwork.status === 'Sold out' ? '<span class="merch-price-discounted">Sold out</span>' : `
+                                                ${artwork.priceAMD ? `<span class="merch-price-discounted">֏${artwork.priceAMD}</span>` : ''}
+                                                <span class="merch-price-discounted">($${artwork.price})</span>
+                                            `}
                                         </p>
                                     </div>
                                 </div>

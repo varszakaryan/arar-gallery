@@ -9,8 +9,14 @@
     "price": 5000,
     "priceAMD": "1.800.000",
     "year": "2026",
-    "images": ["assets/images/artworks/spazuno_bird_1.jpg", "assets/images/artworks/spazuno_bird_2.jpg"],
-    "description": "The swan appears as a remembered presence, one that once emerged in dreams as a guide from darkness toward light. Neither symbol nor fantasy, she exists as an embodied force that saved, held, and returned the self to breath. Rendered as a feminine humanoid form, the figure is fractured, carrying the tension of multiplicity rather than harmony. Her rotating face moves through shifting states of awareness, revealing identity as something continuously negotiated. Masculinity and femininity coexist within her, not in balance, but in active dialogue. The swan does not dissolve; she remains watchful, altered, and luminous."
+    "images": [
+      "assets/images/artworks/spazuno_bird_1.jpg",
+      "assets/images/artworks/spazuno_bird_2.jpg"
+    ],
+    "description": "The swan appears as a remembered presence, one that once emerged in dreams as a guide from darkness toward light. Neither symbol nor fantasy, she exists as an embodied force that saved, held, and returned the self to breath. Rendered as a feminine humanoid form, the figure is fractured, carrying the tension of multiplicity rather than harmony. Her rotating face moves through shifting states of awareness, revealing identity as something continuously negotiated. Masculinity and femininity coexist within her, not in balance, but in active dialogue. The swan does not dissolve; she remains watchful, altered, and luminous.",
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Grace",
@@ -22,7 +28,13 @@
     "price": 1300,
     "priceAMD": "500.000",
     "year": "2025",
-    "images": ["assets/images/artworks/akhikyan1.jpg", "assets/images/artworks/akhikyan1_1.jpg"]
+    "images": [
+      "assets/images/artworks/akhikyan1.jpg",
+      "assets/images/artworks/akhikyan1_1.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Mythology, Displaced Goddess",
@@ -34,7 +46,13 @@
     "price": 1500,
     "priceAMD": "570.000",
     "year": "2025",
-    "images": ["assets/images/artworks/aram_poladian1.jpg", "assets/images/artworks/aram_poladian1_1.jpg"]
+    "images": [
+      "assets/images/artworks/aram_poladian1.jpg",
+      "assets/images/artworks/aram_poladian1_1.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Portrait",
@@ -46,7 +64,13 @@
     "price": 2500,
     "priceAMD": "950.000",
     "year": "2025",
-    "images": ["assets/images/artworks/guy_ghazanchyan.jpg", "assets/images/artworks/guy_ghazanchyan1.jpg"]
+    "images": [
+      "assets/images/artworks/guy_ghazanchyan.jpg",
+      "assets/images/artworks/guy_ghazanchyan1.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Untitled",
@@ -58,7 +82,13 @@
     "price": 2000,
     "priceAMD": "750.000",
     "year": "2025",
-    "images": ["assets/images/artworks/hayduk1.jpg", "assets/images/artworks/hayduk1_1.jpg"]
+    "images": [
+      "assets/images/artworks/hayduk1.jpg",
+      "assets/images/artworks/hayduk1_1.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "The Chaos of Hell",
@@ -70,7 +100,13 @@
     "price": 3500,
     "priceAMD": "1.300.000",
     "year": "2023",
-    "images": ["assets/images/artworks/siranush_vardanyan.jpg", "assets/images/artworks/siranush_vardnayn1.jpg"]
+    "images": [
+      "assets/images/artworks/siranush_vardanyan.jpg",
+      "assets/images/artworks/siranush_vardnayn1.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "The Kept Light",
@@ -82,7 +118,13 @@
     "price": 2000,
     "priceAMD": "750.000",
     "year": "2025",
-    "images": ["assets/images/artworks/lilith_eghiazaryan.jpg", "assets/images/artworks/lilit_2.jpg"]
+    "images": [
+      "assets/images/artworks/lilith_eghiazaryan.jpg",
+      "assets/images/artworks/lilit_2.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "0-Panorama",
@@ -94,7 +136,13 @@
     "price": 5000,
     "priceAMD": "1.800.000",
     "year": "2020",
-    "images": ["assets/images/artworks/armen_hakobjanyan_1.jpg", "assets/images/artworks/armen_hakobjanyan2nd.jpg"]
+    "images": [
+      "assets/images/artworks/armen_hakobjanyan_1.jpg",
+      "assets/images/artworks/armen_hakobjanyan2nd.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "The Two of Them",
@@ -106,7 +154,13 @@
     "price": 2000,
     "priceAMD": "750.000",
     "year": "2025",
-    "images": ["assets/images/artworks/aram_yengibaryan1.jpg", "assets/images/artworks/aram_yengibaryan_2nd.jpg"]
+    "images": [
+      "assets/images/artworks/aram_yengibaryan1.jpg",
+      "assets/images/artworks/aram_yengibaryan_2nd.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Untitled",
@@ -118,7 +172,13 @@
     "price": 1900,
     "priceAMD": "730.000",
     "year": "2025",
-    "images": ["assets/images/artworks/adam_adamyan_1.jpg", "assets/images/artworks/adam_2nd.jpg"]
+    "images": [
+      "assets/images/artworks/adam_adamyan_1.jpg",
+      "assets/images/artworks/adam_2nd.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "ErAZ (Dream)",
@@ -130,7 +190,13 @@
     "price": 1000,
     "priceAMD": "380.000",
     "year": "2023",
-    "images": ["assets/images/artworks/tina_karakeshishyan1.jpg", "assets/images/artworks/tina_karakeshishyan_2nd.jpg"]
+    "images": [
+      "assets/images/artworks/tina_karakeshishyan1.jpg",
+      "assets/images/artworks/tina_karakeshishyan_2nd.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "The Metro",
@@ -142,7 +208,14 @@
     "price": 1800,
     "priceAMD": "690.000",
     "year": "2023",
-    "images": ["assets/images/artworks/guyduk1.jpg", "assets/images/artworks/guyduk2nd.jpg"]
+    "images": [
+      "assets/images/artworks/guyduk1.jpg",
+      "assets/images/artworks/guyduk2nd.jpg"
+    ],
+    "exhibitions": [
+      "guyduk-presence-2026",
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Circle Series #2",
@@ -154,7 +227,13 @@
     "price": 1800,
     "priceAMD": "690.000",
     "year": "2025",
-    "images": ["assets/images/artworks/lubna1.jpg", "assets/images/artworks/lubna1_1.jpg"]
+    "images": [
+      "assets/images/artworks/lubna1.jpg",
+      "assets/images/artworks/lubna1_1.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Urban Flower 1",
@@ -166,7 +245,13 @@
     "price": 950,
     "priceAMD": "350.000",
     "year": "2023",
-    "images": ["assets/images/artworks/aksel_zardaryan1.jpg", "assets/images/artworks/mavian.jpg"]
+    "images": [
+      "assets/images/artworks/aksel_zardaryan1.jpg",
+      "assets/images/artworks/mavian.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Chains of Ignorance",
@@ -178,7 +263,13 @@
     "price": 5000,
     "priceAMD": "1.800.000",
     "year": "2025",
-    "images": ["assets/images/artworks/ashot_harutyunyan.jpg", "assets/images/artworks/ashot_harutyunyan2nd.jpg"]
+    "images": [
+      "assets/images/artworks/ashot_harutyunyan.jpg",
+      "assets/images/artworks/ashot_harutyunyan2nd.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Untitled",
@@ -190,7 +281,13 @@
     "price": 350,
     "priceAMD": "130.000",
     "year": "2025",
-    "images": ["assets/images/artworks/tigran_ghazaryan1.jpg", "assets/images/artworks/tigran_ghazaryanright_1.jpg"]
+    "images": [
+      "assets/images/artworks/tigran_ghazaryan1.jpg",
+      "assets/images/artworks/tigran_ghazaryanright_1.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Flow With It",
@@ -202,9 +299,15 @@
     "price": 1000,
     "priceAMD": "380.000",
     "year": "2025",
-    "images": ["assets/images/artworks/spazuno_1.jpeg", "assets/images/artworks/spaz2nd.jpg"]
+    "images": [
+      "assets/images/artworks/spazuno_1.jpeg",
+      "assets/images/artworks/spaz2nd.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
-    {
+  {
     "title": "The Companion",
     "artist": "Karen Akhikyan",
     "artistLink": "artists/karen-akhikyan",
@@ -214,7 +317,13 @@
     "price": 1300,
     "priceAMD": "500.000",
     "year": "2025",
-    "images": ["assets/images/artworks/akhikyan2.jpg", "assets/images/artworks/akhikyan_3_1.jpg"]
+    "images": [
+      "assets/images/artworks/akhikyan2.jpg",
+      "assets/images/artworks/akhikyan_3_1.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "The Same Eyes—Transformed",
@@ -226,9 +335,15 @@
     "price": 500,
     "priceAMD": "190.000",
     "year": "2025",
-    "images": ["assets/images/artworks/aram_poladian2.jpg", "assets/images/artworks/aram_poladian1_1.jpg"]
+    "images": [
+      "assets/images/artworks/aram_poladian2.jpg",
+      "assets/images/artworks/aram_poladian1_1.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
-    {
+  {
     "title": "Untitled",
     "artist": "Hayduk Smbatyan",
     "artistLink": "artists/hayduk-smbatyan",
@@ -238,9 +353,15 @@
     "price": 2000,
     "priceAMD": "750.000",
     "year": "2025",
-    "images": ["assets/images/artworks/hayduk2.jpg", "assets/images/artworks/hayduk1_1.jpg"]
+    "images": [
+      "assets/images/artworks/hayduk2.jpg",
+      "assets/images/artworks/hayduk1_1.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
-    {
+  {
     "title": "0-Panorama",
     "artist": "Armen Hakobjanyan",
     "artistLink": "artists/armen-hakobjanyan",
@@ -250,9 +371,15 @@
     "price": 5000,
     "priceAMD": "1.800.000",
     "year": "2020",
-    "images": ["assets/images/artworks/armen_hakobjanyan_2.jpg", "assets/images/artworks/armen_hakobjanyan2nd.jpg"]
+    "images": [
+      "assets/images/artworks/armen_hakobjanyan_2.jpg",
+      "assets/images/artworks/armen_hakobjanyan2nd.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
-   {
+  {
     "title": "Threshold",
     "artist": "Aram Yengibaryan",
     "artistLink": "artists/aram-yengibaryan",
@@ -262,7 +389,13 @@
     "price": 2200,
     "priceAMD": "840.000",
     "year": "2024",
-    "images": ["assets/images/artworks/aram_yengibaryan2.jpg", "assets/images/artworks/aram_yengibaryan_2nd.jpg"]
+    "images": [
+      "assets/images/artworks/aram_yengibaryan2.jpg",
+      "assets/images/artworks/aram_yengibaryan_2nd.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Untitled",
@@ -274,7 +407,13 @@
     "price": 1600,
     "priceAMD": "600.000",
     "year": "2025",
-    "images": ["assets/images/artworks/adam_adamyan_2.jpg", "assets/images/artworks/adam_2nd.jpg"]
+    "images": [
+      "assets/images/artworks/adam_adamyan_2.jpg",
+      "assets/images/artworks/adam_2nd.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Ari",
@@ -286,7 +425,13 @@
     "price": 200,
     "priceAMD": "80.000",
     "year": "2022",
-    "images": ["assets/images/artworks/tina_karakeshishyan2.jpg", "assets/images/artworks/tina_karakeshishyan_2nd.jpg"]
+    "images": [
+      "assets/images/artworks/tina_karakeshishyan2.jpg",
+      "assets/images/artworks/tina_karakeshishyan_2nd.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "The Garden",
@@ -298,7 +443,14 @@
     "price": 2000,
     "priceAMD": "750.000",
     "year": "2025",
-    "images": ["assets/images/artworks/guyduk2.jpg", "assets/images/artworks/guyduk2_2.jpg"]
+    "images": [
+      "assets/images/artworks/guyduk2.jpg",
+      "assets/images/artworks/guyduk2_2.jpg"
+    ],
+    "exhibitions": [
+      "guyduk-presence-2026",
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Circle Series #1",
@@ -310,7 +462,13 @@
     "price": 1500,
     "priceAMD": "570.000",
     "year": "2025",
-    "images": ["assets/images/artworks/lubna2.jpg", "assets/images/artworks/lubna2_1.jpg"]
+    "images": [
+      "assets/images/artworks/lubna2.jpg",
+      "assets/images/artworks/lubna2_1.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Urban Flower 2",
@@ -322,7 +480,13 @@
     "price": 950,
     "priceAMD": "350.000",
     "year": "2023",
-    "images": ["assets/images/artworks/aksel_zardaryan2.jpg", "assets/images/artworks/mavian.jpg"]
+    "images": [
+      "assets/images/artworks/aksel_zardaryan2.jpg",
+      "assets/images/artworks/mavian.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Untitled",
@@ -334,7 +498,13 @@
     "price": 350,
     "priceAMD": "130.000",
     "year": "2025",
-    "images": ["assets/images/artworks/tigran_ghazaryan2.jpg", "assets/images/artworks/tigran_ghazaryanright_1.jpg"]
+    "images": [
+      "assets/images/artworks/tigran_ghazaryan2.jpg",
+      "assets/images/artworks/tigran_ghazaryanright_1.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Broken Icons",
@@ -346,7 +516,13 @@
     "price": 1000,
     "priceAMD": "380.000",
     "year": "2025",
-    "images": ["assets/images/artworks/spazuno_2.jpeg", "assets/images/artworks/spaz2nd.jpg"]
+    "images": [
+      "assets/images/artworks/spazuno_2.jpeg",
+      "assets/images/artworks/spaz2nd.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Giraffe",
@@ -358,7 +534,13 @@
     "price": 1300,
     "priceAMD": "500.000",
     "year": "2025",
-    "images": ["assets/images/artworks/akhikyan3.jpg", "assets/images/artworks/akhikyan_giraffe1.jpg"]
+    "images": [
+      "assets/images/artworks/akhikyan3.jpg",
+      "assets/images/artworks/akhikyan_giraffe1.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Generational, New Achievements",
@@ -370,7 +552,13 @@
     "price": 500,
     "priceAMD": "190.000",
     "year": "2025",
-    "images": ["assets/images/artworks/aram_poladian3.jpg", "assets/images/artworks/aram_poladian1_1.jpg"]
+    "images": [
+      "assets/images/artworks/aram_poladian3.jpg",
+      "assets/images/artworks/aram_poladian1_1.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Untitled",
@@ -382,7 +570,13 @@
     "price": 2000,
     "priceAMD": "750.000",
     "year": "2025",
-    "images": ["assets/images/artworks/hayduk3.jpg", "assets/images/artworks/hayduk1_1.jpg"]
+    "images": [
+      "assets/images/artworks/hayduk3.jpg",
+      "assets/images/artworks/hayduk1_1.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Autumn",
@@ -394,7 +588,13 @@
     "price": 2200,
     "priceAMD": "840.000",
     "year": "2024",
-    "images": ["assets/images/artworks/aram_yengibaryan3.jpg", "assets/images/artworks/aram_yengibaryan_2nd.jpg"]
+    "images": [
+      "assets/images/artworks/aram_yengibaryan3.jpg",
+      "assets/images/artworks/aram_yengibaryan_2nd.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Untitled",
@@ -406,7 +606,13 @@
     "price": 2000,
     "priceAMD": "750.000",
     "year": "2025",
-    "images": ["assets/images/artworks/adam_adamyan_3.jpg", "assets/images/artworks/adam_2nd.jpg"]
+    "images": [
+      "assets/images/artworks/adam_adamyan_3.jpg",
+      "assets/images/artworks/adam_2nd.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Warmth",
@@ -418,7 +624,13 @@
     "price": 800,
     "priceAMD": "300.000",
     "year": "2024",
-    "images": ["assets/images/artworks/tina_karakeshishyan3.jpg", "assets/images/artworks/tina_karakeshishyan_2nd.jpg"]
+    "images": [
+      "assets/images/artworks/tina_karakeshishyan3.jpg",
+      "assets/images/artworks/tina_karakeshishyan_2nd.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Urban Flower 3",
@@ -430,9 +642,15 @@
     "price": 950,
     "priceAMD": "350.000",
     "year": "2023",
-    "images": ["assets/images/artworks/aksel_zardaryan3.jpg", "assets/images/artworks/mavian.jpg"]
+    "images": [
+      "assets/images/artworks/aksel_zardaryan3.jpg",
+      "assets/images/artworks/mavian.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
-   {
+  {
     "title": "Untitled",
     "artist": "Tigran Ghazaryan",
     "artistLink": "artists/tigran-ghazaryan",
@@ -442,7 +660,13 @@
     "price": 1000,
     "priceAMD": "380.000",
     "year": "2025",
-    "images": ["assets/images/artworks/tigran_ghazaryan3.jpg", "assets/images/artworks/tigran_ghazaryanright_1.jpg"]
+    "images": [
+      "assets/images/artworks/tigran_ghazaryan3.jpg",
+      "assets/images/artworks/tigran_ghazaryanright_1.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Untitled",
@@ -454,7 +678,13 @@
     "price": 400,
     "priceAMD": "150.000",
     "year": "2025",
-    "images": ["assets/images/artworks/adam_adamyan_4.jpg", "assets/images/artworks/adam_adamyan_5_1.jpg"]
+    "images": [
+      "assets/images/artworks/adam_adamyan_4.jpg",
+      "assets/images/artworks/adam_adamyan_5_1.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Untitled",
@@ -466,7 +696,13 @@
     "price": 500,
     "priceAMD": "190.000",
     "year": "2025",
-    "images": ["assets/images/artworks/tigran_ghazaryan4.jpg", "assets/images/artworks/tigran_ghazaryan_celloist.jpg"]
+    "images": [
+      "assets/images/artworks/tigran_ghazaryan4.jpg",
+      "assets/images/artworks/tigran_ghazaryan_celloist.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Untitled",
@@ -478,7 +714,13 @@
     "price": 400,
     "priceAMD": "150.000",
     "year": "2025",
-    "images": ["assets/images/artworks/adam_adamyan_5.jpg", "assets/images/artworks/adam_adamyan_5_1.jpg"]
+    "images": [
+      "assets/images/artworks/adam_adamyan_5.jpg",
+      "assets/images/artworks/adam_adamyan_5_1.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Untitled",
@@ -490,7 +732,13 @@
     "price": 2000,
     "priceAMD": "750.000",
     "year": "2025",
-    "images": ["assets/images/artworks/tigran_ghazaryan5.jpg", "assets/images/artworks/tigran_ghazaryan_5_1.jpg"]
+    "images": [
+      "assets/images/artworks/tigran_ghazaryan5.jpg",
+      "assets/images/artworks/tigran_ghazaryan_5_1.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Untitled",
@@ -502,7 +750,12 @@
     "price": 350,
     "priceAMD": "130.000",
     "year": "2025",
-    "images": ["assets/images/artworks/tigran_ghazaryan6.jpg"]
+    "images": [
+      "assets/images/artworks/tigran_ghazaryan6.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Untitled",
@@ -514,7 +767,12 @@
     "price": 750,
     "priceAMD": "280.000",
     "year": "2025",
-    "images": ["assets/images/artworks/tigran_ghazaryan7.jpg"]
+    "images": [
+      "assets/images/artworks/tigran_ghazaryan7.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Untitled",
@@ -526,7 +784,12 @@
     "price": 750,
     "priceAMD": "280.000",
     "year": "2025",
-    "images": ["assets/images/artworks/tigran_ghazaryan8.jpg"]
+    "images": [
+      "assets/images/artworks/tigran_ghazaryan8.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Untitled",
@@ -538,7 +801,12 @@
     "price": 500,
     "priceAMD": "190.000",
     "year": "2025",
-    "images": ["assets/images/artworks/tigran_ghazaryan9.jpg"]
+    "images": [
+      "assets/images/artworks/tigran_ghazaryan9.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
   },
   {
     "title": "Untitled",
@@ -550,6 +818,391 @@
     "price": 350,
     "priceAMD": "130.000",
     "year": "2025",
-    "images": ["assets/images/artworks/tigran_ghazaryan10.jpg", "assets/images/artworks/tigran_fish.jpg"]
+    "images": [
+      "assets/images/artworks/tigran_ghazaryan10.jpg",
+      "assets/images/artworks/tigran_fish.jpg"
+    ],
+    "exhibitions": [
+      "contemporary-art-2026"
+    ]
+  },
+  {
+    "title": "4 A.M.",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "76 x 56 cm",
+    "price": 1200,
+    "priceAMD": "450.000",
+    "year": "2024",
+    "images": ["assets/images/artworks/guyduk_4am.jpg"],
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
+  },
+  {
+    "title": "Harpy 02",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "76 x 76 cm",
+    "price": 1200,
+    "priceAMD": "450.000",
+    "year": "2024",
+    "images": [],
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
+  },
+  {
+    "title": "Sirin the bird",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "152 x 152 cm",
+    "price": 2000,
+    "priceAMD": "750.000",
+    "year": "2023",
+    "images": ["assets/images/artworks/guyduk_siren.jpg"],
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
+  },
+  {
+    "title": "Untitled 18",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "76 x 76 cm",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "2025",
+    "images": ["assets/images/artworks/guyduk_untitled18.jpg"],
+    "status": "Gift",
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
+  },
+  {
+    "title": "A Monkey's Stroll",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "76 x 76 cm",
+    "price": 1200,
+    "priceAMD": "450.000",
+    "year": "2025",
+    "images": ["assets/images/artworks/guyduk_monkey.jpg"],
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
+  },
+  {
+    "title": "Steppe",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "90 x 56 cm",
+    "price": 1200,
+    "priceAMD": "450.000",
+    "year": "2025",
+    "images": [],
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
+  },
+  {
+    "title": "August",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "134 x 76 cm",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "2025",
+    "images": ["assets/images/artworks/guyduk_august.jpg"],
+    "status": "Gift",
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
+  },
+  {
+    "title": "Getting tired",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "152 x 76 cm",
+    "price": 2000,
+    "priceAMD": "750.000",
+    "year": "2024",
+    "images": ["assets/images/artworks/guyduk_getting_tired.jpg"],
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
+  },
+  {
+    "title": "A working day",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "152 x 76 cm",
+    "price": 2000,
+    "priceAMD": "750.000",
+    "year": "2023",
+    "images": ["assets/images/artworks/guyduk_workingday.jpg"],
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
+  },
+  {
+    "title": "Vinery",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "152 x 76 cm",
+    "price": 2000,
+    "priceAMD": "750.000",
+    "year": "2024",
+    "images": ["assets/images/artworks/guyduk_vinery.jpg"],
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
+  },
+  {
+    "title": "Untitled 11",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "76 x 76 cm",
+    "price": 1200,
+    "priceAMD": "450.000",
+    "year": "2023",
+    "images": [],
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
+  },
+  {
+    "title": "Harpy 01",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "76 x 76 cm",
+    "price": 1200,
+    "priceAMD": "450.000",
+    "year": "2023",
+    "images": ["assets/images/artworks/guyduk_harpy01.jpg"],
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
+  },
+  {
+    "title": "The home 02",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "76 x 76 cm",
+    "price": 1200,
+    "priceAMD": "450.000",
+    "year": "2023",
+    "images": [],
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
+  },
+  {
+    "title": "The creature 02",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "76 x 76 cm",
+    "price": 1200,
+    "priceAMD": "450.000",
+    "year": "2023",
+    "images": ["assets/images/artworks/guyduk_creature.jpg"],
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
+  },
+  {
+    "title": "Untitled 7",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "76 x 76 cm",
+    "price": 1200,
+    "priceAMD": "450.000",
+    "year": "2023",
+    "images": [],
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
+  },
+  {
+    "title": "The tree",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "152 x 76 cm",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "2023",
+    "images": ["assets/images/artworks/guyduk_tree.jpg"],
+    "status": "Sold out",
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
+  },
+  {
+    "title": "Untitled 2",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "152 x 76 cm",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "2023",
+    "images": ["assets/images/artworks/guyduk_antitled2_2.jpg"],
+    "status": "Sold out",
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
+  },
+  {
+    "title": "Untitled 2",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "152 x 76 cm",
+    "price": 2000,
+    "priceAMD": "750.000",
+    "year": "2024",
+    "images": ["assets/images/artworks/guyduk_untitled2.jpg"],
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
+  },
+  {
+    "title": "Untitled 1",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "97 x 46 cm",
+    "price": 1000,
+    "priceAMD": "400.000",
+    "year": "2024",
+    "images": [],
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
+  },
+  {
+    "title": "May 2025",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "76 x 76 cm",
+    "price": 1200,
+    "priceAMD": "450.000",
+    "year": "2025",
+    "images": [],
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
+  },
+  {
+    "title": "At Market",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "76 x 76 cm",
+    "price": 1200,
+    "priceAMD": "450.000",
+    "year": "2023",
+    "images": [],
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
+  },
+  {
+    "title": "Bird",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "76 x 38 cm",
+    "price": 800,
+    "priceAMD": "300.000",
+    "year": "2023",
+    "images": ["assets/images/artworks/guyduk_bird.jpg"],
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
+  },
+  {
+    "title": "Composition 03",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "76 x 38 cm",
+    "price": 800,
+    "priceAMD": "300.000",
+    "year": "2023",
+    "images": ["assets/images/artworks/guyduk_composition03.jpg"],
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
+  },
+  {
+    "title": "Morning",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "152 x 76 cm",
+    "price": 2000,
+    "priceAMD": "750.000",
+    "year": "2024",
+    "images": ["assets/images/artworks/guyduk_morning.jpg"],
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
+  },
+  {
+    "title": "Nicky Finder",
+    "artist": "Anatoliy Guyduk",
+    "artistLink": "artists/anatoliy-guyduk",
+    "country": "Russia",
+    "media": "Acrylics on plywood",
+    "size": "152 x 76 cm",
+    "price": 2000,
+    "priceAMD": "750.000",
+    "year": "2023",
+    "images": ["assets/images/artworks/guyduk_nickyfinder.jpg"],
+    "exhibitions": [
+      "guyduk-presence-2026"
+    ]
   }
 ]
