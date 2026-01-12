@@ -72,6 +72,9 @@
     </script>
 </head>
 <body>
+    <div class="charity-banner">
+        <p>20% of all sales goes to <a href="https://onelink.to/fwq6jh" target="_blank" rel="noreferrer" class="charity-link">Imast Foundation</a> charity projects.</p>
+    </div>
     <header>
         <div class="header-container">
             <div class="logo">
@@ -1350,12 +1353,12 @@
                 })
                 .then(data => {
                     if (data && data.length > 0) {
-                        // Show only first 16 items
-                        const displayedArtworks = data.slice(0, 16);
+                        // Show only first 8 items
+                        const displayedArtworks = data.slice(0, 8);
                         const seeAllContainer = document.getElementById('seeAllContainer');
                         
-                        // Show "See all" button if there are more than 16 artworks
-                        if (data.length > 16 && seeAllContainer) {
+                        // Show "See all" button if there are more than 8 artworks
+                        if (data.length > 8 && seeAllContainer) {
                             seeAllContainer.style.display = 'block';
                         }
                         
