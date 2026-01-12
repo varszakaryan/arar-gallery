@@ -97,6 +97,7 @@
                 <a href="#artists">Artists</a>
                 <a href="#artworks">Artworks</a>
                 <a href="#merch">Merch</a>
+                <a href="#mural">Mural</a>
                 <a href="#organizers">Organizers</a>
                 <a href="#partners">Partners</a>
                 <a href="#contacts">Contacts</a>
@@ -181,6 +182,16 @@
                         <p class="detail-value">National Center of Aesthetics</p>
                         <p class="detail-value">
                             <a href="https://maps.app.goo.gl/hxiTmgvvDASGUDHZ8" target="_blank" rel="noreferrer" class="location-link">Abovyan 13, Yerevan</a>
+                        </p>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-header">
+                            <span class="material-icons-outlined detail-icon">person</span>
+                            <span class="detail-label">Curator</span>
+                        </div>
+                        <p class="detail-value">
+                            <a href="https://www.instagram.com/voghjamit/" target="_blank" rel="noreferrer" class="location-link">Vahram Muradyan</a>
                         </p>
                     </div>
                 </div>
@@ -319,6 +330,19 @@
                     <button class="donate-btn" onclick="openDonateModal()">Donate</button>
                 </div>
             </div>
+            
+            <div class="mural-section" id="mural">
+                <h3 class="mural-title">Mural</h3>
+                <div class="mural-content">
+                    <p>Arar Gallery and IPBA Foundation join forces to realize a bold contemporary art project that extends beyond the exhibition space. From gallery to city walls, the collaboration brings ambitious artworks and a large-scale mural to life — activating public space and turning artistic vision into visible, lasting impact.</p>
+                </div>
+                <div class="mural-images">
+                    <img src="assets/images/mural_exterior.jpeg" alt="Mural Exterior" class="mural-image">
+                    <img src="assets/images/mural_interior.jpeg" alt="Mural Interior" class="mural-image">
+                    <img src="assets/images/mural.jpeg" alt="Mural" class="mural-image">
+                </div>
+            </div>
+            
             <div class="partners-section" id="partners" style="display: none;">
                 <h3 class="partners-title">Partners</h3>
                 <div class="partners-logos" id="partnersLogosMain">
@@ -729,16 +753,62 @@
                     organizersNavLink.style.display = 'none';
                 }
                 
-                // Hide partners section on homepage
-                const partnersSectionHome = document.querySelector('.partners-section');
-                if (partnersSectionHome) {
-                    partnersSectionHome.style.display = 'none';
+                // Show Mural section on homepage
+                const muralSectionHome = document.querySelector('.mural-section');
+                if (muralSectionHome) {
+                    muralSectionHome.style.display = 'block';
                 }
                 
-                // Hide partners link in navbar on homepage
+                // Show Mural link in navbar on homepage
+                const muralNavLink = document.querySelector('nav a[href="#mural"]');
+                if (muralNavLink) {
+                    muralNavLink.style.display = 'block';
+                }
+                
+                // Show partners section on homepage with all partners (same as contemporary-art-2026)
+                const partnersSectionHome = document.getElementById('partners');
+                if (partnersSectionHome) {
+                    partnersSectionHome.style.display = 'block';
+                    
+                    // Ensure all partner logos are visible
+                    const partnersLogosMain = document.getElementById('partnersLogosMain');
+                    const partnersLogosSecond = document.getElementById('partnersLogosSecond');
+                    const mediaPartnersSection = document.getElementById('mediaPartnersSection');
+                    
+                    // Restore full partners structure if it was modified
+                    if (partnersLogosMain && partnersLogosMain.children.length === 1) {
+                        // If only Imast is showing, restore all partners
+                        partnersLogosMain.innerHTML = `
+                            <div class="partner-logo">
+                                <a href="https://www.yerevan.am/en/" target="_blank" rel="noreferrer">
+                                    <img src="assets/images/partners/ym.png" alt="Yerevan Municipality" class="logo-img">
+                                </a>
+                            </div>
+                            <div class="partner-logo">
+                                <a href="https://nca.am" target="_blank" rel="noreferrer">
+                                    <img src="assets/images/partners/nca.png" alt="National Centre for Aesthetics" class="logo-img">
+                                </a>
+                            </div>
+                            <div class="partner-logo">
+                                <a href="https://imast.am" target="_blank" rel="noreferrer">
+                                    <img src="assets/images/partners/imast.png" alt="Imast" class="logo-img">
+                                </a>
+                            </div>
+                        `;
+                    }
+                    
+                    if (partnersLogosSecond) {
+                        partnersLogosSecond.style.display = 'flex';
+                    }
+                    if (mediaPartnersSection) {
+                        mediaPartnersSection.style.display = 'block';
+                    }
+                }
+                
+                // Show partners link in navbar on homepage
                 const partnersNavLinkHome = document.querySelector('nav a[href="#partners"]');
                 if (partnersNavLinkHome) {
-                    partnersNavLinkHome.style.display = 'none';
+                    partnersNavLinkHome.style.display = 'block';
                 }
                 
                 // Make hero section 30px higher on homepage
