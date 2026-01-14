@@ -258,10 +258,10 @@
                                         </p>
                                         <p class="merch-dimensions">${artwork.size || 'size not available'}</p>
                                         <p class="merch-price">
-                                            ${artwork.status === 'Gift' ? '<span class="merch-price-discounted">Gifted</span>' : artwork.status === 'Sold out' ? '<span class="merch-price-discounted">Sold out</span>' : `
-                                                ${artwork.priceAMD ? `<span class="merch-price-discounted">֏${artwork.priceAMD}</span>` : ''}
-                                                <span class="merch-price-discounted">($${artwork.price})</span>
-                                            `}
+                                            ${artwork.status === 'Gift' ? '<span class="merch-price-discounted">Gifted</span>' : artwork.status === 'Sold out' ? '<span class="merch-price-discounted">Sold out</span>' : 
+                                                (artwork.originalPrice ? (artwork.originalPriceAMD ? '<span class="merch-price-original">֏' + artwork.originalPriceAMD + '</span> ' : '') + '<span class="merch-price-original">($' + artwork.originalPrice + ')</span> ' : '') +
+                                                (artwork.priceAMD ? '<span class="merch-price-discounted">֏' + artwork.priceAMD + '</span> ' : '') +
+                                                '<span class="merch-price-discounted">($' + artwork.price + ')</span>'}
                                         </p>
                                     </div>
                                 </div>

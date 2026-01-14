@@ -122,6 +122,8 @@
                         Anatoliy Guyduk Solo Exhibition
                     </h1>
                     <p class="opening-info">January 10-15, 2026</p>
+                    <p class="hero-address">National Center of Aesthetics</p>
+                    <a href="?exhibition=guyduk-presence-2026" class="hero-more-btn">Learn More</a>
                 </div>
             </div>
             <div class="hero-slide" data-bg="assets/images/bg.jpg" data-link="?exhibition=contemporary-art-2026">
@@ -136,6 +138,8 @@
                         Exhibition-Fundraiser
                     </h1>
                     <p class="opening-info">January 5-10, 2026</p>
+                    <p class="hero-address">National Center of Aesthetics</p>
+                    <a href="?exhibition=contemporary-art-2026" class="hero-more-btn">Learn More</a>
                 </div>
             </div>
             <div class="hero-carousel-controls">
@@ -721,10 +725,14 @@
                 heroSlides = document.querySelectorAll('.hero-slide');
                 heroIndicators = document.querySelectorAll('.hero-indicator');
                 
-                // Make hero slides clickable
+                // Make hero slides clickable (but not when clicking the More button)
                 heroSlides.forEach(slide => {
                     slide.style.cursor = 'pointer';
-                    slide.addEventListener('click', function() {
+                    slide.addEventListener('click', function(e) {
+                        // Don't navigate if clicking on the More button
+                        if (e.target.closest('.hero-more-btn')) {
+                            return;
+                        }
                         const link = this.dataset.link;
                         if (link) {
                             window.location.href = link;
@@ -838,6 +846,16 @@
                 const carouselIndicators = document.querySelector('.hero-carousel-indicators');
                 if (carouselControls) carouselControls.style.display = 'none';
                 if (carouselIndicators) carouselIndicators.style.display = 'none';
+                
+                // Hide More buttons and address on exhibition pages
+                const moreButtons = document.querySelectorAll('.hero-more-btn');
+                moreButtons.forEach(btn => {
+                    btn.style.display = 'none';
+                });
+                const heroAddresses = document.querySelectorAll('.hero-address');
+                heroAddresses.forEach(addr => {
+                    addr.style.display = 'none';
+                });
                 
                 // Show only the relevant slide
                 heroSlides = document.querySelectorAll('.hero-slide');
@@ -1437,10 +1455,10 @@
                             </p>
                             <p class="merch-dimensions">${artwork.size || 'size not available'}</p>
                             <p class="merch-price">
-                                ${artwork.status === 'Gift' ? '<span class="merch-price-discounted">Gifted</span>' : artwork.status === 'Sold out' ? '<span class="merch-price-discounted">Sold out</span>' : `
-                                    ${artwork.priceAMD ? `<span class="merch-price-discounted">֏${artwork.priceAMD}</span>` : ''}
-                                    <span class="merch-price-discounted">($${artwork.price})</span>
-                                `}
+                                ${artwork.status === 'Gift' ? '<span class="merch-price-discounted">Gifted</span>' : artwork.status === 'Sold out' ? '<span class="merch-price-discounted">Sold out</span>' : 
+                                    (artwork.originalPrice ? (artwork.originalPriceAMD ? '<span class="merch-price-original">֏' + artwork.originalPriceAMD + '</span> ' : '') + '<span class="merch-price-original">($' + artwork.originalPrice + ')</span> ' : '') +
+                                    (artwork.priceAMD ? '<span class="merch-price-discounted">֏' + artwork.priceAMD + '</span> ' : '') +
+                                    '<span class="merch-price-discounted">($' + artwork.price + ')</span>'}
                             </p>
                         </div>
                     </div>
