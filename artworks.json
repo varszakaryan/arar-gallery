@@ -704,6 +704,7 @@
     "price": 500,
     "priceAMD": "190.000",
     "year": "2025",
+    "status": "Gift",
     "images": [
       "assets/images/artworks/tigran_ghazaryan4.jpg",
       "assets/images/artworks/tigran_ghazaryan_celloist.jpg"

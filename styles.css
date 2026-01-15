@@ -2095,6 +2095,12 @@ a.artist-name:hover {
     font-weight: 400;
 }
 
+.merch-price-original-no-strike {
+    text-decoration: none;
+    color: #999;
+    font-weight: 400;
+}
+
 .merch-price-discounted {
     color: #000;
     font-weight: 700;
