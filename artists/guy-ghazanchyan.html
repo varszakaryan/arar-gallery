@@ -29,7 +29,7 @@
             <button class="menu-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
                 <span class="material-icons-outlined">menu</span>
             </button>
-            <div class="menu-overlay" onclick="toggleMenu()"></div>
+            <div class="menu-overlay" onclick="closeMenu()"></div>
             <nav id="main-nav" class="nav-menu">
                 <button class="menu-close-btn" onclick="toggleMenu()" aria-label="Close menu">
                     <span class="material-icons-outlined">close</span>
@@ -88,10 +88,29 @@
     <script>
         function toggleMenu() {
             const nav = document.getElementById('main-nav');
+            const menuToggle = document.querySelector('.menu-toggle');
             const overlay = document.querySelector('.menu-overlay');
-            nav.classList.toggle('active');
-            overlay.classList.toggle('active');
-            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+            nav.classList.toggle('nav-open');
+            menuToggle.classList.toggle('menu-open');
+            if (overlay) {
+                overlay.classList.toggle('active');
+            }
+        }
+
+        function closeMenu() {
+            const nav = document.getElementById('main-nav');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const overlay = document.querySelector('.menu-overlay');
+            // Only close if menu is open
+            if (nav && nav.classList.contains('nav-open')) {
+                nav.classList.remove('nav-open');
+                if (menuToggle) {
+                    menuToggle.classList.remove('menu-open');
+                }
+                if (overlay) {
+                    overlay.classList.remove('active');
+                }
+            }
         }
 
         let dropdownTimeout = null;
