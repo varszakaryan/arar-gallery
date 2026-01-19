@@ -264,6 +264,8 @@ The allure of Lilit Yeghiazaryan's works lies in their ability to convey profoun
                                                 artwork.status === 'Gift' ? 
                                                     (artwork.originalPrice ? (artwork.originalPriceAMD ? '<span class="merch-price-original-no-strike">֏' + artwork.originalPriceAMD + '</span> ' : '') + '<span class="merch-price-original-no-strike">($' + artwork.originalPrice + ')</span> ' : '') +
                                                     '<span class="merch-price-discounted">Gifted</span>' :
+                                                artwork.status === 'ARAR Gallery collection' ? 
+                                                    '<span class="merch-price-discounted">ARAR Gallery collection</span>' :
                                                 (artwork.originalPrice ? (artwork.originalPriceAMD ? '<span class="merch-price-original">֏' + artwork.originalPriceAMD + '</span> ' : '') + '<span class="merch-price-original">($' + artwork.originalPrice + ')</span> ' : '') +
                                                 (artwork.priceAMD ? '<span class="merch-price-discounted">֏' + artwork.priceAMD + '</span> ' : '') +
                                                 '<span class="merch-price-discounted">($' + artwork.price + ')</span>'}

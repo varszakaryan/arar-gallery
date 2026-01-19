@@ -298,9 +298,10 @@
     "country": "Lebanon",
     "media": "Alcohol markers on paper",
     "size": "15 x 21 cm",
-    "price": 1000,
-    "priceAMD": "380.000",
+    "price": 0,
+    "priceAMD": "0",
     "year": "2025",
+    "status": "ARAR Gallery collection",
     "images": [
       "assets/images/artworks/spazuno_1.jpeg",
       "assets/images/artworks/spaz2nd.jpg"
@@ -517,9 +518,10 @@
     "country": "Lebanon",
     "media": "Alcohol markers on paper",
     "size": "15 x 21 cm",
-    "price": 1000,
-    "priceAMD": "380.000",
+    "price": 0,
+    "priceAMD": "0",
     "year": "2025",
+    "status": "ARAR Gallery collection",
     "images": [
       "assets/images/artworks/spazuno_2.jpeg",
       "assets/images/artworks/spaz2nd.jpg"
