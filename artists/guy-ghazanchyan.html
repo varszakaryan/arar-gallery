@@ -380,8 +380,8 @@
                                         <span class="merch-dimensions">${item.dimensions}</span>
                                     </p>
                                     <p class="merch-price">
-                                        <span class="merch-price-original">${item.currency === 'USD' ? '$' : ''}${item.price} ${item.currency !== 'USD' ? item.currency : ''}</span>
-                                        ${item.discountedPrice ? `<span class="merch-price-discounted">${item.currency === 'USD' ? '$' : ''}${item.discountedPrice} ${item.currency !== 'USD' ? item.currency : ''}</span>` : ''}
+                                        ${item.discountedPrice ? `<span class="merch-price-original">${item.currency === 'USD' ? '$' : ''}${item.price} ${item.currency !== 'USD' ? item.currency : ''}</span>` : ''}
+                                        <span class="merch-price-discounted">${item.currency === 'USD' ? '$' : ''}${item.discountedPrice || item.price} ${item.currency !== 'USD' ? item.currency : ''}</span>
                                     </p>
                                 </div>
                             </div>
