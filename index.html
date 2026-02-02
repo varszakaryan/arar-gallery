@@ -43,24 +43,6 @@
         }
     </style>
     
-    <!-- Facebook Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'YOUR_PIXEL_ID');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Facebook Pixel Code -->
-    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HGM21QWH4E"></script>
     <script>
@@ -93,6 +75,7 @@
                 <div class="nav-dropdown">
                     <a href="#" class="nav-dropdown-toggle" onclick="toggleDropdown(event)">Exhibitions</a>
                     <div class="nav-dropdown-menu">
+                        <a href="?exhibition=bouquet-contemporary-art-2026">BOUQUET Contemporary Art Exhibition</a>
                         <a href="?exhibition=guyduk-presence-2026">PRESENCE - Anatoliy Guyduk Solo Exhibition</a>
                         <a href="?exhibition=contemporary-art-2026">Contemporary Art Exhibition-Fundraiser</a>
                     </div>
@@ -110,6 +93,22 @@
 
     <main>
         <div class="hero-section hero-carousel">
+            <div class="hero-slide" data-bg="assets/images/artworks/tigran_ghazaryan2.jpg" data-link="?exhibition=bouquet-contemporary-art-2026">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <div class="upcoming-label">
+                        <span class="vertical-line"></span>
+                        <span>UPCOMING</span>
+                    </div>
+                    <h1 class="hero-title">
+                        BOUQUET<br>
+                        Contemporary Art Exhibition
+                    </h1>
+                    <p class="opening-info">March 7-April 7, 2026</p>
+                    <p class="hero-address">National Center of Aesthetics</p>
+                    <a href="?exhibition=bouquet-contemporary-art-2026" class="hero-more-btn">Learn More</a>
+                </div>
+            </div>
             <div class="hero-slide" data-bg="assets/images/guyduk_bg.png" data-link="?exhibition=guyduk-presence-2026">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
@@ -153,6 +152,7 @@
             <div class="hero-carousel-indicators">
                 <span class="hero-indicator active" onclick="goToHeroSlide(0)"></span>
                 <span class="hero-indicator" onclick="goToHeroSlide(1)"></span>
+                <span class="hero-indicator" onclick="goToHeroSlide(2)"></span>
             </div>
             <button class="scroll-down-btn" onclick="scrollToNext()" aria-label="Scroll down">
                 <span class="material-icons-outlined">keyboard_arrow_down</span>
@@ -668,7 +668,9 @@
             const exhibition = urlParams.get('exhibition');
             
             // Update page title based on exhibition parameter
-            if (exhibition === 'guyduk-presence-2026') {
+            if (exhibition === 'bouquet-contemporary-art-2026') {
+                document.title = 'BOUQUET Contemporary Art Exhibition | ARAR Gallery';
+            } else if (exhibition === 'guyduk-presence-2026') {
                 document.title = 'PRESENCE - Anatoliy Guyduk Solo Exhibition | ARAR Gallery';
             } else if (exhibition === 'contemporary-art-2026') {
                 document.title = 'Contemporary Art Exhibition-Fundraiser | ARAR Gallery';
@@ -707,7 +709,9 @@
             }
             
             // Set appropriate image based on exhibition or use logo as fallback
-            if (exhibition === 'guyduk-presence-2026') {
+            if (exhibition === 'bouquet-contemporary-art-2026') {
+                updateOGImage('assets/images/artworks/tigran_ghazaryan2.jpg');
+            } else if (exhibition === 'guyduk-presence-2026') {
                 updateOGImage('assets/images/guyduk_bg.png');
             } else if (exhibition === 'contemporary-art-2026') {
                 updateOGImage('assets/images/bg.jpg');
@@ -849,19 +853,25 @@
                 if (carouselControls) carouselControls.style.display = 'none';
                 if (carouselIndicators) carouselIndicators.style.display = 'none';
                 
-                // Hide More buttons and address on exhibition pages
+                // Hide More buttons on exhibition pages
                 const moreButtons = document.querySelectorAll('.hero-more-btn');
                 moreButtons.forEach(btn => {
                     btn.style.display = 'none';
                 });
+                
+                // Hide address on exhibition pages (except BOUQUET)
                 const heroAddresses = document.querySelectorAll('.hero-address');
                 heroAddresses.forEach(addr => {
-                    addr.style.display = 'none';
+                    if (exhibition !== 'bouquet-contemporary-art-2026') {
+                        addr.style.display = 'none';
+                    } else {
+                        addr.style.display = 'block';
+                    }
                 });
                 
                 // Show only the relevant slide
                 heroSlides = document.querySelectorAll('.hero-slide');
-                if (exhibition === 'guyduk-presence-2026') {
+                if (exhibition === 'bouquet-contemporary-art-2026') {
                     heroSlides.forEach((slide, i) => {
                         slide.classList.toggle('active', i === 0);
                         if (i === 0) {
@@ -876,7 +886,7 @@
                             heroSection.style.backgroundImage = `url('${heroSlides[0].dataset.bg}')`;
                         }
                     }
-                } else if (exhibition === 'contemporary-art-2026') {
+                } else if (exhibition === 'guyduk-presence-2026') {
                     heroSlides.forEach((slide, i) => {
                         slide.classList.toggle('active', i === 1);
                         if (i === 1) {
@@ -891,10 +901,253 @@
                             heroSection.style.backgroundImage = `url('${heroSlides[1].dataset.bg}')`;
                         }
                     }
+                } else if (exhibition === 'contemporary-art-2026') {
+                    heroSlides.forEach((slide, i) => {
+                        slide.classList.toggle('active', i === 2);
+                        if (i === 2) {
+                            slide.style.pointerEvents = 'auto';
+                        } else {
+                            slide.style.pointerEvents = 'none';
+                        }
+                    });
+                    if (heroSlides[2] && heroSlides[2].dataset.bg) {
+                        const heroSection = document.querySelector('.hero-section');
+                        if (heroSection) {
+                            heroSection.style.backgroundImage = `url('${heroSlides[2].dataset.bg}')`;
+                        }
+                    }
                 }
             }
             
-            if (exhibition === 'guyduk-presence-2026') {
+            if (exhibition === 'bouquet-contemporary-art-2026') {
+                // 1. Change hero section bg to tigran_ghazaryan2.jpg
+                const heroSection = document.querySelector('.hero-section');
+                if (heroSection) {
+                    heroSection.style.backgroundImage = "url('assets/images/artworks/tigran_ghazaryan2.jpg')";
+                }
+                
+                // 2. Change hero title
+                const heroTitle = document.querySelector('.hero-title');
+                if (heroTitle) {
+                    heroTitle.innerHTML = 'BOUQUET<br>Contemporary Art Exhibition';
+                }
+                
+                // 3. Change opening info
+                const openingInfo = document.querySelector('.opening-info');
+                if (openingInfo) {
+                    openingInfo.textContent = 'March 7-April 7, 2026';
+                }
+                
+                // Show event info section
+                const eventInfoSection = document.getElementById('eventInfoSection');
+                if (eventInfoSection) {
+                    eventInfoSection.style.display = 'block';
+                    
+                    // Update date to March 7-April 7, 2026
+                    const dateValue = document.getElementById('eventDateValue');
+                    if (dateValue) {
+                        dateValue.textContent = 'March 7–April 7, 2026';
+                    }
+                    
+                    // Update calendar links for bouquet exhibition
+                    const googleCalendarLink = document.getElementById('googleCalendarLink');
+                    const appleCalendarLink = document.getElementById('appleCalendarLink');
+                    if (googleCalendarLink) {
+                        googleCalendarLink.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=BOUQUET+Contemporary+Art+Exhibition&dates=20260307T190000/20260407T220000&details=A+collection+of+flowers+from+around+the+world.+The+BOUQUET+exhibition+brings+together+works+by+artists+from+different+countries%2C+united+by+the+motif+of+the+flower.+Curated+by+Vahram+Muradyan.&location=National+Center+of+Aesthetics%2C+Abovyan+13%2C+Yerevan';
+                    }
+                    if (appleCalendarLink) {
+                        appleCalendarLink.href = 'data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20260307T190000%0ADTEND:20260407T220000%0ASUMMARY:BOUQUET+Contemporary+Art+Exhibition%0ADESCRIPTION=A+collection+of+flowers+from+around+the+world.+The+BOUQUET+exhibition+brings+together+works+by+artists+from+different+countries%2C+united+by+the+motif+of+the+flower.+Curated+by+Vahram+Muradyan.%0ALOCATION:National+Center+of+Aesthetics%2C+Abovyan+13%2C+Yerevan%0AEND:VEVENT%0AEND:VCALENDAR';
+                    }
+                    
+                    // Update description text for bouquet exhibition
+                    const eventInfoDescription = document.getElementById('eventInfoDescription');
+                    if (eventInfoDescription) {
+                        eventInfoDescription.innerHTML = '<strong>A collection of flowers from around the world</strong><br><br>A flower is one of the few images that exists across all cultures and requires no translation. It is given as a gift, used to say goodbye, to celebrate a holiday, or to mark a loss. Yet, despite its universality, a flower is never the same: its meaning changes depending on the place, time, and the perspective of the person who looks at it.<br><br>The BOUQUET exhibition brings together works by artists from different countries, united by the motif of the flower, interpreted in radically different ways. Here, the flower ceases to be merely a decorative element and becomes a statement: personal, cultural, political, or almost intimate. For some, it is memory; for others, a gesture of love; for others, a form of resistance; and for others, silence.<br><br>Each artist is represented by a single work. Just like in a real bouquet, where each flower maintains its shape and character while contributing to a harmonious whole. BOUQUET does not aim to show the "best flowers of the world" — it collects different voices, contexts, and intonations, allowing the viewer to feel how a single image can speak in dozens of visual languages.';
+                    }
+                }
+                
+                // Change artists title to "Exhibited Artists"
+                const artistsTitle = document.querySelector('.artists-title');
+                if (artistsTitle) {
+                    artistsTitle.textContent = 'Exhibited Artists';
+                }
+                
+                // Show "Coming soon" in artists list
+                const artistsList = document.querySelector('.artists-list');
+                if (artistsList) {
+                    artistsList.innerHTML = '<p class="merch-empty">Coming soon</p>';
+                }
+                
+                // Show Zones link in navbar
+                let zonesNavLink = document.querySelector('nav a[href="#zones"]');
+                const artistsNavLink = document.querySelector('nav a[href="#artists"]');
+                if (!zonesNavLink && artistsNavLink) {
+                    zonesNavLink = document.createElement('a');
+                    zonesNavLink.href = '#zones';
+                    zonesNavLink.textContent = 'Zones';
+                    zonesNavLink.style.display = 'block';
+                    artistsNavLink.insertAdjacentElement('beforebegin', zonesNavLink);
+                } else if (zonesNavLink) {
+                    zonesNavLink.style.display = 'block';
+                }
+                
+                // Show exhibition tabs section with BOUQUET zones
+                const exhibitionTabsSection = document.getElementById('exhibitionTabsSection');
+                if (exhibitionTabsSection) {
+                    exhibitionTabsSection.style.display = 'block';
+                    
+                    // Update tabs for BOUQUET zones
+                    const tabsContainer = exhibitionTabsSection.querySelector('.exhibition-tabs');
+                    if (tabsContainer) {
+                        tabsContainer.innerHTML = `
+                            <button class="exhibition-tab active" data-tab="sculptures" onclick="switchExhibitionTab('sculptures', event)">SCULPTURES AND ART OBJECTS</button>
+                            <button class="exhibition-tab" data-tab="femininity" onclick="switchExhibitionTab('femininity', event)">FEMININITY AND FLOWERS</button>
+                            <button class="exhibition-tab" data-tab="small-works" onclick="switchExhibitionTab('small-works', event)">SMALL WORKS AND FLORAL COLLAGES</button>
+                            <button class="exhibition-tab" data-tab="karabala" onclick="switchExhibitionTab('karabala', event)">KARABALA — THE HUMAN FLOWER</button>
+                        `;
+                    }
+                    
+                    // Update tab content for BOUQUET zones
+                    const tabContentContainer = exhibitionTabsSection.querySelector('.exhibition-tab-content');
+                    if (tabContentContainer) {
+                        tabContentContainer.innerHTML = `
+                            <div class="tab-panel active" id="sculptures-panel">
+                                <p><strong>Sculptures and Art Objects</strong></p>
+                                <p>This section of BOUQUET is dedicated to ceramics, vases, and functional art objects designed to hold and interact with flowers. Here, the flower is not simply a decorative element — it becomes an integral part of the artwork, giving life, volume, and context to the piece.</p>
+                                <p>The interplay between material, shape, and the living flower transforms each object into a dynamic experience. A vase, for example, is no longer just a container; it is a sculptural statement, a stage for color, form, and growth. Every curve, every texture, every surface reflects the artist's intention, inviting viewers to explore the dialogue between the natural and the crafted.</p>
+                                <p>These works challenge the traditional boundaries of art and utility. They remind us that beauty can be functional, and that objects can carry meaning beyond their immediate form. By placing a flower within these sculptures, artists create a moment of interaction — the flower's fragility and impermanence contrast with the permanence of the object, creating a poetic tension that encourages reflection.</p>
+                                <p>Through this dialogue, the viewer experiences flowers not as simple embellishments, but as participants in a visual and spatial conversation, where art, nature, and human intention converge.</p>
+                            </div>
+                            <div class="tab-panel" id="femininity-panel">
+                                <p><strong>Femininity and Flowers</strong></p>
+                                <p>The Femininity and Flowers section of BOUQUET explores the intimate connection between flowers, the female experience, and personal expression. These works reflect on the body, emotions, memory, and the cultural symbolism of flowers, revealing their power to convey both strength and vulnerability.</p>
+                                <p>Here, the flower is more than a visual motif — it is a gesture, a narrative, a voice. It speaks of love, loss, resilience, and identity. Through painting, sculpture, mixed media, and installation, artists translate the personal and collective stories of women into visual form, using flowers as carriers of emotion and meaning.</p>
+                                <p>These works invite viewers to engage with the subtleties of femininity: the quiet strength, the delicate fragility, and the nuanced layers of experience that flowers so poetically symbolize. The artists show that a single bloom can embody memory, desire, care, or resistance, bridging the personal and the universal.</p>
+                                <p>By presenting flowers through the lens of female experience, this section creates a dialogue between the natural and the human, highlighting how deeply intertwined cultural, emotional, and symbolic meanings can be.</p>
+                            </div>
+                            <div class="tab-panel" id="small-works-panel">
+                                <p><strong>Small Works & Floral Collages</strong></p>
+                                <p>The Small Works & Floral Collages section of BOUQUET brings together intimate, small-format pieces — typically up to A4 in size — from artists across the globe. These works, though modest in scale, are rich in detail, narrative, and emotion, each offering a unique perspective on the motif of the flower.</p>
+                                <p>Displayed together as a visual collage, these pieces create a dynamic bouquet of voices. Viewers are invited to move from one work to another, exploring different countries, artistic languages, and cultural contexts. In this way, the section becomes a journey — a layered tapestry of meaning, memory, and interpretation.</p>
+                                <p>The small format encourages close engagement. Each work, like a delicate bloom, demands attention, inviting the audience to pause, observe, and reflect. The juxtaposition of these pieces allows the subtle dialogues between form, color, and concept to emerge, showing how even the smallest expression can carry profound impact.</p>
+                                <p>Through this collection, BOUQUET demonstrates that flowers, in all their diversity, can create connections across distances and perspectives, forming a mosaic of shared human experience.</p>
+                            </div>
+                            <div class="tab-panel" id="karabala-panel">
+                                <p><strong>Karabala — The Human Flower</strong></p>
+                                <p>A special part of BOUQUET is dedicated to Karabala, a person whose life and deeds have touched the people of Yerevan. Known for his kindness, generosity, and deep connection to others, Karabala embodies the idea that a flower can be more than a symbol — it can represent humanity, care, and the power of small, meaningful actions.</p>
+                                <p>Artists were inspired by his life and his relationship with the communities he has supported. The works in this section reflect these themes: flowers here are metaphors for empathy, resilience, and hope. They highlight how human gestures, like the act of giving or nurturing, can bloom into lasting impact — much like a flower growing in unexpected soil.</p>
+                                <p>This section bridges the personal and the universal. Just as a flower can travel across borders as a gift or a symbol, Karabala's story resonates beyond its immediate context, reminding viewers that art, life, and humanity are interconnected. Here, the flower becomes a witness to compassion, a marker of memory, and a testament to the ways one individual can inspire many.</p>
+                                <p>Through this section, BOUQUET emphasizes that flowers are not just visual motifs — they can be carriers of stories, symbols of human connection, and reflections of moral beauty in the world around us.</p>
+                            </div>
+                        `;
+                    }
+                    
+                    // Ensure only the first tab panel is active initially
+                    const panels = exhibitionTabsSection.querySelectorAll('.tab-panel');
+                    panels.forEach((panel, index) => {
+                        if (index === 0) {
+                            panel.classList.add('active');
+                        } else {
+                            panel.classList.remove('active');
+                        }
+                    });
+                    
+                    // Ensure only the first tab button is active initially
+                    const tabs = exhibitionTabsSection.querySelectorAll('.exhibition-tab');
+                    tabs.forEach((tab, index) => {
+                        if (index === 0) {
+                            tab.classList.add('active');
+                        } else {
+                            tab.classList.remove('active');
+                        }
+                    });
+                }
+                
+                // Show Partners link in navbar
+                const partnersNavLink = document.querySelector('nav a[href="#partners"]');
+                if (partnersNavLink) {
+                    partnersNavLink.style.display = 'block';
+                }
+                
+                // Show Partners section with only Voskanian
+                const partnersSection = document.getElementById('partners');
+                if (partnersSection) {
+                    partnersSection.style.display = 'block';
+                    
+                    // Hide main partners row
+                    const partnersLogosMain = document.getElementById('partnersLogosMain');
+                    if (partnersLogosMain) {
+                        partnersLogosMain.style.display = 'none';
+                    }
+                    
+                    // Show only Voskanian in second row
+                    const partnersLogosSecond = document.getElementById('partnersLogosSecond');
+                    if (partnersLogosSecond) {
+                        partnersLogosSecond.style.display = 'flex';
+                        // Hide all logos except Voskanian
+                        const partnerLogos = partnersLogosSecond.querySelectorAll('.partner-logo');
+                        partnerLogos.forEach(logo => {
+                            const voskanianLink = logo.querySelector('a[href*="voskanian"]');
+                            if (voskanianLink) {
+                                logo.style.display = 'block';
+                            } else {
+                                logo.style.display = 'none';
+                            }
+                        });
+                    }
+                    
+                    // Hide media partners section
+                    const mediaPartnersSection = document.getElementById('mediaPartnersSection');
+                    if (mediaPartnersSection) {
+                        mediaPartnersSection.style.display = 'none';
+                    }
+                }
+                
+                // Hide Mural section
+                const muralSection = document.querySelector('.mural-section');
+                if (muralSection) {
+                    muralSection.style.display = 'none';
+                }
+                
+                // Hide Mural link in navbar
+                const muralNavLink = document.querySelector('nav a[href="#mural"]');
+                if (muralNavLink) {
+                    muralNavLink.style.display = 'none';
+                }
+                
+                // Hide Merch section
+                const merchSection = document.querySelector('.merch-section');
+                if (merchSection) {
+                    merchSection.style.display = 'none';
+                }
+                
+                // Hide Merch link in navbar
+                const merchNavLink = document.querySelector('nav a[href="#merch"]');
+                if (merchNavLink) {
+                    merchNavLink.style.display = 'none';
+                }
+                
+                // Show Organizers section
+                const organizersSection = document.querySelector('.organizers-section');
+                if (organizersSection) {
+                    organizersSection.style.display = 'block';
+                }
+                
+                // Show Organizers link in navbar
+                const organizersNavLink = document.querySelector('nav a[href="#organizers"]');
+                if (organizersNavLink) {
+                    organizersNavLink.style.display = 'block';
+                }
+                
+                // Update organizers text for BOUQUET exhibition
+                const organizersText = document.querySelector('.organizers-text p');
+                if (organizersText) {
+                    organizersText.textContent = 'Organized by ARAR Gallery in collaboration with the IPBA Foundation, BOUQUET is a curated international exhibition that brings together diverse artistic voices to explore the flower as a universal yet deeply personal visual language.';
+                }
+                
+                // Load artworks for bouquet exhibition
+                loadArtworks('bouquet-contemporary-art-2026');
+            } else if (exhibition === 'guyduk-presence-2026') {
                 // 1. Change hero section bg to guyduk_bg.png
                 const heroSection = document.querySelector('.hero-section');
                 if (heroSection) {
@@ -1228,9 +1481,9 @@
                 loadMerch();
             }
             
-            // Load and display artworks (only on homepage - contemporary art exhibition artworks, limit to 8)
+            // Load and display artworks (only on homepage - show upcoming exhibition artworks, limit to 8)
             if (!exhibition) {
-                loadArtworks('contemporary-art-2026', true); // true = limit to 8 for homepage
+                loadArtworks('bouquet-contemporary-art-2026', true); // true = limit to 8 for homepage
             }
         });
 

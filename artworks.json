@@ -764,6 +764,7 @@
     "originalPriceAMD": "260.000",
     "price": 350,
     "priceAMD": "130.000",
+    "status": "Sold out",
     "year": "2025",
     "images": [
       "assets/images/artworks/tigran_ghazaryan6.jpg"
@@ -778,7 +779,7 @@
     "artistLink": "artists/tigran-ghazaryan",
     "country": "Armenia",
     "media": "Oil on canvas",
-    "size": "30 x 30 cm",
+    "size": "50 x 50 cm",
     "originalPrice": 1500,
     "originalPriceAMD": "560.000",
     "price": 750,
@@ -840,6 +841,7 @@
     "originalPriceAMD": "260.000",
     "price": 350,
     "priceAMD": "130.000",
+    "status": "Sold out",
     "year": "2025",
     "images": [
       "assets/images/artworks/tigran_ghazaryan10.jpg",
