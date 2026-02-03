@@ -25,6 +25,8 @@
     <meta name="twitter:image" content="https://arargallery.com/assets/images/arar.svg">
     
     <link rel="icon" type="image/svg+xml" href="assets/images/ar.svg?v=2">
+    <link rel="icon" href="assets/images/ar.svg?v=2">
+    <link rel="apple-touch-icon" href="assets/images/ar.svg?v=2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -1542,9 +1544,9 @@
                 loadMerch();
             }
             
-            // Load and display artworks (only on homepage - show upcoming exhibition artworks, limit to 8)
+            // Load and display artworks (only on homepage - show contemporary art exhibition artworks, limit to 8)
             if (!exhibition) {
-                loadArtworks('bouquet-contemporary-art-2026', true); // true = limit to 8 for homepage
+                loadArtworks('contemporary-art-2026', true); // true = limit to 8 for homepage
             }
         });
 
@@ -1619,6 +1621,7 @@
                                             <span class="merch-price-discounted">${item.currency === 'USD' ? '$' : ''}${item.price} ${item.currency !== 'USD' ? item.currency : ''}</span>
                                             ${item.discountedPrice ? `<span class="merch-price-discounted">${item.currency === 'USD' ? '$' : ''}${item.discountedPrice} ${item.currency !== 'USD' ? item.currency : ''}</span>` : ''}
                                         </p>
+                                        <a href="https://wa.me/37495286888" target="_blank" rel="noreferrer" class="contact-to-buy-btn" onclick="event.stopPropagation();">Contact to buy</a>
                                     </div>
                                 </div>
                             </div>
@@ -1715,8 +1718,9 @@
                         
                         if (displayedArtworks.length > 0) {
                             renderArtworks(displayedArtworks);
-                            console.log('Artworks loaded from artworks.json', exhibitionFilter ? `(filtered by ${exhibitionFilter})` : '');
+                            console.log('Artworks loaded from artworks.json', exhibitionFilter ? `(filtered by ${exhibitionFilter})` : '', `- Showing ${displayedArtworks.length} of ${filteredArtworks.length} artworks`);
                         } else {
+                            console.warn('No artworks found', exhibitionFilter ? `for exhibition: ${exhibitionFilter}` : '', `- Total artworks in file: ${data.length}, Filtered: ${filteredArtworks.length}`);
                             artworksGrid.innerHTML = '<p class="merch-empty">Coming soon</p>';
                         }
                     } else {
@@ -1783,6 +1787,8 @@
                                     (artwork.priceAMD ? '<span class="merch-price-discounted">֏' + artwork.priceAMD + '</span> ' : '') +
                                     '<span class="merch-price-discounted">($' + artwork.price + ')</span>'}
                             </p>
+                            ${artwork.status !== 'Sold out' && artwork.status !== 'Gift' && artwork.status !== 'ARAR Gallery collection' ? 
+                                '<a href="https://wa.me/37495286888" target="_blank" rel="noreferrer" class="contact-to-buy-btn" onclick="event.stopPropagation();">Contact to buy</a>' : ''}
                         </div>
                     </div>
                 </div>
