@@ -143,10 +143,10 @@
                 </div>
             </div>
             <div class="hero-carousel-controls">
-                <button class="hero-carousel-prev" onclick="changeHeroSlide(-1)" aria-label="Previous slide">
+                <button class="hero-carousel-prev" onclick="event.preventDefault(); event.stopPropagation(); changeHeroSlide(-1);" aria-label="Previous slide">
                     <span class="material-icons-outlined">chevron_left</span>
                 </button>
-                <button class="hero-carousel-next" onclick="changeHeroSlide(1)" aria-label="Next slide">
+                <button class="hero-carousel-next" onclick="event.preventDefault(); event.stopPropagation(); changeHeroSlide(1);" aria-label="Next slide">
                     <span class="material-icons-outlined">chevron_right</span>
                 </button>
             </div>
@@ -1618,10 +1618,14 @@
                                             <span class="merch-dimensions">${item.dimensions}</span>
                                         </p>
                                         <p class="merch-price">
-                                            <span class="merch-price-discounted">${item.currency === 'USD' ? '$' : ''}${item.price} ${item.currency !== 'USD' ? item.currency : ''}</span>
-                                            ${item.discountedPrice ? `<span class="merch-price-discounted">${item.currency === 'USD' ? '$' : ''}${item.discountedPrice} ${item.currency !== 'USD' ? item.currency : ''}</span>` : ''}
+                                            ${item.status === 'Sold out' ? 
+                                                '<span class="merch-price-discounted">Sold out</span>' :
+                                                (item.discountedPrice ? `<span class="merch-price-original">${item.currency === 'USD' ? '$' : ''}${item.price} ${item.currency !== 'USD' ? item.currency : ''}</span> ` : '') +
+                                                `<span class="merch-price-discounted">${item.currency === 'USD' ? '$' : ''}${item.discountedPrice || item.price} ${item.currency !== 'USD' ? item.currency : ''}</span>`
+                                            }
                                         </p>
-                                        <a href="https://wa.me/37495286888" target="_blank" rel="noreferrer" class="contact-to-buy-btn" onclick="event.stopPropagation();">Contact to buy</a>
+                                        ${item.status !== 'Sold out' ? 
+                                            '<a href="https://wa.me/37495286888" target="_blank" rel="noreferrer" class="contact-to-buy-btn" onclick="event.stopPropagation();">Contact to buy</a>' : ''}
                                     </div>
                                 </div>
                             </div>
