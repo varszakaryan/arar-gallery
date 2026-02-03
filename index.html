@@ -104,8 +104,7 @@
                         BOUQUET<br>
                         Contemporary Art Exhibition
                     </h1>
-                    <p class="opening-info">March 7-April 7, 2026</p>
-                    <p class="hero-address">National Center of Aesthetics</p>
+                    <p class="opening-info">March-April, 2026</p>
                     <a href="?exhibition=bouquet-contemporary-art-2026" class="hero-more-btn">Learn More</a>
                 </div>
             </div>
@@ -972,28 +971,53 @@
                 // 3. Change opening info
                 const openingInfo = document.querySelector('.opening-info');
                 if (openingInfo) {
-                    openingInfo.textContent = 'March 7-April 7, 2026';
+                    openingInfo.textContent = 'March-April, 2026';
                 }
+                
+                // 4. Hide hero address for bouquet
+                const heroAddresses = document.querySelectorAll('.hero-address');
+                heroAddresses.forEach(addr => {
+                    if (addr.textContent.includes('National Center of Aesthetics')) {
+                        addr.style.display = 'none';
+                    }
+                });
                 
                 // Show event info section
                 const eventInfoSection = document.getElementById('eventInfoSection');
                 if (eventInfoSection) {
                     eventInfoSection.style.display = 'block';
                     
-                    // Update date to March 7-April 7, 2026
+                    // Update date to March-April, 2026
                     const dateValue = document.getElementById('eventDateValue');
                     if (dateValue) {
-                        dateValue.textContent = 'March 7–April 7, 2026';
+                        dateValue.textContent = 'March–April, 2026';
                     }
+                    
+                    // Update location to "To be announced"
+                    const locationItems = document.querySelectorAll('.detail-item');
+                    locationItems.forEach(item => {
+                        const label = item.querySelector('.detail-label');
+                        if (label && label.textContent === 'Location') {
+                            const detailValues = item.querySelectorAll('.detail-value');
+                            detailValues.forEach((val, index) => {
+                                if (index === 0) {
+                                    val.textContent = 'To be announced';
+                                } else {
+                                    // Hide the address link
+                                    val.style.display = 'none';
+                                }
+                            });
+                        }
+                    });
                     
                     // Update calendar links for bouquet exhibition
                     const googleCalendarLink = document.getElementById('googleCalendarLink');
                     const appleCalendarLink = document.getElementById('appleCalendarLink');
                     if (googleCalendarLink) {
-                        googleCalendarLink.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=BOUQUET+Contemporary+Art+Exhibition&dates=20260307T190000/20260407T220000&details=A+collection+of+flowers+from+around+the+world.+The+BOUQUET+exhibition+brings+together+works+by+artists+from+different+countries%2C+united+by+the+motif+of+the+flower.+Curated+by+Vahram+Muradyan.&location=National+Center+of+Aesthetics%2C+Abovyan+13%2C+Yerevan';
+                        googleCalendarLink.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=BOUQUET+Contemporary+Art+Exhibition&dates=20260301T000000/20260430T235959&details=A+collection+of+flowers+from+around+the+world.+The+BOUQUET+exhibition+brings+together+works+by+artists+from+different+countries%2C+united+by+the+motif+of+the+flower.+Curated+by+Vahram+Muradyan.&location=To+be+announced';
                     }
                     if (appleCalendarLink) {
-                        appleCalendarLink.href = 'data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20260307T190000%0ADTEND:20260407T220000%0ASUMMARY:BOUQUET+Contemporary+Art+Exhibition%0ADESCRIPTION=A+collection+of+flowers+from+around+the+world.+The+BOUQUET+exhibition+brings+together+works+by+artists+from+different+countries%2C+united+by+the+motif+of+the+flower.+Curated+by+Vahram+Muradyan.%0ALOCATION:National+Center+of+Aesthetics%2C+Abovyan+13%2C+Yerevan%0AEND:VEVENT%0AEND:VCALENDAR';
+                        appleCalendarLink.href = 'data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20260301T000000%0ADTEND:20260430T235959%0ASUMMARY:BOUQUET+Contemporary+Art+Exhibition%0ADESCRIPTION=A+collection+of+flowers+from+around+the+world.+The+BOUQUET+exhibition+brings+together+works+by+artists+from+different+countries%2C+united+by+the+motif+of+the+flower.+Curated+by+Vahram+Muradyan.%0ALOCATION=To+be+announced%0AEND:VEVENT%0AEND:VCALENDAR';
                     }
                     
                     // Update description text for bouquet exhibition
