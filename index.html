@@ -106,7 +106,8 @@
                         BOUQUET<br>
                         Contemporary Art Exhibition
                     </h1>
-                    <p class="opening-info">March-April, 2026</p>
+                    <p class="opening-info">March 6–April 8, 2026</p>
+                    <p class="hero-location">Art Kvartal</p>
                     <a href="?exhibition=bouquet-contemporary-art-2026" class="hero-more-btn">Learn More</a>
                 </div>
             </div>
@@ -122,7 +123,6 @@
                         Anatoliy Guyduk Solo Exhibition
                     </h1>
                     <p class="opening-info">January 10-15, 2026</p>
-                    <p class="hero-address">National Center of Aesthetics</p>
                     <a href="?exhibition=guyduk-presence-2026" class="hero-more-btn">Learn More</a>
                 </div>
             </div>
@@ -138,7 +138,6 @@
                         Exhibition-Fundraiser
                     </h1>
                     <p class="opening-info">January 5-10, 2026</p>
-                    <p class="hero-address">National Center of Aesthetics</p>
                     <a href="?exhibition=contemporary-art-2026" class="hero-more-btn">Learn More</a>
                 </div>
             </div>
@@ -897,16 +896,6 @@
                     btn.style.display = 'none';
                 });
                 
-                // Hide address on exhibition pages (except BOUQUET)
-                const heroAddresses = document.querySelectorAll('.hero-address');
-                heroAddresses.forEach(addr => {
-                    if (exhibition !== 'bouquet-contemporary-art-2026') {
-                        addr.style.display = 'none';
-                    } else {
-                        addr.style.display = 'block';
-                    }
-                });
-                
                 // Show only the relevant slide
                 heroSlides = document.querySelectorAll('.hero-slide');
                 if (exhibition === 'bouquet-contemporary-art-2026') {
@@ -973,29 +962,23 @@
                 // 3. Change opening info
                 const openingInfo = document.querySelector('.opening-info');
                 if (openingInfo) {
-                    openingInfo.textContent = 'March-April, 2026';
+                    openingInfo.textContent = 'March 6–April 8, 2026';
                 }
                 
-                // 4. Hide hero address for bouquet
-                const heroAddresses = document.querySelectorAll('.hero-address');
-                heroAddresses.forEach(addr => {
-                    if (addr.textContent.includes('National Center of Aesthetics')) {
-                        addr.style.display = 'none';
-                    }
-                });
+                // 4. Hero addresses are not shown (removed from hero)
                 
                 // Show event info section
                 const eventInfoSection = document.getElementById('eventInfoSection');
                 if (eventInfoSection) {
                     eventInfoSection.style.display = 'block';
                     
-                    // Update date to March-April, 2026
+                    // Update date to March 6–April 8, 2026
                     const dateValue = document.getElementById('eventDateValue');
                     if (dateValue) {
-                        dateValue.textContent = 'March–April, 2026';
+                        dateValue.textContent = 'March 6–April 8, 2026';
                     }
                     
-                    // Update location to "To be announced"
+                    // Update location to Art Kvartal with Pushkin 4, Yerevan link
                     const locationItems = document.querySelectorAll('.detail-item');
                     locationItems.forEach(item => {
                         const label = item.querySelector('.detail-label');
@@ -1003,10 +986,11 @@
                             const detailValues = item.querySelectorAll('.detail-value');
                             detailValues.forEach((val, index) => {
                                 if (index === 0) {
-                                    val.textContent = 'To be announced';
+                                    val.style.display = '';
+                                    val.textContent = 'Art Kvartal';
                                 } else {
-                                    // Hide the address link
-                                    val.style.display = 'none';
+                                    val.style.display = '';
+                                    val.innerHTML = '<a href="https://maps.app.goo.gl/KxeDYjPMdibav2g57" target="_blank" rel="noreferrer" class="location-link">Pushkin 4, Yerevan</a>';
                                 }
                             });
                         }
@@ -1016,10 +1000,10 @@
                     const googleCalendarLink = document.getElementById('googleCalendarLink');
                     const appleCalendarLink = document.getElementById('appleCalendarLink');
                     if (googleCalendarLink) {
-                        googleCalendarLink.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=BOUQUET+Contemporary+Art+Exhibition&dates=20260301T000000/20260430T235959&details=A+collection+of+flowers+from+around+the+world.+The+BOUQUET+exhibition+brings+together+works+by+artists+from+different+countries%2C+united+by+the+motif+of+the+flower.+Curated+by+Vahram+Muradyan.&location=To+be+announced';
+                        googleCalendarLink.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=BOUQUET+Contemporary+Art+Exhibition&dates=20260306T000000/20260408T235959&details=A+collection+of+flowers+from+around+the+world.+The+BOUQUET+exhibition+brings+together+works+by+artists+from+different+countries%2C+united+by+the+motif+of+the+flower.+Curated+by+Vahram+Muradyan.&location=Pushkin+4%2C+Yerevan';
                     }
                     if (appleCalendarLink) {
-                        appleCalendarLink.href = 'data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20260301T000000%0ADTEND:20260430T235959%0ASUMMARY:BOUQUET+Contemporary+Art+Exhibition%0ADESCRIPTION=A+collection+of+flowers+from+around+the+world.+The+BOUQUET+exhibition+brings+together+works+by+artists+from+different+countries%2C+united+by+the+motif+of+the+flower.+Curated+by+Vahram+Muradyan.%0ALOCATION=To+be+announced%0AEND:VEVENT%0AEND:VCALENDAR';
+                        appleCalendarLink.href = 'data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20260306T000000%0ADTEND:20260408T235959%0ASUMMARY:BOUQUET+Contemporary+Art+Exhibition%0ADESCRIPTION=A+collection+of+flowers+from+around+the+world.+The+BOUQUET+exhibition+brings+together+works+by+artists+from+different+countries%2C+united+by+the+motif+of+the+flower.+Curated+by+Vahram+Muradyan.%0ALOCATION=Pushkin+4%2C+Yerevan%0AEND:VEVENT%0AEND:VCALENDAR';
                     }
                     
                     // Update description text for bouquet exhibition
