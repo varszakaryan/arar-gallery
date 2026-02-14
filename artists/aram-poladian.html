@@ -285,19 +285,18 @@
                                             <span class="merch-medium">${artwork.media}</span>
                                         </p>
                                         <p class="merch-dimensions">${artwork.size || 'size not available'}</p>
-                                        <p class="merch-price">
-                                            ${artwork.status === 'Sold out' ? 
+                                        ${(artwork.status === 'Sold out' || artwork.status === 'Gift' || artwork.status === 'ARAR Gallery collection') ? 
+                                            '<p class="merch-price">' + 
+                                            (artwork.status === 'Sold out' ? 
                                                 (artwork.originalPrice ? (artwork.originalPriceAMD ? '<span class="merch-price-original-no-strike">֏' + artwork.originalPriceAMD + '</span> ' : '') + '<span class="merch-price-original-no-strike">($' + artwork.originalPrice + ')</span> ' : '') +
                                                 '<span class="merch-price-discounted">Sold out</span>' : 
                                                 artwork.status === 'Gift' ? 
                                                     (artwork.originalPrice ? (artwork.originalPriceAMD ? '<span class="merch-price-original-no-strike">֏' + artwork.originalPriceAMD + '</span> ' : '') + '<span class="merch-price-original-no-strike">($' + artwork.originalPrice + ')</span> ' : '') +
                                                     '<span class="merch-price-discounted">Gifted</span>' :
-                                                artwork.status === 'ARAR Gallery collection' ? 
-                                                    '<span class="merch-price-discounted">ARAR Gallery collection</span>' :
-                                                (artwork.originalPrice ? (artwork.originalPriceAMD ? '<span class="merch-price-original">֏' + artwork.originalPriceAMD + '</span> ' : '') + '<span class="merch-price-original">($' + artwork.originalPrice + ')</span> ' : '') +
-                                                (artwork.priceAMD ? '<span class="merch-price-discounted">֏' + artwork.priceAMD + '</span> ' : '') +
-                                                '<span class="merch-price-discounted">($' + artwork.price + ')</span>'}
-                                        </p>
+                                                '<span class="merch-price-discounted">ARAR Gallery collection</span>') +
+                                            '</p>' : ''}
+                                        ${artwork.status !== 'Sold out' && artwork.status !== 'Gift' && artwork.status !== 'ARAR Gallery collection' ? 
+                                            '<a href="https://wa.me/37495286888" target="_blank" rel="noreferrer" class="contact-to-buy-btn" onclick="event.stopPropagation();">Request the price</a>' : ''}
                                     </div>
                                 </div>
                             </div>
