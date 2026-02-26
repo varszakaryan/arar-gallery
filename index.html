@@ -761,7 +761,7 @@
             if (exhibition === 'bouquet-contemporary-art-2026') {
                 updateSharingMetaTags(
                     'BOUQUET Contemporary Art Exhibition | ARAR Gallery',
-                    'A collection of flowers from around the world. The BOUQUET exhibition brings together works by artists from different countries, united by the motif of the flower. Curated by Vahram Muradyan.',
+                    'A collection of flowers from around the world. The BOUQUET exhibition brings together works by artists from different countries, united by the motif of the flower. Curated by Vahram Muradyan and Varser Zakaryan.',
                     'https://arargallery.com/?exhibition=bouquet-contemporary-art-2026',
                     'assets/images/arar.png'
                 );
@@ -1016,11 +1016,23 @@
                         }
                     });
                     
+                    // Update curator for BOUQUET exhibition (Varser Zakaryan, Vahram Muradyan)
+                    const curatorItems = document.querySelectorAll('.detail-item');
+                    curatorItems.forEach(item => {
+                        const label = item.querySelector('.detail-label');
+                        if (label && label.textContent === 'Curator') {
+                            const detailValue = item.querySelector('.detail-value');
+                            if (detailValue) {
+                                detailValue.innerHTML = '<a href="https://www.instagram.com/voghjamit/" target="_blank" rel="noreferrer" class="location-link">Vahram Muradyan</a><br><a href="https://www.instagram.com/varszakaryan/" target="_blank" rel="noreferrer" class="location-link">Varser Zakaryan</a>';
+                            }
+                        }
+                    });
+                    
                     // Update calendar links for bouquet exhibition
                     const googleCalendarLink = document.getElementById('googleCalendarLink');
                     const appleCalendarLink = document.getElementById('appleCalendarLink');
                     if (googleCalendarLink) {
-                        googleCalendarLink.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=BOUQUET+Contemporary+Art+Exhibition&dates=20260307T110000/20260307T200000&recur=RRULE%3AFREQ%3DDAILY%3BUNTIL%3D20260408T200000&details=A+collection+of+flowers+from+around+the+world.+The+BOUQUET+exhibition+brings+together+works+by+artists+from+different+countries%2C+united+by+the+motif+of+the+flower.+Curated+by+Vahram+Muradyan.&location=Pushkin+4%2C+Yerevan';
+                        googleCalendarLink.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=BOUQUET+Contemporary+Art+Exhibition&dates=20260307T110000/20260307T200000&recur=RRULE%3AFREQ%3DDAILY%3BUNTIL%3D20260408T200000&details=A+collection+of+flowers+from+around+the+world.+The+BOUQUET+exhibition+brings+together+works+by+artists+from+different+countries%2C+united+by+the+motif+of+the+flower.+Curated+by+Vahram+Muradyan+and+Varser+Zakaryan.&location=Pushkin+4%2C+Yerevan';
                     }
                     if (appleCalendarLink) {
                         appleCalendarLink.href = '#';
@@ -1251,12 +1263,22 @@
                     eventInfoSection.style.display = 'block';
                 }
                 
-                // Restore Guyduk calendar links (clear BOUQUET onclick if present)
+                // Restore Guyduk calendar links and curator (clear BOUQUET onclick if present)
                 const appleCalendarLinkGuyduk = document.getElementById('appleCalendarLink');
                 if (appleCalendarLinkGuyduk) {
                     appleCalendarLinkGuyduk.onclick = null;
                     appleCalendarLinkGuyduk.href = 'data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20260110T190000%0ADTEND:20260115T220000%0ASUMMARY:Anatoliy+Guyduk+-+Presence+2026%0ADESCRIPTION:Anatoliy+Guyduk+-+Presence+2026+Solo+Exhibition%0ALOCATION:National+Center+of+Aesthetics%2C+Abovyan+13%2C+Yerevan%0AEND:VEVENT%0AEND:VCALENDAR';
                 }
+                const curatorItemsGuyduk = document.querySelectorAll('.detail-item');
+                curatorItemsGuyduk.forEach(item => {
+                    const label = item.querySelector('.detail-label');
+                    if (label && label.textContent === 'Curator') {
+                        const detailValue = item.querySelector('.detail-value');
+                        if (detailValue) {
+                            detailValue.innerHTML = '<a href="https://www.instagram.com/voghjamit/" target="_blank" rel="noreferrer" class="location-link">Vahram Muradyan</a>';
+                        }
+                    }
+                });
                 
                 // Update event info description with fundraising text
                 const eventInfoDescription = document.getElementById('eventInfoDescription');
@@ -1451,6 +1473,16 @@
                         appleCalendarLink.onclick = null;
                         appleCalendarLink.href = 'data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20260105T190000%0ADTEND:20260109T220000%0ASUMMARY:Contemporary+Art+Exhibition-Fundraiser%0ADESCRIPTION:Contemporary+Art+Exhibition-Fundraiser+presenting+international+and+Armenian+artists%0ALOCATION:National+Center+of+Aesthetics%2C+Abovyan+13%2C+Yerevan%0AEND:VEVENT%0AEND:VCALENDAR';
                     }
+                    const curatorItemsContemp = document.querySelectorAll('.detail-item');
+                    curatorItemsContemp.forEach(item => {
+                        const label = item.querySelector('.detail-label');
+                        if (label && label.textContent === 'Curator') {
+                            const detailValue = item.querySelector('.detail-value');
+                            if (detailValue) {
+                                detailValue.innerHTML = '<a href="https://www.instagram.com/voghjamit/" target="_blank" rel="noreferrer" class="location-link">Vahram Muradyan</a>';
+                            }
+                        }
+                    });
                     
                     // Update description text for contemporary art
                     const eventInfoDescription = document.getElementById('eventInfoDescription');
