@@ -106,8 +106,10 @@
                         BOUQUET<br>
                         Contemporary Art Exhibition
                     </h1>
-                    <p class="opening-info">March 6–April 8, 2026</p>
+                    <p class="opening-info">March 7–April 8, 2026</p>
                     <p class="hero-location">Art Kvartal</p>
+                    <p class="hero-private-opening-text">PRIVATE OPENING ON MARCH 6</p>
+                    <a href="https://forms.gle/sFJfph1dgf3L3DfQ9" target="_blank" rel="noreferrer" class="hero-closed-opening-btn">JOIN THE PRIVATE OPENING ON MARCH 6</a>
                     <a href="?exhibition=bouquet-contemporary-art-2026" class="hero-more-btn">Learn More</a>
                 </div>
             </div>
@@ -667,6 +669,19 @@
             const urlParams = new URLSearchParams(window.location.search);
             const exhibition = urlParams.get('exhibition');
             
+            // Toggle private opening: text on homepage, button on exhibition page
+            const privateOpeningText = document.querySelector('.hero-private-opening-text');
+            const privateOpeningBtn = document.querySelector('.hero-closed-opening-btn');
+            if (privateOpeningText && privateOpeningBtn) {
+                if (exhibition === 'bouquet-contemporary-art-2026') {
+                    privateOpeningText.style.display = 'none';
+                    privateOpeningBtn.style.display = 'inline-block';
+                } else {
+                    privateOpeningText.style.display = 'block';
+                    privateOpeningBtn.style.display = 'none';
+                }
+            }
+            
             // Update page title based on exhibition parameter
             if (exhibition === 'bouquet-contemporary-art-2026') {
                 document.title = 'BOUQUET Contemporary Art Exhibition | ARAR Gallery';
@@ -957,7 +972,7 @@
                 // 3. Change opening info
                 const openingInfo = document.querySelector('.opening-info');
                 if (openingInfo) {
-                    openingInfo.textContent = 'March 6–April 8, 2026';
+                    openingInfo.textContent = 'March 7–April 8, 2026';
                 }
                 
                 // 4. Hero addresses are not shown (removed from hero)
@@ -967,10 +982,20 @@
                 if (eventInfoSection) {
                     eventInfoSection.style.display = 'block';
                     
-                    // Update date to March 6–April 8, 2026
+                    // Update date to March 7–April 8, 2026
                     const dateValue = document.getElementById('eventDateValue');
                     if (dateValue) {
-                        dateValue.textContent = 'March 6–April 8, 2026';
+                        dateValue.textContent = 'March 7–April 8, 2026';
+                        // Add opening hours below date
+                        let dateHours = document.getElementById('eventDateHours');
+                        if (!dateHours) {
+                            dateHours = document.createElement('p');
+                            dateHours.id = 'eventDateHours';
+                            dateHours.className = 'detail-value detail-hours';
+                            dateValue.parentNode.insertBefore(dateHours, dateValue.nextSibling);
+                        }
+                        dateHours.textContent = '11:00–20:00';
+                        dateHours.style.display = '';
                     }
                     
                     // Update location to Art Kvartal with Pushkin 4, Yerevan link
@@ -995,10 +1020,28 @@
                     const googleCalendarLink = document.getElementById('googleCalendarLink');
                     const appleCalendarLink = document.getElementById('appleCalendarLink');
                     if (googleCalendarLink) {
-                        googleCalendarLink.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=BOUQUET+Contemporary+Art+Exhibition&dates=20260306T000000/20260408T235959&details=A+collection+of+flowers+from+around+the+world.+The+BOUQUET+exhibition+brings+together+works+by+artists+from+different+countries%2C+united+by+the+motif+of+the+flower.+Curated+by+Vahram+Muradyan.&location=Pushkin+4%2C+Yerevan';
+                        googleCalendarLink.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=BOUQUET+Contemporary+Art+Exhibition&dates=20260307T110000/20260307T200000&recur=RRULE%3AFREQ%3DDAILY%3BUNTIL%3D20260408T200000&details=A+collection+of+flowers+from+around+the+world.+The+BOUQUET+exhibition+brings+together+works+by+artists+from+different+countries%2C+united+by+the+motif+of+the+flower.+Curated+by+Vahram+Muradyan.&location=Pushkin+4%2C+Yerevan';
                     }
                     if (appleCalendarLink) {
-                        appleCalendarLink.href = 'data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20260306T000000%0ADTEND:20260408T235959%0ASUMMARY:BOUQUET+Contemporary+Art+Exhibition%0ADESCRIPTION=A+collection+of+flowers+from+around+the+world.+The+BOUQUET+exhibition+brings+together+works+by+artists+from+different+countries%2C+united+by+the+motif+of+the+flower.+Curated+by+Vahram+Muradyan.%0ALOCATION=Pushkin+4%2C+Yerevan%0AEND:VEVENT%0AEND:VCALENDAR';
+                        appleCalendarLink.href = '#';
+                        appleCalendarLink.onclick = function(e) {
+                            e.preventDefault();
+                            const icsLines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//ARAR Gallery//BOUQUET//EN', ''];
+                            const endDate = new Date(2026, 3, 8);
+                            for (let d = new Date(2026, 2, 7); d <= endDate; d.setDate(d.getDate() + 1)) {
+                                const dateStr = d.getFullYear() + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0');
+                                icsLines.push('BEGIN:VEVENT', 'DTSTART:' + dateStr + 'T110000', 'DTEND:' + dateStr + 'T200000', 'SUMMARY:BOUQUET Contemporary Art Exhibition', 'DESCRIPTION:A collection of flowers from around the world.', 'LOCATION:Pushkin 4, Yerevan', 'END:VEVENT', '');
+                            }
+                            icsLines.push('END:VCALENDAR');
+                            const icsContent = icsLines.join('\r\n');
+                            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+                            const url = URL.createObjectURL(blob);
+                            const a = document.createElement('a');
+                            a.href = url;
+                            a.download = 'bouquet-exhibition.ics';
+                            a.click();
+                            URL.revokeObjectURL(url);
+                        };
                     }
                     
                     // Update description text for bouquet exhibition
@@ -1045,7 +1088,6 @@
                             <button class="exhibition-tab active" data-tab="sculptures" onclick="switchExhibitionTab('sculptures', event)">SCULPTURES AND ART OBJECTS</button>
                             <button class="exhibition-tab" data-tab="femininity" onclick="switchExhibitionTab('femininity', event)">FEMININITY AND FLOWERS</button>
                             <button class="exhibition-tab" data-tab="small-works" onclick="switchExhibitionTab('small-works', event)">SMALL WORKS AND FLORAL COLLAGES</button>
-                            <button class="exhibition-tab" data-tab="karabala" onclick="switchExhibitionTab('karabala', event)">KARABALA — THE HUMAN FLOWER</button>
                         `;
                     }
                     
@@ -1073,13 +1115,6 @@
                                 <p>Displayed together as a visual collage, these pieces create a dynamic bouquet of voices. Viewers are invited to move from one work to another, exploring different countries, artistic languages, and cultural contexts. In this way, the section becomes a journey — a layered tapestry of meaning, memory, and interpretation.</p>
                                 <p>The small format encourages close engagement. Each work, like a delicate bloom, demands attention, inviting the audience to pause, observe, and reflect. The juxtaposition of these pieces allows the subtle dialogues between form, color, and concept to emerge, showing how even the smallest expression can carry profound impact.</p>
                                 <p>Through this collection, BOUQUET demonstrates that flowers, in all their diversity, can create connections across distances and perspectives, forming a mosaic of shared human experience.</p>
-                            </div>
-                            <div class="tab-panel" id="karabala-panel">
-                                <p><strong>Karabala — The Human Flower</strong></p>
-                                <p>A special part of BOUQUET is dedicated to Karabala, a person whose life and deeds have touched the people of Yerevan. Known for his kindness, generosity, and deep connection to others, Karabala embodies the idea that a flower can be more than a symbol — it can represent humanity, care, and the power of small, meaningful actions.</p>
-                                <p>Artists were inspired by his life and his relationship with the communities he has supported. The works in this section reflect these themes: flowers here are metaphors for empathy, resilience, and hope. They highlight how human gestures, like the act of giving or nurturing, can bloom into lasting impact — much like a flower growing in unexpected soil.</p>
-                                <p>This section bridges the personal and the universal. Just as a flower can travel across borders as a gift or a symbol, Karabala's story resonates beyond its immediate context, reminding viewers that art, life, and humanity are interconnected. Here, the flower becomes a witness to compassion, a marker of memory, and a testament to the ways one individual can inspire many.</p>
-                                <p>Through this section, BOUQUET emphasizes that flowers are not just visual motifs — they can be carriers of stories, symbols of human connection, and reflections of moral beauty in the world around us.</p>
                             </div>
                         `;
                     }
@@ -1111,7 +1146,7 @@
                     partnersNavLink.style.display = 'block';
                 }
                 
-                // Show Partners section with only Voskanian
+                // Show Partners section with Art Kvartal and Bazaar
                 const partnersSection = document.getElementById('partners');
                 if (partnersSection) {
                     partnersSection.style.display = 'block';
@@ -1122,20 +1157,22 @@
                         partnersLogosMain.style.display = 'none';
                     }
                     
-                    // Show only Voskanian in second row
+                    // Show Art Kvartal and Bazaar in second row
                     const partnersLogosSecond = document.getElementById('partnersLogosSecond');
                     if (partnersLogosSecond) {
                         partnersLogosSecond.style.display = 'flex';
-                        // Hide all logos except Voskanian
-                        const partnerLogos = partnersLogosSecond.querySelectorAll('.partner-logo');
-                        partnerLogos.forEach(logo => {
-                            const voskanianLink = logo.querySelector('a[href*="voskanian"]');
-                            if (voskanianLink) {
-                                logo.style.display = 'block';
-                            } else {
-                                logo.style.display = 'none';
-                            }
-                        });
+                        partnersLogosSecond.innerHTML = `
+                            <div class="partner-logo partner-logo-small">
+                                <a href="https://maps.app.goo.gl/KxeDYjPMdibav2g57" target="_blank" rel="noreferrer">
+                                    <img src="assets/images/partners/artkvartal.png" alt="Art Kvartal" class="logo-img">
+                                </a>
+                            </div>
+                            <div class="partner-logo partner-logo-small">
+                                <a href="#" target="_blank" rel="noreferrer">
+                                    <img src="assets/images/partners/bazaar.png" alt="Bazaar" class="logo-img">
+                                </a>
+                            </div>
+                        `;
                     }
                     
                     // Hide media partners section
@@ -1214,6 +1251,13 @@
                     eventInfoSection.style.display = 'block';
                 }
                 
+                // Restore Guyduk calendar links (clear BOUQUET onclick if present)
+                const appleCalendarLinkGuyduk = document.getElementById('appleCalendarLink');
+                if (appleCalendarLinkGuyduk) {
+                    appleCalendarLinkGuyduk.onclick = null;
+                    appleCalendarLinkGuyduk.href = 'data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20260110T190000%0ADTEND:20260115T220000%0ASUMMARY:Anatoliy+Guyduk+-+Presence+2026%0ADESCRIPTION:Anatoliy+Guyduk+-+Presence+2026+Solo+Exhibition%0ALOCATION:National+Center+of+Aesthetics%2C+Abovyan+13%2C+Yerevan%0AEND:VEVENT%0AEND:VCALENDAR';
+                }
+                
                 // Update event info description with fundraising text
                 const eventInfoDescription = document.getElementById('eventInfoDescription');
                 if (eventInfoDescription) {
@@ -1235,7 +1279,7 @@
                     zonesNavLink.textContent = 'Zones';
                     zonesNavLink.style.display = 'block';
                     artistsNavLink.insertAdjacentElement('beforebegin', zonesNavLink);
-                } else if (zonesNavLink) {crt
+                } else if (zonesNavLink) {
                     zonesNavLink.style.display = 'block';
                 }
                 
@@ -1404,6 +1448,7 @@
                         googleCalendarLink.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Contemporary+Art+Exhibition-Fundraiser&dates=20260105T190000/20260109T220000&details=Contemporary+Art+Exhibition-Fundraiser+presenting+international+and+Armenian+artists&location=National+Center+of+Aesthetics%2C+Abovyan+13%2C+Yerevan';
                     }
                     if (appleCalendarLink) {
+                        appleCalendarLink.onclick = null;
                         appleCalendarLink.href = 'data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20260105T190000%0ADTEND:20260109T220000%0ASUMMARY:Contemporary+Art+Exhibition-Fundraiser%0ADESCRIPTION:Contemporary+Art+Exhibition-Fundraiser+presenting+international+and+Armenian+artists%0ALOCATION:National+Center+of+Aesthetics%2C+Abovyan+13%2C+Yerevan%0AEND:VEVENT%0AEND:VCALENDAR';
                     }
                     
