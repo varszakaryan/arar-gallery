@@ -1452,6 +1452,15 @@ a.artist-name:hover {
     height: auto;
 }
 
+/* BOUQUET partners: Bazaar same width as Art Kvartal */
+.partners-logos-second-row .partner-logo-artkvartal .logo-img,
+.partners-logos-second-row .partner-logo-bazaar .logo-img {
+    width: 200px !important;
+    max-width: 200px !important;
+    height: auto;
+    object-fit: contain;
+}
+
 /* .partner-logo-ta .logo-img {
     max-width: none;
     max-height: 20px;
@@ -3125,6 +3134,15 @@ footer {
         max-height: 60px !important;
         width: auto;
         height: auto;
+    }
+    
+    /* BOUQUET partners: Bazaar same width as Art Kvartal on mobile */
+    .partners-logos-second-row .partner-logo-artkvartal .logo-img,
+    .partners-logos-second-row .partner-logo-bazaar .logo-img {
+        width: 140px !important;
+        max-width: 140px !important;
+        height: auto;
+        object-fit: contain;
     }
     
     .partners-logos-media .partner-logo-small .logo-img {
