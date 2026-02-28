@@ -117,7 +117,62 @@
       "stockLeft": 14,
       "stockTotal": 25,
       "description": "The swan appears as a remembered presence, one that once emerged in dreams as a guide from darkness toward light. Neither symbol nor fantasy, she exists as an embodied force that saved, held, and returned the self to breath. Rendered as a feminine humanoid form, the figure is fractured, carrying the tension of multiplicity rather than harmony. Her rotating face moves through shifting states of awareness, revealing identity as something continuously negotiated. Masculinity and femininity coexist within her, not in balance, but in active dialogue. The swan does not dissolve; she remains watchful, altered, and luminous."
+    },
+    {
+      "id": 10,
+      "title": "Bird Postcard",
+      "artist": "Anatoliy Guyduk",
+      "price": 1000,
+      "currency": "AMD",
+      "dimensions": "10.5 x 14.8 cm",
+      "medium": "printed on paper",
+      "images": [
+        "assets/images/merch/guyduk_bird_front.png",
+        "assets/images/merch/guyduk_bird_back.png"
+      ],
+      "link": "#"
+    },
+    {
+      "id": 11,
+      "title": "The Creature Postcard",
+      "artist": "Anatoliy Guyduk",
+      "price": 1000,
+      "currency": "AMD",
+      "dimensions": "10.5 x 14.8 cm",
+      "medium": "printed on paper",
+      "images": [
+        "assets/images/merch/guyduk_creature_front.png",
+        "assets/images/merch/guyduk_creature_back.png"
+      ],
+      "link": "#"
+    },
+    {
+      "id": 12,
+      "title": "Siren the Bird Postcard",
+      "artist": "Anatoliy Guyduk",
+      "price": 1000,
+      "currency": "AMD",
+      "dimensions": "10.5 x 14.8 cm",
+      "medium": "printed on paper",
+      "images": [
+        "assets/images/merch/guyduk_siren_front.png",
+        "assets/images/merch/guyduk_siren_back.png"
+      ],
+      "link": "#"
+    },
+    {
+      "id": 13,
+      "title": "Morning Postcard",
+      "artist": "Anatoliy Guyduk",
+      "price": 1000,
+      "currency": "AMD",
+      "dimensions": "10.5 x 14.8 cm",
+      "medium": "printed on paper",
+      "images": [
+        "assets/images/merch/guyduk_morning_front.png",
+        "assets/images/merch/guyduk_morning_back.png"
+      ],
+      "link": "#"
     }
   ]
 }
-
