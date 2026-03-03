@@ -106,7 +106,7 @@
                         BOUQUET<br>
                         Contemporary Art Exhibition
                     </h1>
-                    <p class="opening-info">March 7–April 8, 2026</p>
+                    <p class="opening-info">March 7–April 7, 2026</p>
                     <p class="hero-location">Art Kvartal</p>
                     <p class="hero-private-opening-text">PRIVATE OPENING ON MARCH 6</p>
                     <a href="https://forms.gle/sFJfph1dgf3L3DfQ9" target="_blank" rel="noreferrer" class="hero-closed-opening-btn">JOIN THE PRIVATE OPENING ON MARCH 6</a>
@@ -972,7 +972,7 @@
                 // 3. Change opening info
                 const openingInfo = document.querySelector('.opening-info');
                 if (openingInfo) {
-                    openingInfo.textContent = 'March 7–April 8, 2026';
+                    openingInfo.textContent = 'March 7–April 7, 2026';
                 }
                 
                 // 4. Hero addresses are not shown (removed from hero)
@@ -982,10 +982,10 @@
                 if (eventInfoSection) {
                     eventInfoSection.style.display = 'block';
                     
-                    // Update date to March 7–April 8, 2026
+                    // Update date to March 7–April 7, 2026
                     const dateValue = document.getElementById('eventDateValue');
                     if (dateValue) {
-                        dateValue.textContent = 'March 7–April 8, 2026';
+                        dateValue.textContent = 'March 7–April 7, 2026';
                         // Add opening hours below date
                         let dateHours = document.getElementById('eventDateHours');
                         if (!dateHours) {
@@ -1032,14 +1032,14 @@
                     const googleCalendarLink = document.getElementById('googleCalendarLink');
                     const appleCalendarLink = document.getElementById('appleCalendarLink');
                     if (googleCalendarLink) {
-                        googleCalendarLink.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=BOUQUET+Contemporary+Art+Exhibition&dates=20260307T110000/20260307T200000&recur=RRULE%3AFREQ%3DDAILY%3BUNTIL%3D20260408T200000&details=A+collection+of+flowers+from+around+the+world.+The+BOUQUET+exhibition+brings+together+works+by+artists+from+different+countries%2C+united+by+the+motif+of+the+flower.+Curated+by+Vahram+Muradyan+and+Varser+Zakaryan.&location=Pushkin+4%2C+Yerevan';
+                        googleCalendarLink.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=BOUQUET+Contemporary+Art+Exhibition&dates=20260307T110000/20260307T200000&recur=RRULE%3AFREQ%3DDAILY%3BUNTIL%3D20260407T200000&details=A+collection+of+flowers+from+around+the+world.+The+BOUQUET+exhibition+brings+together+works+by+artists+from+different+countries%2C+united+by+the+motif+of+the+flower.+Curated+by+Vahram+Muradyan+and+Varser+Zakaryan.&location=Pushkin+4%2C+Yerevan';
                     }
                     if (appleCalendarLink) {
                         appleCalendarLink.href = '#';
                         appleCalendarLink.onclick = function(e) {
                             e.preventDefault();
                             const icsLines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//ARAR Gallery//BOUQUET//EN', ''];
-                            const endDate = new Date(2026, 3, 8);
+                            const endDate = new Date(2026, 3, 7);
                             for (let d = new Date(2026, 2, 7); d <= endDate; d.setDate(d.getDate() + 1)) {
                                 const dateStr = d.getFullYear() + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0');
                                 icsLines.push('BEGIN:VEVENT', 'DTSTART:' + dateStr + 'T110000', 'DTEND:' + dateStr + 'T200000', 'SUMMARY:BOUQUET Contemporary Art Exhibition', 'DESCRIPTION:A collection of flowers from around the world.', 'LOCATION:Pushkin 4, Yerevan', 'END:VEVENT', '');
