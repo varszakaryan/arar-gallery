@@ -492,7 +492,7 @@
     ]
   },
   {
-    "title": "Untitled",
+    "title": "Bouquet",
     "artist": "Tigran Ghazaryan",
     "artistLink": "artists/tigran-ghazaryan",
     "country": "Armenia",
@@ -508,7 +508,8 @@
       "assets/images/artworks/tigran_ghazaryanright_1.jpg"
     ],
     "exhibitions": [
-      "contemporary-art-2026"
+      "contemporary-art-2026",
+      "bouquet-contemporary-art-2026"
     ]
   },
   {
@@ -1229,5 +1230,252 @@
     "exhibitions": [
       "guyduk-presence-2026"
     ]
+  },
+  {
+    "title": "Midpoint",
+    "artist": "Nune Manukyan",
+    "artistLink": "artists/nune-manukyan",
+    "country": "Armenia",
+    "media": "Marble, smalt, sadaf",
+    "size": "13 x 11 cm",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "2026",
+    "images": ["assets/images/artworks/nune_manukyan_mijaket.jpg"],
+    "exhibitions": ["bouquet-contemporary-art-2026"]
+  },
+  {
+    "title": "Two",
+    "artist": "Mariam Gevorgyan",
+    "artistLink": "artists/mariam-gevorgyan",
+    "country": "Armenia",
+    "media": "Acrylic on canvas",
+    "size": "30 x 40 + 30 x 40 cm",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "2024",
+    "images": ["assets/images/artworks/mariam-gevorgyan_two.jpg"],
+    "exhibitions": ["bouquet-contemporary-art-2026"]
+  },
+  {
+    "title": "Hope",
+    "artist": "Mariam Gevorgyan",
+    "artistLink": "artists/mariam-gevorgyan",
+    "country": "Armenia",
+    "media": "Acrylic on canvas",
+    "size": "30 x 60 cm",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "2025",
+    "images": ["assets/images/artworks/mariam_gevorgyan_hope.jpg"],
+    "exhibitions": ["bouquet-contemporary-art-2026"]
+  },
+  {
+    "title": "Orchids",
+    "artist": "Haykuhi Makaryan",
+    "artistLink": "artists/haykuhi-makaryan",
+    "country": "Armenia",
+    "media": "Acrylic on cardboard",
+    "size": "70 x 50 cm",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "2025",
+    "images": ["assets/images/artworks/haykuhi_orchids.jpg"],
+    "exhibitions": ["bouquet-contemporary-art-2026"]
+  },
+  {
+    "title": "Flowers",
+    "artist": "Tigran Ghazaryan",
+    "artistLink": "artists/tigran-ghazaryan",
+    "country": "Armenia",
+    "media": "Oil on cardboard",
+    "size": "",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "2025",
+    "images": ["assets/images/artworks/tigran_ghazaryan_flowsers.jpg"],
+    "exhibitions": ["bouquet-contemporary-art-2026"]
+  },
+  {
+    "title": "Roses",
+    "artist": "Tigran Ghazaryan",
+    "artistLink": "artists/tigran-ghazaryan",
+    "country": "Armenia",
+    "media": "Oil on canvas",
+    "size": "50 x 70 cm",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "2026",
+    "images": ["assets/images/artworks/tigran_ghazaryan_roses.jpg"],
+    "exhibitions": ["bouquet-contemporary-art-2026"]
+  },
+  {
+    "title": "Response",
+    "artist": "Nune Manukyan",
+    "artistLink": "artists/nune-manukyan",
+    "country": "Armenia",
+    "media": "Mix stones",
+    "size": "19 x 17 cm",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "2026",
+    "images": ["assets/images/artworks/nune_manukyan_eresponse.jpg"],
+    "exhibitions": ["bouquet-contemporary-art-2026"]
+  },
+  {
+    "title": "Bloom",
+    "artist": "Margaret Asatryan",
+    "artistLink": "artists/margaret-asatryan",
+    "country": "Armenia",
+    "media": "Oil on canvas",
+    "size": "80 x 99 cm",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "2023",
+    "images": ["assets/images/artworks/margaret_asatryan.jpg"],
+    "exhibitions": ["bouquet-contemporary-art-2026"]
+  },
+  {
+    "title": "Blue Vacuum. Flight",
+    "artist": "Mariam Galstyan",
+    "artistLink": "artists/mariam-galstyan",
+    "country": "Armenia",
+    "media": "Acrylic on canvas",
+    "size": "105 x 105 cm",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "2025",
+    "images": ["assets/images/artworks/mariam_galstyan_flight.jpg"],
+    "exhibitions": ["bouquet-contemporary-art-2026"]
+  },
+  {
+    "title": "Cry",
+    "artist": "Mariam Galstyan",
+    "artistLink": "artists/mariam-galstyan",
+    "country": "Armenia",
+    "media": "Acrylic on canvas",
+    "size": "105 x 106 cm",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "2023",
+    "images": ["assets/images/artworks/mariam_galstyan_cry.jpg"],
+    "exhibitions": ["bouquet-contemporary-art-2026"]
+  },
+  {
+    "title": "Narcissus",
+    "artist": "Tatev Aslanyan",
+    "artistLink": "artists/tatev-aslanyan",
+    "country": "Armenia",
+    "media": "Acrylic, oil on canvas",
+    "size": "90 x 70 cm",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "",
+    "images": ["assets/images/artworks/tatev_aslanyan_narcissus.jpg"],
+    "exhibitions": ["bouquet-contemporary-art-2026"]
+  },
+  {
+    "title": "A life that's full",
+    "artist": "Tatev Aslanyan",
+    "artistLink": "artists/tatev-aslanyan",
+    "country": "Armenia",
+    "media": "Oil, acrylic on canvas",
+    "size": "80 x 60 cm",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "",
+    "images": ["assets/images/artworks/tatev_aslanyan_life.jpg"],
+    "exhibitions": ["bouquet-contemporary-art-2026"]
+  },
+  {
+    "title": "Wildflowers",
+    "artist": "Ararat Minasyan",
+    "artistLink": "artists/ararat-minasyan",
+    "country": "Armenia",
+    "media": "Acrylic on canvas",
+    "size": "60 x 60 cm",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "2021",
+    "images": ["assets/images/artworks/ararat_minasyan.jpg"],
+    "exhibitions": ["bouquet-contemporary-art-2026"]
+  },
+  {
+    "title": "Untitled",
+    "artist": "Arsen Arsist",
+    "artistLink": "artists/arsen-arsist",
+    "country": "Armenia",
+    "media": "",
+    "size": "",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "2026",
+    "images": ["assets/images/artworks/arsen_arsist.jpg"],
+    "exhibitions": ["bouquet-contemporary-art-2026"]
+  },
+  {
+    "title": "Bouquet 1",
+    "artist": "Suren Arakelyan",
+    "artistLink": "artists/suren-arakelyan",
+    "country": "Armenia",
+    "media": "",
+    "size": "",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "",
+    "images": ["assets/images/artworks/suren_arakelyan1.jpg"],
+    "exhibitions": ["bouquet-contemporary-art-2026"]
+  },
+  {
+    "title": "Bouquet 2",
+    "artist": "Suren Arakelyan",
+    "artistLink": "artists/suren-arakelyan",
+    "country": "Armenia",
+    "media": "",
+    "size": "",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "",
+    "images": ["assets/images/artworks/suren_arakelyan2.jpg"],
+    "exhibitions": ["bouquet-contemporary-art-2026"]
+  },
+  {
+    "title": "Bouquet 3",
+    "artist": "Suren Arakelyan",
+    "artistLink": "artists/suren-arakelyan",
+    "country": "Armenia",
+    "media": "",
+    "size": "",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "",
+    "images": ["assets/images/artworks/suren_arakelyan3.jpg"],
+    "exhibitions": ["bouquet-contemporary-art-2026"]
+  },
+  {
+    "title": "City flower No1",
+    "artist": "Blue Pencil",
+    "artistLink": "artists/blue-pencil",
+    "country": "Armenia",
+    "media": "Iron, rust, acrylic",
+    "size": "100 x 40 cm",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "",
+    "images": ["assets/images/artworks/blue_pencil_flower1.jpg"],
+    "exhibitions": ["bouquet-contemporary-art-2026"]
+  },
+  {
+    "title": "City flower No2",
+    "artist": "Blue Pencil",
+    "artistLink": "artists/blue-pencil",
+    "country": "Armenia",
+    "media": "Iron, rust, acrylic",
+    "size": "100 x 40 cm",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "",
+    "images": ["assets/images/artworks/blue_pencil_flower2.jpg"],
+    "exhibitions": ["bouquet-contemporary-art-2026"]
   }
 ]

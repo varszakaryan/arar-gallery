@@ -107,9 +107,7 @@
                         Contemporary Art Exhibition
                     </h1>
                     <p class="opening-info">March 7–April 7, 2026</p>
-                    <p class="hero-location">Art Kvartal</p>
-                    <p class="hero-private-opening-text">PRIVATE OPENING ON MARCH 6</p>
-                    <a href="https://forms.gle/sFJfph1dgf3L3DfQ9" target="_blank" rel="noreferrer" class="hero-closed-opening-btn">JOIN THE PRIVATE OPENING ON MARCH 6</a>
+                    <p class="hero-location">ARAR Gallery, Art Kvartal</p>
                     <a href="?exhibition=bouquet-contemporary-art-2026" class="hero-more-btn">Learn More</a>
                 </div>
             </div>
@@ -675,7 +673,7 @@
             if (privateOpeningText && privateOpeningBtn) {
                 if (exhibition === 'bouquet-contemporary-art-2026') {
                     privateOpeningText.style.display = 'none';
-                    privateOpeningBtn.style.display = 'inline-block';
+                    privateOpeningBtn.style.display = 'none';
                 } else {
                     privateOpeningText.style.display = 'block';
                     privateOpeningBtn.style.display = 'none';
@@ -1007,7 +1005,7 @@
                             detailValues.forEach((val, index) => {
                                 if (index === 0) {
                                     val.style.display = '';
-                                    val.textContent = 'Art Kvartal';
+                                    val.textContent = 'ARAR Gallery, Art Kvartal';
                                 } else {
                                     val.style.display = '';
                                     val.innerHTML = '<a href="https://maps.app.goo.gl/KxeDYjPMdibav2g57" target="_blank" rel="noreferrer" class="location-link">Pushkin 4, Yerevan</a>';
@@ -1069,10 +1067,28 @@
                     artistsTitle.textContent = 'Exhibited Artists';
                 }
                 
-                // Show "Coming soon" in artists list
+                // Show exhibited artists list for BOUQUET
                 const artistsList = document.querySelector('.artists-list');
                 if (artistsList) {
-                    artistsList.innerHTML = '<p class="merch-empty">Coming soon</p>';
+                    artistsList.innerHTML = `
+                        <div class="artists-column">
+                            <div class="artist-item"><a href="artists/nune-manukyan" class="artist-name">Nune Manukyan</a></div>
+                            <div class="artist-item"><a href="artists/mariam-gevorgyan" class="artist-name">Mariam Gevorgyan</a></div>
+                            <div class="artist-item"><a href="artists/haykuhi-makaryan" class="artist-name">Haykuhi Makaryan</a></div>
+                            <div class="artist-item"><a href="artists/tigran-ghazaryan" class="artist-name">Tigran Ghazaryan</a></div>
+                        </div>
+                        <div class="artists-column">
+                            <div class="artist-item"><a href="artists/margaret-asatryan" class="artist-name">Margaret Asatryan</a></div>
+                            <div class="artist-item"><a href="artists/mariam-galstyan" class="artist-name">Mariam Galstyan</a></div>
+                            <div class="artist-item"><a href="artists/tatev-aslanyan" class="artist-name">Tatev Aslanyan</a></div>
+                            <div class="artist-item"><a href="artists/ararat-minasyan" class="artist-name">Ararat Minasyan</a></div>
+                        </div>
+                        <div class="artists-column">
+                            <div class="artist-item"><a href="artists/arsen-arsist" class="artist-name">Arsen Arsist</a></div>
+                            <div class="artist-item"><a href="artists/suren-arakelyan" class="artist-name">Suren Arakelyan</a></div>
+                            <div class="artist-item"><a href="artists/blue-pencil" class="artist-name">Blue Pencil</a></div>
+                        </div>
+                    `;
                 }
                 
                 // Show Zones link in navbar

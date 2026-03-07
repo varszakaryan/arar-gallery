@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Mariam Galstyan - ARAR Gallery</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/images/ar.svg?v=2">
+    <link rel="icon" href="../assets/images/ar.svg?v=2">
+    <link rel="apple-touch-icon" href="../assets/images/ar.svg?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HGM21QWH4E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HGM21QWH4E');
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="/" aria-label="Go to homepage">
+                    <img src="../assets/images/arar.svg" alt="ARAR" class="logo-img">
+                </a>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+                <span class="material-icons-outlined">menu</span>
+            </button>
+            <div class="menu-overlay" onclick="closeMenu()"></div>
+            <nav id="main-nav" class="nav-menu">
+                <button class="menu-close-btn" onclick="toggleMenu()" aria-label="Close menu">
+                    <span class="material-icons-outlined">close</span>
+                </button>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle" onclick="toggleDropdown(event)">Exhibitions</a>
+                    <div class="nav-dropdown-menu">
+                        <a href="../index.html?exhibition=bouquet-contemporary-art-2026">BOUQUET Contemporary Art Exhibition</a>
+                        <a href="../index.html?exhibition=guyduk-presence-2026">PRESENCE - Anatoliy Guyduk Solo Exhibition</a>
+                        <a href="../index.html?exhibition=contemporary-art-2026">Contemporary Art Exhibition-Fundraiser</a>
+                    </div>
+                </div>
+                <a href="../index.html#artists">Artists</a>
+                <a href="../index.html#artworks">Artworks</a>
+                <a href="../index.html#merch">Merch</a>
+                <a href="../index.html#organizers">Organizers</a>
+                <a href="../index.html#partners">Partners</a>
+                <a href="../index.html#contacts">Contacts</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="artist-page-container">
+            <a href="#" class="back-btn" id="backBtn"><span class="material-icons-outlined">arrow_back</span></a>
+            <div class="artist-profile-card">
+                <div class="artist-profile-info">
+                    <h1 class="artist-profile-name">Mariam Galstyan</h1>
+                    <p class="artist-profile-location">Armenia</p>
+                    <p class="artist-profile-bio">Mariam Galstyan is a contemporary Armenian artist born and raised in Armenia. Mariam participated in several competitive exhibitions in Armenia, Russia, Romania, Egypt, Poland and India. Between 2000 and 2008 Mariam exhibited her works at events dedicated to the establishment of the UN, the 50th anniversary of the UNHCR, the Olympic Games in Romania, at Shankar's International Competition in India, among others. After 6 years at the Yerevan State Academy of Fine Arts, Mariam holds a master's degree in graphic arts. She lives and creates in Armenia, having held six solo exhibitions. Mariam is a member of Artists' Union of Armenia. In 2021 she participated in Machanents International Art Symposium in Echmiatsin, and exhibited her work at Context Art Miami 2021.</p>
+                    <div class="artist-exhibitions-section">
+                        <h3 class="artist-exhibitions-title">ARAR Exhibitions</h3>
+                        <ul class="artist-exhibitions-list">
+                            <li><a href="../index.html?exhibition=bouquet-contemporary-art-2026">BOUQUET Contemporary Art Exhibition</a></li>
+                        </ul>
+                    </div>
+                    <div class="artist-artworks-section">
+                        <h2 class="artist-artworks-title">Exhibited Artworks</h2>
+                        <div class="merch-grid" id="artistArtworksGrid">
+                            <p class="merch-loading">Loading...</p>
+                        </div>
+                    </div>
+                    <div class="artist-merch-section" id="artistMerchSection" style="display: none;">
+                        <h2 class="artist-artworks-title">Merch</h2>
+                        <div class="merch-grid" id="artistMerchGrid">
+                            <p class="merch-loading">Loading...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('main-nav');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const overlay = document.querySelector('.menu-overlay');
+            nav.classList.toggle('nav-open');
+            menuToggle.classList.toggle('menu-open');
+            if (overlay) {
+                overlay.classList.toggle('active');
+            }
+        }
+
+        function closeMenu() {
+            const nav = document.getElementById('main-nav');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const overlay = document.querySelector('.menu-overlay');
+            if (nav && nav.classList.contains('nav-open')) {
+                nav.classList.remove('nav-open');
+                if (menuToggle) {
+                    menuToggle.classList.remove('menu-open');
+                }
+                if (overlay) {
+                    overlay.classList.remove('active');
+                }
+            }
+        }
+
+        let dropdownTimeout = null;
+
+        function toggleDropdown(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            const dropdown = event.currentTarget.closest('.nav-dropdown');
+            if (dropdown) {
+                dropdown.classList.toggle('active');
+                if (dropdownTimeout) {
+                    clearTimeout(dropdownTimeout);
+                    dropdownTimeout = null;
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.nav-dropdown');
+            dropdowns.forEach(dropdown => {
+                const dropdownMenu = dropdown.querySelector('.nav-dropdown-menu');
+                
+                function clearDropdownTimeout() {
+                    if (dropdownTimeout) {
+                        clearTimeout(dropdownTimeout);
+                        dropdownTimeout = null;
+                    }
+                }
+
+                function hideDropdown() {
+                    dropdownTimeout = setTimeout(function() {
+                        dropdown.classList.remove('active');
+                        dropdownTimeout = null;
+                    }, 2000);
+                }
+
+                dropdown.addEventListener('mouseenter', function() {
+                    clearDropdownTimeout();
+                    dropdown.classList.add('active');
+                });
+
+                dropdown.addEventListener('mouseleave', function(e) {
+                    const relatedTarget = e.relatedTarget;
+                    if (!dropdown.contains(relatedTarget)) {
+                        hideDropdown();
+                    }
+                });
+
+                if (dropdownMenu) {
+                    dropdownMenu.addEventListener('mouseenter', function() {
+                        clearDropdownTimeout();
+                    });
+
+                    dropdownMenu.addEventListener('mouseleave', function() {
+                        hideDropdown();
+                    });
+                }
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.nav-dropdown')) {
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                        if (dropdownTimeout) {
+                            clearTimeout(dropdownTimeout);
+                            dropdownTimeout = null;
+                        }
+                    });
+                }
+            });
+        });
+
+        function getArtistProfileImage(artistName) {
+            return '../assets/images/placeholder.jpg';
+        }
+
+        function loadArtistArtworks() {
+            const artistName = document.querySelector('.artist-profile-name').textContent.trim();
+            const artworksGrid = document.getElementById('artistArtworksGrid');
+            
+            if (!artworksGrid) return;
+
+            fetch('../artworks.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch artworks.json');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    let artistArtworks = data.filter(artwork => artwork.artist === artistName);
+                    
+                    artistArtworks = artistArtworks.filter(artwork => {
+                        const images = artwork.images || (artwork.image ? [artwork.image] : []);
+                        return images.length > 0 && images.some(img => img && img.trim() !== '');
+                    });
+                    
+                    if (artistArtworks && artistArtworks.length > 0) {
+                        artworksGrid.innerHTML = artistArtworks.map((artwork, index) => {
+                            const artworkId = `artwork-${index}`;
+                            const images = artwork.images || (artwork.image ? [artwork.image] : []);
+                            const fallbackImage = getArtistProfileImage(artwork.artist);
+                            const firstImage = images[0] ? '../' + images[0] : fallbackImage;
+                            const secondImage = images[1] ? '../' + images[1] : firstImage;
+                            
+                            return `
+                            <div class="merch-item">
+                                <div class="merch-image-container" onclick="${images.length > 1 ? `event.preventDefault(); flipMerchImage('${artworkId}')` : ''}" style="cursor: ${images.length > 1 ? 'pointer' : 'default'}">
+                                    <div class="merch-flip-container" id="${artworkId}">
+                                        <div class="merch-flip-front">
+                                            <img src="${firstImage}" alt="${artwork.title}" class="merch-image" onerror="this.onerror=null; this.src='${fallbackImage}'">
+                                        </div>
+                                        <div class="merch-flip-back">
+                                            <img src="${secondImage}" alt="${artwork.title}" class="merch-image" onerror="this.onerror=null; this.src='${fallbackImage}'">
+                                        </div>
+                                    </div>
+                                    <button class="merch-flip-btn" style="${images.length > 1 ? 'display: flex' : 'display: none'}" onclick="event.preventDefault(); event.stopPropagation(); flipMerchImage('${artworkId}')" title="Flip image">
+                                        <span class="material-icons-outlined">sync</span>
+                                    </button>
+                                </div>
+                                <div class="merch-info">
+                                    <div class="merch-info-left">
+                                        <p class="merch-item-title">
+                                            <strong>${artwork.title || 'Untitled'}</strong>
+                                            ${artwork.year ? ` <span class="merch-separator">·</span> ${artwork.year}` : ''}
+                                        </p>
+                                        <p class="merch-details-combined">
+                                            <span class="merch-medium">${artwork.media}</span>
+                                        </p>
+                                        <p class="merch-dimensions">${artwork.size || 'size not available'}</p>
+                                        ${(artwork.status === 'Sold out' || artwork.status === 'Gift' || artwork.status === 'ARAR Gallery collection') ? 
+                                            '<p class="merch-price">' + 
+                                            (artwork.status === 'Sold out' ? 
+                                                (artwork.originalPrice ? (artwork.originalPriceAMD ? '<span class="merch-price-original-no-strike">֏' + artwork.originalPriceAMD + '</span> ' : '') + '<span class="merch-price-original-no-strike">($' + artwork.originalPrice + ')</span> ' : '') +
+                                                '<span class="merch-price-discounted">Sold out</span>' : 
+                                                artwork.status === 'Gift' ? 
+                                                    (artwork.originalPrice ? (artwork.originalPriceAMD ? '<span class="merch-price-original-no-strike">֏' + artwork.originalPriceAMD + '</span> ' : '') + '<span class="merch-price-original-no-strike">($' + artwork.originalPrice + ')</span> ' : '') +
+                                                    '<span class="merch-price-discounted">Gifted</span>' :
+                                                '<span class="merch-price-discounted">ARAR Gallery collection</span>') +
+                                            '</p>' : ''}
+                                        ${artwork.status !== 'Sold out' && artwork.status !== 'Gift' && artwork.status !== 'ARAR Gallery collection' ? 
+                                            '<a href="https://wa.me/37495286888" target="_blank" rel="noreferrer" class="contact-to-buy-btn" onclick="event.stopPropagation();">Request the price</a>' : ''}
+                                    </div>
+                                </div>
+                            </div>
+                            `;
+                        }).join('');
+                    } else {
+                        artworksGrid.innerHTML = '<p class="merch-empty">Coming soon</p>';
+                    }
+                })
+                .catch(err => {
+                    console.error('Failed to load artworks:', err);
+                    artworksGrid.innerHTML = '<p class="merch-empty">Coming soon</p>';
+                });
+        }
+
+        function setBackButton() {
+            const backBtn = document.getElementById('backBtn');
+            if (backBtn) {
+                backBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.history.back();
+                });
+            }
+        }
+
+        function loadArtistMerch() {
+            const artistName = document.querySelector('.artist-profile-name').textContent.trim();
+            const merchSection = document.getElementById('artistMerchSection');
+            const merchGrid = document.getElementById('artistMerchGrid');
+            
+            if (!merchGrid || !merchSection) return;
+
+            fetch('../merch.json?' + new Date().getTime(), { cache: 'no-store' })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch merch.json');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    function matchesArtist(merchArtist, pageArtist) {
+                        if (merchArtist === pageArtist) return true;
+                        if (merchArtist.includes('Spazuno') && (pageArtist.includes('Spazuno') || pageArtist.includes('Raydan Zebian'))) return true;
+                        if (pageArtist.includes('Spazuno') && merchArtist.includes('Spazuno')) return true;
+                        return false;
+                    }
+                    
+                    const artistMerch = data.items ? data.items.filter(item => matchesArtist(item.artist, artistName)) : [];
+                    
+                    if (artistMerch && artistMerch.length > 0) {
+                        merchSection.style.display = 'block';
+                        merchGrid.innerHTML = artistMerch.map((item, index) => {
+                            const images = item.images || (item.image ? [item.image] : []);
+                            const itemId = `merch-${item.id || index}`;
+                            return `
+                            <div class="merch-item">
+                                <a href="${item.link}" class="merch-item-link">
+                                    <div class="merch-image-container" onclick="${images.length > 1 ? `event.preventDefault(); flipMerchImage('${itemId}')` : ''}" style="cursor: ${images.length > 1 ? 'pointer' : 'default'}">
+                                        <div class="merch-flip-container" id="${itemId}">
+                                            <div class="merch-flip-front">
+                                                <img src="../${images[0]}" alt="${item.title}" class="merch-image" onerror="this.src='../assets/images/placeholder.jpg'">
+                                            </div>
+                                            ${images.length > 1 ? `
+                                            <div class="merch-flip-back">
+                                                <img src="../${images[1]}" alt="${item.title}" class="merch-image" onerror="this.src='../assets/images/placeholder.jpg'">
+                                            </div>
+                                            ` : ''}
+                                        </div>
+                                        ${item.stockLeft && item.stockTotal ? `<div class="merch-limited-badge">${item.stockLeft} left of ${item.stockTotal}</div>` : item.stockAvailableUntil ? `<div class="merch-limited-badge">available until ${item.stockAvailableUntil}</div>` : ''}
+                                        ${images.length > 1 ? `
+                                        <button class="merch-flip-btn" onclick="event.preventDefault(); event.stopPropagation(); flipMerchImage('${itemId}')" title="Flip image">
+                                            <span class="material-icons-outlined">sync</span>
+                                        </button>
+                                        ` : ''}
+                                    </div>
+                                </a>
+                                <div class="merch-info">
+                                    <p class="merch-item-title">${item.title}</p>
+                                    <p class="merch-details-combined">
+                                        <span class="merch-medium">${item.medium}</span>
+                                        <span class="merch-separator">·</span>
+                                        <span class="merch-dimensions">${item.dimensions}</span>
+                                    </p>
+                                    <p class="merch-price">
+                                        ${item.discountedPrice ? `<span class="merch-price-original">${item.currency === 'USD' ? '$' : ''}${item.price} ${item.currency !== 'USD' ? item.currency : ''}</span>` : ''}
+                                        <span class="merch-price-discounted">${item.currency === 'USD' ? '$' : ''}${item.discountedPrice || item.price} ${item.currency !== 'USD' ? item.currency : ''}</span>
+                                    </p>
+                                </div>
+                            </div>
+                            `;
+                        }).join('');
+                    } else {
+                        merchSection.style.display = 'none';
+                    }
+                })
+                .catch(err => {
+                    console.error('Failed to load merch:', err);
+                    merchSection.style.display = 'none';
+                });
+        }
+
+        function flipMerchImage(containerId) {
+            const container = document.getElementById(containerId);
+            if (container) {
+                container.classList.toggle('flipped');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            setBackButton();
+            loadArtistArtworks();
+            loadArtistMerch();
+        });
+    </script>
+</body>
+</html>
