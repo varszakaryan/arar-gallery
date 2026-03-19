@@ -173,6 +173,48 @@
         "assets/images/merch/guyduk_morning_back.png"
       ],
       "link": "#"
+    },
+    {
+      "id": 14,
+      "title": "The Two Postcard",
+      "artist": "Aram Yengibaryan",
+      "price": 1000,
+      "currency": "AMD",
+      "dimensions": "10.5 x 14.8 cm",
+      "medium": "printed on paper",
+      "images": [
+        "assets/images/merch/aram_yengibaryan_two_front.png",
+        "assets/images/merch/aram_yengibaryan_two_back.png"
+      ],
+      "link": "#"
+    },
+    {
+      "id": 15,
+      "title": "Threshold Postcard",
+      "artist": "Aram Yengibaryan",
+      "price": 1000,
+      "currency": "AMD",
+      "dimensions": "10.5 x 14.8 cm",
+      "medium": "printed on paper",
+      "images": [
+        "assets/images/merch/aram_yengibaryan_threshold_front.png",
+        "assets/images/merch/aram_yengibaryan_threshold_back.png"
+      ],
+      "link": "#"
+    },
+    {
+      "id": 16,
+      "title": "Autumn Postcard",
+      "artist": "Aram Yengibaryan",
+      "price": 1000,
+      "currency": "AMD",
+      "dimensions": "10.5 x 14.8 cm",
+      "medium": "printed on paper",
+      "images": [
+        "assets/images/merch/aram_yengibaryan_autumn_front.png",
+        "assets/images/merch/aram_yengibaryan_autumn_back.png"
+      ],
+      "link": "#"
     }
   ]
 }
