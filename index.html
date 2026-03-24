@@ -959,7 +959,7 @@
                     
                     const dateValue = document.getElementById('eventDateValue');
                     if (dateValue) {
-                        dateValue.textContent = 'April 9, 2026, 18:00';
+                        dateValue.textContent = 'April 9–17, 2026';
                     }
                     
                     const locationItems = document.querySelectorAll('.detail-item');
@@ -989,14 +989,21 @@
                     
                     const googleCalendarLink = document.getElementById('googleCalendarLink');
                     if (googleCalendarLink) {
-                        googleCalendarLink.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=RESONANCE+-+Guy+Ghazanchyan+Solo+Exhibition&dates=20260409T180000/20260409T210000&details=Through+a+series+of+expressive+portraits%2C+Guy+Ghazanchyan+explores+the+fragile+boundary+between+reality+and+perception.&location=Artists+Union+of+Armenia%2C+Abovyan+16%2C+Yerevan';
+                        googleCalendarLink.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=RESONANCE+-+Guy+Ghazanchyan+Solo+Exhibition&dates=20260409T180000/20260417T200000&recur=RRULE%3AFREQ%3DDAILY%3BUNTIL%3D20260417T200000&details=Through+a+series+of+expressive+portraits%2C+Guy+Ghazanchyan+explores+the+fragile+boundary+between+reality+and+perception.&location=Artists+Union+of+Armenia%2C+Abovyan+16%2C+Yerevan';
                     }
                     const appleCalendarLink = document.getElementById('appleCalendarLink');
                     if (appleCalendarLink) {
                         appleCalendarLink.href = '#';
                         appleCalendarLink.onclick = function(e) {
                             e.preventDefault();
-                            const icsContent = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//ARAR Gallery//RESONANCE//EN', 'BEGIN:VEVENT', 'DTSTART:20260409T180000', 'DTEND:20260409T210000', 'SUMMARY:RESONANCE - Guy Ghazanchyan Solo Exhibition', 'DESCRIPTION:Through a series of expressive portraits\\, Guy Ghazanchyan explores the fragile boundary between reality and perception.', 'LOCATION:Artists Union of Armenia\\, Abovyan 16\\, Yerevan', 'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
+                            const icsLines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//ARAR Gallery//RESONANCE//EN', ''];
+                            const endDate = new Date(2026, 3, 17);
+                            for (let d = new Date(2026, 3, 9); d <= endDate; d.setDate(d.getDate() + 1)) {
+                                const dateStr = d.getFullYear() + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0');
+                                icsLines.push('BEGIN:VEVENT', 'DTSTART:' + dateStr + 'T110000', 'DTEND:' + dateStr + 'T200000', 'SUMMARY:RESONANCE - Guy Ghazanchyan Solo Exhibition', 'DESCRIPTION:Through a series of expressive portraits\\, Guy Ghazanchyan explores the fragile boundary between reality and perception.', 'LOCATION:Artists Union of Armenia\\, Abovyan 16\\, Yerevan', 'END:VEVENT', '');
+                            }
+                            icsLines.push('END:VCALENDAR');
+                            const icsContent = icsLines.join('\r\n');
                             const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
                             const url = URL.createObjectURL(blob);
                             const a = document.createElement('a');
