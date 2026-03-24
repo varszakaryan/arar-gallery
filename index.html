@@ -77,6 +77,7 @@
                 <div class="nav-dropdown">
                     <a href="#" class="nav-dropdown-toggle" onclick="toggleDropdown(event)">Exhibitions</a>
                     <div class="nav-dropdown-menu">
+                        <a href="?exhibition=resonance-guy-ghazanchyan-2026">RESONANCE - Guy Ghazanchyan's Exhibition</a>
                         <a href="?exhibition=bouquet-contemporary-art-2026">BOUQUET Contemporary Art Exhibition</a>
                         <a href="?exhibition=guyduk-presence-2026">PRESENCE - Anatoliy Guyduk Solo Exhibition</a>
                         <a href="?exhibition=contemporary-art-2026">Contemporary Art Exhibition-Fundraiser</a>
@@ -95,12 +96,28 @@
 
     <main>
         <div class="hero-section hero-carousel">
-            <div class="hero-slide" data-bg="assets/images/artworks/tigran_ghazaryan2.jpg" data-link="?exhibition=bouquet-contemporary-art-2026">
+            <div class="hero-slide" data-bg="assets/images/artworks/resonance_bg.jpg" data-link="?exhibition=resonance-guy-ghazanchyan-2026">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
                     <div class="upcoming-label">
                         <span class="vertical-line"></span>
                         <span>UPCOMING</span>
+                    </div>
+                    <h1 class="hero-title">
+                        RESONANCE<br>
+                        Guy Ghazanchyan Solo Exhibition
+                    </h1>
+                    <p class="opening-info">Opening April 9, 2026, 18:00</p>
+                    <p class="hero-location">Artists Union of Armenia</p>
+                    <a href="?exhibition=resonance-guy-ghazanchyan-2026" class="hero-more-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-slide" data-bg="assets/images/artworks/tigran_ghazaryan2.jpg" data-link="?exhibition=bouquet-contemporary-art-2026">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <div class="upcoming-label">
+                        <span class="vertical-line"></span>
+                        <span>RUNNING</span>
                     </div>
                     <h1 class="hero-title">
                         BOUQUET<br>
@@ -153,6 +170,7 @@
                 <span class="hero-indicator active" onclick="goToHeroSlide(0)"></span>
                 <span class="hero-indicator" onclick="goToHeroSlide(1)"></span>
                 <span class="hero-indicator" onclick="goToHeroSlide(2)"></span>
+                <span class="hero-indicator" onclick="goToHeroSlide(3)"></span>
             </div>
             <button class="scroll-down-btn" onclick="scrollToNext()" aria-label="Scroll down">
                 <span class="material-icons-outlined">keyboard_arrow_down</span>
@@ -246,58 +264,36 @@
                 <h3 class="artists-title">Gallery Artists</h3>
                 <div class="artists-list">
                     <div class="artists-column">
-                        <div class="artist-item">
-                            <a href="artists/spazuno" class="artist-name">Raydan Zebian (Spazuno)</a>
-                        </div>
-                        <div class="artist-item">
-                            <a href="artists/karen-akhikyan" class="artist-name">Karen Akhikyan</a>
-                        </div>
-                        <div class="artist-item">
-                            <a href="artists/aram-poladian" class="artist-name">Aram Poladian</a>
-                        </div>
-                        <div class="artist-item">
-                            <a href="artists/guy-ghazanchyan" class="artist-name">Guy Ghazanchyan</a>
-                        </div>
-                        <div class="artist-item">
-                            <a href="artists/hayduk-smbatyan" class="artist-name">Hayduk Smbatyan</a>
-                        </div>
-                        <div class="artist-item">
-                            <a href="artists/siranush-vardanyan" class="artist-name">Siranush Vardanyan</a>
-                        </div>
+                        <div class="artist-item"><a href="artists/guy-ghazanchyan" class="artist-name">Guy Ghazanchyan</a></div>
+                        <div class="artist-item"><a href="artists/nune-manukyan" class="artist-name">Nune Manukyan</a></div>
+                        <div class="artist-item"><a href="artists/mariam-gevorgyan" class="artist-name">Mariam Gevorgyan</a></div>
+                        <div class="artist-item"><a href="artists/haykuhi-makaryan" class="artist-name">Haykuhi Makaryan</a></div>
+                        <div class="artist-item"><a href="artists/margaret-asatryan" class="artist-name">Margaret Asatryan</a></div>
+                        <div class="artist-item"><a href="artists/mariam-galstyan" class="artist-name">Mariam Galstyan</a></div>
+                        <div class="artist-item"><a href="artists/tatev-aslanyan" class="artist-name">Tatev Aslanyan</a></div>
+                        <div class="artist-item"><a href="artists/ararat-minasyan" class="artist-name">Ararat Minasyan</a></div>
+                        <div class="artist-item"><a href="artists/arsen-arsist" class="artist-name">Arsen Arsist</a></div>
                     </div>
                     <div class="artists-column">
-                        <div class="artist-item">
-                            <a href="artists/lilit-eghiazaryan" class="artist-name">Lilith Leel Eghiazaryan</a>
-                        </div>
-                        <div class="artist-item">
-                            <a href="artists/armen-hakobjanyan" class="artist-name">Armen Hakobjanyan</a>
-                        </div>
-                        <div class="artist-item">
-                            <a href="artists/aram-yengibaryan" class="artist-name">Aram Yengibaryan</a>
-                        </div>
-                        <div class="artist-item">
-                            <a href="artists/adam-adamyan" class="artist-name">Adam Adamyan</a>
-                        </div>
-                        <div class="artist-item">
-                            <a href="artists/tina-karakeshishyan" class="artist-name">Tina Karakeshishyan</a>
-                        </div>
+                        <div class="artist-item"><a href="artists/suren-arakelyan" class="artist-name">Suren Arakelyan</a></div>
+                        <div class="artist-item"><a href="artists/blue-pencil" class="artist-name">Blue Pencil</a></div>
+                        <div class="artist-item"><a href="artists/anatoliy-guyduk" class="artist-name">Anatoliy Guyduk</a></div>
+                        <div class="artist-item"><a href="artists/tigran-ghazaryan" class="artist-name">Tigran Ghazaryan</a></div>
+                        <div class="artist-item"><a href="artists/aram-yengibaryan" class="artist-name">Aram Yengibaryan</a></div>
+                        <div class="artist-item"><a href="artists/spazuno" class="artist-name">Raydan Zebian (Spazuno)</a></div>
+                        <div class="artist-item"><a href="artists/karen-akhikyan" class="artist-name">Karen Akhikyan</a></div>
+                        <div class="artist-item"><a href="artists/aram-poladian" class="artist-name">Aram Poladian</a></div>
+                        <div class="artist-item"><a href="artists/hayduk-smbatyan" class="artist-name">Hayduk Smbatyan</a></div>
                     </div>
                     <div class="artists-column">
-                        <div class="artist-item">
-                            <a href="artists/anatoliy-guyduk" class="artist-name">Anatoliy Guyduk</a>
-                        </div>
-                        <div class="artist-item">
-                            <a href="artists/lubna-al-lahham" class="artist-name">Lubna Al-Lahham</a>
-                        </div>
-                        <div class="artist-item">
-                            <a href="artists/aksel-zardaryan" class="artist-name">Aksel Zardaryan-Mavian</a>
-                        </div>
-                        <div class="artist-item">
-                            <a href="artists/ashot-harutyunyan" class="artist-name">Ashot Harutyunyan</a>
-                        </div>
-                        <div class="artist-item">
-                            <a href="artists/tigran-ghazaryan" class="artist-name">Tigran Ghazaryan</a>
-                        </div>
+                        <div class="artist-item"><a href="artists/siranush-vardanyan" class="artist-name">Siranush Vardanyan</a></div>
+                        <div class="artist-item"><a href="artists/lilit-eghiazaryan" class="artist-name">Lilith Leel Eghiazaryan</a></div>
+                        <div class="artist-item"><a href="artists/armen-hakobjanyan" class="artist-name">Armen Hakobjanyan</a></div>
+                        <div class="artist-item"><a href="artists/adam-adamyan" class="artist-name">Adam Adamyan</a></div>
+                        <div class="artist-item"><a href="artists/tina-karakeshishyan" class="artist-name">Tina Karakeshishyan</a></div>
+                        <div class="artist-item"><a href="artists/lubna-al-lahham" class="artist-name">Lubna Al-Lahham</a></div>
+                        <div class="artist-item"><a href="artists/aksel-zardaryan" class="artist-name">Aksel Zardaryan-Mavian</a></div>
+                        <div class="artist-item"><a href="artists/ashot-harutyunyan" class="artist-name">Ashot Harutyunyan</a></div>
                     </div>
                 </div>
             </div>
@@ -681,7 +677,9 @@
             }
             
             // Update page title based on exhibition parameter
-            if (exhibition === 'bouquet-contemporary-art-2026') {
+            if (exhibition === 'resonance-guy-ghazanchyan-2026') {
+                document.title = 'RESONANCE - Guy Ghazanchyan Solo Exhibition | ARAR Gallery';
+            } else if (exhibition === 'bouquet-contemporary-art-2026') {
                 document.title = 'BOUQUET Contemporary Art Exhibition | ARAR Gallery';
             } else if (exhibition === 'guyduk-presence-2026') {
                 document.title = 'PRESENCE - Anatoliy Guyduk Solo Exhibition | ARAR Gallery';
@@ -756,7 +754,14 @@
             updateOGImage('assets/images/arar.png');
             
             // Update sharing meta tags for exhibition-specific title/description/url
-            if (exhibition === 'bouquet-contemporary-art-2026') {
+            if (exhibition === 'resonance-guy-ghazanchyan-2026') {
+                updateSharingMetaTags(
+                    'RESONANCE - Guy Ghazanchyan Solo Exhibition | ARAR Gallery',
+                    'Through a series of expressive portraits, Guy Ghazanchyan explores the fragile boundary between reality and perception. Artists Union of Armenia, Abovyan 16, Yerevan.',
+                    'https://arargallery.com/?exhibition=resonance-guy-ghazanchyan-2026',
+                    'assets/images/arar.png'
+                );
+            } else if (exhibition === 'bouquet-contemporary-art-2026') {
                 updateSharingMetaTags(
                     'BOUQUET Contemporary Art Exhibition | ARAR Gallery',
                     'A collection of flowers from around the world. The BOUQUET exhibition brings together works by artists from different countries, united by the motif of the flower. Curated by Vahram Muradyan and Varser Zakaryan.',
@@ -906,55 +911,185 @@
                 
                 // Show only the relevant slide
                 heroSlides = document.querySelectorAll('.hero-slide');
-                if (exhibition === 'bouquet-contemporary-art-2026') {
+                const exhibitionSlideMap = {
+                    'resonance-guy-ghazanchyan-2026': 0,
+                    'bouquet-contemporary-art-2026': 1,
+                    'guyduk-presence-2026': 2,
+                    'contemporary-art-2026': 3
+                };
+                const slideIndex = exhibitionSlideMap[exhibition];
+                if (slideIndex !== undefined) {
                     heroSlides.forEach((slide, i) => {
-                        slide.classList.toggle('active', i === 0);
-                        if (i === 0) {
-                            slide.style.pointerEvents = 'auto';
-                        } else {
-                            slide.style.pointerEvents = 'none';
-                        }
+                        slide.classList.toggle('active', i === slideIndex);
+                        slide.style.pointerEvents = i === slideIndex ? 'auto' : 'none';
                     });
-                    if (heroSlides[0] && heroSlides[0].dataset.bg) {
+                    if (heroSlides[slideIndex] && heroSlides[slideIndex].dataset.bg) {
                         const heroSection = document.querySelector('.hero-section');
                         if (heroSection) {
-                            heroSection.style.backgroundImage = `url('${heroSlides[0].dataset.bg}')`;
-                        }
-                    }
-                } else if (exhibition === 'guyduk-presence-2026') {
-                    heroSlides.forEach((slide, i) => {
-                        slide.classList.toggle('active', i === 1);
-                        if (i === 1) {
-                            slide.style.pointerEvents = 'auto';
-                        } else {
-                            slide.style.pointerEvents = 'none';
-                        }
-                    });
-                    if (heroSlides[1] && heroSlides[1].dataset.bg) {
-                        const heroSection = document.querySelector('.hero-section');
-                        if (heroSection) {
-                            heroSection.style.backgroundImage = `url('${heroSlides[1].dataset.bg}')`;
-                        }
-                    }
-                } else if (exhibition === 'contemporary-art-2026') {
-                    heroSlides.forEach((slide, i) => {
-                        slide.classList.toggle('active', i === 2);
-                        if (i === 2) {
-                            slide.style.pointerEvents = 'auto';
-                        } else {
-                            slide.style.pointerEvents = 'none';
-                        }
-                    });
-                    if (heroSlides[2] && heroSlides[2].dataset.bg) {
-                        const heroSection = document.querySelector('.hero-section');
-                        if (heroSection) {
-                            heroSection.style.backgroundImage = `url('${heroSlides[2].dataset.bg}')`;
+                            heroSection.style.backgroundImage = `url('${heroSlides[slideIndex].dataset.bg}')`;
                         }
                     }
                 }
             }
             
-            if (exhibition === 'bouquet-contemporary-art-2026') {
+            if (exhibition === 'resonance-guy-ghazanchyan-2026') {
+                const heroSection = document.querySelector('.hero-section');
+                if (heroSection) {
+                    heroSection.style.backgroundImage = "url('assets/images/artworks/resonance_bg.jpg')";
+                }
+                
+                const heroTitle = document.querySelector('.hero-title');
+                if (heroTitle) {
+                    heroTitle.innerHTML = 'RESONANCE<br>Guy Ghazanchyan Solo Exhibition';
+                }
+                
+                const openingInfo = document.querySelector('.opening-info');
+                if (openingInfo) {
+                    openingInfo.textContent = 'Opening April 9, 2026, 18:00';
+                }
+                
+                const heroLocation = document.querySelector('.hero-location');
+                if (heroLocation) {
+                    heroLocation.textContent = 'Artists Union of Armenia';
+                }
+                
+                const eventInfoSection = document.getElementById('eventInfoSection');
+                if (eventInfoSection) {
+                    eventInfoSection.style.display = 'block';
+                    
+                    const dateValue = document.getElementById('eventDateValue');
+                    if (dateValue) {
+                        dateValue.textContent = 'April 9, 2026, 18:00';
+                    }
+                    
+                    const locationItems = document.querySelectorAll('.detail-item');
+                    locationItems.forEach(item => {
+                        const label = item.querySelector('.detail-label');
+                        if (label && label.textContent === 'Location') {
+                            const detailValues = item.querySelectorAll('.detail-value');
+                            detailValues.forEach((val, index) => {
+                                if (index === 0) {
+                                    val.style.display = '';
+                                    val.textContent = 'Artists Union of Armenia';
+                                } else {
+                                    val.style.display = '';
+                                    val.innerHTML = '<a href="https://maps.app.goo.gl/3jkVnvV4VuX9NFWX8" target="_blank" rel="noreferrer" class="location-link">Abovyan 16, Yerevan</a>';
+                                }
+                            });
+                        }
+                    });
+                    
+                    const curatorItems = document.querySelectorAll('.detail-item');
+                    curatorItems.forEach(item => {
+                        const label = item.querySelector('.detail-label');
+                        if (label && label.textContent === 'Curator') {
+                            item.style.display = 'none';
+                        }
+                    });
+                    
+                    const googleCalendarLink = document.getElementById('googleCalendarLink');
+                    if (googleCalendarLink) {
+                        googleCalendarLink.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=RESONANCE+-+Guy+Ghazanchyan+Solo+Exhibition&dates=20260409T180000/20260409T210000&details=Through+a+series+of+expressive+portraits%2C+Guy+Ghazanchyan+explores+the+fragile+boundary+between+reality+and+perception.&location=Artists+Union+of+Armenia%2C+Abovyan+16%2C+Yerevan';
+                    }
+                    const appleCalendarLink = document.getElementById('appleCalendarLink');
+                    if (appleCalendarLink) {
+                        appleCalendarLink.href = '#';
+                        appleCalendarLink.onclick = function(e) {
+                            e.preventDefault();
+                            const icsContent = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//ARAR Gallery//RESONANCE//EN', 'BEGIN:VEVENT', 'DTSTART:20260409T180000', 'DTEND:20260409T210000', 'SUMMARY:RESONANCE - Guy Ghazanchyan Solo Exhibition', 'DESCRIPTION:Through a series of expressive portraits\\, Guy Ghazanchyan explores the fragile boundary between reality and perception.', 'LOCATION:Artists Union of Armenia\\, Abovyan 16\\, Yerevan', 'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
+                            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+                            const url = URL.createObjectURL(blob);
+                            const a = document.createElement('a');
+                            a.href = url;
+                            a.download = 'resonance-exhibition.ics';
+                            a.click();
+                            URL.revokeObjectURL(url);
+                        };
+                    }
+                    
+                    const eventInfoDescription = document.getElementById('eventInfoDescription');
+                    if (eventInfoDescription) {
+                        eventInfoDescription.innerHTML = '<strong>What do we actually see when we look at a face?</strong><br><br>Colors, shadows, and forms appear real, yet color itself is only a wave interpreted by the brain. The faces we perceive may exist only through our own perception. A gaze may seem thoughtful, anxious, or distant — but does it truly exist, or is it created within the viewer\'s mind?<br><br>Through a series of expressive portraits, Guy Ghazanchyan explores the fragile boundary between reality and perception. The exhibition invites viewers to question what they see, what they feel, and where the line between the artwork and illusion truly lies.';
+                    }
+                }
+                
+                const artistsNavLink = document.querySelector('nav a[href="#artists"]');
+                if (artistsNavLink) {
+                    artistsNavLink.textContent = 'The Artist';
+                }
+                
+                const artistsTitle = document.querySelector('.artists-title');
+                if (artistsTitle) {
+                    artistsTitle.textContent = 'The Artist';
+                }
+                
+                const artistsList = document.querySelector('.artists-list');
+                if (artistsList) {
+                    artistsList.style.display = 'block';
+                    artistsList.innerHTML = '<div style="width: 100%; max-width: 900px; margin: 0 auto;"><p style="font-size: 18px; line-height: 1.8; color: #1a1a1a; margin: 0; text-align: left;"><a href="artists/guy-ghazanchyan" style="color: #000; text-decoration: none; font-weight: 600;">Guy Ghazanchyan</a>, born in 1991 in Yerevan into a family of artists, has been immersed in creativity since childhood, presenting himself from an early age solely as an artist. He studied at the Yerevan Academy of Arts, where his 2011 diploma work \u201cI KNOW WHERE IT\u2019S FLYING\u201d received the Eduard Isabekyan Prize. A residency at Paris\u2019s Cit\u00e9 des Arts in 2012 propelled his exhibition career, leading to solo shows in Yerevan, Wiesbaden, Groningen, Zurich, and Beirut. Ghazanchyan\u2019s figurative and monumental paintings explore themes of flight, freedom, and movement, complemented by distinctive bronze sculptures. His works have been recognized with awards such as the 2015 Youth Prize of the Armenian President Art, and he has collaborated with AvestArt Gallery, including a 2017 solo exhibition in Washington DC.<br><br>The 2020 Nagorno-Karabakh war marked a turning point in Ghazanchyan\u2019s work, inspiring a new period characterized by expressive energy and reflective depictions of young men, as seen in his 2021 exhibition \u201cAKANates\u201d at the Yerevan Museum of Modern Art. Some works from this show were included in the museum\u2019s permanent collection and 2022 album. In 2022, he continued exploring contemporary human identity through the vibrant portrait series \u201cIUVENIS\u201d (Youth), highlighting confident young individuals. Across his career, Ghazanchyan\u2019s central pursuit remains the creation of a fresh, expressive image of today\u2019s human experience.</p></div>';
+                }
+                
+                const artworksGrid = document.getElementById('artworksGrid');
+                if (artworksGrid) {
+                    artworksGrid.innerHTML = '<p class="merch-empty">Coming soon</p>';
+                }
+                
+                const seeAllContainer = document.getElementById('seeAllContainer');
+                if (seeAllContainer) {
+                    seeAllContainer.style.display = 'none';
+                }
+                
+                const muralSection = document.querySelector('.mural-section');
+                if (muralSection) {
+                    muralSection.style.display = 'none';
+                }
+                const muralNavLink = document.querySelector('nav a[href="#mural"]');
+                if (muralNavLink) {
+                    muralNavLink.style.display = 'none';
+                }
+                
+                const merchSection = document.querySelector('.merch-section');
+                if (merchSection) {
+                    merchSection.style.display = 'none';
+                }
+                const merchNavLink = document.querySelector('nav a[href="#merch"]');
+                if (merchNavLink) {
+                    merchNavLink.style.display = 'none';
+                }
+                
+                const exhibitionTabsSection = document.getElementById('exhibitionTabsSection');
+                if (exhibitionTabsSection) {
+                    exhibitionTabsSection.style.display = 'none';
+                }
+                
+                const zonesNavLink2 = document.querySelector('nav a[href="#zones"]');
+                if (zonesNavLink2) {
+                    zonesNavLink2.style.display = 'none';
+                }
+                
+                const organizersSection = document.querySelector('.organizers-section');
+                if (organizersSection) {
+                    organizersSection.style.display = 'block';
+                }
+                const organizersNavLink = document.querySelector('nav a[href="#organizers"]');
+                if (organizersNavLink) {
+                    organizersNavLink.style.display = 'block';
+                }
+                const organizersText = document.querySelector('.organizers-text p');
+                if (organizersText) {
+                    organizersText.textContent = 'ARAR Gallery presents RESONANCE, a solo exhibition by Guy Ghazanchyan, as part of its mission to create meaningful encounters between art and its audience. By bringing together a powerful series of expressive portraits in a single space, the gallery invites viewers to confront fundamental questions about perception, identity, and the nature of seeing. RESONANCE reflects ARAR\'s commitment to supporting artists whose work challenges conventions and sparks dialogue — turning the gallery into a space where the boundaries between reality and interpretation dissolve.';
+                }
+                
+                const partnersSection = document.getElementById('partners');
+                if (partnersSection) {
+                    partnersSection.style.display = 'none';
+                }
+                const partnersNavLink = document.querySelector('nav a[href="#partners"]');
+                if (partnersNavLink) {
+                    partnersNavLink.style.display = 'none';
+                }
+                
+            } else if (exhibition === 'bouquet-contemporary-art-2026') {
                 // 1. Change hero section bg to tigran_ghazaryan2.jpg
                 const heroSection = document.querySelector('.hero-section');
                 if (heroSection) {
