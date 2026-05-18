@@ -77,6 +77,7 @@
                 <div class="nav-dropdown">
                     <a href="#" class="nav-dropdown-toggle" onclick="toggleDropdown(event)">Exhibitions</a>
                     <div class="nav-dropdown-menu">
+                        <a href="?exhibition=stratumism-14-concept-2026">14 Concept - STRATUMISM</a>
                         <a href="?exhibition=resonance-guy-ghazanchyan-2026">RESONANCE - Guy Ghazanchyan's Exhibition</a>
                         <a href="?exhibition=bouquet-contemporary-art-2026">BOUQUET Contemporary Art Exhibition</a>
                         <a href="?exhibition=guyduk-presence-2026">PRESENCE - Anatoliy Guyduk Solo Exhibition</a>
@@ -96,12 +97,28 @@
 
     <main>
         <div class="hero-section hero-carousel">
+            <div class="hero-slide" data-bg="assets/images/artworks/stratumism_ronov_hero.png" data-link="?exhibition=stratumism-14-concept-2026">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <div class="upcoming-label">
+                        <span class="vertical-line"></span>
+                        <span>RUNNING</span>
+                    </div>
+                    <h1 class="hero-title">
+                        14 Concept - STRATUMISM<br>
+                        Armen Ronov
+                    </h1>
+                    <p class="opening-info">May 16–29, 2026</p>
+                    <p class="hero-location">ARAR Gallery · Pushkin 4, Yerevan</p>
+                    <a href="?exhibition=stratumism-14-concept-2026" class="hero-more-btn">Learn More</a>
+                </div>
+            </div>
             <div class="hero-slide" data-bg="assets/images/artworks/resonance_bg.jpg" data-link="?exhibition=resonance-guy-ghazanchyan-2026">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
                     <div class="upcoming-label">
                         <span class="vertical-line"></span>
-                        <span>UPCOMING</span>
+                        <span>PAST</span>
                     </div>
                     <h1 class="hero-title">
                         RESONANCE<br>
@@ -117,7 +134,7 @@
                 <div class="hero-content">
                     <div class="upcoming-label">
                         <span class="vertical-line"></span>
-                        <span>RUNNING</span>
+                        <span>PAST</span>
                     </div>
                     <h1 class="hero-title">
                         BOUQUET<br>
@@ -171,6 +188,7 @@
                 <span class="hero-indicator" onclick="goToHeroSlide(1)"></span>
                 <span class="hero-indicator" onclick="goToHeroSlide(2)"></span>
                 <span class="hero-indicator" onclick="goToHeroSlide(3)"></span>
+                <span class="hero-indicator" onclick="goToHeroSlide(4)"></span>
             </div>
             <button class="scroll-down-btn" onclick="scrollToNext()" aria-label="Scroll down">
                 <span class="material-icons-outlined">keyboard_arrow_down</span>
@@ -272,9 +290,10 @@
                         <div class="artist-item"><a href="artists/mariam-galstyan" class="artist-name">Mariam Galstyan</a></div>
                         <div class="artist-item"><a href="artists/tatev-aslanyan" class="artist-name">Tatev Aslanyan</a></div>
                         <div class="artist-item"><a href="artists/ararat-minasyan" class="artist-name">Ararat Minasyan</a></div>
-                        <div class="artist-item"><a href="artists/arsen-arsist" class="artist-name">Arsen Arsist</a></div>
+                        <div class="artist-item"><a href="artists/armen-ronov" class="artist-name">Armen Ronov</a></div>
                     </div>
                     <div class="artists-column">
+                        <div class="artist-item"><a href="artists/arsen-arsist" class="artist-name">Arsen Arsist</a></div>
                         <div class="artist-item"><a href="artists/suren-arakelyan" class="artist-name">Suren Arakelyan</a></div>
                         <div class="artist-item"><a href="artists/blue-pencil" class="artist-name">Blue Pencil</a></div>
                         <div class="artist-item"><a href="artists/anatoliy-guyduk" class="artist-name">Anatoliy Guyduk</a></div>
@@ -283,9 +302,9 @@
                         <div class="artist-item"><a href="artists/spazuno" class="artist-name">Raydan Zebian (Spazuno)</a></div>
                         <div class="artist-item"><a href="artists/karen-akhikyan" class="artist-name">Karen Akhikyan</a></div>
                         <div class="artist-item"><a href="artists/aram-poladian" class="artist-name">Aram Poladian</a></div>
-                        <div class="artist-item"><a href="artists/hayduk-smbatyan" class="artist-name">Hayduk Smbatyan</a></div>
                     </div>
                     <div class="artists-column">
+                        <div class="artist-item"><a href="artists/hayduk-smbatyan" class="artist-name">Hayduk Smbatyan</a></div>
                         <div class="artist-item"><a href="artists/siranush-vardanyan" class="artist-name">Siranush Vardanyan</a></div>
                         <div class="artist-item"><a href="artists/lilit-eghiazaryan" class="artist-name">Lilith Leel Eghiazaryan</a></div>
                         <div class="artist-item"><a href="artists/armen-hakobjanyan" class="artist-name">Armen Hakobjanyan</a></div>
@@ -677,7 +696,9 @@
             }
             
             // Update page title based on exhibition parameter
-            if (exhibition === 'resonance-guy-ghazanchyan-2026') {
+            if (exhibition === 'stratumism-14-concept-2026') {
+                document.title = '14 Concept - STRATUMISM | Armen Ronov | ARAR Art Gallery';
+            } else if (exhibition === 'resonance-guy-ghazanchyan-2026') {
                 document.title = 'RESONANCE - Guy Ghazanchyan Solo Exhibition | ARAR Gallery';
             } else if (exhibition === 'bouquet-contemporary-art-2026') {
                 document.title = 'BOUQUET Contemporary Art Exhibition | ARAR Gallery';
@@ -754,7 +775,14 @@
             updateOGImage('assets/images/arar.png');
             
             // Update sharing meta tags for exhibition-specific title/description/url
-            if (exhibition === 'resonance-guy-ghazanchyan-2026') {
+            if (exhibition === 'stratumism-14-concept-2026') {
+                updateSharingMetaTags(
+                    '14 Concept - STRATUMISM | Armen Ronov | ARAR Art Gallery',
+                    'Stratumism: layered linen, minerals, lava pigments, and meteorite alloys — a Land Art series by Armen Ronov. ARAR Gallery, Pushkin 4, Yerevan. May 16–29, 2026.',
+                    'https://arargallery.com/?exhibition=stratumism-14-concept-2026',
+                    'assets/images/arar.png'
+                );
+            } else if (exhibition === 'resonance-guy-ghazanchyan-2026') {
                 updateSharingMetaTags(
                     'RESONANCE - Guy Ghazanchyan Solo Exhibition | ARAR Gallery',
                     'Through a series of expressive portraits, Guy Ghazanchyan explores the fragile boundary between reality and perception. Artists Union of Armenia, Abovyan 16, Yerevan.',
@@ -912,10 +940,11 @@
                 // Show only the relevant slide
                 heroSlides = document.querySelectorAll('.hero-slide');
                 const exhibitionSlideMap = {
-                    'resonance-guy-ghazanchyan-2026': 0,
-                    'bouquet-contemporary-art-2026': 1,
-                    'guyduk-presence-2026': 2,
-                    'contemporary-art-2026': 3
+                    'stratumism-14-concept-2026': 0,
+                    'resonance-guy-ghazanchyan-2026': 1,
+                    'bouquet-contemporary-art-2026': 2,
+                    'guyduk-presence-2026': 3,
+                    'contemporary-art-2026': 4
                 };
                 const slideIndex = exhibitionSlideMap[exhibition];
                 if (slideIndex !== undefined) {
@@ -932,23 +961,200 @@
                 }
             }
             
-            if (exhibition === 'resonance-guy-ghazanchyan-2026') {
+            if (exhibition === 'stratumism-14-concept-2026') {
+                const heroSection = document.querySelector('.hero-section');
+                if (heroSection) {
+                    heroSection.style.backgroundImage = "url('assets/images/artworks/stratumism_ronov_hero.png')";
+                }
+                
+                const activeHero = document.querySelector('.hero-slide.active');
+                const heroTitle = activeHero && activeHero.querySelector('.hero-title');
+                if (heroTitle) {
+                    heroTitle.innerHTML = '14 Concept - STRATUMISM<br>Armen Ronov';
+                }
+                
+                const openingInfo = activeHero && activeHero.querySelector('.opening-info');
+                if (openingInfo) {
+                    openingInfo.textContent = 'May 16–29, 2026';
+                }
+                
+                const heroLocation = activeHero && activeHero.querySelector('.hero-location');
+                if (heroLocation) {
+                    heroLocation.style.display = '';
+                    heroLocation.textContent = 'ARAR Gallery · Pushkin 4, Yerevan';
+                }
+                
+                const eventInfoSection = document.getElementById('eventInfoSection');
+                if (eventInfoSection) {
+                    eventInfoSection.style.display = 'block';
+                    
+                    const dateValue = document.getElementById('eventDateValue');
+                    if (dateValue) {
+                        dateValue.textContent = 'May 16–29, 2026';
+                        let dateHours = document.getElementById('eventDateHours');
+                        if (!dateHours) {
+                            dateHours = document.createElement('p');
+                            dateHours.id = 'eventDateHours';
+                            dateHours.className = 'detail-value detail-hours';
+                            dateValue.parentNode.insertBefore(dateHours, dateValue.nextSibling);
+                        }
+                        dateHours.textContent = '11:00–20:00';
+                        dateHours.style.display = '';
+                    }
+                    
+                    const locationItems = document.querySelectorAll('.detail-item');
+                    locationItems.forEach(item => {
+                        const label = item.querySelector('.detail-label');
+                        if (label && label.textContent === 'Location') {
+                            const detailValues = item.querySelectorAll('.detail-value');
+                            detailValues.forEach((val, index) => {
+                                if (index === 0) {
+                                    val.style.display = '';
+                                    val.textContent = 'ARAR Gallery, Art Kvartal';
+                                } else {
+                                    val.style.display = '';
+                                    val.innerHTML = '<a href="https://maps.app.goo.gl/KxeDYjPMdibav2g57" target="_blank" rel="noreferrer" class="location-link">Pushkin 4, Yerevan</a>';
+                                }
+                            });
+                        }
+                    });
+                    
+                    const curatorItems = document.querySelectorAll('.detail-item');
+                    curatorItems.forEach(item => {
+                        const label = item.querySelector('.detail-label');
+                        if (label && label.textContent === 'Curator') {
+                            item.style.display = 'none';
+                        }
+                    });
+                    
+                    const googleCalendarLink = document.getElementById('googleCalendarLink');
+                    if (googleCalendarLink) {
+                        googleCalendarLink.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=14+Concept+-+STRATUMISM&dates=20260516T110000/20260516T200000&recur=RRULE%3AFREQ%3DDAILY%3BUNTIL%3D20260529T200000&details=STRATUMISM+by+Armen+Ronov.+Solo+series+of+layered+linen+and+mineral+pigments.&location=Pushkin+4%2C+Yerevan';
+                    }
+                    const appleCalendarLink = document.getElementById('appleCalendarLink');
+                    if (appleCalendarLink) {
+                        appleCalendarLink.href = '#';
+                        appleCalendarLink.onclick = function(e) {
+                            e.preventDefault();
+                            const icsLines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//ARAR Gallery//STRATUMISM//EN', ''];
+                            const endDate = new Date(2026, 4, 29);
+                            for (let d = new Date(2026, 4, 16); d <= endDate; d.setDate(d.getDate() + 1)) {
+                                const dateStr = d.getFullYear() + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0');
+                                icsLines.push('BEGIN:VEVENT', 'DTSTART:' + dateStr + 'T110000', 'DTEND:' + dateStr + 'T200000', 'SUMMARY:14 Concept - STRATUMISM', 'DESCRIPTION:STRATUMISM by Armen Ronov', 'LOCATION:ARAR Gallery, Pushkin 4, Yerevan', 'END:VEVENT', '');
+                            }
+                            icsLines.push('END:VCALENDAR');
+                            const icsContent = icsLines.join('\r\n');
+                            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+                            const url = URL.createObjectURL(blob);
+                            const a = document.createElement('a');
+                            a.href = url;
+                            a.download = 'stratumism-exhibition.ics';
+                            a.click();
+                            URL.revokeObjectURL(url);
+                        };
+                    }
+                    
+                    const eventInfoDescription = document.getElementById('eventInfoDescription');
+                    if (eventInfoDescription) {
+                        eventInfoDescription.innerHTML = '<strong>STRATUMISM — Manifesto of Armen Ronov</strong><br><br>The layer is a metaphor for the origin of both world and human being, emerging out of elemental chaos. The model of stone-earth becomes an embodiment of Life itself — its surface born from magma, from primordial heat and the deepest geological memory of the planet. The central idea is the body as both canvas and planetary landscape — a living surface through which life, pain, motion, and the breath of the world become visible.<br><br>Created at the end of 2020, the Stratumism / Land Art series is based on linen canvas combined with Indian minerals, precious stones, lava-derived pigments, and meteorite alloys — materials that Ronov himself has constructed and synthesized into original paints. This technique — layering, smoothing, and scraping natural pigment surfaces — enabled the creation of richly textured, dynamic fields that define the visual language of the series.<br><br>The works presented here belong to a strictly limited, timeless series — conceived as objects that exist beyond temporal boundaries, as if already belonging to geological rather than human time.';
+                    }
+                }
+                
+                const artistsNavLink = document.querySelector('nav a[href="#artists"]');
+                if (artistsNavLink) {
+                    artistsNavLink.textContent = 'The Artist';
+                }
+                
+                const artistsTitle = document.querySelector('.artists-title');
+                if (artistsTitle) {
+                    artistsTitle.textContent = 'The Artist';
+                }
+                
+                const artistsList = document.querySelector('.artists-list');
+                if (artistsList) {
+                    artistsList.style.display = 'block';
+                    artistsList.innerHTML = '<div style="width: 100%; max-width: 900px; margin: 0 auto;"><p style="font-size: 18px; line-height: 1.8; color: #1a1a1a; margin: 0; text-align: left;"><a href="artists/armen-ronov" style="color: #000; text-decoration: none; font-weight: 600;">Armen Ronov</a> (American, born in Armenia; based in Boston, born 1971) develops <strong>Stratumism</strong> — a practice where the layer becomes a metaphor for origins of world and self, at the intersection of contemporary painting, the Old Masters, and Land Art. His Stratumism / Land Art series (from 2020) layers linen with minerals, precious stones, lava pigments, and meteorite alloys into original paints, yielding richly textured fields that read as much like geology as painting.</p></div>';
+                }
+                
+                const artworksGrid = document.getElementById('artworksGrid');
+                if (artworksGrid) {
+                    artworksGrid.innerHTML = '<p class="merch-empty">Coming soon</p>';
+                }
+                
+                const seeAllContainer = document.getElementById('seeAllContainer');
+                if (seeAllContainer) {
+                    seeAllContainer.style.display = 'none';
+                }
+                
+                const muralSection = document.querySelector('.mural-section');
+                if (muralSection) {
+                    muralSection.style.display = 'none';
+                }
+                const muralNavLink = document.querySelector('nav a[href="#mural"]');
+                if (muralNavLink) {
+                    muralNavLink.style.display = 'none';
+                }
+                
+                const merchSection = document.querySelector('.merch-section');
+                if (merchSection) {
+                    merchSection.style.display = 'none';
+                }
+                const merchNavLink = document.querySelector('nav a[href="#merch"]');
+                if (merchNavLink) {
+                    merchNavLink.style.display = 'none';
+                }
+                
+                const exhibitionTabsSection = document.getElementById('exhibitionTabsSection');
+                if (exhibitionTabsSection) {
+                    exhibitionTabsSection.style.display = 'none';
+                }
+                
+                const zonesNavLink2 = document.querySelector('nav a[href="#zones"]');
+                if (zonesNavLink2) {
+                    zonesNavLink2.style.display = 'none';
+                }
+                
+                const organizersSection = document.querySelector('.organizers-section');
+                if (organizersSection) {
+                    organizersSection.style.display = 'block';
+                }
+                const organizersNavLink = document.querySelector('nav a[href="#organizers"]');
+                if (organizersNavLink) {
+                    organizersNavLink.style.display = 'block';
+                }
+                const organizersText = document.querySelector('.organizers-text p');
+                if (organizersText) {
+                    organizersText.textContent = 'ArAr Gallery presents 14 Concept - STRATUMISM, an exhibition of Armen Ronov\'s Stratumism / Land Art series — works that treat the canvas as geology, memory, and living surface, bringing together contemporary painting and the legacies of the Old Masters and Land Art.';
+                }
+                
+                const partnersSection = document.getElementById('partners');
+                if (partnersSection) {
+                    partnersSection.style.display = 'none';
+                }
+                const partnersNavLink = document.querySelector('nav a[href="#partners"]');
+                if (partnersNavLink) {
+                    partnersNavLink.style.display = 'none';
+                }
+                
+                loadArtworks('stratumism-14-concept-2026');
+            } else if (exhibition === 'resonance-guy-ghazanchyan-2026') {
                 const heroSection = document.querySelector('.hero-section');
                 if (heroSection) {
                     heroSection.style.backgroundImage = "url('assets/images/artworks/resonance_bg.jpg')";
                 }
                 
-                const heroTitle = document.querySelector('.hero-title');
+                const activeHero = document.querySelector('.hero-slide.active');
+                const heroTitle = activeHero && activeHero.querySelector('.hero-title');
                 if (heroTitle) {
                     heroTitle.innerHTML = 'RESONANCE<br>Guy Ghazanchyan Solo Exhibition';
                 }
                 
-                const openingInfo = document.querySelector('.opening-info');
+                const openingInfo = activeHero && activeHero.querySelector('.opening-info');
                 if (openingInfo) {
                     openingInfo.textContent = 'Opening April 9, 2026, 18:00';
                 }
                 
-                const heroLocation = document.querySelector('.hero-location');
+                const heroLocation = activeHero && activeHero.querySelector('.hero-location');
                 if (heroLocation) {
                     heroLocation.textContent = 'Artists Union of Armenia';
                 }
@@ -1104,13 +1310,14 @@
                 }
                 
                 // 2. Change hero title
-                const heroTitle = document.querySelector('.hero-title');
+                const activeHero = document.querySelector('.hero-slide.active');
+                const heroTitle = activeHero && activeHero.querySelector('.hero-title');
                 if (heroTitle) {
                     heroTitle.innerHTML = 'BOUQUET<br>Contemporary Art Exhibition';
                 }
                 
                 // 3. Change opening info
-                const openingInfo = document.querySelector('.opening-info');
+                const openingInfo = activeHero && activeHero.querySelector('.opening-info');
                 if (openingInfo) {
                     openingInfo.textContent = 'March 7–April 7, 2026';
                 }
@@ -1161,6 +1368,7 @@
                     curatorItems.forEach(item => {
                         const label = item.querySelector('.detail-label');
                         if (label && label.textContent === 'Curator') {
+                            item.style.display = '';
                             const detailValue = item.querySelector('.detail-value');
                             if (detailValue) {
                                 detailValue.innerHTML = '<a href="https://www.instagram.com/voghjamit/" target="_blank" rel="noreferrer" class="location-link">Vahram Muradyan</a><br><a href="https://www.instagram.com/varszakaryan/" target="_blank" rel="noreferrer" class="location-link">Varser Zakaryan</a>';
@@ -1404,13 +1612,14 @@
                 }
                 
                 // 2. Change hero title
-                const heroTitle = document.querySelector('.hero-title');
+                const activeHero = document.querySelector('.hero-slide.active');
+                const heroTitle = activeHero && activeHero.querySelector('.hero-title');
                 if (heroTitle) {
                     heroTitle.innerHTML = '<span class="presence-title">PRESENCE</span><br>Anatoliy Guyduk Solo Exhibition';
                 }
                 
                 // 3. Change opening info
-                const openingInfo = document.querySelector('.opening-info');
+                const openingInfo = activeHero && activeHero.querySelector('.opening-info');
                 if (openingInfo) {
                     openingInfo.textContent = 'OPEN UNTIL JANUARY 15, 11:00-20:00';
                 }
@@ -1431,6 +1640,7 @@
                 curatorItemsGuyduk.forEach(item => {
                     const label = item.querySelector('.detail-label');
                     if (label && label.textContent === 'Curator') {
+                        item.style.display = '';
                         const detailValue = item.querySelector('.detail-value');
                         if (detailValue) {
                             detailValue.innerHTML = '<a href="https://www.instagram.com/voghjamit/" target="_blank" rel="noreferrer" class="location-link">Vahram Muradyan</a>';
@@ -1635,6 +1845,7 @@
                     curatorItemsContemp.forEach(item => {
                         const label = item.querySelector('.detail-label');
                         if (label && label.textContent === 'Curator') {
+                            item.style.display = '';
                             const detailValue = item.querySelector('.detail-value');
                             if (detailValue) {
                                 detailValue.innerHTML = '<a href="https://www.instagram.com/voghjamit/" target="_blank" rel="noreferrer" class="location-link">Vahram Muradyan</a>';
@@ -1884,7 +2095,8 @@
                 'Tina Karakeshishyan': 'assets/images/artists/tina_karakeshishyan_profile.png',
                 'Anatoliy Guyduk': 'assets/images/artists/anatoliy_guyduk_profile.jpeg',
                 'Aksel Zardaryan': 'assets/images/artists/aksel_zardaryan_profile.png',
-                'Aksel Zardaryan-Mavian': 'assets/images/artists/aksel_zardaryan_profile.png'
+                'Aksel Zardaryan-Mavian': 'assets/images/artists/aksel_zardaryan_profile.png',
+                'Armen Ronov': 'assets/images/artists/armen_ronov_profile.png'
             };
             
             return artistImageMap[artistName] || 'assets/images/placeholder.jpg';
