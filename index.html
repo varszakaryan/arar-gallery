@@ -108,7 +108,7 @@
                         14 Concept - STRATUMISM<br>
                         Armen Ronov
                     </h1>
-                    <p class="opening-info">May 16–29, 2026</p>
+                    <p class="opening-info">May 10–29, 2026</p>
                     <p class="hero-location">ARAR Gallery · Pushkin 4, Yerevan</p>
                     <a href="?exhibition=stratumism-14-concept-2026" class="hero-more-btn">Learn More</a>
                 </div>
@@ -778,7 +778,7 @@
             if (exhibition === 'stratumism-14-concept-2026') {
                 updateSharingMetaTags(
                     '14 Concept - STRATUMISM | Armen Ronov | ARAR Art Gallery',
-                    'Stratumism: layered linen, minerals, lava pigments, and meteorite alloys — a Land Art series by Armen Ronov. ARAR Gallery, Pushkin 4, Yerevan. May 16–29, 2026.',
+                    'Stratumism: layered linen, minerals, lava pigments, and meteorite alloys — a Land Art series by Armen Ronov. ARAR Gallery, Pushkin 4, Yerevan. May 10–29, 2026.',
                     'https://arargallery.com/?exhibition=stratumism-14-concept-2026',
                     'assets/images/arar.png'
                 );
@@ -975,7 +975,7 @@
                 
                 const openingInfo = activeHero && activeHero.querySelector('.opening-info');
                 if (openingInfo) {
-                    openingInfo.textContent = 'May 16–29, 2026';
+                    openingInfo.textContent = 'May 10–29, 2026';
                 }
                 
                 const heroLocation = activeHero && activeHero.querySelector('.hero-location');
@@ -990,7 +990,7 @@
                     
                     const dateValue = document.getElementById('eventDateValue');
                     if (dateValue) {
-                        dateValue.textContent = 'May 16–29, 2026';
+                        dateValue.textContent = 'May 10–29, 2026';
                         let dateHours = document.getElementById('eventDateHours');
                         if (!dateHours) {
                             dateHours = document.createElement('p');
@@ -1029,7 +1029,7 @@
                     
                     const googleCalendarLink = document.getElementById('googleCalendarLink');
                     if (googleCalendarLink) {
-                        googleCalendarLink.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=14+Concept+-+STRATUMISM&dates=20260516T110000/20260516T200000&recur=RRULE%3AFREQ%3DDAILY%3BUNTIL%3D20260529T200000&details=STRATUMISM+by+Armen+Ronov.+Solo+series+of+layered+linen+and+mineral+pigments.&location=Pushkin+4%2C+Yerevan';
+                        googleCalendarLink.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=14+Concept+-+STRATUMISM&dates=20260510T110000/20260510T200000&recur=RRULE%3AFREQ%3DDAILY%3BUNTIL%3D20260529T200000&details=STRATUMISM+by+Armen+Ronov.+Solo+series+of+layered+linen+and+mineral+pigments.&location=Pushkin+4%2C+Yerevan';
                     }
                     const appleCalendarLink = document.getElementById('appleCalendarLink');
                     if (appleCalendarLink) {
@@ -1038,7 +1038,7 @@
                             e.preventDefault();
                             const icsLines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//ARAR Gallery//STRATUMISM//EN', ''];
                             const endDate = new Date(2026, 4, 29);
-                            for (let d = new Date(2026, 4, 16); d <= endDate; d.setDate(d.getDate() + 1)) {
+                            for (let d = new Date(2026, 4, 10); d <= endDate; d.setDate(d.getDate() + 1)) {
                                 const dateStr = d.getFullYear() + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0');
                                 icsLines.push('BEGIN:VEVENT', 'DTSTART:' + dateStr + 'T110000', 'DTEND:' + dateStr + 'T200000', 'SUMMARY:14 Concept - STRATUMISM', 'DESCRIPTION:STRATUMISM by Armen Ronov', 'LOCATION:ARAR Gallery, Pushkin 4, Yerevan', 'END:VEVENT', '');
                             }
