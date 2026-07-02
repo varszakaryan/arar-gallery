@@ -288,7 +288,8 @@
       "assets/images/artworks/tigran_ghazaryanright_1.jpg"
     ],
     "exhibitions": [
-      "contemporary-art-2026"
+      "contemporary-art-2026",
+      "paper-oil-tigran-ghazaryan-2026"
     ]
   },
   {
@@ -509,7 +510,8 @@
     ],
     "exhibitions": [
       "contemporary-art-2026",
-      "bouquet-contemporary-art-2026"
+      "bouquet-contemporary-art-2026",
+      "paper-oil-tigran-ghazaryan-2026"
     ]
   },
   {
@@ -674,7 +676,8 @@
       "assets/images/artworks/tigran_ghazaryanright_1.jpg"
     ],
     "exhibitions": [
-      "contemporary-art-2026"
+      "contemporary-art-2026",
+      "paper-oil-tigran-ghazaryan-2026"
     ]
   },
   {
@@ -713,7 +716,8 @@
       "assets/images/artworks/tigran_ghazaryan_celloist.jpg"
     ],
     "exhibitions": [
-      "contemporary-art-2026"
+      "contemporary-art-2026",
+      "paper-oil-tigran-ghazaryan-2026"
     ]
   },
   {
@@ -849,7 +853,8 @@
       "assets/images/artworks/tigran_fish.jpg"
     ],
     "exhibitions": [
-      "contemporary-art-2026"
+      "contemporary-art-2026",
+      "paper-oil-tigran-ghazaryan-2026"
     ]
   },
   {
@@ -1294,7 +1299,7 @@
     "priceAMD": "0",
     "year": "2025",
     "images": ["assets/images/artworks/tigran_ghazaryan_flowsers.jpg"],
-    "exhibitions": ["bouquet-contemporary-art-2026"]
+    "exhibitions": ["bouquet-contemporary-art-2026", "paper-oil-tigran-ghazaryan-2026"]
   },
   {
     "title": "Roses",
