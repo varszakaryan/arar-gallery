@@ -1,5 +1,243 @@
 [
   {
+    "artist": "Leo Leo Vardanyan",
+    "artistLink": "artists/leo-leo-vardanyan",
+    "country": "Armenia",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "",
+    "exhibitions": [
+      "artefact-leo-leo-vardanyan-2026"
+    ],
+    "title": "Vibration 1",
+    "media": "Mixed media on canvas",
+    "size": "",
+    "images": [
+      "assets/images/artworks/leo_leo_vibration1.jpg"
+    ]
+  },
+  {
+    "artist": "Leo Leo Vardanyan",
+    "artistLink": "artists/leo-leo-vardanyan",
+    "country": "Armenia",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "",
+    "exhibitions": [
+      "artefact-leo-leo-vardanyan-2026"
+    ],
+    "title": "Vibration 2",
+    "media": "Mixed media on canvas",
+    "size": "",
+    "images": [
+      "assets/images/artworks/leo_leo_vibration2.jpg"
+    ]
+  },
+  {
+    "artist": "Leo Leo Vardanyan",
+    "artistLink": "artists/leo-leo-vardanyan",
+    "country": "Armenia",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "",
+    "exhibitions": [
+      "artefact-leo-leo-vardanyan-2026"
+    ],
+    "title": "Untitled",
+    "media": "Paint remnants on canvas",
+    "size": "100 x 100 cm",
+    "images": [
+      "assets/images/artworks/leo_leo_100x100.png"
+    ]
+  },
+  {
+    "artist": "Leo Leo Vardanyan",
+    "artistLink": "artists/leo-leo-vardanyan",
+    "country": "Armenia",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "",
+    "exhibitions": [
+      "artefact-leo-leo-vardanyan-2026"
+    ],
+    "title": "Untitled",
+    "media": "Paint remnants on canvas",
+    "size": "60 x 60 cm",
+    "images": [
+      "assets/images/artworks/leo_leo_60x60.png"
+    ]
+  },
+  {
+    "artist": "Leo Leo Vardanyan",
+    "artistLink": "artists/leo-leo-vardanyan",
+    "country": "Armenia",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "",
+    "exhibitions": [
+      "artefact-leo-leo-vardanyan-2026"
+    ],
+    "title": "Untitled",
+    "media": "Paint remnants on canvas",
+    "size": "60 x 60 cm",
+    "images": [
+      "assets/images/artworks/leo_leo_60x60_2.png"
+    ]
+  },
+  {
+    "artist": "Leo Leo Vardanyan",
+    "artistLink": "artists/leo-leo-vardanyan",
+    "country": "Armenia",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "",
+    "exhibitions": [
+      "artefact-leo-leo-vardanyan-2026"
+    ],
+    "title": "Untitled",
+    "media": "Paint remnants on canvas",
+    "size": "60 x 60 cm",
+    "images": [
+      "assets/images/artworks/leo_leo_60x60_3.png"
+    ]
+  },
+  {
+    "artist": "Leo Leo Vardanyan",
+    "artistLink": "artists/leo-leo-vardanyan",
+    "country": "Armenia",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "",
+    "exhibitions": [
+      "artefact-leo-leo-vardanyan-2026"
+    ],
+    "title": "Untitled",
+    "media": "Paint remnants on canvas",
+    "size": "25 x 20 cm",
+    "images": [
+      "assets/images/artworks/leo_leo_25x20.png"
+    ]
+  },
+  {
+    "artist": "Leo Leo Vardanyan",
+    "artistLink": "artists/leo-leo-vardanyan",
+    "country": "Armenia",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "",
+    "exhibitions": [
+      "artefact-leo-leo-vardanyan-2026"
+    ],
+    "title": "Untitled",
+    "media": "Paint remnants on canvas",
+    "size": "25 x 20 cm",
+    "images": [
+      "assets/images/artworks/leo_leo_25x20_2.jpg"
+    ]
+  },
+  {
+    "artist": "Leo Leo Vardanyan",
+    "artistLink": "artists/leo-leo-vardanyan",
+    "country": "Armenia",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "",
+    "exhibitions": [
+      "artefact-leo-leo-vardanyan-2026"
+    ],
+    "title": "Untitled",
+    "media": "Paint remnants on canvas",
+    "size": "25 x 20 cm",
+    "images": [
+      "assets/images/artworks/leo_leo_25x20_3.jpg"
+    ]
+  },
+  {
+    "artist": "Leo Leo Vardanyan",
+    "artistLink": "artists/leo-leo-vardanyan",
+    "country": "Armenia",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "",
+    "exhibitions": [
+      "artefact-leo-leo-vardanyan-2026"
+    ],
+    "title": "Untitled",
+    "media": "Paint remnants on canvas",
+    "size": "25 x 20 cm",
+    "images": [
+      "assets/images/artworks/leo_leo_25x20_4.jpg"
+    ]
+  },
+  {
+    "artist": "Leo Leo Vardanyan",
+    "artistLink": "artists/leo-leo-vardanyan",
+    "country": "Armenia",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "",
+    "exhibitions": [
+      "artefact-leo-leo-vardanyan-2026"
+    ],
+    "title": "Untitled",
+    "media": "Paint remnants on canvas",
+    "size": "25 x 20 cm",
+    "images": [
+      "assets/images/artworks/leo_leo_25x20_5.png"
+    ]
+  },
+  {
+    "artist": "Leo Leo Vardanyan",
+    "artistLink": "artists/leo-leo-vardanyan",
+    "country": "Armenia",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "",
+    "exhibitions": [
+      "artefact-leo-leo-vardanyan-2026"
+    ],
+    "title": "Untitled",
+    "media": "Paint remnants on canvas",
+    "size": "25 x 20 cm",
+    "images": [
+      "assets/images/artworks/leo_leo_25x20_6.jpg"
+    ]
+  },
+  {
+    "artist": "Leo Leo Vardanyan",
+    "artistLink": "artists/leo-leo-vardanyan",
+    "country": "Armenia",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "",
+    "exhibitions": [
+      "artefact-leo-leo-vardanyan-2026"
+    ],
+    "title": "Untitled",
+    "media": "Paint remnants on canvas",
+    "size": "25 x 20 cm",
+    "images": [
+      "assets/images/artworks/leo_leo_25x20_7.jpg"
+    ]
+  },
+  {
+    "artist": "Leo Leo Vardanyan",
+    "artistLink": "artists/leo-leo-vardanyan",
+    "country": "Armenia",
+    "price": 0,
+    "priceAMD": "0",
+    "year": "",
+    "exhibitions": [
+      "artefact-leo-leo-vardanyan-2026"
+    ],
+    "title": "Untitled",
+    "media": "Paint remnants on canvas",
+    "size": "25 x 20 cm",
+    "images": [
+      "assets/images/artworks/leo_leo_25x20_8.jpg"
+    ]
+  },
+  {
     "title": "Rotational Grace",
     "artist": "Raydan Zebian (Spazuno)",
     "artistLink": "artists/spazuno",
@@ -867,7 +1105,9 @@
     "price": 1200,
     "priceAMD": "450.000",
     "year": "2024",
-    "images": ["assets/images/artworks/guyduk_4am.jpg"],
+    "images": [
+      "assets/images/artworks/guyduk_4am.jpg"
+    ],
     "exhibitions": [
       "guyduk-presence-2026"
     ]
@@ -897,7 +1137,9 @@
     "price": 2000,
     "priceAMD": "750.000",
     "year": "2023",
-    "images": ["assets/images/artworks/guyduk_siren.jpg"],
+    "images": [
+      "assets/images/artworks/guyduk_siren.jpg"
+    ],
     "exhibitions": [
       "guyduk-presence-2026"
     ]
@@ -912,7 +1154,9 @@
     "price": 0,
     "priceAMD": "0",
     "year": "2025",
-    "images": ["assets/images/artworks/guyduk_untitled18.jpg"],
+    "images": [
+      "assets/images/artworks/guyduk_untitled18.jpg"
+    ],
     "status": "Gift",
     "exhibitions": [
       "guyduk-presence-2026"
@@ -928,7 +1172,9 @@
     "price": 1200,
     "priceAMD": "450.000",
     "year": "2025",
-    "images": ["assets/images/artworks/guyduk_monkey.jpg"],
+    "images": [
+      "assets/images/artworks/guyduk_monkey.jpg"
+    ],
     "exhibitions": [
       "guyduk-presence-2026"
     ]
@@ -958,7 +1204,9 @@
     "price": 0,
     "priceAMD": "0",
     "year": "2025",
-    "images": ["assets/images/artworks/guyduk_august.jpg"],
+    "images": [
+      "assets/images/artworks/guyduk_august.jpg"
+    ],
     "status": "Gift",
     "exhibitions": [
       "guyduk-presence-2026"
@@ -974,7 +1222,9 @@
     "price": 2000,
     "priceAMD": "750.000",
     "year": "2024",
-    "images": ["assets/images/artworks/guyduk_getting_tired.jpg"],
+    "images": [
+      "assets/images/artworks/guyduk_getting_tired.jpg"
+    ],
     "exhibitions": [
       "guyduk-presence-2026"
     ]
@@ -989,7 +1239,9 @@
     "price": 2000,
     "priceAMD": "750.000",
     "year": "2023",
-    "images": ["assets/images/artworks/guyduk_workingday.jpg"],
+    "images": [
+      "assets/images/artworks/guyduk_workingday.jpg"
+    ],
     "exhibitions": [
       "guyduk-presence-2026"
     ]
@@ -1004,7 +1256,9 @@
     "price": 2000,
     "priceAMD": "750.000",
     "year": "2024",
-    "images": ["assets/images/artworks/guyduk_vinery.jpg"],
+    "images": [
+      "assets/images/artworks/guyduk_vinery.jpg"
+    ],
     "exhibitions": [
       "guyduk-presence-2026"
     ]
@@ -1034,7 +1288,9 @@
     "price": 1200,
     "priceAMD": "450.000",
     "year": "2023",
-    "images": ["assets/images/artworks/guyduk_harpy01.jpg"],
+    "images": [
+      "assets/images/artworks/guyduk_harpy01.jpg"
+    ],
     "exhibitions": [
       "guyduk-presence-2026"
     ]
@@ -1064,7 +1320,9 @@
     "price": 1200,
     "priceAMD": "450.000",
     "year": "2023",
-    "images": ["assets/images/artworks/guyduk_creature.jpg"],
+    "images": [
+      "assets/images/artworks/guyduk_creature.jpg"
+    ],
     "exhibitions": [
       "guyduk-presence-2026"
     ]
@@ -1094,7 +1352,9 @@
     "price": 0,
     "priceAMD": "0",
     "year": "2023",
-    "images": ["assets/images/artworks/guyduk_tree.jpg"],
+    "images": [
+      "assets/images/artworks/guyduk_tree.jpg"
+    ],
     "status": "Sold out",
     "exhibitions": [
       "guyduk-presence-2026"
@@ -1110,7 +1370,9 @@
     "price": 0,
     "priceAMD": "0",
     "year": "2023",
-    "images": ["assets/images/artworks/guyduk_untitled2_2.jpg"],
+    "images": [
+      "assets/images/artworks/guyduk_untitled2_2.jpg"
+    ],
     "status": "Sold out",
     "exhibitions": [
       "guyduk-presence-2026"
@@ -1126,7 +1388,9 @@
     "price": 2000,
     "priceAMD": "750.000",
     "year": "2024",
-    "images": ["assets/images/artworks/guyduk_untitled2.jpg"],
+    "images": [
+      "assets/images/artworks/guyduk_untitled2.jpg"
+    ],
     "exhibitions": [
       "guyduk-presence-2026"
     ]
@@ -1186,7 +1450,9 @@
     "price": 800,
     "priceAMD": "300.000",
     "year": "2023",
-    "images": ["assets/images/artworks/guyduk_bird.jpg"],
+    "images": [
+      "assets/images/artworks/guyduk_bird.jpg"
+    ],
     "exhibitions": [
       "guyduk-presence-2026"
     ]
@@ -1201,7 +1467,9 @@
     "price": 800,
     "priceAMD": "300.000",
     "year": "2023",
-    "images": ["assets/images/artworks/guyduk_composition03.jpg"],
+    "images": [
+      "assets/images/artworks/guyduk_composition03.jpg"
+    ],
     "exhibitions": [
       "guyduk-presence-2026"
     ]
@@ -1216,7 +1484,9 @@
     "price": 2000,
     "priceAMD": "750.000",
     "year": "2024",
-    "images": ["assets/images/artworks/guyduk_morning.jpg"],
+    "images": [
+      "assets/images/artworks/guyduk_morning.jpg"
+    ],
     "exhibitions": [
       "guyduk-presence-2026"
     ]
@@ -1231,7 +1501,9 @@
     "price": 2000,
     "priceAMD": "750.000",
     "year": "2023",
-    "images": ["assets/images/artworks/guyduk_nickyfinder.jpg"],
+    "images": [
+      "assets/images/artworks/guyduk_nickyfinder.jpg"
+    ],
     "exhibitions": [
       "guyduk-presence-2026"
     ]
@@ -1246,8 +1518,12 @@
     "price": 0,
     "priceAMD": "0",
     "year": "2026",
-    "images": ["assets/images/artworks/nune_manukyan_mijaket.jpg"],
-    "exhibitions": ["bouquet-contemporary-art-2026"]
+    "images": [
+      "assets/images/artworks/nune_manukyan_mijaket.jpg"
+    ],
+    "exhibitions": [
+      "bouquet-contemporary-art-2026"
+    ]
   },
   {
     "title": "Two",
@@ -1259,8 +1535,12 @@
     "price": 0,
     "priceAMD": "0",
     "year": "2024",
-    "images": ["assets/images/artworks/mariam-gevorgyan_two.jpg"],
-    "exhibitions": ["bouquet-contemporary-art-2026"]
+    "images": [
+      "assets/images/artworks/mariam-gevorgyan_two.jpg"
+    ],
+    "exhibitions": [
+      "bouquet-contemporary-art-2026"
+    ]
   },
   {
     "title": "Hope",
@@ -1272,8 +1552,12 @@
     "price": 0,
     "priceAMD": "0",
     "year": "2025",
-    "images": ["assets/images/artworks/mariam_gevorgyan_hope.jpg"],
-    "exhibitions": ["bouquet-contemporary-art-2026"]
+    "images": [
+      "assets/images/artworks/mariam_gevorgyan_hope.jpg"
+    ],
+    "exhibitions": [
+      "bouquet-contemporary-art-2026"
+    ]
   },
   {
     "title": "Orchids",
@@ -1285,8 +1569,12 @@
     "price": 0,
     "priceAMD": "0",
     "year": "2025",
-    "images": ["assets/images/artworks/haykuhi_orchids.jpg"],
-    "exhibitions": ["bouquet-contemporary-art-2026"]
+    "images": [
+      "assets/images/artworks/haykuhi_orchids.jpg"
+    ],
+    "exhibitions": [
+      "bouquet-contemporary-art-2026"
+    ]
   },
   {
     "title": "Flowers",
@@ -1298,8 +1586,13 @@
     "price": 0,
     "priceAMD": "0",
     "year": "2025",
-    "images": ["assets/images/artworks/tigran_ghazaryan_flowsers.jpg"],
-    "exhibitions": ["bouquet-contemporary-art-2026", "paper-oil-tigran-ghazaryan-2026"]
+    "images": [
+      "assets/images/artworks/tigran_ghazaryan_flowsers.jpg"
+    ],
+    "exhibitions": [
+      "bouquet-contemporary-art-2026",
+      "paper-oil-tigran-ghazaryan-2026"
+    ]
   },
   {
     "title": "Roses",
@@ -1311,8 +1604,12 @@
     "price": 0,
     "priceAMD": "0",
     "year": "2026",
-    "images": ["assets/images/artworks/tigran_ghazaryan_roses.jpg"],
-    "exhibitions": ["bouquet-contemporary-art-2026"]
+    "images": [
+      "assets/images/artworks/tigran_ghazaryan_roses.jpg"
+    ],
+    "exhibitions": [
+      "bouquet-contemporary-art-2026"
+    ]
   },
   {
     "title": "Response",
@@ -1324,8 +1621,12 @@
     "price": 0,
     "priceAMD": "0",
     "year": "2026",
-    "images": ["assets/images/artworks/nune_manukyan_eresponse.jpg"],
-    "exhibitions": ["bouquet-contemporary-art-2026"]
+    "images": [
+      "assets/images/artworks/nune_manukyan_eresponse.jpg"
+    ],
+    "exhibitions": [
+      "bouquet-contemporary-art-2026"
+    ]
   },
   {
     "title": "Bloom",
@@ -1337,8 +1638,12 @@
     "price": 0,
     "priceAMD": "0",
     "year": "2023",
-    "images": ["assets/images/artworks/margaret_asatryan.jpg"],
-    "exhibitions": ["bouquet-contemporary-art-2026"]
+    "images": [
+      "assets/images/artworks/margaret_asatryan.jpg"
+    ],
+    "exhibitions": [
+      "bouquet-contemporary-art-2026"
+    ]
   },
   {
     "title": "Blue Vacuum. Flight",
@@ -1350,8 +1655,12 @@
     "price": 0,
     "priceAMD": "0",
     "year": "2025",
-    "images": ["assets/images/artworks/mariam_galstyan_flight.jpg"],
-    "exhibitions": ["bouquet-contemporary-art-2026"]
+    "images": [
+      "assets/images/artworks/mariam_galstyan_flight.jpg"
+    ],
+    "exhibitions": [
+      "bouquet-contemporary-art-2026"
+    ]
   },
   {
     "title": "Cry",
@@ -1363,8 +1672,12 @@
     "price": 0,
     "priceAMD": "0",
     "year": "2023",
-    "images": ["assets/images/artworks/mariam_galstyan_cry.jpg"],
-    "exhibitions": ["bouquet-contemporary-art-2026"]
+    "images": [
+      "assets/images/artworks/mariam_galstyan_cry.jpg"
+    ],
+    "exhibitions": [
+      "bouquet-contemporary-art-2026"
+    ]
   },
   {
     "title": "Narcissus",
@@ -1376,8 +1689,12 @@
     "price": 0,
     "priceAMD": "0",
     "year": "2023",
-    "images": ["assets/images/artworks/tatev_aslanyan_narcissus.jpg"],
-    "exhibitions": ["bouquet-contemporary-art-2026"]
+    "images": [
+      "assets/images/artworks/tatev_aslanyan_narcissus.jpg"
+    ],
+    "exhibitions": [
+      "bouquet-contemporary-art-2026"
+    ]
   },
   {
     "title": "A life that's full",
@@ -1389,8 +1706,12 @@
     "price": 0,
     "priceAMD": "0",
     "year": "2025",
-    "images": ["assets/images/artworks/tatev_aslanyan_life.jpg"],
-    "exhibitions": ["bouquet-contemporary-art-2026"]
+    "images": [
+      "assets/images/artworks/tatev_aslanyan_life.jpg"
+    ],
+    "exhibitions": [
+      "bouquet-contemporary-art-2026"
+    ]
   },
   {
     "title": "Wildflowers",
@@ -1402,8 +1723,12 @@
     "price": 0,
     "priceAMD": "0",
     "year": "2021",
-    "images": ["assets/images/artworks/ararat_minasyan.jpg"],
-    "exhibitions": ["bouquet-contemporary-art-2026"]
+    "images": [
+      "assets/images/artworks/ararat_minasyan.jpg"
+    ],
+    "exhibitions": [
+      "bouquet-contemporary-art-2026"
+    ]
   },
   {
     "title": "Bouquet",
@@ -1415,8 +1740,12 @@
     "price": 0,
     "priceAMD": "0",
     "year": "2026",
-    "images": ["assets/images/artworks/arsen_arsist.jpg"],
-    "exhibitions": ["bouquet-contemporary-art-2026"]
+    "images": [
+      "assets/images/artworks/arsen_arsist.jpg"
+    ],
+    "exhibitions": [
+      "bouquet-contemporary-art-2026"
+    ]
   },
   {
     "title": "Bouquet 1",
@@ -1428,8 +1757,12 @@
     "price": 0,
     "priceAMD": "0",
     "year": "2025",
-    "images": ["assets/images/artworks/suren_arakelyan1.jpg"],
-    "exhibitions": ["bouquet-contemporary-art-2026"]
+    "images": [
+      "assets/images/artworks/suren_arakelyan1.jpg"
+    ],
+    "exhibitions": [
+      "bouquet-contemporary-art-2026"
+    ]
   },
   {
     "title": "Bouquet 2",
@@ -1441,8 +1774,12 @@
     "price": 0,
     "priceAMD": "0",
     "year": "2025",
-    "images": ["assets/images/artworks/suren_arakelyan2.jpg"],
-    "exhibitions": ["bouquet-contemporary-art-2026"]
+    "images": [
+      "assets/images/artworks/suren_arakelyan2.jpg"
+    ],
+    "exhibitions": [
+      "bouquet-contemporary-art-2026"
+    ]
   },
   {
     "title": "Bouquet 3",
@@ -1454,8 +1791,12 @@
     "price": 0,
     "priceAMD": "0",
     "year": "2025",
-    "images": ["assets/images/artworks/suren_arakelyan3.jpg"],
-    "exhibitions": ["bouquet-contemporary-art-2026"]
+    "images": [
+      "assets/images/artworks/suren_arakelyan3.jpg"
+    ],
+    "exhibitions": [
+      "bouquet-contemporary-art-2026"
+    ]
   },
   {
     "title": "City flower No1",
@@ -1467,8 +1808,12 @@
     "price": 0,
     "priceAMD": "0",
     "year": "2026",
-    "images": ["assets/images/artworks/blue_pencil_flower1.jpg"],
-    "exhibitions": ["bouquet-contemporary-art-2026"]
+    "images": [
+      "assets/images/artworks/blue_pencil_flower1.jpg"
+    ],
+    "exhibitions": [
+      "bouquet-contemporary-art-2026"
+    ]
   },
   {
     "title": "City flower No2",
@@ -1480,7 +1825,11 @@
     "price": 0,
     "priceAMD": "0",
     "year": "2026",
-    "images": ["assets/images/artworks/blue_pencil_flower2.jpg"],
-    "exhibitions": ["bouquet-contemporary-art-2026"]
+    "images": [
+      "assets/images/artworks/blue_pencil_flower2.jpg"
+    ],
+    "exhibitions": [
+      "bouquet-contemporary-art-2026"
+    ]
   }
 ]

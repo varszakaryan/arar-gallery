@@ -77,6 +77,7 @@
                 <div class="nav-dropdown">
                     <a href="#" class="nav-dropdown-toggle" onclick="toggleDropdown(event)">Exhibitions</a>
                     <div class="nav-dropdown-menu">
+                        <a href="?exhibition=artefact-leo-leo-vardanyan-2026">ARTEFACT - Leo Leo Vardanyan Multimedia Art Exhibition</a>
                         <a href="?exhibition=paper-oil-tigran-ghazaryan-2026">PAPER & OIL - Tigran Ghazaryan Solo Exhibition</a>
                         <a href="?exhibition=stratumism-14-concept-2026">14 Concept - STRATUMISM</a>
                         <a href="?exhibition=resonance-guy-ghazanchyan-2026">RESONANCE - Guy Ghazanchyan's Exhibition</a>
@@ -98,12 +99,28 @@
 
     <main>
         <div class="hero-section hero-carousel">
+            <div class="hero-slide" data-bg="assets/images/artworks/artefact_bg.jpg" data-link="?exhibition=artefact-leo-leo-vardanyan-2026">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <div class="upcoming-label">
+                        <span class="vertical-line"></span>
+                        <span>UPCOMING</span>
+                    </div>
+                    <h1 class="hero-title">
+                        ARTEFACT<br>
+                        Leo Leo Vardanyan — Multimedia Art Exhibition
+                    </h1>
+                    <p class="opening-info">October 21–25, 2026</p>
+                    <p class="hero-location">ARAR Gallery · Pushkin 4, Yerevan</p>
+                    <a href="?exhibition=artefact-leo-leo-vardanyan-2026" class="hero-more-btn">Learn More</a>
+                </div>
+            </div>
             <div class="hero-slide" data-bg="assets/images/artworks/tigran_ghazaryan3.jpg" data-link="?exhibition=paper-oil-tigran-ghazaryan-2026">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
                     <div class="upcoming-label">
                         <span class="vertical-line"></span>
-                        <span>RUNNING</span>
+                        <span>PAST</span>
                     </div>
                     <h1 class="hero-title">
                         PAPER & OIL<br>
@@ -207,6 +224,7 @@
                 <span class="hero-indicator" onclick="goToHeroSlide(3)"></span>
                 <span class="hero-indicator" onclick="goToHeroSlide(4)"></span>
                 <span class="hero-indicator" onclick="goToHeroSlide(5)"></span>
+                <span class="hero-indicator" onclick="goToHeroSlide(6)"></span>
             </div>
             <button class="scroll-down-btn" onclick="scrollToNext()" aria-label="Scroll down">
                 <span class="material-icons-outlined">keyboard_arrow_down</span>
@@ -309,6 +327,7 @@
                         <div class="artist-item"><a href="artists/tatev-aslanyan" class="artist-name">Tatev Aslanyan</a></div>
                         <div class="artist-item"><a href="artists/ararat-minasyan" class="artist-name">Ararat Minasyan</a></div>
                         <div class="artist-item"><a href="artists/armen-ronov" class="artist-name">Armen Ronov</a></div>
+                        <div class="artist-item"><a href="artists/leo-leo-vardanyan" class="artist-name">Leo Leo Vardanyan</a></div>
                     </div>
                     <div class="artists-column">
                         <div class="artist-item"><a href="artists/arsen-arsist" class="artist-name">Arsen Arsist</a></div>
@@ -714,7 +733,9 @@
             }
             
             // Update page title based on exhibition parameter
-            if (exhibition === 'paper-oil-tigran-ghazaryan-2026') {
+            if (exhibition === 'artefact-leo-leo-vardanyan-2026') {
+                document.title = 'ARTEFACT | Leo Leo Vardanyan Multimedia Art Exhibition | ARAR Gallery';
+            } else if (exhibition === 'paper-oil-tigran-ghazaryan-2026') {
                 document.title = 'PAPER & OIL | Tigran Ghazaryan Solo Exhibition | ARAR Gallery';
             } else if (exhibition === 'stratumism-14-concept-2026') {
                 document.title = '14 Concept - STRATUMISM | Armen Ronov | ARAR Art Gallery';
@@ -795,7 +816,14 @@
             updateOGImage('assets/images/arar.png');
             
             // Update sharing meta tags for exhibition-specific title/description/url
-            if (exhibition === 'paper-oil-tigran-ghazaryan-2026') {
+            if (exhibition === 'artefact-leo-leo-vardanyan-2026') {
+                updateSharingMetaTags(
+                    'ARTEFACT | Leo Leo Vardanyan Multimedia Art Exhibition | ARAR Gallery',
+                    'What remains beyond a finished work of art? Leo Leo Vardanyan explores hidden traces of the creative process and the new life of reclaimed materials. ARAR Gallery, 4 Pushkin Street, Yerevan. October 21–25, 2026. Opening October 21 at 20:00.',
+                    'https://arargallery.com/?exhibition=artefact-leo-leo-vardanyan-2026',
+                    'assets/images/arar.png'
+                );
+            } else if (exhibition === 'paper-oil-tigran-ghazaryan-2026') {
                 updateSharingMetaTags(
                     'PAPER & OIL | Tigran Ghazaryan Solo Exhibition | ARAR Gallery',
                     'Oil on paper and cardboard — precision, restraint, and quiet attention to material and gesture. ARAR Gallery, Pushkin 4, Yerevan. June 22–July 22, 2026. Curated by Vahram Muradyan.',
@@ -967,12 +995,13 @@
                 // Show only the relevant slide
                 heroSlides = document.querySelectorAll('.hero-slide');
                 const exhibitionSlideMap = {
-                    'paper-oil-tigran-ghazaryan-2026': 0,
-                    'stratumism-14-concept-2026': 1,
-                    'resonance-guy-ghazanchyan-2026': 2,
-                    'bouquet-contemporary-art-2026': 3,
-                    'guyduk-presence-2026': 4,
-                    'contemporary-art-2026': 5
+                    'artefact-leo-leo-vardanyan-2026': 0,
+                    'paper-oil-tigran-ghazaryan-2026': 1,
+                    'stratumism-14-concept-2026': 2,
+                    'resonance-guy-ghazanchyan-2026': 3,
+                    'bouquet-contemporary-art-2026': 4,
+                    'guyduk-presence-2026': 5,
+                    'contemporary-art-2026': 6
                 };
                 const slideIndex = exhibitionSlideMap[exhibition];
                 if (slideIndex !== undefined) {
@@ -989,7 +1018,174 @@
                 }
             }
             
-            if (exhibition === 'paper-oil-tigran-ghazaryan-2026') {
+            if (exhibition === 'artefact-leo-leo-vardanyan-2026') {
+                const heroSection = document.querySelector('.hero-section');
+                if (heroSection) {
+                    heroSection.style.backgroundImage = "url('assets/images/artworks/artefact_bg.jpg')";
+                }
+                
+                const activeHero = document.querySelector('.hero-slide.active');
+                const heroTitle = activeHero && activeHero.querySelector('.hero-title');
+                if (heroTitle) {
+                    heroTitle.innerHTML = 'ARTEFACT<br>Leo Leo Vardanyan — Multimedia Art Exhibition';
+                }
+                
+                const openingInfo = activeHero && activeHero.querySelector('.opening-info');
+                if (openingInfo) {
+                    openingInfo.textContent = 'October 21–25, 2026';
+                }
+                
+                const heroLocation = activeHero && activeHero.querySelector('.hero-location');
+                if (heroLocation) {
+                    heroLocation.style.display = '';
+                    heroLocation.textContent = 'ARAR Gallery · Pushkin 4, Yerevan';
+                }
+                
+                const eventInfoSection = document.getElementById('eventInfoSection');
+                if (eventInfoSection) {
+                    eventInfoSection.style.display = 'block';
+                    
+                    const dateValue = document.getElementById('eventDateValue');
+                    if (dateValue) {
+                        dateValue.textContent = 'October 21–25, 2026';
+                        let dateHours = document.getElementById('eventDateHours');
+                        if (!dateHours) {
+                            dateHours = document.createElement('p');
+                            dateHours.id = 'eventDateHours';
+                            dateHours.className = 'detail-value detail-hours';
+                            dateValue.parentNode.insertBefore(dateHours, dateValue.nextSibling);
+                        }
+                        dateHours.textContent = 'Opening: October 21 at 20:00';
+                        dateHours.style.display = '';
+                    }
+                    
+                    const locationItems = document.querySelectorAll('.detail-item');
+                    locationItems.forEach(item => {
+                        const label = item.querySelector('.detail-label');
+                        if (label && label.textContent === 'Location') {
+                            const detailValues = item.querySelectorAll('.detail-value');
+                            detailValues.forEach((val, index) => {
+                                if (index === 0) {
+                                    val.style.display = '';
+                                    val.textContent = 'ARAR Gallery';
+                                } else {
+                                    val.style.display = '';
+                                    val.innerHTML = '<a href="https://maps.app.goo.gl/KxeDYjPMdibav2g57" target="_blank" rel="noreferrer" class="location-link">4 Pushkin Street, Yerevan, Armenia</a>';
+                                }
+                            });
+                        }
+                    });
+                    
+                    const curatorItems = document.querySelectorAll('.detail-item');
+                    curatorItems.forEach(item => {
+                        const label = item.querySelector('.detail-label');
+                        if (label && label.textContent === 'Curator') {
+                            item.style.display = 'none';
+                        }
+                    });
+                    
+                    const googleCalendarLink = document.getElementById('googleCalendarLink');
+                    if (googleCalendarLink) {
+                        googleCalendarLink.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=ARTEFACT+-+Leo+Leo+Vardanyan+Multimedia+Art+Exhibition&dates=20261021T200000/20261025T220000&details=ARTEFACT+multimedia+art+exhibition+by+Leo+Leo+Vardanyan.+Opening+October+21+at+20%3A00.&location=ARAR+Gallery%2C+4+Pushkin+Street%2C+Yerevan%2C+Armenia';
+                    }
+                    const appleCalendarLink = document.getElementById('appleCalendarLink');
+                    if (appleCalendarLink) {
+                        appleCalendarLink.onclick = null;
+                        appleCalendarLink.href = 'data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20261021T200000%0ADTEND:20261025T220000%0ASUMMARY:ARTEFACT+-+Leo+Leo+Vardanyan+Multimedia+Art+Exhibition%0ADESCRIPTION:ARTEFACT+multimedia+art+exhibition+by+Leo+Leo+Vardanyan.+Opening+October+21+at+20:00.%0ALOCATION:ARAR+Gallery%2C+4+Pushkin+Street%2C+Yerevan%2C+Armenia%0AEND:VEVENT%0AEND:VCALENDAR';
+                    }
+                    
+                    const eventInfoDescription = document.getElementById('eventInfoDescription');
+                    if (eventInfoDescription) {
+                        eventInfoDescription.innerHTML = 'What remains beyond a finished work of art?<br><br>In ARTEFACT, Leo Leo Vardanyan invites viewers to look beyond the completed painting and discover the hidden traces of the creative process and the new life of materials.<br><br>At the intersection of art and environmental responsibility, the project reconsiders the value of materials and challenges conventional approaches to artistic production. Discarded PVC plastic from advertising banners, leftover wood, kimono belts, and other reclaimed materials are given new life as elements of artworks. Objects are also created from paint remnants scraped from the artist’s palette after a painting is complete.<br><br>Through painting, video art, objects, and installations, the exhibition explores the transformation of materials and the relationship between a finished artwork and the traces left behind during its creation. By documenting the removal of paint from the palette, the artist reveals a process that usually remains hidden from the viewer, turning its remnants into objects with their own distinctive colours, textures, and visual character.<br><br>Each artefact preserves traces of its original source, carrying the colours, textures, and visual memory of the painting from which its materials emerged. What might otherwise be discarded becomes a new form of artistic expression, blurring the boundaries between artwork and residue, waste and value, process and outcome.<br><br>ARTEFACT invites us to reconsider how we use resources, the materials we choose, what we leave behind, and the new possibilities that can emerge from what we once considered excess or waste.';
+                    }
+                }
+                
+                const artistsNavLink = document.querySelector('nav a[href="#artists"]');
+                if (artistsNavLink) {
+                    artistsNavLink.textContent = 'The Artist';
+                }
+                
+                const artistsTitle = document.querySelector('.artists-title');
+                if (artistsTitle) {
+                    artistsTitle.textContent = 'The Artist';
+                }
+                
+                const artistsList = document.querySelector('.artists-list');
+                if (artistsList) {
+                    artistsList.style.display = 'block';
+                    artistsList.innerHTML = '<div style="width: 100%; max-width: 900px; margin: 0 auto;"><p style="font-size: 18px; line-height: 1.8; color: #1a1a1a; margin: 0; text-align: left;"><a href="artists/leo-leo-vardanyan" style="color: #000; text-decoration: none; font-weight: 600;">Leo Leo Vardanyan</a> was born in Yerevan, Armenia in 1971. From the age of ten, he started attending various painting clubs and studios. After the Academy, figurative art no longer coincided with his internal experiences, and his first solo exhibition in 1998 already had an abstract direction. After 2010, Leo\'s art is meditative in nature: painting remains at the center, alongside photography, video art, and performance.</p></div>';
+                }
+
+                const artworksSection = document.querySelector('.artworks-section');
+                if (artworksSection) {
+                    artworksSection.style.display = 'block';
+                }
+                const artworksNavLink = document.querySelector('nav a[href="#artworks"]');
+                if (artworksNavLink) {
+                    artworksNavLink.style.display = 'block';
+                }
+                const artworksTitle = document.querySelector('.artworks-title');
+                if (artworksTitle) {
+                    artworksTitle.textContent = 'Artworks';
+                }
+                
+                const seeAllContainer = document.getElementById('seeAllContainer');
+                if (seeAllContainer) {
+                    seeAllContainer.style.display = 'none';
+                }
+                
+                const muralSection = document.querySelector('.mural-section');
+                if (muralSection) {
+                    muralSection.style.display = 'none';
+                }
+                const muralNavLink = document.querySelector('nav a[href="#mural"]');
+                if (muralNavLink) {
+                    muralNavLink.style.display = 'none';
+                }
+                
+                const merchSection = document.querySelector('.merch-section');
+                if (merchSection) {
+                    merchSection.style.display = 'none';
+                }
+                const merchNavLink = document.querySelector('nav a[href="#merch"]');
+                if (merchNavLink) {
+                    merchNavLink.style.display = 'none';
+                }
+                
+                const exhibitionTabsSection = document.getElementById('exhibitionTabsSection');
+                if (exhibitionTabsSection) {
+                    exhibitionTabsSection.style.display = 'none';
+                }
+                
+                const zonesNavLink2 = document.querySelector('nav a[href="#zones"]');
+                if (zonesNavLink2) {
+                    zonesNavLink2.style.display = 'none';
+                }
+                
+                const organizersSection = document.querySelector('.organizers-section');
+                if (organizersSection) {
+                    organizersSection.style.display = 'block';
+                }
+                const organizersNavLink = document.querySelector('nav a[href="#organizers"]');
+                if (organizersNavLink) {
+                    organizersNavLink.style.display = 'block';
+                }
+                const organizersText = document.querySelector('.organizers-text p');
+                if (organizersText) {
+                    organizersText.textContent = 'Organized by ARAR Gallery in collaboration with the IPBA Foundation, ARTEFACT is a multimedia exhibition by Leo Leo Vardanyan that explores the transformation of materials and the traces left behind in the making of art.';
+                }
+                
+                const partnersSection = document.getElementById('partners');
+                if (partnersSection) {
+                    partnersSection.style.display = 'none';
+                }
+                const partnersNavLink = document.querySelector('nav a[href="#partners"]');
+                if (partnersNavLink) {
+                    partnersNavLink.style.display = 'none';
+                }
+                
+                loadArtworks('artefact-leo-leo-vardanyan-2026');
+            } else if (exhibition === 'paper-oil-tigran-ghazaryan-2026') {
                 const heroSection = document.querySelector('.hero-section');
                 if (heroSection) {
                     heroSection.style.backgroundImage = "url('assets/images/artworks/tigran_ghazaryan3.jpg')";
@@ -2293,6 +2489,7 @@
         // Helper function to get artist profile image path
         function getArtistProfileImage(artistName) {
             const artistImageMap = {
+                'Leo Leo Vardanyan': 'assets/images/artists/leo_leo_vardanyan_profile.png',
                 'Raydan Zebian (Spazuno)': 'assets/images/artists/spaz_profile.jpg',
                 'Spazuno': 'assets/images/artists/spaz_profile.jpg',
                 'Karen Akhikyan': 'assets/images/artists/karen_akhikyan_profile.jpg',
