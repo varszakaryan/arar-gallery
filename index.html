@@ -1147,15 +1147,11 @@
 
                 const artworksSection = document.querySelector('.artworks-section');
                 if (artworksSection) {
-                    artworksSection.style.display = 'block';
+                    artworksSection.style.display = 'none';
                 }
                 const artworksNavLink = document.querySelector('nav a[href="#artworks"]');
                 if (artworksNavLink) {
-                    artworksNavLink.style.display = 'block';
-                }
-                const artworksTitle = document.querySelector('.artworks-title');
-                if (artworksTitle) {
-                    artworksTitle.textContent = 'Artworks';
+                    artworksNavLink.style.display = 'none';
                 }
                 
                 const seeAllContainer = document.getElementById('seeAllContainer');
@@ -1212,8 +1208,6 @@
                 if (partnersNavLink) {
                     partnersNavLink.style.display = 'none';
                 }
-                
-                loadArtworks('the-plants-exhale-reiner-heidorn-2026');
             } else if (exhibition === 'artefact-leo-leo-vardanyan-2026') {
                 const heroSection = document.querySelector('.hero-section');
                 if (heroSection) {
