@@ -77,6 +77,7 @@
                 <div class="nav-dropdown">
                     <a href="#" class="nav-dropdown-toggle" onclick="toggleDropdown(event)">Exhibitions</a>
                     <div class="nav-dropdown-menu">
+                        <a href="?exhibition=the-plants-exhale-reiner-heidorn-2026">THE PLANTS EXHALE - Reiner Heidorn</a>
                         <a href="?exhibition=artefact-leo-leo-vardanyan-2026">ARTEFACT - Leo Leo Vardanyan Multimedia Art Exhibition</a>
                         <a href="?exhibition=paper-oil-tigran-ghazaryan-2026">PAPER & OIL - Tigran Ghazaryan Solo Exhibition</a>
                         <a href="?exhibition=stratumism-14-concept-2026">14 Concept - STRATUMISM</a>
@@ -99,12 +100,28 @@
 
     <main>
         <div class="hero-section hero-carousel">
+            <div class="hero-slide" data-bg="assets/images/artworks/plants_exhale_bg.jpg" data-link="?exhibition=the-plants-exhale-reiner-heidorn-2026">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <div class="upcoming-label">
+                        <span class="vertical-line"></span>
+                        <span>RUNNING</span>
+                    </div>
+                    <h1 class="hero-title">
+                        THE PLANTS EXHALE<br>
+                        Reiner Heidorn — Artist Residency · Open Studio · Exhibition
+                    </h1>
+                    <p class="opening-info">26 October–15 November 2026</p>
+                    <p class="hero-location">ARAR Gallery · Pushkin 4, Yerevan</p>
+                    <a href="?exhibition=the-plants-exhale-reiner-heidorn-2026" class="hero-more-btn">Learn More</a>
+                </div>
+            </div>
             <div class="hero-slide" data-bg="assets/images/artworks/artefact_bg.jpg" data-link="?exhibition=artefact-leo-leo-vardanyan-2026">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
                     <div class="upcoming-label">
                         <span class="vertical-line"></span>
-                        <span>UPCOMING</span>
+                        <span>PAST</span>
                     </div>
                     <h1 class="hero-title">
                         ARTEFACT<br>
@@ -225,6 +242,7 @@
                 <span class="hero-indicator" onclick="goToHeroSlide(4)"></span>
                 <span class="hero-indicator" onclick="goToHeroSlide(5)"></span>
                 <span class="hero-indicator" onclick="goToHeroSlide(6)"></span>
+                <span class="hero-indicator" onclick="goToHeroSlide(7)"></span>
             </div>
             <button class="scroll-down-btn" onclick="scrollToNext()" aria-label="Scroll down">
                 <span class="material-icons-outlined">keyboard_arrow_down</span>
@@ -328,6 +346,7 @@
                         <div class="artist-item"><a href="artists/ararat-minasyan" class="artist-name">Ararat Minasyan</a></div>
                         <div class="artist-item"><a href="artists/armen-ronov" class="artist-name">Armen Ronov</a></div>
                         <div class="artist-item"><a href="artists/leo-leo-vardanyan" class="artist-name">Leo Leo Vardanyan</a></div>
+                        <div class="artist-item"><a href="artists/reiner-heidorn" class="artist-name">Reiner Heidorn</a></div>
                     </div>
                     <div class="artists-column">
                         <div class="artist-item"><a href="artists/arsen-arsist" class="artist-name">Arsen Arsist</a></div>
@@ -733,7 +752,9 @@
             }
             
             // Update page title based on exhibition parameter
-            if (exhibition === 'artefact-leo-leo-vardanyan-2026') {
+            if (exhibition === 'the-plants-exhale-reiner-heidorn-2026') {
+                document.title = 'THE PLANTS EXHALE | Reiner Heidorn | ARAR Gallery';
+            } else if (exhibition === 'artefact-leo-leo-vardanyan-2026') {
                 document.title = 'ARTEFACT | Leo Leo Vardanyan Multimedia Art Exhibition | ARAR Gallery';
             } else if (exhibition === 'paper-oil-tigran-ghazaryan-2026') {
                 document.title = 'PAPER & OIL | Tigran Ghazaryan Solo Exhibition | ARAR Gallery';
@@ -816,7 +837,14 @@
             updateOGImage('assets/images/arar.png');
             
             // Update sharing meta tags for exhibition-specific title/description/url
-            if (exhibition === 'artefact-leo-leo-vardanyan-2026') {
+            if (exhibition === 'the-plants-exhale-reiner-heidorn-2026') {
+                updateSharingMetaTags(
+                    'THE PLANTS EXHALE | Reiner Heidorn | ARAR Gallery',
+                    'Artist residency, open studio, and exhibition by German painter Reiner Heidorn. ArAr Gallery transforms into an open studio for five days, then presents a new series inspired by Yerevan. 26 October–15 November 2026. Opening October 30 at 20:00.',
+                    'https://arargallery.com/?exhibition=the-plants-exhale-reiner-heidorn-2026',
+                    'assets/images/arar.png'
+                );
+            } else if (exhibition === 'artefact-leo-leo-vardanyan-2026') {
                 updateSharingMetaTags(
                     'ARTEFACT | Leo Leo Vardanyan Multimedia Art Exhibition | ARAR Gallery',
                     'What remains beyond a finished work of art? Leo Leo Vardanyan explores hidden traces of the creative process and the new life of reclaimed materials. ARAR Gallery, 4 Pushkin Street, Yerevan. October 21–25, 2026. Opening October 21 at 20:00.',
@@ -995,13 +1023,14 @@
                 // Show only the relevant slide
                 heroSlides = document.querySelectorAll('.hero-slide');
                 const exhibitionSlideMap = {
-                    'artefact-leo-leo-vardanyan-2026': 0,
-                    'paper-oil-tigran-ghazaryan-2026': 1,
-                    'stratumism-14-concept-2026': 2,
-                    'resonance-guy-ghazanchyan-2026': 3,
-                    'bouquet-contemporary-art-2026': 4,
-                    'guyduk-presence-2026': 5,
-                    'contemporary-art-2026': 6
+                    'the-plants-exhale-reiner-heidorn-2026': 0,
+                    'artefact-leo-leo-vardanyan-2026': 1,
+                    'paper-oil-tigran-ghazaryan-2026': 2,
+                    'stratumism-14-concept-2026': 3,
+                    'resonance-guy-ghazanchyan-2026': 4,
+                    'bouquet-contemporary-art-2026': 5,
+                    'guyduk-presence-2026': 6,
+                    'contemporary-art-2026': 7
                 };
                 const slideIndex = exhibitionSlideMap[exhibition];
                 if (slideIndex !== undefined) {
@@ -1018,7 +1047,174 @@
                 }
             }
             
-            if (exhibition === 'artefact-leo-leo-vardanyan-2026') {
+            if (exhibition === 'the-plants-exhale-reiner-heidorn-2026') {
+                const heroSection = document.querySelector('.hero-section');
+                if (heroSection) {
+                    heroSection.style.backgroundImage = "url('assets/images/artworks/plants_exhale_bg.jpg')";
+                }
+                
+                const activeHero = document.querySelector('.hero-slide.active');
+                const heroTitle = activeHero && activeHero.querySelector('.hero-title');
+                if (heroTitle) {
+                    heroTitle.innerHTML = 'THE PLANTS EXHALE<br>Reiner Heidorn — Artist Residency · Open Studio · Exhibition';
+                }
+                
+                const openingInfo = activeHero && activeHero.querySelector('.opening-info');
+                if (openingInfo) {
+                    openingInfo.textContent = '26 October–15 November 2026';
+                }
+                
+                const heroLocation = activeHero && activeHero.querySelector('.hero-location');
+                if (heroLocation) {
+                    heroLocation.style.display = '';
+                    heroLocation.textContent = 'ARAR Gallery · Pushkin 4, Yerevan';
+                }
+                
+                const eventInfoSection = document.getElementById('eventInfoSection');
+                if (eventInfoSection) {
+                    eventInfoSection.style.display = 'block';
+                    
+                    const dateValue = document.getElementById('eventDateValue');
+                    if (dateValue) {
+                        dateValue.textContent = '26 October–15 November 2026';
+                        let dateHours = document.getElementById('eventDateHours');
+                        if (!dateHours) {
+                            dateHours = document.createElement('p');
+                            dateHours.id = 'eventDateHours';
+                            dateHours.className = 'detail-value detail-hours';
+                            dateValue.parentNode.insertBefore(dateHours, dateValue.nextSibling);
+                        }
+                        dateHours.textContent = 'Opening: October 30 at 20:00';
+                        dateHours.style.display = '';
+                    }
+                    
+                    const locationItems = document.querySelectorAll('.detail-item');
+                    locationItems.forEach(item => {
+                        const label = item.querySelector('.detail-label');
+                        if (label && label.textContent === 'Location') {
+                            const detailValues = item.querySelectorAll('.detail-value');
+                            detailValues.forEach((val, index) => {
+                                if (index === 0) {
+                                    val.style.display = '';
+                                    val.textContent = 'ARAR Gallery';
+                                } else {
+                                    val.style.display = '';
+                                    val.innerHTML = '<a href="https://maps.app.goo.gl/KxeDYjPMdibav2g57" target="_blank" rel="noreferrer" class="location-link">4 Pushkin Street, Yerevan, Armenia</a>';
+                                }
+                            });
+                        }
+                    });
+                    
+                    const curatorItems = document.querySelectorAll('.detail-item');
+                    curatorItems.forEach(item => {
+                        const label = item.querySelector('.detail-label');
+                        if (label && label.textContent === 'Curator') {
+                            item.style.display = 'none';
+                        }
+                    });
+                    
+                    const googleCalendarLink = document.getElementById('googleCalendarLink');
+                    if (googleCalendarLink) {
+                        googleCalendarLink.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=THE+PLANTS+EXHALE+-+Reiner+Heidorn&dates=20261026T110000/20261115T200000&details=Artist+residency%2C+open+studio%2C+and+exhibition+by+Reiner+Heidorn.+Open+studio+26%E2%80%9330+October.+Exhibition+opening+30+October+at+20%3A00.&location=ARAR+Gallery%2C+4+Pushkin+Street%2C+Yerevan%2C+Armenia';
+                    }
+                    const appleCalendarLink = document.getElementById('appleCalendarLink');
+                    if (appleCalendarLink) {
+                        appleCalendarLink.onclick = null;
+                        appleCalendarLink.href = 'data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20261026T110000%0ADTEND:20261115T200000%0ASUMMARY:THE+PLANTS+EXHALE+-+Reiner+Heidorn%0ADESCRIPTION:Artist+residency%2C+open+studio%2C+and+exhibition+by+Reiner+Heidorn.+Open+studio+26-30+October.+Exhibition+opening+30+October+at+20:00.%0ALOCATION:ARAR+Gallery%2C+4+Pushkin+Street%2C+Yerevan%2C+Armenia%0AEND:VEVENT%0AEND:VCALENDAR';
+                    }
+                    
+                    const eventInfoDescription = document.getElementById('eventInfoDescription');
+                    if (eventInfoDescription) {
+                        eventInfoDescription.innerHTML = 'For The Plants Exhale, ArAr Gallery will transform into an open studio for five days. Reiner will explore the surroundings of Yerevan, collect natural materials, and use them to create a new series of paintings inspired by the local environment.<br><br>Visitors will have the opportunity to observe the creative process, meet the artist, and take part in open workshops.<br><br><strong>Dates &amp; Programme</strong><br>26–30 October — Open Studio &amp; Workshops: Reiner will work directly in the gallery, welcoming visitors to observe his process and participate in creative activities.<br><br>30 October, 8:00 PM — Exhibition Opening: Official opening of The Plants Exhale at ArAr Gallery.<br><br>31 October–15 November — Exhibition: The new series of paintings will remain on view at the gallery. The closing date is tentative and may be adjusted.';
+                    }
+                }
+                
+                const artistsNavLink = document.querySelector('nav a[href="#artists"]');
+                if (artistsNavLink) {
+                    artistsNavLink.textContent = 'The Artist';
+                }
+                
+                const artistsTitle = document.querySelector('.artists-title');
+                if (artistsTitle) {
+                    artistsTitle.textContent = 'The Artist';
+                }
+                
+                const artistsList = document.querySelector('.artists-list');
+                if (artistsList) {
+                    artistsList.style.display = 'block';
+                    artistsList.innerHTML = '<div style="width: 100%; max-width: 900px; margin: 0 auto;"><p style="font-size: 18px; line-height: 1.8; color: #1a1a1a; margin: 0; text-align: left;"><a href="artists/reiner-heidorn" style="color: #000; text-decoration: none; font-weight: 600;">Reiner Heidorn</a> is a German painter living and working next to Munich. In his paintings, he explores the microscopic structures of microorganisms, plants, and chlorophyll, often using micrographs as a starting point and translating them into an abstract visual language that combines elements of Pointillism and Abstract Expressionism. He also incorporates natural materials such as leaves, twigs, and blossoms as printing templates. His works have been shown in Brazil, Dubai, Taiwan, the USA, and in various German and European cities.</p></div>';
+                }
+
+                const artworksSection = document.querySelector('.artworks-section');
+                if (artworksSection) {
+                    artworksSection.style.display = 'block';
+                }
+                const artworksNavLink = document.querySelector('nav a[href="#artworks"]');
+                if (artworksNavLink) {
+                    artworksNavLink.style.display = 'block';
+                }
+                const artworksTitle = document.querySelector('.artworks-title');
+                if (artworksTitle) {
+                    artworksTitle.textContent = 'Artworks';
+                }
+                
+                const seeAllContainer = document.getElementById('seeAllContainer');
+                if (seeAllContainer) {
+                    seeAllContainer.style.display = 'none';
+                }
+                
+                const muralSection = document.querySelector('.mural-section');
+                if (muralSection) {
+                    muralSection.style.display = 'none';
+                }
+                const muralNavLink = document.querySelector('nav a[href="#mural"]');
+                if (muralNavLink) {
+                    muralNavLink.style.display = 'none';
+                }
+                
+                const merchSection = document.querySelector('.merch-section');
+                if (merchSection) {
+                    merchSection.style.display = 'none';
+                }
+                const merchNavLink = document.querySelector('nav a[href="#merch"]');
+                if (merchNavLink) {
+                    merchNavLink.style.display = 'none';
+                }
+                
+                const exhibitionTabsSection = document.getElementById('exhibitionTabsSection');
+                if (exhibitionTabsSection) {
+                    exhibitionTabsSection.style.display = 'none';
+                }
+                
+                const zonesNavLink2 = document.querySelector('nav a[href="#zones"]');
+                if (zonesNavLink2) {
+                    zonesNavLink2.style.display = 'none';
+                }
+                
+                const organizersSection = document.querySelector('.organizers-section');
+                if (organizersSection) {
+                    organizersSection.style.display = 'block';
+                }
+                const organizersNavLink = document.querySelector('nav a[href="#organizers"]');
+                if (organizersNavLink) {
+                    organizersNavLink.style.display = 'block';
+                }
+                const organizersText = document.querySelector('.organizers-text p');
+                if (organizersText) {
+                    organizersText.textContent = 'Organized by ARAR Gallery in collaboration with the IPBA Foundation, THE PLANTS EXHALE is an artist residency, open studio, and exhibition by Reiner Heidorn, creating a new series inspired by the surroundings of Yerevan.';
+                }
+                
+                const partnersSection = document.getElementById('partners');
+                if (partnersSection) {
+                    partnersSection.style.display = 'none';
+                }
+                const partnersNavLink = document.querySelector('nav a[href="#partners"]');
+                if (partnersNavLink) {
+                    partnersNavLink.style.display = 'none';
+                }
+                
+                loadArtworks('the-plants-exhale-reiner-heidorn-2026');
+            } else if (exhibition === 'artefact-leo-leo-vardanyan-2026') {
                 const heroSection = document.querySelector('.hero-section');
                 if (heroSection) {
                     heroSection.style.backgroundImage = "url('assets/images/artworks/artefact_bg.jpg')";
@@ -1080,7 +1276,11 @@
                     curatorItems.forEach(item => {
                         const label = item.querySelector('.detail-label');
                         if (label && label.textContent === 'Curator') {
-                            item.style.display = 'none';
+                            item.style.display = '';
+                            const detailValue = item.querySelector('.detail-value');
+                            if (detailValue) {
+                                detailValue.innerHTML = '<a href="https://www.instagram.com/varszakaryan/" target="_blank" rel="noreferrer" class="location-link">Varser Zakaryan</a><br><a href="https://www.instagram.com/voghjamit/" target="_blank" rel="noreferrer" class="location-link">Vahram Muradyan</a>';
+                            }
                         }
                     });
                     
@@ -2489,6 +2689,7 @@
         // Helper function to get artist profile image path
         function getArtistProfileImage(artistName) {
             const artistImageMap = {
+                'Reiner Heidorn': 'assets/images/artists/reiner_heidorn_profile.jpg',
                 'Leo Leo Vardanyan': 'assets/images/artists/leo_leo_vardanyan_profile.png',
                 'Raydan Zebian (Spazuno)': 'assets/images/artists/spaz_profile.jpg',
                 'Spazuno': 'assets/images/artists/spaz_profile.jpg',
